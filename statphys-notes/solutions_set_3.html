@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.551">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistical Physics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./solutions_set_1.html">Solutions</a></li><li class="breadcrumb-item"><a href="./solutions_set_3.html">Solutions set 3</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./NotesFigs/courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course-texts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course texts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Chapters</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Foundations: equilibrium of an isolated system</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Entropy, equilibrium, and the second Law</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. The Boltzmann distribution</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Free energy minimisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Systems of weakly interacting constituents</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. More on magnetism; review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Einstein’s model of a simple solid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Ideal gas and indistinguishability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Ideal gas in the low density limit</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Systems with varying particle number</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Quantum gases</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Ideal Fermi gas</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Problems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Problem_set_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem set 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Problem_set_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem set 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Problem_set_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem set 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Problem_set_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem set 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Solutions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions_set_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions set 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions_set_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions set 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions_set_3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Solutions set 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions_set_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions set 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Coursework/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coursework assignment</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="solutions-to-problem-set-3" class="level1">
+<h1>Solutions to problem set 3</h1>
+<section id="knowing-and-understanding-the-boltzmann-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="knowing-and-understanding-the-boltzmann-distribution">3.1 Knowing, and understanding, the Boltzmann distribution</h2>
+<p>The Boltzmann distribution gives the probability <span class="math inline">\(p_r\)</span> that a system will be found in a nominated microstate <span class="math inline">\(r\)</span> of energy <span class="math inline">\(E_r\)</span>. Explicitly</p>
+<p><span class="math display">\[
+p_r = \frac{1}{Z} e^{-\beta E_r}
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+Z = \sum_r e^{-\beta E_r}
+\]</span></p>
+<p>If we choose two microstates with different energies, our system is always more likely to be found in the one with lower energy. The reason is that in accessing the higher energy microstate the system has to grab more energy from its environment, which means that its environment can access fewer microstates (has a smaller entropy). In other words, overall (taking into account system and environment), the higher energy microstate of the system can be accessed in fewer ways.</p>
+<p>We can make this argument more explicit as follows. Consider two microstates of energies <span class="math inline">\(E_1\)</span> and <span class="math inline">\(E_2\)</span> respectively, and suppose that <span class="math inline">\(E_1\)</span> is smaller than <span class="math inline">\(E_2\)</span>. When the system is in the microstate of energy <span class="math inline">\(E_1\)</span>, the surrounding bath has energy <span class="math inline">\(E_b = E_c - E_1\)</span>, where (as in section 3.2) we use the subscripts <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> to label respectively the bath and the composite system comprising the (physical) system and the bath. Thus, when the system is in the microstate 1, the bath may be in any of <span class="math inline">\(\Omega_b(E_c - E_1)\)</span> microstates. Similarly, when the system is in the microstate 2, the bath may be in any of <span class="math inline">\(\Omega_b(E_c - E_2)\)</span> microstates. Since the composite system is (can be thought of as being) isolated, each of its microstates is equally likely. It follows that</p>
+<p><span class="math display">\[
+\frac{\text{probability system is in microstate 1}}{\text{probability system is in microstate 2}} = \frac{\text{number of microstates open to composite system when system is in microstate 1}}{\text{number of microstates open to composite system when system is in microstate 2}}
+\]</span></p>
+<p><span class="math display">\[
+= \frac{1 \times \Omega_b(E_c - E_1)}{1 \times \Omega_b(E_c - E_2)} = \frac{\Omega_b(E_c - E_1)}{\Omega_b(E_c - E_2)}
+\]</span></p>
+<p>Since <span class="math inline">\(\Omega_b(E_b)\)</span> is an increasing function (whose gradient measures the inverse of the temperature) <span class="math inline">\(\Omega_b(E_c - E_1)\)</span> must be bigger than <span class="math inline">\(\Omega_b(E_c - E_2)\)</span> if, as supposed, <span class="math inline">\(E_1\)</span> is smaller than <span class="math inline">\(E_2\)</span>. It follows that microstate 1 is the likelier.</p>
+</section>
+<section id="some-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="some-numbers">3.2 Some numbers</h2>
+<p>Label the two states 1 and 2; let them have energies <span class="math inline">\(\varepsilon_1\)</span> and <span class="math inline">\(\varepsilon_2\)</span> respectively. The probability that a particle has energy <span class="math inline">\(\varepsilon_2\)</span> is just the probability that it will be found in the state 2. Thus</p>
+<p><span class="math display">\[
+p(\varepsilon = \varepsilon_2) = p_2 = \frac{e^{-\beta \varepsilon_2}}{Z(1)}
+\]</span></p>
+<p>Similarly, the probability the particle has energy <span class="math inline">\(\varepsilon_1\)</span> is</p>
+<p><span class="math display">\[
+p(\varepsilon = \varepsilon_1) = p_1 = \frac{e^{-\beta \varepsilon_1}}{Z(1)}
+\]</span></p>
+<p>Thus</p>
+<p><span class="math display">\[
+\frac{p(\varepsilon = \varepsilon_2)}{p(\varepsilon = \varepsilon_1)} = \frac{p_2}{p_1} = \frac{e^{-\beta \varepsilon_2}}{e^{-\beta \varepsilon_1}} = e^{-\beta \Delta \varepsilon}
+\]</span></p>
+<p>where <span class="math inline">\(\Delta \varepsilon \equiv \varepsilon_2 - \varepsilon_1\)</span>. Inverting this equation gives</p>
+<p><span class="math display">\[
+T = \frac{\Delta \varepsilon}{k \ln(p_1 / p_2)} = \frac{\Delta \varepsilon}{k \ln 2}
+\]</span></p>
+<p>where we have set <span class="math inline">\(p_1 / p_2 = 2\)</span>. Setting <span class="math inline">\(\Delta \varepsilon = 0.1 \, \text{eV}\)</span> gives <span class="math inline">\(T = 1.68 \times 10^3 \, \text{K}\)</span>.</p>
+</section>
+<section id="and-some-thinking" class="level2">
+<h2 class="anchored" data-anchor-id="and-some-thinking">3.3 …and some thinking</h2>
+<p>Now we have to be a little more careful. In this case each particle has access to <strong>three</strong> states, two of which have the same energy. Label the three states 1, 2, and 3, with the understanding that</p>
+<p><span class="math display">\[
+\varepsilon_3 = \varepsilon_2 = \varepsilon_1 + \Delta \varepsilon
+\]</span></p>
+<p>Then</p>
+<p><span class="math display">\[
+p(\varepsilon = \varepsilon_2) = p_2 + p_3 = 2p_2 = 2 \times \frac{e^{-\beta \varepsilon_2}}{Z(1)}
+\]</span></p>
+<p>while</p>
+<p><span class="math display">\[
+p(\varepsilon = \varepsilon_1) = p_1 = \frac{e^{-\beta \varepsilon_1}}{Z(1)}
+\]</span></p>
+<p>Thus, now</p>
+<p><span class="math display">\[
+\frac{p(\varepsilon = \varepsilon_2)}{p(\varepsilon = \varepsilon_1)} = \frac{2 \times p_2}{p_1} = 2 \times e^{-\beta \Delta \varepsilon}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+T = \frac{\Delta \varepsilon}{k \ln(p(\varepsilon = \varepsilon_1) / 2p(\varepsilon = \varepsilon_2))} = \frac{\Delta \varepsilon}{k \ln 4} = \frac{\Delta \varepsilon}{2k \ln 2}
+\]</span></p>
+<p>leading to <span class="math inline">\(T = 864 \, \text{K}\)</span>, half the temperature we found in the preceding question. We need a lower temperature to achieve the same proportion of particles with the higher energy because, in this case, there are more ways (twice as many!) in which each particle can have the higher energy.</p>
+</section>
+<section id="how-to-divide-and-conquer" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-divide-and-conquer">3.4 How to divide and conquer</h2>
+<p>Consider the magnetic and the vibrational ‘aspects’ of a solid. The associated energy in microstate <span class="math inline">\(r\)</span> can usually be written (to a good first approximation) as a <strong>sum</strong>:</p>
+<p><span class="math display">\[
+E_r = E_{r_v} + E_{r_m}
+\]</span></p>
+<p>where <span class="math inline">\(r_v\)</span> and <span class="math inline">\(r_m\)</span> label the vibrational and magnetic states implicit in the microstate label <span class="math inline">\(r\)</span>, and the two terms on the right-hand side give the energies associated with the two aspects.</p>
+<p>Then the partition function can be written as follows:</p>
+<p><span class="math display">\[
+Z = \sum_r e^{-\beta E_r} = \sum_{r_v} e^{-\beta E_{r_v}} \times \sum_{r_m} e^{-\beta E_{r_m}} = Z^v \times Z^m
+\]</span></p>
+<p>So the partition function is just the product of the partition functions associated with the two aspects.</p>
+<p>This result is a generalisation of the claim (Key Point 12) that the partition function of <span class="math inline">\(N\)</span> weakly interacting particles is just the <span class="math inline">\(N^{\text{th}}\)</span> power of the partition function of one of them.</p>
+<p>Its utility lies in the fact that it allows us to deal <strong>separately</strong> with the different aspects of the behaviour of a complex system, calculating the partition function for each one in turn.</p>
+<p>The result will, hopefully, seem intuitively reasonable: when we are considering one aspect, any other just acts as an auxiliary heat bath, a reservoir of energy with which the aspect of interest can exchange energy.</p>
+</section>
+<section id="minimising-the-free-energy" class="level2">
+<h2 class="anchored" data-anchor-id="minimising-the-free-energy">3.5 Minimising the free energy</h2>
+<p>The Helmholtz free energy is defined as:</p>
+<p><span class="math display">\[
+F = E - TS
+\]</span></p>
+<p>Taking the derivative of <span class="math inline">\(F\)</span> with respect to <span class="math inline">\(E\)</span>:</p>
+<p><span class="math display">\[
+\frac{dF}{dE} = \frac{d}{dE} \left( E - TS \right)
+\]</span></p>
+<p>In general, <span class="math inline">\(S = S(E)\)</span>, and the temperature <span class="math inline">\(T\)</span> is constant (for this derivation). Thus:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+\frac{dF}{dE} &amp;=&amp; \frac{dE}{dE} - T \frac{dS}{dE}\\
+&amp; = &amp; 1 - T \frac{dS}{dE}\\
+\end{eqnarray*}\]</span></p>
+<p>Thus the identification</p>
+<p><span class="math display">\[
+T = \left( \frac{\partial E}{\partial S} \right)^{-1}
+\]</span> minimises the free energy. This definition of temperature in terms of entropy is the one given in lectures.</p>
+</section>
+<section id="a-qualitative-thinking-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="a-qualitative-thinking-exercise">3.6 A qualitative thinking exercise</h2>
+<p>When applied to a system of weakly interacting particles, the Boltzmann theory tells us that the partition function can be written as <span class="math inline">\(Z = Z(1)^N\)</span>, where</p>
+<p><span class="math display">\[
+Z(1) = \sum_i e^{-\beta \varepsilon_i}
+\]</span></p>
+<p>is the partition function for <strong>one particle</strong>, so that the sum extends over the states <span class="math inline">\(i = 1, 2, \dots q\)</span> of one particle, with energies denoted by <span class="math inline">\(\varepsilon_i\)</span>, and we are told that the number of states <span class="math inline">\(q\)</span> is finite. The probability of finding a (nominated) particle to be in a state <span class="math inline">\(i\)</span> is then</p>
+<p><span class="math display">\[
+p_i = \frac{e^{-\beta \varepsilon_i}}{Z(1)}
+\]</span></p>
+<p>which one may view as a direct application of the original Boltzmann distribution, with the ‘system’ chosen as one particle, with all the other particles acting as a heat bath.</p>
+<p>The basic physics is controlled by the limiting (low and high <span class="math inline">\(T\)</span>) behaviour of the set of probabilities <span class="math inline">\(p_i\)</span>.</p>
+<ul>
+<li><p><strong>For low <span class="math inline">\(T\)</span></strong>, a particle is most likely to be found in one of the lowest energy states; it will be in its ground state when <span class="math inline">\(T \ll \Delta \varepsilon / k\)</span> where <span class="math inline">\(\Delta \varepsilon\)</span> is the energy spacing between the ground state and the first excited state.</p></li>
+<li><p><strong>For high enough <span class="math inline">\(T\)</span></strong> (specifically when <span class="math inline">\(T \gg (\varepsilon_q - \varepsilon_1)/k\)</span>; convince yourself about this!) each particle is essentially equally likely to be in any one of its states.</p></li>
+</ul>
+<p>The implications for <span class="math inline">\(S\)</span>, <span class="math inline">\(E\)</span>, and the heat capacity <span class="math inline">\(C\)</span> should be clear:</p>
+<ul>
+<li><p>The <strong>entropy</strong> evolves smoothly from zero, at <span class="math inline">\(T = 0\)</span> (where the underlying picture is one of ‘order’, with everything in its ground state) to a finite upper limiting value at high <span class="math inline">\(T\)</span> (associated with the ‘most disordered’ macrostate in which a particle is equally likely to be in any one of its states).</p></li>
+<li><p>The <strong>energy <span class="math inline">\(E\)</span></strong> evolves in a qualitatively similar way, from a minimum at <span class="math inline">\(T = 0\)</span> (just <span class="math inline">\(N \times \varepsilon_1\)</span>, the ground state energy for a single particle) to a finite upper limit (just <span class="math inline">\(N \times \varepsilon_{\text{av}}\)</span>, where <span class="math inline">\(\varepsilon_{\text{av}} = q^{-1} \sum_{i=1}^{q} \varepsilon_i\)</span> is the average of the one-particle energy levels).</p></li>
+<li><p>The <strong>heat capacity <span class="math inline">\(C\)</span></strong> mirrors the slope of the <span class="math inline">\(E\)</span>-versus-<span class="math inline">\(T\)</span> curve and thus evolves from zero, to a peak, and back to zero, forming a hump.</p></li>
+</ul>
+<p><img src="NotesFigs/PS3_fig.png" class="img-fluid"></p>
+<ul>
+<li><strong>Entropy vs.&nbsp;Temperature</strong>: Shows a smooth increase from zero to a limiting value.</li>
+<li><strong>Mean Energy vs.&nbsp;Temperature</strong>: Starts at a minimum and approaches a finite upper limit.</li>
+<li><strong>Heat Capacity vs.&nbsp;Temperature</strong>: Peaks at an intermediate temperature and approaches zero at both low and high temperatures.</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
