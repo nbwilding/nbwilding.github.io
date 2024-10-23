@@ -109,7 +109,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">13. The Ideal fermi gas</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter13.html">13. Ideal Fermi gas</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -227,6 +227,12 @@ window.Quarto = {
  <span class="menu-text">12. Quantum gases</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter13.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">13. Ideal Fermi gas</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -299,6 +305,12 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Coursework/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coursework assignment</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -308,79 +320,78 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">13. The Ideal fermi gas</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
+<section id="the-ideal-fermi-gas" class="level1">
+<h1>13. The Ideal fermi gas</h1>
 <section id="low-density-limit" class="level2">
 <h2 class="anchored" data-anchor-id="low-density-limit">Low Density Limit</h2>
 <p>Consider the limit <span class="math inline">\(e^{\mu/kT} \ll 1\)</span>, i.e., <span class="math inline">\(\mu\)</span> large and negative. Then:</p>
 <p><span class="math display">\[
-n_i = \frac{1}{\exp\left(\frac{\epsilon_i - \mu}{kT}\right) + 1} \approx e^{-\frac{\epsilon_i - \mu}{kT}}
+\overline{n_i} = \frac{1}{\exp\left(\frac{\epsilon_i - \mu}{kT}\right) \pm 1} \approx e^{-\frac{\epsilon_i - \mu}{kT}}
 \]</span></p>
 <p>for both Fermi-Dirac (F-D) and Bose-Einstein (B-E) distributions.</p>
-<p>Now,</p>
+<p>Now fix <span class="math inline">\(\mu(N,T)\)</span> through the constraint</p>
 <p><span class="math display">\[
-N = \sum_i n_i \approx e^{\mu/kT} \sum_i e^{-\epsilon_i/kT} = e^{\mu/kT} Z(1)
+N = \sum_i \overline{n_i} \approx e^{\mu/kT} \sum_i e^{-\epsilon_i/kT} = e^{\mu/kT} Z(1)
 \]</span></p>
 <p>where we have identified the canonical single particle partition function <span class="math inline">\(Z(1)\)</span>. Thus we see that in the limit <span class="math inline">\(e^{\mu/kT} \ll 1\)</span>:</p>
 <p><span class="math display">\[
 Z(1)N \ll 1
 \]</span></p>
 <p>which, referring to <strong>chapters 11/12</strong>, is the low density/high temperature limit where a semi-classical treatment is adequate.</p>
-<p>In <strong>Tutorial Question 8.2</strong> (for the mathematically inclined), it is shown how the semi-classical partition function is recovered.</p>
-<p>Also, we can see that in the low-density limit:</p>
-<p><span class="math display">\[
-\mu \approx kT \ln \left( \frac{N}{Z(1)} \right)
-\]</span></p>
-<p>which recovers the semi-classical <span class="math inline">\(\mu\)</span> of <strong>chapter 14.3</strong>.</p>
 </section>
 <section id="ideal-fermi-gas" class="level2">
 <h2 class="anchored" data-anchor-id="ideal-fermi-gas">Ideal Fermi Gas</h2>
-<p>We return now to the Fermi-Dirac distribution from <strong>Key Point 17</strong> (chapter 15). The function <span class="math inline">\(f_+\)</span> is often referred to simply as the <strong>Fermi function</strong>.</p>
+<p>We return now to the Fermi-Dirac distribution from <strong>Key Point 15</strong> (chapter 12). The function <span class="math inline">\(f_+\)</span> is often referred to simply as the <strong>Fermi function</strong>.</p>
 <p>Consider the limit <span class="math inline">\(T \to 0\)</span> (<span class="math inline">\(\beta \to \infty\)</span>):</p>
 <p><span class="math display">\[
 f_+(\epsilon) = \frac{1}{\exp\left(\frac{\epsilon - \mu}{kT}\right) + 1} \to
 \begin{cases}
-1 &amp; \text{if } \epsilon &lt; \mu_f \\
-0 &amp; \text{if } \epsilon &gt; \mu_f
+1 &amp; \text{if } \epsilon &lt; \epsilon_f \\
+0 &amp; \text{if } \epsilon &gt; \epsilon_f
 \end{cases}
 \]</span></p>
-<p>where <span class="math inline">\(\mu_f\)</span> is the <strong>Fermi energy</strong> defined by:</p>
+<p>where <span class="math inline">\(\epsilon_f\)</span> is the <strong>Fermi energy</strong> defined by:</p>
+<div id="kp16" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Point 16
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><span class="math display">\[
-\mu_f = \lim_{T \to 0} \mu(T)
+\epsilon_f = \lim_{T \to 0} \mu(T)
 \]</span></p>
-<p><strong>Key Point 18</strong>: From <strong>Tutorial Question 8.3</strong>, you should convince yourself that the Fermi-Dirac distribution is equivalent to the probability that a quantum state of energy <span class="math inline">\(\epsilon\)</span> is occupied.</p>
-<p>In <strong>Figure 1</strong>, we observe the following features:</p>
+</div>
+</div>
+<p>You should convince yourself that the Fermi-Dirac distribution is equivalent to the probability that a quantum state of energy <span class="math inline">\(\epsilon\)</span> is occupied.</p>
+<div id="fig-FermiT0" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-FermiT0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="NotesFigs/FermiT0.png" class="img-fluid figure-img" width="400">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-FermiT0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Fermi function at zero temperature
+</figcaption>
+</figure>
+</div>
+<p>In <a href="#fig-FermiT0" class="quarto-xref">Figure&nbsp;1</a>, we observe the following features:</p>
 <ul>
-<li>All states up to <span class="math inline">\(\mu_f\)</span> are filled with probability 1.</li>
-<li>All states above <span class="math inline">\(\mu_f\)</span> are empty.</li>
+<li>All states up to <span class="math inline">\(\epsilon_f\)</span> are filled with probability 1.</li>
+<li>All states above <span class="math inline">\(\epsilon_f\)</span> are empty.</li>
 <li>This is very different from a classical gas where at zero temperature, all gas molecules would have zero energy.</li>
 <li>It is a direct result of the <strong>exclusion principle</strong>, which leads to an “effective repulsion” between fermions.</li>
 </ul>
-<pre class="{figure}"><code>---
-caption: "Fermi function at zero temperature"
----</code></pre>
-<p>We now calculate <span class="math inline">\(\mu_f\)</span>. First, turn the sum over quantum states into an integral:</p>
+<p>We now calculate <span class="math inline">\(\epsilon_f\)</span>. First, turn the sum over quantum states into an integral:</p>
 <p><span class="math display">\[
 N = \sum_i f_+(\epsilon_i) \approx \int_0^{\infty} d\epsilon\, g(\epsilon) f_+(\epsilon)
 \]</span></p>
-<p>where <span class="math inline">\(g(\epsilon)\)</span> is the density of states, a concept first introduced in <strong>chapter 11</strong>. As a reminder:</p>
+<p>where <span class="math inline">\(g(\epsilon)\)</span> is the density of states, a concept first introduced in <strong>chapter 10</strong>. As a reminder:</p>
 <p><span class="math display">\[
 g(\epsilon) d\epsilon = \text{number of states in energy range } [\epsilon, \epsilon + d\epsilon]
 \]</span></p>
@@ -394,54 +405,61 @@ g(\epsilon) = \tilde{D} \epsilon^{1/2}, \quad \tilde{D} = (2s + 1) D
 \]</span></p>
 <p>Thus:</p>
 <p><span class="math display">\[
-N = \int_0^{\mu_f} \tilde{D} \epsilon^{1/2} d\epsilon = \frac{2}{3} \tilde{D} \mu_f^{3/2}
+N = \int_0^{\epsilon_f} \tilde{D} \epsilon^{1/2} d\epsilon = \frac{2}{3} \tilde{D} \epsilon_f^{3/2}
 \]</span></p>
 <p>which implies:</p>
 <p><span class="math display">\[
-\mu_f = \left( \frac{3N}{2\tilde{D}V} \right)^{2/3}
+\epsilon_f = \left( \frac{3N}{2\tilde{D}V} \right)^{2/3}
 \]</span></p>
 <p>or equivalently:</p>
 <p><span class="math display">\[
-\mu_f = \frac{h^2}{2m} \left( \frac{6\pi^2 N}{(2s + 1)V} \right)^{2/3}
+\epsilon_f = \frac{h^2}{2m} \left( \frac{6\pi^2 N}{(2s + 1)V} \right)^{2/3}
 \]</span></p>
-<p>In <strong>Tutorial Question 8.5</strong>, it is shown that:</p>
+<p>In <strong>Tutorial Question 4.5</strong>, it is shown that:</p>
 <p><span class="math display">\[
-E = \int_0^{\mu_f} g(\epsilon) \epsilon d\epsilon = \frac{3}{5} N \mu_f
+E = \int_0^{\epsilon_f} g(\epsilon) \epsilon d\epsilon = \frac{3}{5} N \epsilon_f
 \]</span></p>
 <section id="important-points" class="level3">
 <h3 class="anchored" data-anchor-id="important-points">Important Points:</h3>
 <ul>
-<li><span class="math inline">\(\mu_f\)</span> decreases with the mass <span class="math inline">\(M\)</span> of the fermion.</li>
-<li><span class="math inline">\(\mu_f\)</span> increases with density <span class="math inline">\(N/V\)</span>.</li>
-<li><span class="math inline">\(\mu_f\)</span> defines a characteristic temperature through <span class="math inline">\(\mu_f = kT_f\)</span>.</li>
-<li>At zero temperature, there is a finite energy per particle <span class="math inline">\(\epsilon = \frac{3}{5} \mu_f\)</span>.</li>
+<li><span class="math inline">\(\epsilon_f\)</span> decreases with the mass <span class="math inline">\(M\)</span> of the fermion.</li>
+<li><span class="math inline">\(\epsilon_f\)</span> increases with the number density <span class="math inline">\(N/V\)</span>.</li>
+<li><span class="math inline">\(\epsilon_f\)</span> defines a characteristic temperature through <span class="math inline">\(\epsilon_f = kT_f\)</span>.</li>
+<li>At zero temperature, there is a finite energy per particle <span class="math inline">\(\epsilon = \frac{3}{5} \epsilon_f\)</span>.</li>
 </ul>
 </section>
 </section>
-<section id="low-temperature-behavior" class="level2">
-<h2 class="anchored" data-anchor-id="low-temperature-behavior">Low Temperature Behavior</h2>
+<section id="low-temperature-behaviour" class="level2">
+<h2 class="anchored" data-anchor-id="low-temperature-behaviour">Low Temperature Behaviour</h2>
 <p>Now consider the Fermi function at low but finite <span class="math inline">\(T\)</span>. The meaning of “low” will be specified shortly. Note that:</p>
 <p><span class="math display">\[
 f_+(\epsilon) = \frac{1}{\exp\left(\frac{\epsilon - \mu}{kT}\right) + 1}
 \]</span></p>
-<p>approaches 1 if <span class="math inline">\((\epsilon - \mu)/kT \ll -1\)</span> and 0 if <span class="math inline">\((\epsilon - \mu)/kT \gg 1\)</span>, with <span class="math inline">\(f_+(\epsilon) = 1/2\)</span> when <span class="math inline">\(\epsilon = \mu\)</span>. The Fermi function is a sigmoid shape illustrated in <strong>Figure 2</strong>. It differs from the zero-temperature step-function only when <span class="math inline">\(|\epsilon - \mu| \sim O(kT)\)</span>.</p>
-<pre class="{figure}"><code>---
-caption: "Fermi function at low temperature"
----</code></pre>
-<p>For the Fermi function to retain its characteristic shape, we must have <span class="math inline">\(kT \ll \mu(T) \approx \mu_f\)</span>, implying <span class="math inline">\(T \ll T_f\)</span>. We assume that for low <span class="math inline">\(T\)</span>:</p>
+<p>approaches 1 if <span class="math inline">\((\epsilon - \mu)/kT \ll -1\)</span> and 0 if <span class="math inline">\((\epsilon - \mu)/kT \gg 1\)</span>, with <span class="math inline">\(f_+(\epsilon) = 1/2\)</span> when <span class="math inline">\(\epsilon = \mu\)</span>. The Fermi function is a sigmoid shape illustrated in <a href="#fig-FermilowT" class="quarto-xref">Figure&nbsp;2</a>. It differs from the zero-temperature step-function only when <span class="math inline">\(|\epsilon - \mu| \sim O(kT)\)</span>.</p>
+<div id="fig-FermilowT" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-FermilowT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="NotesFigs/FermilowT.png" class="img-fluid figure-img" width="400">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-FermilowT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Fermi function at zero temperature
+</figcaption>
+</figure>
+</div>
+<p>For the Fermi function to retain its characteristic shape, we must have <span class="math inline">\(kT \ll \mu(T) \approx \epsilon_f\)</span>, implying <span class="math inline">\(T \ll T_f\)</span>. We assume that for low <span class="math inline">\(T\)</span>:</p>
 <p><span class="math display">\[
-\mu(T) \approx \mu_f \left( 1 - O\left( \frac{T^2}{T_f^2} \right) \right)
+\mu(T) \approx \epsilon_f \left( 1 - O\left( \frac{T^2}{T_f^2} \right) \right)
 \]</span></p>
 <p>Thus, the change in <span class="math inline">\(\mu\)</span> is second-order in <span class="math inline">\(T/T_f\)</span> and can safely be ignored in the regime <span class="math inline">\(T \ll T_f\)</span>.</p>
-<p>An intuitive interpretation of <strong>Figure 2</strong> is that at low temperatures, the general scenario is similar to that at zero temperature, where all states up to energy <span class="math inline">\(\mu_f\)</span> are filled. The difference is that states within energy <span class="math inline">\(O(kT)\)</span> below <span class="math inline">\(\mu_f\)</span> are vacated with some probability, and previously empty states within <span class="math inline">\(O(kT)\)</span> above <span class="math inline">\(\mu_f\)</span> are filled with some probability. In other words, some fermions are thermally excited above the Fermi energy.</p>
+<p>An intuitive interpretation of <a href="#fig-FermilowT" class="quarto-xref">Figure&nbsp;2</a> is that at low temperatures, the general scenario is similar to that at zero temperature, where all states up to energy <span class="math inline">\(\epsilon_f\)</span> are filled. The difference is that states within energy <span class="math inline">\(O(kT)\)</span> below <span class="math inline">\(\epsilon_f\)</span> are vacated with some probability, and previously empty states within <span class="math inline">\(O(kT)\)</span> above <span class="math inline">\(\epsilon_f\)</span> are filled with some probability. In other words, some fermions are thermally excited above the Fermi energy.</p>
 <p>We investigate the result of this thermal excitation by calculating the heat capacity. To avoid a complicated calculation required to get the exact result, we instead make a rough estimate (for a more careful argument, see Baierlein 9.1). We expect:</p>
 <p><span class="math display">\[
-E(T) - E(0) \sim N \cdot \frac{kT}{\mu_f} \cdot kT
+E(T) - E(0) \sim N \cdot \frac{kT}{\epsilon_f} \cdot kT
 \]</span></p>
-<p>i.e., the change in energy is <span class="math inline">\(N\)</span> times the fraction of fermions excited (roughly <span class="math inline">\(kT/\mu_f\)</span>) times the typical excitation (roughly <span class="math inline">\(kT\)</span>).</p>
+<p>i.e., the change in energy is <span class="math inline">\(N\)</span> times the fraction of fermions excited (roughly <span class="math inline">\(kT/\epsilon_f\)</span>) times the typical excitation (roughly <span class="math inline">\(kT\)</span>).</p>
 <p>Therefore, the heat capacity is approximately:</p>
 <p><span class="math display">\[
-C_V \sim \frac{E(T) - E(0)}{T} \sim \frac{Nk^2T}{\mu_f}
+C_V \sim \frac{E(T) - E(0)}{T} \sim \frac{Nk^2T}{\epsilon_f}
 \]</span></p>
 <p>The important point is that this is <strong>linear in <span class="math inline">\(T\)</span></strong>. This contrasts with the classical gas, where <span class="math inline">\(C_V\)</span> is a constant (equal to <span class="math inline">\(3Nk/2\)</span>).</p>
 </section>
@@ -450,32 +468,11 @@ C_V \sim \frac{E(T) - E(0)}{T} \sim \frac{Nk^2T}{\mu_f}
 <ol type="1">
 <li><span class="math inline">\(E/N \approx E_\text{classical}/N\)</span>, i.e., the gas has a large kinetic energy per molecule, even at low <span class="math inline">\(T\)</span>.</li>
 <li><span class="math inline">\(C_V\)</span> is small.</li>
-<li>The pressure of the gas is high and doesn’t depend on <span class="math inline">\(T\)</span> (see <strong>Tutorial Question 8.6</strong>).</li>
+<li>The pressure of the gas is high and doesn’t depend on <span class="math inline">\(T\)</span></li>
 </ol>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Expand for a physical application: The Electron Gas
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>For the low-temperature physics of the Fermi gas outlined above, we</p>
-<p>require <span class="math inline">\(T \ll T_f\)</span>. The archetypical example is the electron gas, realized by the conduction electrons in metals. The basic idea is that alkali metal atoms (such as Na, Li, K) sit on the sites of an ordered lattice (usually body-centered cubic) and donate their outermost (valence) electron to a sea of conduction electrons. Thus, there is an array of positive ions surrounded by a sea of delocalized electrons (see <strong>Figure 3</strong>).</p>
-<pre class="{figure}"><code>---
-caption: "Non-localized conduction electrons forming a free electron gas"
----</code></pre>
-<p>It is not obvious that the conduction electrons can be modeled as an ideal Fermi gas (also known as a free electron gas) — clearly, there are electrostatic interactions between an electron and the other electrons and ions. However, one argument is that a single electron sees, on average, a neutral environment. Other factors are also relevant, which will be explored in <strong>Solid State Physics</strong> courses.</p>
-<p>For alkali metals, <span class="math inline">\(\mu_f\)</span> is high compared to room temperature because the mass of an electron is small, and the density of conduction electrons is relatively high (see <strong>Question 8.4</strong>). Thus, the electron gas is well modeled by the low-temperature ideal Fermi gas, and the results of the previous chapter are well borne out by experiment.</p>
-</div>
-</div>
-</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

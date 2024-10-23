@@ -227,6 +227,12 @@ window.Quarto = {
  <span class="menu-text">12. Quantum gases</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Ideal Fermi gas</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -299,6 +305,12 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Coursework/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coursework assignment</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -336,6 +348,42 @@ x \equiv \frac{\hbar \omega}{kT}
 <section id="a-check-on-the-entropy-formula" class="level2">
 <h2 class="anchored" data-anchor-id="a-check-on-the-entropy-formula">4.3 A check on the entropy formula</h2>
 <p>Calculate the molar entropy of argon gas at its normal boiling point of <span class="math inline">\(T_b = 87.29 \, \text{K}\)</span>, assuming the appropriateness of the ideal (low density) gas theory. Compare the result with the experimental value derived from calorimetric studies (how?) between low temperatures and the boiling point, <span class="math inline">\(S = 129.6 \pm 0.5 \, \text{J mol}^{-1} \, \text{K}^{-1}\)</span>.</p>
+</section>
+<section id="density-of-states-for-a-2d-gas" class="level2">
+<h2 class="anchored" data-anchor-id="density-of-states-for-a-2d-gas">4.4 Density of states for a 2d gas</h2>
+<p>Show that the density of states function <span class="math inline">\(g(\epsilon)\)</span> for a gas of particles of mass <span class="math inline">\(M\)</span> confined to a 2d surface of area <span class="math inline">\(A\)</span> is of the form</p>
+<p><span class="math display">\[
+g(\epsilon) = \frac{AM}{2\pi \hbar^2}
+\]</span></p>
+<p>independent of <span class="math inline">\(\epsilon\)</span>.</p>
+<p>[Help: This is a challenging question. If you don’t make progress, make sure you understand the solution. You need to modify the argument used to calculate the density of states in 3d by recognizing that the “spheres” in <span class="math inline">\(k\)</span>-space subtending the relevant allowed states are now “circles”.]</p>
+</section>
+<section id="the-fermi-dirac-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="the-fermi-dirac-distribution">4.5 The Fermi-Dirac distribution</h2>
+<p>Write down the Fermi-Dirac (FD) distribution (making sure you can distinguish it from the BE distribution!), and explain what it means. Show that the FD distribution can be viewed as giving the probability that a state (of the prescribed energy) is occupied. Sketch the form of the distribution for (i) <span class="math inline">\(T=0\)</span>; (ii) a low but finite <span class="math inline">\(T\)</span>.</p>
+</section>
+<section id="energy-of-the-electron-gas" class="level2">
+<h2 class="anchored" data-anchor-id="energy-of-the-electron-gas">4.6 Energy of the electron gas</h2>
+<p>The mean energy of a gas of fermions can be written as</p>
+<p><span class="math display">\[
+\bar{E} = \int_0^{\infty} d\epsilon \, \epsilon \, g(\epsilon) f_+(\epsilon)
+\]</span></p>
+<p>where <span class="math inline">\(g(\epsilon)\)</span> is the density of states function. Show that, at <span class="math inline">\(T = 0\)</span>, this equation implies</p>
+<p><span class="math display">\[
+\bar{E} = \frac{3 N \epsilon_f}{5}
+\]</span></p>
+</section>
+<section id="ideal-fermi-gas-model-of-conduction-electrons-in-na" class="level2">
+<h2 class="anchored" data-anchor-id="ideal-fermi-gas-model-of-conduction-electrons-in-na">4.7 Ideal fermi gas model of conduction electrons in Na</h2>
+<p>Review the argument that the Fermi energy</p>
+<p><span class="math display">\[
+\varepsilon_f = \lim_{T \to 0} \mu(T)
+\]</span></p>
+<p>and for the ideal Fermi gas</p>
+<p><span class="math display">\[
+\varepsilon_f = \left( \frac{3}{8 \pi} \frac{N}{V} \right)^{2/3} \frac{h^2}{2M}
+\]</span></p>
+<p>The molar volume of metallic Na is <span class="math inline">\(23.7 \, \text{cc}\)</span>. Each atom contributes its single 3s electron to the conduction electron gas. Determine (a) the number of such electrons per unit volume, <span class="math inline">\(N/V\)</span>, and (b) the associated Fermi energy <span class="math inline">\(\varepsilon_f\)</span>.</p>
 
 
 </section>
