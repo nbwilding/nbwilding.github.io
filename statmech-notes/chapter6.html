@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -334,7 +334,7 @@ E_r = \epsilon_{i_1} + \epsilon_{i_2} + \epsilon_{i_3} + \cdots + \epsilon_{i_N}
 \]</span></p>
 <p>where <span class="math inline">\(\epsilon_{i_n}\)</span> is the energy of particle <span class="math inline">\(n\)</span> which is in state <span class="math inline">\(i_n\)</span>.</p>
 <p>For example, in the model magnet, the microstate is given by the states of all <span class="math inline">\(N\)</span> dipoles; the state of each dipole <span class="math inline">\(n\)</span> is either the ground state (<span class="math inline">\(i_n = 1; \epsilon_1 = -mH\)</span>) or the excited state (<span class="math inline">\(i_n = 2; \epsilon_2 = +mH\)</span>). The total energy is the sum of the energies of each dipole.</p>
-<p>Recalling the definition of <span class="math inline">\(Z\)</span> from key point 9, we have:</p>
+<p>Recalling the definition of <span class="math inline">\(Z\)</span> from key point 10, we have:</p>
 <p><span class="math display">\[\begin{eqnarray*}
 Z &amp;=&amp; \sum_r \exp(-\beta E_r)\\
 &amp;=&amp; \sum_{i_1 \cdots i_N} \exp\left(-\beta \left[\epsilon_{i_1} + \epsilon_{i_2} + \cdots + \epsilon_{i_N}\right]\right) \\
@@ -362,13 +362,13 @@ P_{i_1} &amp;=&amp; \sum_{i_2 \cdots i_N} \exp\left(-\beta \left[\epsilon_{i_1} 
 &amp; =&amp; \frac{\exp(-\beta \epsilon_{i_1}) Z(1)^{N-1}}{Z(1)^N}\\
 &amp; =&amp; \frac{\exp(-\beta \epsilon_{i_1})}{Z(1)}
 \end{eqnarray*}\]</span> This is identical to the probability distribution for a single particle discussed in 4.2.</p>
-<div id="kp12" class="callout callout-style-default callout-tip callout-titled">
+<div id="kp13" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Key Point 12:
+Key Point 13:
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -380,6 +380,7 @@ Key Point 12:
 </section>
 <section id="the-model-magnet" class="level2">
 <h2 class="anchored" data-anchor-id="the-model-magnet">6.2. The Model Magnet</h2>
+<p><em>See Mandl 3.1-3.3</em></p>
 <p>In 5.2, we examined the single particle partition function, i.e., the partition function for a single dipole, so effectively we have already done the hard work. We saw:</p>
 <p><span class="math display">\[
 Z(1) = 2 \cosh x \quad \text{where} \quad x = \frac{mH}{kT}
@@ -435,7 +436,7 @@ E = E_\alpha + E_\beta + \cdots
 Z = Z_\alpha \times Z_\beta \times \cdots
 \]</span></p>
 <p>A consequence of this is that the free energy is a sum of contributions from each aspect.</p>
-<p>For example, in a real magnetic solid, contributions to the energy will come from vibrations of the atoms about their average positions (see chapter 9) as well</p>
+<p>For example, in a real magnetic solid, contributions to the energy will come from vibrations of the atoms about their average positions (see chapter 8) as well</p>
 
 
 </section>

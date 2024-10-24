@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -325,6 +325,7 @@ window.Quarto = {
 
 <section id="free-energy-minimisation" class="level1">
 <h1>5. Free energy minimisation</h1>
+<p><em>See Mandl 2.6</em></p>
 <section id="energy-and-its-fluctuations" class="level2">
 <h2 class="anchored" data-anchor-id="energy-and-its-fluctuations">5.1. Energy and its fluctuations</h2>
 <p>The mean energy is defined as usual as:</p>
@@ -378,7 +379,7 @@ C = -\frac{1}{kT^2} \left[\overline{E^2}- \overline{E}^2\right] = \frac{(\overli
 <p>From this, we see that for a system in equilibrium with a heat bath, although the energy is a free macroscopic variable, it takes on a sharply defined value <span class="math inline">\(\overline{E}\)</span>. A consequence is that a large system in equilibrium with a heat bath should have essentially the same behavior as a large isolated system with fixed energy <span class="math inline">\(\overline{E}\)</span>.</p>
 </section>
 <section id="entropy-energy-distribution-and-free-energy" class="level2">
-<h2 class="anchored" data-anchor-id="entropy-energy-distribution-and-free-energy">5.2. Entropy, Energy Distribution, and Free Energy</h2>
+<h2 class="anchored" data-anchor-id="entropy-energy-distribution-and-free-energy">5.2. Entropy, energy distribution, and free energy</h2>
 <p>Since, in the Boltzmann distribution, the energy is a free macroscopic variable, we can label the macrostates of the system by their energy, and the weight of the macrostate of energy <span class="math inline">\(E\)</span> is <span class="math inline">\(\Omega(E)\)</span>, the number of microstates with energy <span class="math inline">\(E\)</span>.</p>
 <p>As in chapter 3, we can use the Planck relation to determine the entropy of a macrostate:</p>
 <p><span class="math display">\[
@@ -418,13 +419,13 @@ F(E) \equiv E - TS(E)
 \]</span></p>
 <p><span class="math inline">\(F\)</span> is the Helmholtz free energy, which s often referred to in statistical mechanics simply as the free energy.</p>
 <p>Now the peak of <span class="math inline">\(P(E)\)</span> occurs when the argument of the exponential is maximized. Thus, we see that the equilibrium value of the energy <span class="math inline">\(E\)</span> is determined by minimizing the free energy. This is a profound and general concept:</p>
-<div id="kp10" class="callout callout-style-default callout-tip callout-titled">
+<div id="kp11" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Key Point 10:
+Key Point 11:
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -434,20 +435,19 @@ Key Point 10:
 <p>We write equilibrium values as <span class="math inline">\(S(T)\)</span>, <span class="math inline">\(F(T)\)</span>, etc.</p>
 </section>
 <section id="free-energy-the-energyentropy-competition" class="level2">
-<h2 class="anchored" data-anchor-id="free-energy-the-energyentropy-competition">5.3. Free Energy: The Energy–Entropy Competition</h2>
+<h2 class="anchored" data-anchor-id="free-energy-the-energyentropy-competition">5.3. Free energy: The energy–entropy competition</h2>
 <p>First, consider low <span class="math inline">\(T\)</span>: here <span class="math inline">\(F\)</span> is dominated by <span class="math inline">\(E\)</span>, therefore minimizing <span class="math inline">\(F\)</span> corresponds to minimizing <span class="math inline">\(E\)</span> (exactly so for <span class="math inline">\(T = 0\)</span>).</p>
 <p>Now consider high <span class="math inline">\(T\)</span>: here <span class="math inline">\(F\)</span> is dominated by <span class="math inline">\(S\)</span>, therefore minimizing <span class="math inline">\(F\)</span> corresponds to maximizing <span class="math inline">\(S\)</span> (exactly so for <span class="math inline">\(T = \infty\)</span>).</p>
 <p>Thus, one has a competition between energy and entropy, the arbiter of which is temperature.</p>
 <p>However, it should always be borne in mind that equilibrium is such as to maximize the entropy of the universe under the constraint that energy is conserved. For example, in an isolated system, the energy is constant, therefore we just maximize the entropy. For a system in equilibrium with its environment, the energy is free to vary. Thus, the minimization of the free energy for a system in equilibrium tells us the best way to distribute energy between the system and the universe such that the entropy of the universe is maximized.</p>
-<p>We now begin to understand the different phases in question 2.5 and 2.6, e.g., in Q2.5:</p>
+<p>We now begin to understand the different phases in question 2.5:</p>
 <ul>
 <li>At low temperatures, ice forms. The crystal structure is energetically favorable and releases energy (latent heat of fusion) to the environment, which maximizes the entropy of the universe, i.e., from the viewpoint of the system, energy considerations win.</li>
 <li>At higher temperatures, storing more energy in the system gives the liquid phase (water), which has a high entropy and allows the entropy of the universe to be maximized. From the point of view of the system, entropy wins.</li>
 </ul>
-<p>Q3.5 uses free energy considerations to explain the behavior of rubber.</p>
 </section>
-<section id="utility-of-partition-function" class="level2">
-<h2 class="anchored" data-anchor-id="utility-of-partition-function">5.4. Utility of Partition Function</h2>
+<section id="utility-of-the-partition-function" class="level2">
+<h2 class="anchored" data-anchor-id="utility-of-the-partition-function">5.4. Utility of the partition function</h2>
 <p>Let us first write <span class="math inline">\(Z\)</span> as</p>
 <p><span class="math display">\[
 Z = \sum_E \Omega(E) \exp(-\beta E)
@@ -473,13 +473,13 @@ F(T) = \overline{E} - TS(T) = -kT \ln Z
 S(T) = k \ln Z + \frac{\overline{E}}{T}
 \]</span></p>
 <p>Therefore, for a system in equilibrium at temperature <span class="math inline">\(T\)</span>, all the thermodynamic properties can be obtained from <span class="math inline">\(Z\)</span> from the following formulae:</p>
-<div id="kp11" class="callout callout-style-default callout-tip callout-titled">
+<div id="kp12" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Key Point 11:
+Key Point 12:
 </div>
 </div>
 <div class="callout-body-container callout-body">

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -325,6 +325,7 @@ window.Quarto = {
 
 <section id="the-boltzmann-distribution" class="level1">
 <h1>4 The Boltzmann distribution</h1>
+<p><em>See Mandl 2.5</em></p>
 <p>Previously we have considered an isolated system of fixed <span class="math inline">\(N, E\)</span>. Here we consider systems with fixed <span class="math inline">\(N\)</span> but instead of <span class="math inline">\(E\)</span> being fixed, the system is at some fixed temperature <span class="math inline">\(T\)</span>.</p>
 <p>To be specific our system is in equilibrium with a heat bath (or heat reservior) at constant <span class="math inline">\(T\)</span>. The zeroth law of thermodynamics then implies our system is at temperature <span class="math inline">\(T\)</span> and the thermal contact with the reservoir means that energy can be exchanged. Therefore the energy of our system is not fixed and the system can explore microstates of different energy. We expect microstates of the same energy to have the same probabilities (we have no reason to believe otherwise). However since we are at fixed <span class="math inline">\(T\)</span> we might think that microstates of different energy should have different probabilities. In the following we substantiate this.</p>
 </section>
@@ -367,7 +368,7 @@ If you don’t follow this
 \]</span></p>
 <p>Since <span class="math inline">\(E_i \ll E_{TOT}\)</span> we can perform a Taylor expansion <span class="math display">\[
 S_b(E _{TOT}− E_i) = S_b(E_{TOT}) − E_i\frac{\partial S_b}{\partial E_b} + \frac{E_i^2}{2}\frac{\partial^2S_b}{\partial E_b^2} +\cdots
-\]</span> Only keeping the first two terms (it turns out that the third term is small) and using key point 8 to identify <span class="math display">\[
+\]</span> Only keeping the first two terms (it turns out that the third term is small) and using key point 9 to identify <span class="math display">\[
 \frac{1}{T_b}=\frac{\partial S_b}{\partial E_b}
 \]</span> we find</p>
 <p><span class="math display">\[
@@ -382,13 +383,13 @@ P_i \propto \exp\left(-\frac{E_i}{kT}\right)
 P_i=\frac{\exp\left(-\frac{E_i}{kT}\right)}{\sum_j\exp\left(-\frac{E_i}{kT}\right)}
 \]</span></p>
 <p>Thus the Boltzmann distribution for the probability that at system in equilibrium with a heat bath at temperature <span class="math inline">\(T\)</span> is in microstate <span class="math inline">\(i\)</span> is</p>
-<div id="kp9" class="callout callout-style-default callout-tip callout-titled">
+<div id="kp10" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Key Point 9:
+Key Point 10:
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -439,13 +440,13 @@ Figure&nbsp;2: Mean energy <span class="math inline">\(E/mH\)</span> versus scal
 </section>
 <section id="single-constituent-in-an-isolated-system-for-large-n" class="level2">
 <h2 class="anchored" data-anchor-id="single-constituent-in-an-isolated-system-for-large-n">4.3. Single Constituent in an Isolated System for Large <span class="math inline">\(N\)</span></h2>
-<p>In order to gain more insight into the generality of the Boltzmann distribution, we return briefly to the scenario of chapters 3 and 4 where we considered an isolated system with a large number <span class="math inline">\(N\)</span> of constituents. We saw we could define an entropy <span class="math inline">\(S(E)\)</span> through the Planck relation and a temperature through Key Point 8.</p>
+<p>In order to gain more insight into the generality of the Boltzmann distribution, we return briefly to the scenario of chapters 3 and 4 where we considered an isolated system with a large number <span class="math inline">\(N\)</span> of constituents. We saw we could define an entropy <span class="math inline">\(S(E)\)</span> through the Planck relation and a temperature through key point 9.</p>
 <p>In particular, for the model magnet, we used the Planck relation to find the entropy:</p>
 <p><span class="math display">\[
 S(E) = -Nk \left[ x \ln x + (1 - x) \ln(1 - x) \right], \quad x = \frac{n}{N} = \frac{1}{2}\left(1 + \frac{E}{NmH}\right)
 \]</span></p>
 <p>where <span class="math inline">\(n\)</span> is the number of excited dipoles and <span class="math inline">\(N\)</span> is the total number of dipoles.</p>
-<p>Using key point 8, we find:</p>
+<p>Using key point 9, we find:</p>
 <p><span class="math display">\[
 \frac{1}{T} = \frac{\partial S}{\partial E} = \frac{dx}{dE} \frac{\partial S}{\partial x} = -\frac{Nk}{2NmH} \left[ \ln x + 1 - \ln(1 - x) - 1 \right] = -\frac{k}{2mH} \ln\left(\frac{x}{1 - x}\right)
 \]</span></p>

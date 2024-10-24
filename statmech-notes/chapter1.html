@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -484,6 +484,7 @@ Expand to review key concepts of probability
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>For further reading see chapter 3 of Gould and Tobochnik</p>
 <p><em>Definitions</em></p>
 <ol type="1">
 <li><p>frequency definition: the probability <span class="math inline">\(P\)</span> of an event in a trial is given by <span class="math display">\[
@@ -516,9 +517,9 @@ P (x) dx = \text{Probability that outcome lies in the range } x \text{ to } x + 
 <p><em>Averages</em></p>
 <p>The Probability distribution contains the complete information about the trial. However the moments (mean, variance . . . ) can give the important features. They are defined as</p>
 <p><span class="math display">\[\begin{eqnarray*}
-{\rm mean}~~\bar{x} &amp;=&amp; \sum_{i=1}^q P(i)x_i ~{~\rm or}~ \int_{-\infty}^\infty P(x)xdx\\
-{\rm variance}~~\overline{\Delta x^2} &amp;=&amp; \sum_{i=1}^q P(i)(x_i-\bar{x})^2 ~{\rm or}~ \int_{-\infty}^\infty P(x)(x-\bar{x})^2\\
-i.e. ~~\overline{\Delta x^2}&amp;=&amp; \overline{(x-\bar{x})^2}=\overline{x^2}-\bar{x}^2
+{\rm mean}~~\overline{x} &amp;=&amp; \sum_{i=1}^q P(i)x_i ~{~\rm or}~ \int_{-\infty}^\infty P(x)xdx\\
+{\rm variance}~~\overline{\Delta x^2} &amp;=&amp; \sum_{i=1}^q P(i)(x_i-\overline{x})^2 ~{\rm or}~ \int_{-\infty}^\infty P(x)(x-\overline{x})^2\\
+i.e. ~~\overline{\Delta x^2}&amp;=&amp; \overline{(x-\overline{x})^2}=\overline{x^2}-\overline{x}^2
 \end{eqnarray*}\]</span></p>
 <p>More generally the average of a function <span class="math inline">\(f(x)\)</span> is given by</p>
 <p><span class="math display">\[
@@ -562,15 +563,15 @@ i.e. ~~\overline{\Delta x^2}&amp;=&amp; \overline{(x-\bar{x})^2}=\overline{x^2}-
 {N\choose n}\simeq\frac{N^n}{n!}
 \]</span> Now consider</p>
 <p><span class="math display">\[(1−p)^{N−n} =\exp[(N−n)\ln(1−p)]\simeq \exp(−Np)
-\]</span> where we have used <span class="math inline">\(\ln(1−p) \simeq −p\)</span> for <span class="math inline">\(p \ll 1\)</span> and <span class="math inline">\(N −n \simeq N\)</span>. (More strictly we require <span class="math inline">\(N\to\infty, p\to 0\)</span> such that <span class="math inline">\(Np=\bar{n}\)</span> is finite.) Under these conditions we find when we put the above results together that <span class="math display">\[
-\boxed{P_n = (N p)^n \frac{\exp(−N p)}{n!} = (\bar{n}^n) \frac{\exp(−\bar{n})}{n!}}
+\]</span> where we have used <span class="math inline">\(\ln(1−p) \simeq −p\)</span> for <span class="math inline">\(p \ll 1\)</span> and <span class="math inline">\(N −n \simeq N\)</span>. (More strictly we require <span class="math inline">\(N\to\infty, p\to 0\)</span> such that <span class="math inline">\(Np=\overline{n}\)</span> is finite.) Under these conditions we find when we put the above results together that <span class="math display">\[
+\boxed{P_n = (N p)^n \frac{\exp(−N p)}{n!} = (\overline{n}^n) \frac{\exp(−\overline{n})}{n!}}
 \]</span></p>
 <p>This is known as the <a href="https://en.wikipedia.org/wiki/Poisson_distribution">Poisson distribution</a> and one can check using the power series representation of the exponential function that <span class="math inline">\(\sum_{n=1}^NP_n=1\)</span>. One also finds</p>
 <p><span class="math display">\[
 \boxed{
 \begin{align*}
 \overline{n}          &amp;= \sum_{n=1}^NnP_n=Np\\
-\overline{\Delta n^2} &amp;= \sum_{n=1}^N(n-\bar{n})^2P_n=Np
+\overline{\Delta n^2} &amp;= \sum_{n=1}^N(n-\overline{n})^2P_n=Np
 \end{align*}}
 \]</span> ie. the mean and variance are equal.</p>
 <p>Basically the Poisson distribution is used when there are a large number of trials in each of which an event is very unlikely but overall one expects a finite number of events.</p>
@@ -623,14 +624,14 @@ P_n\simeq P_{Np}\exp{ \left(\frac{−(n−Np)^2}{2N(1−p)p}\right)}
        &amp; &amp; \times   \text{probability of any specific way of getting $n$ heads}\\[2mm]
    &amp; = &amp; {N\choose n}p^nq^{N-m}
 \end{eqnarray*}\]</span></p>
-<p>This is the binomial distribution of probabilities. The distribution is characterised by two key parameters, the <em>mean</em> <span class="math inline">\(\bar{n}\)</span> and the <em>variance</em> <span class="math inline">\(\bar\Delta n^2\)</span>. Remind yourself from your probability and statistics lectures that <span class="math inline">\(\bar{n}\equiv\sum_{n=0}^Nnp_n=Np\)</span>, and <span class="math inline">\(\bar{\Delta n^2}\equiv\sum_{n=0}^N(n-\bar{n})^2p_n=Npq\)</span>.</p>
+<p>This is the binomial distribution of probabilities. The distribution is characterised by two key parameters, the <em>mean</em> <span class="math inline">\(\overline{n}\)</span> and the <em>variance</em> <span class="math inline">\(\overline\Delta n^2\)</span>. Remind yourself from your probability and statistics lectures that <span class="math inline">\(\overline{n}\equiv\sum_{n=0}^Nnp_n=Np\)</span>, and <span class="math inline">\(\overline{\Delta n^2}\equiv\sum_{n=0}^N(n-\overline{n})^2p_n=Npq\)</span>.</p>
 <p>In the present context, setting <span class="math inline">\(p=q=\frac{1}{2}\)</span> (for an unbiased coin) and defining <span class="math inline">\(f\equiv n/N\)</span>, the fraction of tosses giving heads, we have</p>
 <p><span class="math display">\[
-\bar{f}=\frac{\bar{n}}{N}=p=\frac{1}{2}
+\overline{f}=\frac{\overline{n}}{N}=p=\frac{1}{2}
 \]</span></p>
 <p>and</p>
 <p><span id="eq-toss-var"><span class="math display">\[
-(\bar{\Delta f^2})^{1/2}\equiv\frac{(\bar{\Delta n^2})^{1/2}}{N}=\left(\frac{pq}{N}\right)^{1/2}=\frac{1}{2N^{1/2}}
+(\overline{\Delta f^2})^{1/2}\equiv\frac{(\overline{\Delta n^2})^{1/2}}{N}=\left(\frac{pq}{N}\right)^{1/2}=\frac{1}{2N^{1/2}}
 \tag{1}\]</span></span></p>
 <p><a href="#eq-toss-var" class="quarto-xref">Equation&nbsp;1</a> shows that the typical deviation of <span class="math inline">\(f\)</span> from its mean value is vanishingly small (it is <span class="math inline">\(O(N^{-1/2}\)</span>) for <span class="math inline">\(N\)</span> large). Thus for large <span class="math inline">\(N\)</span> we can be very sure that <span class="math inline">\(f\)</span> will always effectively coincide with its mean (cf <a href="#fig-coin-tossesNlarge" class="quarto-xref">Figure&nbsp;1 (b)</a>). The virtual certainty that comes from dealing with large numbers is one of the distinctive features of statistical physics.</p>
 <div id="fig-coin-tosses" class="quarto-layout-panel">
@@ -669,7 +670,7 @@ Figure&nbsp;1: Left: a probability histogram of the fraction of heads <span clas
 </figure>
 </div>
 <p>You can investigate for yourself the effect of changing the number of of coin tosses <span class="math inline">\(N\)</span> in this python simulation:</p>
-<div id="d46baf59" class="cell" data-execution_count="1">
+<div id="9a27cb13" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
