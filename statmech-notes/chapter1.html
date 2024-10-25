@@ -134,7 +134,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -350,7 +350,18 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="-1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">1.1 Overview</a></li>
+  <li><a href="#microscopic-approaches" id="toc-microscopic-approaches" class="nav-link" data-scroll-target="#microscopic-approaches">1.2 Microscopic approaches</a></li>
+  <li><a href="#probability" id="toc-probability" class="nav-link" data-scroll-target="#probability">1.3 Probability</a></li>
+  <li><a href="#simplicity-at-large-n-a-toy-example" id="toc-simplicity-at-large-n-a-toy-example" class="nav-link" data-scroll-target="#simplicity-at-large-n-a-toy-example">1.4 Simplicity at large <span class="math inline">\(N\)</span>: a toy example</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -670,7 +681,7 @@ Figure&nbsp;1: Left: a probability histogram of the fraction of heads <span clas
 </figure>
 </div>
 <p>You can investigate for yourself the effect of changing the number of of coin tosses <span class="math inline">\(N\)</span> in this python simulation:</p>
-<div id="9a27cb13" class="cell" data-execution_count="1">
+<div id="1bff5aba" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>

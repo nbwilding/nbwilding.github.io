@@ -100,7 +100,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -316,7 +316,20 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="-1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-boltzmann-distribution" id="toc-the-boltzmann-distribution" class="nav-link active" data-scroll-target="#the-boltzmann-distribution">4 The Boltzmann distribution</a></li>
+  <li><a href="#derivation-of-the-boltzmann-distribution" id="toc-derivation-of-the-boltzmann-distribution" class="nav-link" data-scroll-target="#derivation-of-the-boltzmann-distribution">4.1 Derivation of the Boltzmann distribution</a>
+  <ul class="collapse">
+  <li><a href="#boltzmann-distribution-for-a-single-particle-system" id="toc-boltzmann-distribution-for-a-single-particle-system" class="nav-link" data-scroll-target="#boltzmann-distribution-for-a-single-particle-system">4.2 Boltzmann distribution for a single particle system</a></li>
+  <li><a href="#single-constituent-in-an-isolated-system-for-large-n" id="toc-single-constituent-in-an-isolated-system-for-large-n" class="nav-link" data-scroll-target="#single-constituent-in-an-isolated-system-for-large-n">4.3. Single constituent in an isolated system for large <span class="math inline">\(N\)</span></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -325,7 +338,7 @@ window.Quarto = {
 
 <section id="the-boltzmann-distribution" class="level1">
 <h1>4 The Boltzmann distribution</h1>
-<p><em>See Mandl 2.5</em></p>
+<p><em>See Mandl chapter 2.5 and Blundell&amp; Blundell chapter 20</em></p>
 <p>Previously we have considered an isolated system of fixed <span class="math inline">\(N, E\)</span>. Here we consider systems with fixed <span class="math inline">\(N\)</span> but instead of <span class="math inline">\(E\)</span> being fixed, the system is at some fixed temperature <span class="math inline">\(T\)</span>.</p>
 <p>To be specific our system is in equilibrium with a heat bath (or heat reservior) at constant <span class="math inline">\(T\)</span>. The zeroth law of thermodynamics then implies our system is at temperature <span class="math inline">\(T\)</span> and the thermal contact with the reservoir means that energy can be exchanged. Therefore the energy of our system is not fixed and the system can explore microstates of different energy. We expect microstates of the same energy to have the same probabilities (we have no reason to believe otherwise). However since we are at fixed <span class="math inline">\(T\)</span> we might think that microstates of different energy should have different probabilities. In the following we substantiate this.</p>
 </section>
@@ -403,7 +416,7 @@ P_i=\frac{1}{Z}\exp\left(-\beta E_i\right) \:\:\: {\rm where~} Z=\sum_j\exp\left
 <p>The Boltzmann distribution is also known as the canonical distribution (canonical simply means standard).</p>
 <p>The quantity <span class="math inline">\(Z\)</span> is known as the partition function or partition sum. Although introduced quietly here as a normalisation we shall see that it holds the key to calculating all properties of the system!</p>
 <section id="boltzmann-distribution-for-a-single-particle-system" class="level2">
-<h2 class="anchored" data-anchor-id="boltzmann-distribution-for-a-single-particle-system">4.2 Boltzmann Distribution for a Single Particle System</h2>
+<h2 class="anchored" data-anchor-id="boltzmann-distribution-for-a-single-particle-system">4.2 Boltzmann distribution for a single particle system</h2>
 <p>As a simple application of the Boltzmann distribution, let us consider a single magnetic dipole in equilibrium with a heat bath. (This is discussed in Baierlein 5.3 but with some differences in notation.)</p>
 <p>Recall that a single dipole has two microstates <span class="math inline">\(\downarrow, \uparrow\)</span> with energies <span class="math inline">\(-mH, +mH\)</span>.</p>
 <p>A simple application of the Boltzmann distribution gives:</p>
@@ -439,7 +452,7 @@ Figure&nbsp;2: Mean energy <span class="math inline">\(E/mH\)</span> versus scal
 <p>The curve is plotted in <a href="#fig-Ebar" class="quarto-xref">Figure&nbsp;2</a>.</p>
 </section>
 <section id="single-constituent-in-an-isolated-system-for-large-n" class="level2">
-<h2 class="anchored" data-anchor-id="single-constituent-in-an-isolated-system-for-large-n">4.3. Single Constituent in an Isolated System for Large <span class="math inline">\(N\)</span></h2>
+<h2 class="anchored" data-anchor-id="single-constituent-in-an-isolated-system-for-large-n">4.3. Single constituent in an isolated system for large <span class="math inline">\(N\)</span></h2>
 <p>In order to gain more insight into the generality of the Boltzmann distribution, we return briefly to the scenario of chapters 3 and 4 where we considered an isolated system with a large number <span class="math inline">\(N\)</span> of constituents. We saw we could define an entropy <span class="math inline">\(S(E)\)</span> through the Planck relation and a temperature through key point 9.</p>
 <p>In particular, for the model magnet, we used the Planck relation to find the entropy:</p>
 <p><span class="math display">\[

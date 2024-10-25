@@ -100,7 +100,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -316,7 +316,21 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="-1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#einsteins-model-of-a-simple-solid" id="toc-einsteins-model-of-a-simple-solid" class="nav-link active" data-scroll-target="#einsteins-model-of-a-simple-solid">8 Einstein’s model of a simple solid</a>
+  <ul class="collapse">
+  <li><a href="#simple-model-of-a-solid" id="toc-simple-model-of-a-solid" class="nav-link" data-scroll-target="#simple-model-of-a-solid">8.1 Simple model of a solid</a></li>
+  <li><a href="#statistical-mechanics-of-the-quantum-harmonic-oscillator" id="toc-statistical-mechanics-of-the-quantum-harmonic-oscillator" class="nav-link" data-scroll-target="#statistical-mechanics-of-the-quantum-harmonic-oscillator">8.2 Statistical mechanics of the quantum harmonic oscillator</a></li>
+  <li><a href="#thermodynamic-properties" id="toc-thermodynamic-properties" class="nav-link" data-scroll-target="#thermodynamic-properties">8.3 Thermodynamic properties</a></li>
+  <li><a href="#high-and-low-temperature-behaviour" id="toc-high-and-low-temperature-behaviour" class="nav-link" data-scroll-target="#high-and-low-temperature-behaviour">8.4 High and low temperature behaviour</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -382,7 +396,7 @@ C_V = \frac{\partial E}{\partial T} = 3Nk
 <p>To understand why at a qualitative level quantum effects are important in diamond. Recall that diamond is very hard. This means that the ‘spring constant’ of the classical oscillator modelling each atom in Figure 1 is very large. Therefore the frequency of the oscillators is very large and and the typical displacements very small. This last fact implies that quantum effects have to be taken into account– roughly speaking, from the uncertainty principle if the displacements are very small then we know the atoms’ positions with high accuracy, therefore there must be uncertainty in the momenta (velocities).</p>
 </section>
 <section id="statistical-mechanics-of-the-quantum-harmonic-oscillator" class="level2">
-<h2 class="anchored" data-anchor-id="statistical-mechanics-of-the-quantum-harmonic-oscillator">8.2 Statistical Mechanics of the Quantum Harmonic Oscillator</h2>
+<h2 class="anchored" data-anchor-id="statistical-mechanics-of-the-quantum-harmonic-oscillator">8.2 Statistical mechanics of the quantum harmonic oscillator</h2>
 <p>From quantum mechanics recall that a one dimensional harmonic oscillator has energy levels</p>
 <p><span class="math display">\[
 \varepsilon = \left(n + \frac{1}{2}\right)\hbar\omega
@@ -411,7 +425,7 @@ Z_{1d}(1) = \frac{\exp\left(-\frac{x}{2}\right)}{1 - \exp(-x)}
 <p>where <span class="math inline">\(x = \beta\hbar\omega\)</span>.</p>
 </section>
 <section id="thermodynamic-properties" class="level2">
-<h2 class="anchored" data-anchor-id="thermodynamic-properties">8.3 Thermodynamic Properties</h2>
+<h2 class="anchored" data-anchor-id="thermodynamic-properties">8.3 Thermodynamic properties</h2>
 <p>We now turn the handle to crank out the thermodynamics variables. First note</p>
 <p><span class="math display">\[
 E = 3N\varepsilon = 3N\hbar\omega\left(n + \frac{1}{2}\right)
@@ -468,7 +482,7 @@ C_V = -3N \frac{\hbar\omega}{k T^2} \frac{d}{dx} \left[\frac{1}{\exp(x) - 1}\rig
 \]</span></p>
 </section>
 <section id="high-and-low-temperature-behaviour" class="level2">
-<h2 class="anchored" data-anchor-id="high-and-low-temperature-behaviour">8.4 High and Low Temperature Behaviour</h2>
+<h2 class="anchored" data-anchor-id="high-and-low-temperature-behaviour">8.4 High and low temperature behaviour</h2>
 <p>As usual to define the high temperature and low temperature regimes we define a characteristic temperature <span class="math inline">\(T^*\)</span> defined by <span class="math inline">\(x = 1\)</span> i.e.&nbsp;when <span class="math inline">\(kT\)</span> equals the excitation energy <span class="math inline">\(\hbar\omega\)</span></p>
 <p><span class="math display">\[
 T^* = \frac{\hbar\omega}{k}

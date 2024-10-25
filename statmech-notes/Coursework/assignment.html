@@ -100,7 +100,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -316,7 +316,29 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="-1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1 Introduction</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">2 Background</a>
+  <ul class="collapse">
+  <li><a href="#the-2d-ising-model" id="toc-the-2d-ising-model" class="nav-link" data-scroll-target="#the-2d-ising-model">2.1 The 2D Ising Model</a></li>
+  <li><a href="#monte-carlo-simulation" id="toc-monte-carlo-simulation" class="nav-link" data-scroll-target="#monte-carlo-simulation">2.2 Monte Carlo Simulation</a></li>
+  </ul></li>
+  <li><a href="#the-assignment" id="toc-the-assignment" class="nav-link" data-scroll-target="#the-assignment">3. The assignment</a>
+  <ul class="collapse">
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">3.1 Setup</a></li>
+  <li><a href="#microstates-and-macrostates-as-a-function-of-temperature" id="toc-microstates-and-macrostates-as-a-function-of-temperature" class="nav-link" data-scroll-target="#microstates-and-macrostates-as-a-function-of-temperature">3.2 Microstates and macrostates as a function of temperature</a></li>
+  <li><a href="#energy-and-magnetisation" id="toc-energy-and-magnetisation" class="nav-link" data-scroll-target="#energy-and-magnetisation">3.3 Energy and magnetisation</a></li>
+  <li><a href="#specific-heat-and-magnetic-susceptibilty" id="toc-specific-heat-and-magnetic-susceptibilty" class="nav-link" data-scroll-target="#specific-heat-and-magnetic-susceptibilty">3.4 Specific heat and magnetic susceptibilty</a></li>
+  <li><a href="#the-ferromagnetic-paramagnetic-phase-transition" id="toc-the-ferromagnetic-paramagnetic-phase-transition" class="nav-link" data-scroll-target="#the-ferromagnetic-paramagnetic-phase-transition">3.5 The ferromagnetic-paramagnetic phase transition</a></li>
+  <li><a href="#your-report" id="toc-your-report" class="nav-link" data-scroll-target="#your-report">4.0 Your report</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -413,12 +435,13 @@ e^{-\beta \Delta H} &amp; \text{otherwise}.
 <h2 class="anchored" data-anchor-id="setup">3.1 Setup</h2>
 <ul>
 <li>On the PH20040 Blackboard page open the Resources and Tools tab</li>
-<li>Scroll down to Notable and open it</li>
+<li>Scroll down to Notable and open it (if off campus make sure you have the <a href="https://uob.sharepoint.com/sites/itservices/SitePages/vpn.aspx">UoB VPN</a> enabled)</li>
 <li>Select the Jupyter Notebook (Legacy) notebook server option</li>
 <li>When the notebook has opened click the +Gitrepo button</li>
-<li>….</li>
+<li>Under enter Git Repository insert: https://github.com/nbwilding/Ising-coursework</li>
+<li>Press the “clone” button. This will download a notebook called Ising.ipynb into Jupyter</li>
 <li>Check that the program runs</li>
-<li>Familiarise yourself with the main features of the program. Pay attention to how to change the temperature range and system size <span class="math inline">\(L^2\)</span>, and how the energy and magnetisation are calculated.</li>
+<li>Familiarise yourself with the main features of the program. Pay attention to how to change the temperature range and system size <span class="math inline">\(L^2\)</span>, and how the energy and magnetisation are calculated. Be aware that the program can take several minutes to run depending on the system size <span class="math inline">\(L\)</span>.</li>
 </ul>
 <p>You should perform measurements of various quantities using the program as set out below. Instructions are given in <em>italics</em>.</p>
 </section>
@@ -448,14 +471,14 @@ C = -\frac{1}{kT^2} \left[\langle E^2 \rangle - \langle E \rangle^2\right] = \fr
 <section id="the-ferromagnetic-paramagnetic-phase-transition" class="level2">
 <h2 class="anchored" data-anchor-id="the-ferromagnetic-paramagnetic-phase-transition">3.5 The ferromagnetic-paramagnetic phase transition</h2>
 <p>Your investigations should be pointing to something interesting happening at around <span class="math inline">\(T=2.3\)</span>.</p>
-<p>Infact the exact ‘critical’ temperature of this model is <span class="math inline">\(T_c=2/(1+\sqrt{2})\approx 2.269\)</span>. (Aside: <a href="https://en.wikipedia.org/wiki/Lars_Onsager">Lars Onsager</a> provided an exact analytical solution of the properties of the Ising model in 1944.)</p>
+<p>In fact the exact ‘critical’ temperature of this model is <span class="math inline">\(T_c=2/(1+\sqrt{2})\approx 2.269\)</span>. (Aside: <a href="https://en.wikipedia.org/wiki/Lars_Onsager">Lars Onsager</a> provided an exact analytical solution of the properties of the Ising model in 1944.)</p>
 <p>Below the critical temperature, there is a net long-ranged ordering of the system, ie on average more than half the spins point in the same direction. We say that the system is feooromagnetic as it has a spontaneous magnetic moment. Above the critical temperature, the is no net ordering and the system is a paramagnet.</p>
 <p>At the critical temperature the microstates form interesting fractal patterns, and as the number of sites <span class="math inline">\(L^2\to\infty\)</span>, <span class="math inline">\(C(T_c)\)</span> and <span class="math inline">\(\chi(T_c)\)</span> diverge to infinity.</p>
 <p><em>Make plots of how <span class="math inline">\(C(T)\)</span> and <span class="math inline">\(\chi(T)\)</span> vary with the number of sites for <span class="math inline">\(L=5,10,20\)</span>. Comment on the dependence with system size.</em></p>
 </section>
 <section id="your-report" class="level2">
 <h2 class="anchored" data-anchor-id="your-report">4.0 Your report</h2>
-<p>You should produce a short skeleton report (2 sides of A4) focussing on and summarising the results of the above investigations. The report should be laid out using the headings above:</p>
+<p>You should produce a short skeleton report (upto 2 sides of A4) focussing on and summarising the results of the above investigations and demonstrating your understanding of what the results mean. The report should be laid out using the headings above:</p>
 <ul>
 <li>Microstates and macrostates as a function of temperature</li>
 <li>Energy and magnetisation</li>

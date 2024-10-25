@@ -100,7 +100,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -316,7 +316,24 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="-1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-ideal-fermi-gas" id="toc-the-ideal-fermi-gas" class="nav-link active" data-scroll-target="#the-ideal-fermi-gas">13. The Ideal Fermi gas</a>
+  <ul class="collapse">
+  <li><a href="#low-density-limit" id="toc-low-density-limit" class="nav-link" data-scroll-target="#low-density-limit">Low density limit</a></li>
+  <li><a href="#ideal-fermi-gas" id="toc-ideal-fermi-gas" class="nav-link" data-scroll-target="#ideal-fermi-gas">Ideal Fermi gas</a>
+  <ul class="collapse">
+  <li><a href="#important-points" id="toc-important-points" class="nav-link" data-scroll-target="#important-points">Important Points:</a></li>
+  </ul></li>
+  <li><a href="#low-temperature-behaviour" id="toc-low-temperature-behaviour" class="nav-link" data-scroll-target="#low-temperature-behaviour">Low temperature behaviour</a></li>
+  <li><a href="#summary-of-ideal-fermi-gas" id="toc-summary-of-ideal-fermi-gas" class="nav-link" data-scroll-target="#summary-of-ideal-fermi-gas">Summary of Ideal Fermi Gas</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -324,9 +341,10 @@ window.Quarto = {
 
 
 <section id="the-ideal-fermi-gas" class="level1">
-<h1>13. The Ideal fermi gas</h1>
+<h1>13. The Ideal Fermi gas</h1>
+<p><em>Blundell and Blundell chapter 30</em></p>
 <section id="low-density-limit" class="level2">
-<h2 class="anchored" data-anchor-id="low-density-limit">Low Density Limit</h2>
+<h2 class="anchored" data-anchor-id="low-density-limit">Low density limit</h2>
 <p>Consider the limit <span class="math inline">\(e^{\mu/kT} \ll 1\)</span>, i.e., <span class="math inline">\(\mu\)</span> large and negative. Then:</p>
 <p><span class="math display">\[
 \overline{n_i} = \frac{1}{\exp\left(\frac{\epsilon_i - \mu}{kT}\right) \pm 1} \approx e^{-\frac{\epsilon_i - \mu}{kT}}
@@ -343,7 +361,7 @@ Z(1)N \ll 1
 <p>which, referring to <strong>chapters 11/12</strong>, is the low density/high temperature limit where a semi-classical treatment is adequate.</p>
 </section>
 <section id="ideal-fermi-gas" class="level2">
-<h2 class="anchored" data-anchor-id="ideal-fermi-gas">Ideal Fermi Gas</h2>
+<h2 class="anchored" data-anchor-id="ideal-fermi-gas">Ideal Fermi gas</h2>
 <p>We return now to the Fermi-Dirac distribution from key point 17 (chapter 12). The function <span class="math inline">\(f_+\)</span> is often referred to simply as the <strong>Fermi function</strong>.</p>
 <p>Consider the limit <span class="math inline">\(T \to 0\)</span> (<span class="math inline">\(\beta \to \infty\)</span>):</p>
 <p><span class="math display">\[
@@ -430,7 +448,7 @@ E = \int_0^{\epsilon_f} g(\epsilon) \epsilon d\epsilon = \frac{3}{5} N \epsilon_
 </section>
 </section>
 <section id="low-temperature-behaviour" class="level2">
-<h2 class="anchored" data-anchor-id="low-temperature-behaviour">Low Temperature Behaviour</h2>
+<h2 class="anchored" data-anchor-id="low-temperature-behaviour">Low temperature behaviour</h2>
 <p>Now consider the Fermi function at low but finite <span class="math inline">\(T\)</span>. The meaning of “low” will be specified shortly. Note that:</p>
 <p><span class="math display">\[
 f_+(\epsilon) = \frac{1}{\exp\left(\frac{\epsilon - \mu}{kT}\right) + 1}

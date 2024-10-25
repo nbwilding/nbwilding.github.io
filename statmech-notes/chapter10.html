@@ -100,7 +100,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -316,7 +316,22 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="-1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ideal-gas-in-the-low-density-limit" id="toc-ideal-gas-in-the-low-density-limit" class="nav-link active" data-scroll-target="#ideal-gas-in-the-low-density-limit">10. Ideal gas in the low density limit</a>
+  <ul class="collapse">
+  <li><a href="#calculation-of-z1" id="toc-calculation-of-z1" class="nav-link" data-scroll-target="#calculation-of-z1">10.1 Calculation of <span class="math inline">\(Z(1)\)</span></a></li>
+  <li><a href="#density-of-states" id="toc-density-of-states" class="nav-link" data-scroll-target="#density-of-states">10.2 Density of states</a></li>
+  <li><a href="#thermodynamic-variables" id="toc-thermodynamic-variables" class="nav-link" data-scroll-target="#thermodynamic-variables">10.3 Thermodynamic variables</a></li>
+  <li><a href="#validity-of-semi-classical-treatment" id="toc-validity-of-semi-classical-treatment" class="nav-link" data-scroll-target="#validity-of-semi-classical-treatment">10.4 Validity of semi-classical treatment</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">10.5 Summary</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -325,6 +340,7 @@ window.Quarto = {
 
 <section id="ideal-gas-in-the-low-density-limit" class="level1">
 <h1>10. Ideal gas in the low density limit</h1>
+<p><em>Blundell and Blundell chapter 21</em></p>
 <p>In the last chapter, the calculation of <span class="math inline">\(Z(1)\)</span> for the ideal gas was begun. In this chapter, we finish the calculation and discuss when the semi-classical treatment is valid. The concept of a density of states is also introduced.</p>
 <section id="calculation-of-z1" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-of-z1">10.1 Calculation of <span class="math inline">\(Z(1)\)</span></h2>
@@ -347,7 +363,7 @@ Z(1) = \frac{\pi^{3/2}}{8} \left( \frac{2ML^2}{\beta \hbar^2 \pi^2} \right)^{3/2
 <p>where <span class="math inline">\(h = 2\pi \hbar\)</span> has been used.</p>
 </section>
 <section id="density-of-states" class="level2">
-<h2 class="anchored" data-anchor-id="density-of-states">10.2 Density of States</h2>
+<h2 class="anchored" data-anchor-id="density-of-states">10.2 Density of states</h2>
 <p>Consider again the approximation of a sum by an integral:</p>
 <p><span class="math display">\[
 \sum_{n_x,n_y,n_z} A(n) \rightarrow \frac{1}{8} \int_0^\infty A(n) 4\pi n^2 dn
@@ -389,7 +405,7 @@ Z(1) = \int_0^\infty \exp(-\beta \epsilon) g(\epsilon) d\epsilon
 <p>Notice that the density of states increases with energy, meaning that at higher energies, more states are available to the particle.</p>
 </section>
 <section id="thermodynamic-variables" class="level2">
-<h2 class="anchored" data-anchor-id="thermodynamic-variables">10.3 Thermodynamic Variables</h2>
+<h2 class="anchored" data-anchor-id="thermodynamic-variables">10.3 Thermodynamic variables</h2>
 <p>In the semi-classical treatment developed over this and the previous chapter:</p>
 <p><span class="math display">\[
 Z = \frac{Z(1)^N}{N!} = \frac{V^N}{N!} \left( \frac{2\pi M k T}{h^2} \right)^{3N/2}
@@ -422,7 +438,7 @@ C_V = \frac{3}{2} Nk \quad \text{(equipartition)}
 </ul>
 </section>
 <section id="validity-of-semi-classical-treatment" class="level2">
-<h2 class="anchored" data-anchor-id="validity-of-semi-classical-treatment">10.4 Validity of Semi-Classical Treatment</h2>
+<h2 class="anchored" data-anchor-id="validity-of-semi-classical-treatment">10.4 Validity of semi-classical treatment</h2>
 <p>The semi-classical treatment developed here is valid when the particles are partly distinguishable, i.e., when <span class="math inline">\(d_{typ}\)</span> the typical distance between particles is much larger than the typical thermal de Broglie wavelength:</p>
 <p><span class="math display">\[
 d_{typ} \gg \lambda_{typ}

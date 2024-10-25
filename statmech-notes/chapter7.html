@@ -100,7 +100,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -316,7 +316,20 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="-1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#more-on-magnetism-review" id="toc-more-on-magnetism-review" class="nav-link active" data-scroll-target="#more-on-magnetism-review">7: More on magnetism; review</a>
+  <ul class="collapse">
+  <li><a href="#paramagnetism-and-ferromagnetism" id="toc-paramagnetism-and-ferromagnetism" class="nav-link" data-scroll-target="#paramagnetism-and-ferromagnetism">7.1 Paramagnetism and ferromagnetism</a></li>
+  <li><a href="#simple-model-of-ferromagnetism" id="toc-simple-model-of-ferromagnetism" class="nav-link" data-scroll-target="#simple-model-of-ferromagnetism">7.2 Simple model of ferromagnetism</a></li>
+  <li><a href="#pause-for-breath" id="toc-pause-for-breath" class="nav-link" data-scroll-target="#pause-for-breath">7.3 Pause for breath</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -335,7 +348,7 @@ window.Quarto = {
 <p>Interactions between dipoles have two origins. Firstly, we have the classical electromagnetic interaction where each dipole produces a field that its neighbors sit in. This tends to align dipoles. Secondly, we have a quantum mechanical interaction which occurs when the wavefunctions of neighboring atoms overlap. This produces what is known as an ‘exchange interaction’, which generally tends to align dipoles and is stronger than the classical interaction. If the interaction between dipoles is strong enough, it can lead to the phenomenon of ferromagnetism, where the dipoles tend to align without the aid of an external field.</p>
 </section>
 <section id="simple-model-of-ferromagnetism" class="level2">
-<h2 class="anchored" data-anchor-id="simple-model-of-ferromagnetism">7.2 Simple Model of Ferromagnetism</h2>
+<h2 class="anchored" data-anchor-id="simple-model-of-ferromagnetism">7.2 Simple model of ferromagnetism</h2>
 <p>As a very basic model of ferromagnetic interactions, let us restrict ourselves to a one-dimensional array of dipoles.</p>
 <p>Here there is no external field, and the only energy comes from the ferromagnetic interactions between particles: if two neighboring dipoles are in the same direction, this is favorable, but if two neighboring dipoles are in opposite directions, this costs energy.</p>
 <p>Thus, each ‘domain wall’ where neighboring dipoles are of opposite directions costs energy <span class="math inline">\(J\)</span>, say.</p>
@@ -361,7 +374,7 @@ J + kT [\ln x - \ln(1 - x)] = 0
 <p>As usual, there is a competition between energy, here favoring ferromagnetic order, and entropy: at very low <span class="math inline">\(T\)</span> (<span class="math inline">\(kT \ll J\)</span>), energy wins, and we have very large ferromagnetically ordered domains; at high <span class="math inline">\(T\)</span> (<span class="math inline">\(kT \gg J\)</span>), entropy dominates and the domains are very small.</p>
 </section>
 <section id="pause-for-breath" class="level2">
-<h2 class="anchored" data-anchor-id="pause-for-breath">7.3 Pause for Breath</h2>
+<h2 class="anchored" data-anchor-id="pause-for-breath">7.3 Pause for breath</h2>
 <p>We have now covered all the fundamental concepts of statistical mechanics. Before proceeding it is worthwhile to try and recap on the basic ideas. You should go through the key points (13 of them) of chapters 3–7. Here we try and pull some ideas together.</p>
 <ul>
 <li><p>First we met microstates and macrostates. One thing to remember is that for a system of <span class="math inline">\(N\)</span> ‘particles’ the number of microstates is typically exponentially large in <span class="math inline">\(N\)</span> e.g.&nbsp;<span class="math inline">\(2^N\)</span> for the model magnet. Also to each macrostate there correpsonds there typically corresponds a large number of microstates, exponentially large in <span class="math inline">\(N\)</span>.</p></li>
