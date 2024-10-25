@@ -1307,7 +1307,7 @@
     "href": "index.html",
     "title": "Welcome to PHYS20040: Statistical Mechanics!",
     "section": "",
-    "text": "Nigel Wilding (nigel.wilding@bristol.ac.uk)\n\n\n\n\n\nThe navigation bar on the left will allow you to access the lecture notes and problem sets.",
+    "text": "Lecturer: Prof. Nigel Wilding (nigel.wilding@bristol.ac.uk)\n\n\n\n\n\n\nThis course in statistical mechanics introduces you to the powerful methods used to describe the behavior of systems with a large number of particles, bridging the microscopic properties of individual atoms and molecules with macroscopic observables such as temperature, pressure, and entropy. Statistical mechanics provides a framework to understand thermodynamics from a probabilistic standpoint, using statistical tools to connect the microstates of a system to its overall behavior. In this course, you’ll learn fundamental concepts like free energies, partition functions, and the Boltzmann distribution, which allow us to describe systems in thermal equilibrium. Applications will include understanding phase transitions, properties of gases, and fluctuations, with examples from both classical and quantum systems. By the end of the course, you’ll have a toolkit for analyzing complex physical systems, making statistical mechanics an essential foundation for advanced studies in physics, chemistry, and materials science.\n\nThe navigation bar on the left will allow you to access the lecture notes and problem sets.",
     "crumbs": [
       "Home"
     ]
