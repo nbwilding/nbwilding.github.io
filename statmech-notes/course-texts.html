@@ -312,28 +312,24 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The notes that I provide are skeletons of the course to be fleshed out by your own reading.</p>
+<p>The notes that I provide are skeletons of the course to be fleshed out by your own reading. There are several paper copies of each of the following texts in the Physics library. All except the book by F. Mandl are also available as a pdf through the links to the library collection below.</p>
 <ul>
-<li><p>The main text (an oldie but a goodie!) for this course is:</p>
+<li>The main text (an oldie but a goodie!) for this course is:
 <ul>
-<li><strong>F. Mandl: Statistical Physics</strong>.</li>
-</ul>
-<p>There are several copies in the Physics library</p></li>
-<li><p>A more modern take, including hands-on simulations is:</p>
+<li><strong><a href="https://bris.on.worldcat.org/search/detail/15487191?queryString=F.%20Mandl&amp;clusterResults=true&amp;stickyFacetsChecked=true&amp;groupVariantRecords=false" class="external" target="_blank">F. Mandl: Statistical Physics</a></strong>.</li>
+</ul></li>
+<li>A more modern take, including hands-on simulations is:
 <ul>
-<li><strong>H. Gould and J. Tobochnik: Statistical and Thermal Physics with computer applications</strong>.</li>
-</ul>
-<p>There are several copies in the Physics library. Also available as a pdf through the library webpages</p></li>
-<li><p>A book that is good for some aspects of the course is</p>
+<li><strong><a href="https://bris.on.worldcat.org/search/detail/1268137225?queryString=tobochnik&amp;clusterResults=true&amp;stickyFacetsChecked=true&amp;groupVariantRecords=false" class="external" target="_blank">H. Gould and J. Tobochnik: Statistical and Thermal Physics with computer application</a></strong>.</li>
+</ul></li>
+<li>A book that is good for some aspects of the course is
 <ul>
-<li><strong>S. Blundell and K. Blundell: Concepts in Thermal Physics</strong></li>
-</ul>
-<p>There are several copies in the Physics library. Also available as a pdf through the library webpages</p></li>
-<li><p>Another older staple book at the right level is</p>
+<li><strong><a href="https://bris.on.worldcat.org/search/detail/607907330?queryString=blundell%20and%20blundell%20thermal&amp;clusterResults=true&amp;stickyFacetsChecked=true&amp;groupVariantRecords=false" class="external" target="_blank">S. Blundell and K. Blundell: Concepts in Thermal Physics</a></strong></li>
+</ul></li>
+<li>Another older staple book at the right level is
 <ul>
-<li><strong>R. Baierlein: Thermal Physics</strong></li>
-</ul>
-<p>There are several copies in the Physics library. Also available as a pdf through the library webpages</p></li>
+<li><strong><a href="https://bris.on.worldcat.org/search/detail/817914180?queryString=baierlein%20statistical&amp;clusterResults=true&amp;stickyFacetsChecked=true&amp;groupVariantRecords=false" class="external" target="_blank">R. Baierlein: Thermal Physics</a></strong></li>
+</ul></li>
 </ul>
 
 
@@ -434,6 +430,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

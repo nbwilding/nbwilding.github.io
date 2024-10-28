@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -360,7 +360,7 @@ window.Quarto = {
 <p>Let us consider <span class="math inline">\(n\)</span> domain walls. The energy cost is <span class="math inline">\(nJ\)</span>.</p>
 <p>The number of ways of arranging the <span class="math inline">\(n\)</span> domain walls on the lattice is the number of ways of choosing <span class="math inline">\(n\)</span> from the <span class="math inline">\(N - 1\)</span> possible places the domain walls can be. (Do you see why it is <span class="math inline">\(N - 1\)</span>? but actually <span class="math inline">\(N - 1 \approx N\)</span> for large <span class="math inline">\(N\)</span>.) Thus:</p>
 <p><span class="math display">\[
-S(n) = k \ln \left( \binom{N - 1}{n} \right) \approx -kN [x \ln x + (1 - x) \ln(1 - x)]
+S(n) = k \ln \binom{N - 1}{n} \approx -kN [x \ln x + (1 - x) \ln(1 - x)]
 \]</span> where <span class="math inline">\(x = \frac{n}{N}\)</span>.</p>
 <p>Thus, the free energy as a function of <span class="math inline">\(x = \frac{n}{N}\)</span> is: <span class="math display">\[
 F(x) = E(x) - TS(x) = N \left\{ Jx + kT [x \ln x + (1 - x) \ln(1 - x)] \right\}
@@ -369,7 +369,7 @@ J + kT [\ln x - \ln(1 - x)] = 0
 \]</span> <span class="math display">\[
 \Rightarrow \frac{x}{1 - x} = \exp \left( \frac{-J}{kT} \right)
 \]</span> <span class="math display">\[
-\Rightarrow n = N \frac{\exp \left( \frac{-J}{kT} \right)}{1 + \exp \left( \frac{-J}{kT} \right)}
+\Rightarrow \bar{n} = N \frac{\exp \left( \frac{-J}{kT} \right)}{1 + \exp \left( \frac{-J}{kT} \right)}
 \]</span> The average number of domains <span class="math inline">\(n + 1\)</span> tends to <span class="math inline">\(N/2\)</span> as <span class="math inline">\(T \to \infty\)</span> and to 1 as <span class="math inline">\(T \to 0\)</span> (in this limit <span class="math inline">\(n\)</span> is not large so strictly the analysis isn’t valid, but the results give some insight).</p>
 <p>As usual, there is a competition between energy, here favoring ferromagnetic order, and entropy: at very low <span class="math inline">\(T\)</span> (<span class="math inline">\(kT \ll J\)</span>), energy wins, and we have very large ferromagnetically ordered domains; at high <span class="math inline">\(T\)</span> (<span class="math inline">\(kT \gg J\)</span>), entropy dominates and the domains are very small.</p>
 </section>
