@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -401,17 +401,14 @@ window.Quarto = {
 <li>output is predictions for macroscopic properties and behaviour.</li>
 <li>advantage of the approach is that it yields predictions for a given system which can be compared to experiment thus allowing refinement of the microscopic model which in turn deepens our understanding of the system.</li>
 </ul>
-<div id="kp1" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div id="kp1" class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Key idea
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-body-container">
 <p>The key idea that connects the microscopic and macroscopic approaches is that due to the large number of consituents, macroscopic quantities are precisely defined even though the microscopic specification is not precise.</p>
+</div>
 </div>
 </div>
 <p><strong>Aims of course</strong></p>
@@ -482,9 +479,9 @@ Key idea
 </section>
 <section id="probability" class="level2">
 <h2 class="anchored" data-anchor-id="probability">1.3 Probability</h2>
-<p>Probabilitic concepts are central to statistical mechanics. You should have a working knowledge of probability theory from your programme so far. We shall not explicitly revise this material in chapters, so refer to you probability notes as needed. For convenience and reference we summarise below some of the main results on which we shall draw.</p>
+<p>Probabilitic concepts are central to statistical mechanics. You should have a working knowledge of probability theory from your programme so far. We shall not explicitly revise this material in lectures, so refer to you probability notes as needed. For convenience and reference we summarise below some of the main results on which we shall draw.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -493,7 +490,7 @@ Expand to review key concepts of probability
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>For further reading see chapter 3 of Gould and Tobochnik</p>
 <p><em>Definitions</em></p>
@@ -501,10 +498,11 @@ Expand to review key concepts of probability
 <li><p>frequency definition: the probability <span class="math inline">\(P\)</span> of an event in a trial is given by <span class="math display">\[
 P = \lim_{N\to\infty}\frac{n}{N}
 \]</span> where <span class="math inline">\(n\)</span> is the number of occurrences in <span class="math inline">\(N\)</span> trials.</p></li>
-<li><p>degree of belief: probability is a quantitative measure of our degree of belief that something will occur e.g.&nbsp;if there are <span class="math inline">\(q\)</span> possible outcomes of a trial (recall that a trial is some procedure where we can measure the outcome), and we have no reason to favour any one outcome over any other, then we would assign probability <span class="math inline">\(1/q\)</span> to each outcome. Tossing a coin would correspond to <span class="math inline">\(q = 2\)</span> and rolling a die to <span class="math inline">\(q = 6\)</span>. Thankfully both definitions lead to the same numerical values for probability.</p></li>
+<li><p>degree of belief: probability is a quantitative measure of our degree of belief that something will occur e.g.&nbsp;if there are <span class="math inline">\(q\)</span> possible outcomes of a trial (recall that a trial is some procedure where we can measure the outcome), and we have no reason to favour any one outcome over any other, then we would assign probability <span class="math inline">\(1/q\)</span> to each outcome. Tossing a coin would correspond to <span class="math inline">\(q = 2\)</span> and rolling a die to <span class="math inline">\(q = 6\)</span>.</p></li>
 </ol>
+<p>Thankfully both definitions lead to the same numerical values for probability.</p>
 <p><em>Rules of Probability</em></p>
-<p>For a trial with q possible outcomes let the probability of outcome <span class="math inline">\(i\)</span> be <span class="math inline">\(P(i)\)</span></p>
+<p>For a trial with <span class="math inline">\(q\)</span> possible outcomes let the probability of outcome <span class="math inline">\(i\)</span> be <span class="math inline">\(P(i)\)</span></p>
 <ul>
 <li><p>normalisation <span class="math inline">\(\sum_{i=1}^q P(i) = 1\)</span></p></li>
 <li><p><span class="math inline">\(P (i \text{ or } j) = P (i) + P (j)\)</span> (for mutually exclusive outcomes <span class="math inline">\(i, j\)</span>).</p></li>
@@ -561,7 +559,7 @@ i.e. ~~\overline{\Delta x^2}&amp;=&amp; \overline{(x-\overline{x})^2}=\overline{
 <p>A very useful approximation for the factorial function is given by the <em>Stirling approximation</em></p>
 <p><span class="math display">\[
 \ln(N !) = N \ln N − N + \frac{1}{2}\ln(2\pi N ) + O(1/N )
-\]</span> We see that for N large</p>
+\]</span> We see that for <span class="math inline">\(N\)</span> large</p>
 <p><span class="math display">\[
 \boxed{\ln(N !) \simeq N\ln N − N}
 \]</span></p>
@@ -595,7 +593,7 @@ s(n) \equiv \ln P_n \simeq n\ln p+(N −n)\ln(1−p) +N \ln N −(N −n)\ln(N �
 <p><span class="math display">\[\begin{eqnarray*}
 s^\prime (n) &amp;=&amp; \ln p−\ln(1−p)+\ln(N −n)−\ln n\\
 s^{\prime\prime}(n) &amp;=&amp; − \frac{1}{N-n}-\frac{1}{n}
-\end{eqnarray*}\]</span> You should notice that <span class="math inline">\(s(n)\)</span> is a maximum at <span class="math inline">\(n = Np\)</span>~ i.e.&nbsp;at the mean value.</p>
+\end{eqnarray*}\]</span> You should notice that <span class="math inline">\(s(n)\)</span> is a maximum at <span class="math inline">\(n = Np\)</span> i.e.&nbsp;at the mean value.</p>
 <p>Now expand in powers of <span class="math inline">\(x = n − N p\)</span>, i.e.&nbsp;make a Taylor expansion around the mean value: <span class="math display">\[
 s(x)=s(Np)+xs^\prime(Np)+ \frac{x^2}{2}s^\prime(Np)\ldots
 \]</span></p>
@@ -624,7 +622,7 @@ P_n\simeq P_{Np}\exp{ \left(\frac{−(n−Np)^2}{2N(1−p)p}\right)}
 <section id="simplicity-at-large-n-a-toy-example" class="level2">
 <h2 class="anchored" data-anchor-id="simplicity-at-large-n-a-toy-example">1.4 Simplicity at large <span class="math inline">\(N\)</span>: a toy example</h2>
 <p>Suppose that <span class="math inline">\(N\)</span> coins are tossed; we denote by <span class="math inline">\(n\)</span> the number of heads obtained. We will determine the probability distribution <span class="math inline">\(p_n\)</span> (ie the set of probabilities <span class="math inline">\(p_0,p_1\ldots,p_N\)</span>) characterising the possible outcomes.</p>
-<p>Denote by the probability <span class="math inline">\(p\)</span> that a head results from a single toss; then <span class="math inline">\(q\equiv 1-p\)</span> gives the corresponding probability for a tail.</p>
+<p>Denote by <span class="math inline">\(p\)</span> the probability that a head results from a single toss; then <span class="math inline">\(q\equiv 1-p\)</span> gives the corresponding probability for a tail.</p>
 <p>There are <em>many distinct ways</em> of getting <span class="math inline">\(n\)</span> heads from <span class="math inline">\(N\)</span> tosses, differing according to which tosses give heads. It should be clear that each one of these distinct ways has the same probability, namely <span class="math inline">\(p^nq^{N-n}\)</span>, and recalling your probability and statistics lectures, the number of distinct ways in which we can get <span class="math inline">\(n\)</span> heads from <span class="math inline">\(N\)</span> tosses is given by the binomial coefficient:</p>
 <p><span class="math display">\[
 {N\choose n}\equiv \frac{N!}{(N-n)!n!}
@@ -680,8 +678,8 @@ Figure&nbsp;1: Left: a probability histogram of the fraction of heads <span clas
 </figcaption>
 </figure>
 </div>
-<p>You can investigate for yourself the effect of changing the number of of coin tosses <span class="math inline">\(N\)</span> in this python simulation:</p>
-<div id="5b71065c" class="cell" data-execution_count="1">
+<p>You can investigate for yourself the effect of changing the number of coin tosses <span class="math inline">\(N\)</span> in this python simulation (copy it into your favourite Python runtime environment):</p>
+<div id="7c51549a" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>

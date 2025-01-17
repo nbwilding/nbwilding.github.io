@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -328,6 +328,7 @@ window.Quarto = {
   <li><a href="#sharpness-of-maximum-of-weight-function" id="toc-sharpness-of-maximum-of-weight-function" class="nav-link" data-scroll-target="#sharpness-of-maximum-of-weight-function">2.3 Sharpness of maximum of weight function</a></li>
   <li><a href="#two-ways-of-calculating-entropy-changes" id="toc-two-ways-of-calculating-entropy-changes" class="nav-link" data-scroll-target="#two-ways-of-calculating-entropy-changes">2.4 Two ways of calculating entropy changes</a></li>
   <li><a href="#entropy-change-due-to-a-phase-transition-melting-ice" id="toc-entropy-change-due-to-a-phase-transition-melting-ice" class="nav-link" data-scroll-target="#entropy-change-due-to-a-phase-transition-melting-ice">2.5 Entropy change due to a phase transition: melting ice</a></li>
+  <li><a href="#entropy-change-due-to-a-phase-transition" id="toc-entropy-change-due-to-a-phase-transition" class="nav-link" data-scroll-target="#entropy-change-due-to-a-phase-transition">2.6 Entropy change due to a phase transition</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -501,6 +502,49 @@ Q = \text{mass} \times L = 0.01 \, \text{kg} \times 3.34 \times 10^5 \, \text{J/
 \frac{\Omega_{\text{liquid}}}{\Omega_{\text{solid}}} \approx e^{8.87 \times 10^{23}}
 \]</span></p>
 <p>This is an astronomically large number, indicating that the liquid phase has vastly more microstates than the solid phase.</p>
+</section>
+<section id="entropy-change-due-to-a-phase-transition" class="level2">
+<h2 class="anchored" data-anchor-id="entropy-change-due-to-a-phase-transition">2.6 Entropy change due to a phase transition</h2>
+<p>First let’s check that the stated low temperature structure matches the stated proportions of the atoms. Each cubic unit cell contributes effectively 1 corner site (each of the 8 corner sites is ‘shared’ amongst 8 adjacent cells) and 3 face-centre sites (each of the 6 face-centre sites is shared between 2 cells). Thus there are 3 times as many face centre sites (occupied by Cu atoms in the low-<span class="math inline">\(T\)</span> arrangement) as there are cube-corner sites (occupied by Au atoms at low <span class="math inline">\(T\)</span>), matching the stated proportions of Cu and Au atoms.</p>
+<p>In a solid of <span class="math inline">\(N\)</span> atoms (and <span class="math inline">\(N\)</span> sites) there will thus be <span class="math inline">\(n_1 = \frac{3N}{4}\)</span> Cu atoms (and face-centre sites) and <span class="math inline">\(n_2 = \frac{N}{4}\)</span> Au atoms (and cube-corner sites).</p>
+<p>The reference to ‘ways of thinking’ about atoms reflects the choice we have to make: do we say that two identical atoms (ie two atoms of the same species) are distinguishable or indistinguishable?</p>
+<p>This is not always an empty issue. Here however we shall see that the choice we make has no effect on the final prediction for the entropy difference.</p>
+<p>Suppose, first, that atoms are distinguishable: we can tell the difference between one Au atom and another (and between one Cu atom and another). In the high <span class="math inline">\(T\)</span> (disordered) structure we can arrange the <span class="math inline">\(N = n_1 + n_2\)</span> different atoms amongst the <span class="math inline">\(N\)</span> sites in</p>
+<p><span class="math display">\[\Omega_d = N!\]</span></p>
+<p>(DISTINGUISHABLE)</p>
+<p>distinct ways. In the low <span class="math inline">\(T\)</span> (ordered) structure we can arrange the <span class="math inline">\(n_1\)</span> Cu atoms amongst their (face-centre) sites in <span class="math inline">\(n_1!\)</span> ways and the <span class="math inline">\(n_2\)</span> Au atoms amongst their (cube-corner) sites in <span class="math inline">\(n_2!\)</span> ways. Since each of the possible Cu arrangements can be paired with each of the possible Au arrangements, the total number of distinct arrangements is the product of these two factors, so that</p>
+<p><span class="math display">\[\Omega_o = n_1! n_2! = \left(\frac{3N}{4}\right)!\left(\frac{N}{4}\right)!\]</span></p>
+<p>(DISTINGUISHABLE)</p>
+<p>Now suppose that the atoms are indistinguishable: we can’t tell the difference between members of the same species. We must then replace the above assignment of <span class="math inline">\(\Omega_d\)</span> by</p>
+<p><span class="math display">\[\Omega_d = \frac{N!}{n_1! n_2!} = \binom{N}{n_1}\]</span></p>
+<p>(INDISTINGUISHABLE)</p>
+<p>which we recognise as the number of distinct ways of labelling the <span class="math inline">\(N\)</span> sites as ‘Cu’ or ‘Au’, given <span class="math inline">\(n_1\)</span> Cu labels, and <span class="math inline">\(n_2 = N - n_1\)</span> Au labels. For the ordered arrangement we have simply</p>
+<p><span class="math display">\[\Omega_o = 1\]</span></p>
+<p>(INDISTINGUISHABLE)</p>
+<p>since all the face-centre sites now have ‘Cu’ labels and all the corner sites have ‘Au’ labels, and there are no choices to be made.</p>
+<p>Now consider the difference between the entropy of the ordered and disordered arrangements. We have</p>
+<p><span class="math display">\[
+\Delta S = S_d - S_o = k \ln \left( \frac{\Omega_d}{\Omega_o} \right)
+\]</span></p>
+<p>Inspection of the two sets of results shows that, whichever perspective we adopt</p>
+<p><span class="math display">\[
+\Delta S = k \ln \left( \frac{N!}{n_1! n_2!} \right)
+\]</span></p>
+<p>Then appealing to the Stirling formula we find</p>
+<p><span class="math display">\[
+\frac{\Delta S}{k} = N \ln N - N - n_1 \ln n_1 + n_1 - n_2 \ln n_2 + n_2
+\]</span></p>
+<p><span class="math display">\[
+= N \ln N - \frac{3N}{4} \ln \frac{3N}{4} - \frac{N}{4} \ln \frac{N}{4}
+\]</span></p>
+<p><span class="math display">\[
+= -N \left( \frac{3}{4} \ln \frac{3}{4} + \frac{1}{4} \ln \frac{1}{4} \right)
+\]</span></p>
+<p>or, for one mole (setting <span class="math inline">\(N = N_A\)</span> and <span class="math inline">\(R \equiv N_A k\)</span>),</p>
+<p><span class="math display">\[
+\Delta S = R \left( \ln 4 - \frac{3}{4} \ln 3 \right) = 4.67 \, \mathrm{J \, mol^{-1} \, K^{-1}}
+\]</span></p>
+<p>Measurement of the heat capacity of this alloy as a function of <span class="math inline">\(T\)</span> (how is this relevant?) shows that, in fact, between the low and high temperature regions the entropy increases by <span class="math inline">\(\Delta S \simeq 3.96 \, \mathrm{J \, mol^{-1} \, K^{-1}}\)</span>, in reasonable accord with the calculation.</p>
 
 
 </section>

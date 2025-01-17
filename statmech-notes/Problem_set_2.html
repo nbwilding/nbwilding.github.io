@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -328,6 +328,7 @@ window.Quarto = {
   <li><a href="#sharpness-of-maximum-of-weight-function" id="toc-sharpness-of-maximum-of-weight-function" class="nav-link" data-scroll-target="#sharpness-of-maximum-of-weight-function">2.3 Sharpness of maximum of weight function</a></li>
   <li><a href="#two-ways-of-calculating-entropy-changes" id="toc-two-ways-of-calculating-entropy-changes" class="nav-link" data-scroll-target="#two-ways-of-calculating-entropy-changes">2.4 Two ways of calculating entropy changes</a></li>
   <li><a href="#entropy-change-due-to-a-phase-transition-melting-ice" id="toc-entropy-change-due-to-a-phase-transition-melting-ice" class="nav-link" data-scroll-target="#entropy-change-due-to-a-phase-transition-melting-ice">2.5 Entropy change due to a phase transition: melting ice</a></li>
+  <li><a href="#entropy-change-due-to-a-phase-transition-orderdisorder-transition" id="toc-entropy-change-due-to-a-phase-transition-orderdisorder-transition" class="nav-link" data-scroll-target="#entropy-change-due-to-a-phase-transition-orderdisorder-transition">2.6 Entropy change due to a phase transition: order/disorder transition</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -375,6 +376,17 @@ window.Quarto = {
 <p>An ice cube is melted slowly (i.e., reversibly) at <span class="math inline">\(T = 0^\circ C\)</span>. How many times more microstates are associated with the liquid phase (water) than the solid phase (ice)?</p>
 <p><strong>Help</strong>: Calculate the energy required to melt the cube given that its size is <span class="math inline">\(10 \, \text{cm}^3\)</span>, its density is <span class="math inline">\(1 \, \text{g/cm}^3\)</span>, and the latent heat of melting of ice is <span class="math inline">\(3.34 \times 10^5 \, \text{J/kg}\)</span>.</p>
 <p>Now use the relation from thermodynamics for entropy change along a reversible path at constant <span class="math inline">\(T\)</span>, <span class="math inline">\(\Delta S = \frac{Q}{T}\)</span>, to determine the entropy change. Then use the Planck relation.</p>
+</section>
+<section id="entropy-change-due-to-a-phase-transition-orderdisorder-transition" class="level2">
+<h2 class="anchored" data-anchor-id="entropy-change-due-to-a-phase-transition-orderdisorder-transition">2.6 Entropy change due to a phase transition: order/disorder transition</h2>
+<p>A metallic alloy comprises 25 atomic percent of Au and 75 atomic percent of Cu. At low temperatures the atoms arrange themselves in an ordered array comprising cubic cells in which the Au atoms occupy cube-corner sites, and the Cu atoms occupy the centres of the cube faces. At high enough temperatures the atoms are randomly arranged over corner and face-centre sites. For a sample containing <span class="math inline">\(N\)</span> atoms in total, show that the number of microstates associated with the ordered (o) low-temperature arrangement (“macrostate”), <span class="math inline">\(\Omega_o\)</span>, and the number associated with the disordered (d) high-temperature arrangement, <span class="math inline">\(\Omega_d\)</span>, are</p>
+<p>either</p>
+<p><span class="math display">\[\Omega_d = N! \quad \text{and} \quad \Omega_o = (N/4)!(3N/4)!\]</span></p>
+<p>or</p>
+<p><span class="math display">\[\Omega_d = \frac{N!}{[(N/4)!(3N/4)!]} \quad \text{and} \quad \Omega_o = 1\]</span></p>
+<p>where the “either … or” reflects two possible ways of thinking about atoms, which you should identify. Show that (irrespective of the “way of thinking”) the difference between the (molar) entropy of the two arrangements is</p>
+<p><span class="math display">\[\Delta S \equiv S_d - S_o = R \left( \ln 4 - \frac{3}{4} \ln 3 \right).\]</span></p>
+<p><em>Help: (1) Can you tell one Au atom from another? (2) Use Stirling’s formula.</em></p>
 
 
 </section>
