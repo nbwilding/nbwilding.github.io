@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -311,6 +311,12 @@ window.Quarto = {
  <span class="menu-text">Coursework assignment</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Keynote slides/Slides.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -411,7 +417,7 @@ Key point 1
 <p><strong>Examples:</strong></p>
 <ol type="1">
 <li><p>Specifying the microstate of the model magnet means specifying the orientation of each of the <span class="math inline">\(N\)</span> dipoles as in <a href="#fig-magmicrostate" class="quarto-xref">Figure&nbsp;3 (a)</a>– or equivalently specifying which of the two rungs of its energy level ladder (cf <a href="#fig-magen" class="quarto-xref">Figure&nbsp;2</a>) it occupies.</p></li>
-<li><p>Specifying the microstate of the (ideal) gas means (if we choose to use classical language) specifying the positions and velocities of each and every molecule (cf <a href="#fig-gasmicrostate" class="quarto-xref">Figure&nbsp;3 (b)</a>).</p></li>
+<li><p>Specifying the microstate of the (ideal) gas means (if we choose to use classical language) specifying the positions and velocities of each and every molecule (cf. <a href="#fig-gasmicrostate" class="quarto-xref">Figure&nbsp;3 (b)</a>).</p></li>
 </ol>
 <div id="fig-cmicrostate" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
@@ -421,10 +427,10 @@ Key point 1
 <div id="fig-magmicrostate" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-magmicrostate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="NotesFigs/magmicrostate.png" class="quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-cmicrostate" height="250">
+<img src="NotesFigs/spinconf.png" class="quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-cmicrostate" width="260" height="260">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-magmicrostate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) A microstate of a model magnet entails knowledge of the orientation of each dipole. This is one possible microstate. The colour of each square (black or white) represents the orientation (up or down) of the dipole located there.
+(a) A microstate of a model magnet entails knowledge of the orientation (up or down) of each dipole. This is one possible microstate.
 </figcaption>
 </figure>
 </div>
@@ -433,10 +439,10 @@ Key point 1
 <div id="fig-gasmicrostate" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-gasmicrostate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="NotesFigs/gasmicrostate.png" class="quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-cmicrostate" height="250">
+<img src="NotesFigs/gasmicrostate.png" class="quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-cmicrostate" width="260" height="270">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-gasmicrostate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) A microstate of a model gas entails knowledge of the positions and velocities of all the molecules. Here is one example.
+(b) A microstate of a model gas entails knowledge of the positions (blue circles) and velocities (red arrows) of all the molecules. Here is one example.
 </figcaption>
 </figure>
 </div>
@@ -468,7 +474,7 @@ Key point 2
 <li><p>Some macroscopic properties are fixed by constraints e.g.&nbsp;total energy <span class="math inline">\(E\)</span>, and number <span class="math inline">\(N\)</span> are fixed macroscopic properties in the systems we are considering.</p></li>
 <li><p>Other macroscopic variables are free e.g.&nbsp;the number of ideal gas molecules in the left hand side of the box in <a href="#fig-gasmicrostate" class="quarto-xref">Figure&nbsp;3 (b)</a> can take on different values</p></li>
 </ul>
-<p>Now we see that a macrostate is a description which depends on what macroscopic properties we are interested in i.e.&nbsp;we have some freedom in choosing what are to be the macrostates. We adopt the notation of denoting the free macroscopic properties of interest (if any) <span class="math inline">\(\{\alpha\}\)</span> and we label macrostates by <span class="math inline">\(N, E, \{\alpha\}\)</span>} (note that to lighten the notation <span class="math inline">\(N\)</span> is often dropped but <span class="math inline">\(E\)</span> is usually retained)</p>
+<p>Now we see that a macrostate is a description which depends on what macroscopic properties we are interested in i.e.&nbsp;we have some freedom in choosing what are to be the macrostates. We adopt the notation of denoting the free macroscopic properties of interest (if any) <span class="math inline">\(\{\alpha\}\)</span> and we label macrostates by <span class="math inline">\(N, E, \{\alpha\}\)</span> (note that to lighten the notation <span class="math inline">\(N\)</span> is often dropped but <span class="math inline">\(E\)</span> is usually retained, however we shall retain both for the time being.)</p>
 <div id="kp3" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -498,7 +504,7 @@ n_1=\frac{1}{2}(N-\frac{E}{mH}),\hspace{1cm}n_2=\frac{1}{2}(N+\frac{E}{mH})
 \]</span></p>
 <p>To lighten the notation, set <span class="math inline">\(n_2=n, n_1=N-n\)</span>, with <span class="math inline">\(n\equiv\frac{N}{2}(1+\frac{E}{NmH})\)</span> (the number of dipoles in the ‘excited’ state) we can then write</p>
 <p><span id="eq-Ncn"><span class="math display">\[
-\Omega(E)=\frac{N!}{n!(N-n)!}
+\Omega(N,E)=\frac{N!}{n!(N-n)!}
 \tag{1}\]</span></span></p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -589,38 +595,38 @@ If you don’t follow this
 &amp;=&amp; N \left[ \ln N - \frac{n}{N} \ln n - \left( 1 - \frac{n}{N} \right) \ln(N - n) \right]\\
 &amp;=&amp; N \left[ -\frac{n}{N} \ln \left( \frac{n}{N} \right) - \left( 1 - \frac{n}{N} \right) \ln \left( 1 - \frac{n}{N} \right) \right]\\
 \end{eqnarray*}\]</span></p>
-<p>where we have used a `trick’ to write:</p>
+<p>where we have used a ‘trick’ to write:</p>
 <p><span class="math display">\[
 \ln N = -\frac{n}{N} \ln \frac{1}{N} - \left( 1 - \frac{n}{N} \right) \ln \frac{1}{N}
 \]</span></p>
 <p>Thus <span class="math display">\[
-\frac{1}{N}\ln\Omega(E)=s(n/N)
-\]</span> where <span class="math inline">\(s(x)=-1(1-x)\ln(1-x)-x\ln x\)</span></p>
+\frac{1}{N}\ln\Omega(N,E)=s(n/N)
+\]</span> where <span class="math inline">\(s(x)=-(1-x)\ln(1-x)-x\ln x\)</span></p>
 <div id="fig-logmagwhts" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-logmagwhts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="NotesFigs/logmagweightfn.png" class="img-fluid figure-img" width="500">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-logmagwhts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Logarithm of the weight function, <span class="math inline">\(\ln\Omega(E)/N\)</span>, for the simple model magnet, plotted as a function of the fraction <span class="math inline">\(n/N\)</span> of dipoles in excited states; <span class="math inline">\(n\)</span> and <span class="math inline">\(E\)</span> are related by <span class="math inline">\(n=\frac{N}{2}(1+E/NmH)\)</span>.
+Figure&nbsp;4: Logarithm of the weight function, <span class="math inline">\(\ln\Omega(N,E)/N\)</span>, for the simple model magnet, plotted as a function of the fraction <span class="math inline">\(n/N\)</span> of dipoles in excited states; <span class="math inline">\(n\)</span> and <span class="math inline">\(E\)</span> are related by <span class="math inline">\(n=\frac{N}{2}(1+E/NmH)\)</span>.
 </figcaption>
 </figure>
 </div>
-<p>The logarithm of <span class="math inline">\(\Omega (E)\)</span> is displayed in <a href="#fig-logmagwhts" class="quarto-xref">Figure&nbsp;4</a>. Note the key features:</p>
+<p>The logarithm of <span class="math inline">\(\Omega (N,E)\)</span> is displayed in <a href="#fig-logmagwhts" class="quarto-xref">Figure&nbsp;4</a>. Note the key features:</p>
 <ul>
-<li><p>When <span class="math inline">\(E\)</span> has its minimum value, <span class="math inline">\(E= -NmH\)</span> (ie <span class="math inline">\(n= 0\)</span>), then <span class="math inline">\(\ln\Omega(E) = 0\)</span> and <span class="math inline">\(\Omega(E) = 1\)</span>. There is only a single microstate associated with this macrostate.</p></li>
-<li><p>As <span class="math inline">\(E\)</span> increases from its minimum, <span class="math inline">\(\ln \Omega(E)\)</span> increases steeply.</p></li>
-<li><p>For <span class="math inline">\(E=0\)</span> (ie. <span class="math inline">\(n=N/2\)</span>) we have a maximum where <span class="math inline">\(\ln\Omega(E)= N\ln 2\)</span>, and <span class="math inline">\(\Omega(E)= 2^N\)</span>. In general the logarithm of <span class="math inline">\(\Omega\)</span> is proportional to the size of the system (we say that it is ‘extensive’)</p></li>
+<li><p>When <span class="math inline">\(E\)</span> has its minimum value, <span class="math inline">\(E= -NmH\)</span> (ie <span class="math inline">\(n= 0\)</span>), then <span class="math inline">\(\ln\Omega(N,E) = 0\)</span> and <span class="math inline">\(\Omega(N,E) = 1\)</span>. There is only a single microstate associated with this macrostate.</p></li>
+<li><p>As <span class="math inline">\(E\)</span> increases from its minimum, <span class="math inline">\(\ln \Omega(N,E)\)</span> increases steeply.</p></li>
+<li><p>For <span class="math inline">\(E=0\)</span> (ie. <span class="math inline">\(n=N/2\)</span>) we have a maximum where <span class="math inline">\(\ln\Omega(N,E)= N\ln 2\)</span>, and <span class="math inline">\(\Omega(N,E)= 2^N\)</span>. In general the logarithm of <span class="math inline">\(\Omega\)</span> is proportional to the size of the system (we say that it is ‘extensive’)</p></li>
 <li><p>Since <span class="math inline">\(\Omega = \exp(Ns(x))\)</span> the weight function is exponentially large in <span class="math inline">\(N\)</span> but the logarithm is proportional to <span class="math inline">\(N\)</span>.</p></li>
 </ul>
-<p>The scaling of <span class="math inline">\(\Omega(E)\)</span> with <span class="math inline">\(N\)</span> is demonstrated by <a href="#fig-magwhts" class="quarto-xref">Figure&nbsp;5</a> for systems of <span class="math inline">\(N=2,4,8,16,32,64\)</span> dipoles. We see that the number of microstates for each energy increases strongly with <span class="math inline">\(N\)</span> and <span class="math inline">\(\Omega(E)\)</span> gets narrower. This trend continues so that for Avogadro’s number of dipoles, the plot <a href="#fig-whtfnNlarge" class="quarto-xref">Figure&nbsp;6</a> of <span class="math inline">\(\Omega(E)\)</span> is practically infinitely high and infinitesimally narrow. This is the key insight of this exercise: for large <span class="math inline">\(N\)</span> there are overwhelmingly more microstates associated with the ‘equal-shares’ macrostate than there are associated with any significantly different macrostate. Problem 2.2 invites you to explore the properties of the weight function.</p>
+<p>The scaling of <span class="math inline">\(\Omega(N,E)\)</span> with <span class="math inline">\(N\)</span> is demonstrated by <a href="#fig-magwhts" class="quarto-xref">Figure&nbsp;5</a> for systems of <span class="math inline">\(N=2,4,8,16,32,64\)</span> dipoles. We see that the number of microstates for each energy increases strongly with <span class="math inline">\(N\)</span> and <span class="math inline">\(\Omega(N,E)\)</span> gets narrower. This trend continues so that for Avogadro’s number of dipoles, the plot <a href="#fig-whtfnNlarge" class="quarto-xref">Figure&nbsp;6</a> of <span class="math inline">\(\Omega(E)\)</span> is practically infinitely high and infinitesimally narrow. This is the key insight of this exercise: for large <span class="math inline">\(N\)</span> there are overwhelmingly more microstates associated with the ‘equal-shares’ macrostate than there are associated with any significantly different macrostate. Problem 2.2 invites you to explore the properties of the weight function.</p>
 <div id="fig-magwhts" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-magwhts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="NotesFigs/scalemagweightfn.png" class="img-fluid figure-img" width="500">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-magwhts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Weight function <span class="math inline">\(\Omega(E)\)</span>, for the simple model magnet comprising <span class="math inline">\(N=2,4,8,16,32,64\)</span> dipoles, plotted as a function of the fraction <span class="math inline">\(n/N\)</span> of dipoles in excited states; <span class="math inline">\(n\)</span> and <span class="math inline">\(E\)</span> are related by <span class="math inline">\(n=\frac{N}{2}(1+E/NmH)\)</span>. Note the y-axis scales and the narrowing of the function with increasing <span class="math inline">\(N\)</span>.
+Figure&nbsp;5: Weight function <span class="math inline">\(\Omega(N,E)\)</span>, for the simple model magnet comprising <span class="math inline">\(N=2,4,8,16,32,64\)</span> dipoles, plotted as a function of the fraction <span class="math inline">\(n/N\)</span> of dipoles in excited states; <span class="math inline">\(n\)</span> and <span class="math inline">\(E\)</span> are related by <span class="math inline">\(n=\frac{N}{2}(1+E/NmH)\)</span>. Note the y-axis scales and the narrowing of the function with increasing <span class="math inline">\(N\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -631,7 +637,7 @@ Figure&nbsp;5: Weight function <span class="math inline">\(\Omega(E)\)</span>, f
 <img src="NotesFigs/NAmagweightfn.png" class="img-fluid figure-img" width="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-whtfnNlarge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: For <span class="math inline">\(N=10^{23}\)</span> dipoles the weight function is essentially a delta function
+Figure&nbsp;6: For <span class="math inline">\(N=10^{23}\)</span> dipoles the weight function <span class="math inline">\(\Omega(N,E)\)</span> is essentially a delta function.
 </figcaption>
 </figure>
 </div>
