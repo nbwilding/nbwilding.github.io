@@ -313,7 +313,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Keynote slides/Slides.pdf" class="sidebar-item-text sidebar-link">
+  <a href="./Lecture slides/Slides.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
@@ -471,7 +471,7 @@ Key point 2
 <p>To understand this, we must first consider macroscopic variables.</p>
 <ul>
 <li><p>Macroscopic properties are properties reflecting aggregate behaviour of a large number of constituents.</p></li>
-<li><p>Some macroscopic properties are fixed by constraints e.g.&nbsp;total energy <span class="math inline">\(E\)</span>, and number <span class="math inline">\(N\)</span> are fixed macroscopic properties in the systems we are considering.</p></li>
+<li><p>Some macroscopic properties are fixed by constraints e.g.&nbsp;total energy <span class="math inline">\(E\)</span>, and number <span class="math inline">\(N\)</span> are fixed macroscopic properties in the isolated systems we are considering.</p></li>
 <li><p>Other macroscopic variables are free e.g.&nbsp;the number of ideal gas molecules in the left hand side of the box in <a href="#fig-gasmicrostate" class="quarto-xref">Figure&nbsp;3 (b)</a> can take on different values</p></li>
 </ul>
 <p>Now we see that a macrostate is a description which depends on what macroscopic properties we are interested in i.e.&nbsp;we have some freedom in choosing what are to be the macrostates. We adopt the notation of denoting the free macroscopic properties of interest (if any) <span class="math inline">\(\{\alpha\}\)</span> and we label macrostates by <span class="math inline">\(N, E, \{\alpha\}\)</span> (note that to lighten the notation <span class="math inline">\(N\)</span> is often dropped but <span class="math inline">\(E\)</span> is usually retained, however we shall retain both for the time being.)</p>
@@ -641,9 +641,13 @@ Figure&nbsp;6: For <span class="math inline">\(N=10^{23}\)</span> dipoles the we
 </figcaption>
 </figure>
 </div>
-<p>In order to understand what we mean by free macroscopic variables <span class="math inline">\(\{\alpha\}\)</span> we consider as an example the number of dipoles that are in the excited state in the left hand side of our array of <span class="math inline">\(N\)</span> dipoles. We denote this number by <span class="math inline">\(n_L\)</span>. This number is not fixed by our constraints; we only have to satisfy <span class="math inline">\(n_r + n_L = n\)</span> where <span class="math inline">\(n_r\)</span> is the number of excited dipoles in the right hand region.</p>
+<p>In order to understand what we mean by free macroscopic variables <span class="math inline">\(\{\alpha\}\)</span> we consider as an example the number of dipoles that are in the excited state in the left hand side of our array of <span class="math inline">\(N\)</span> dipoles. We denote this number by <span class="math inline">\(n_L\)</span>. This number is not fixed by our constraints; we only have to satisfy <span class="math inline">\(n_R + n_L = n\)</span> where <span class="math inline">\(n_R\)</span> is the number of excited dipoles in the right hand region.</p>
 <p>We now label our macrostates by <span class="math inline">\(N, E, n_L\)</span></p>
-<p>We can calculate the weight of a macrostate by combinatorics: in the left hand region we can choose the <span class="math inline">\(n_L\)</span> excited dipoles from <span class="math inline">\(N/2\)</span> and similarly in the right hand region <span class="math inline">\(n_r = n − n_L\)</span> are chosen from <span class="math inline">\(N/2\)</span>. Thus using Stirling’s approximation again we have that</p>
+<p>We can calculate the weight of a macrostate by combinatorics: in the left hand region we can choose the <span class="math inline">\(n_L\)</span> excited dipoles from <span class="math inline">\(N/2\)</span> and similarly in the right hand region <span class="math inline">\(n_R = n - n_L\)</span> are chosen from <span class="math inline">\(N/2\)</span>. Thus</p>
+<p><span class="math display">\[
+\Omega(N,E,n_L)={N/2\choose n_L}{N/2\choose n-n_L}
+\]</span></p>
+<p>In the special case where <span class="math inline">\(E=0\)</span>, so <span class="math inline">\(n_1=n_2=n=N/2\)</span> and <span class="math inline">\(n_L=N/2-n_R\)</span>, one can show using Stirling’s approximation (see question 2.3) we have that</p>
 <p><span class="math display">\[
 \frac{1}{N}\ln\Omega(N,0,n_L)\simeq s(n_L/(N/2))
 \]</span></p>
