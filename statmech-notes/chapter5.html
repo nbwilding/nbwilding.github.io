@@ -330,7 +330,7 @@ window.Quarto = {
   <li><a href="#free-energy-minimisation" id="toc-free-energy-minimisation" class="nav-link active" data-scroll-target="#free-energy-minimisation">5. Free energy minimisation</a>
   <ul class="collapse">
   <li><a href="#energy-and-its-fluctuations" id="toc-energy-and-its-fluctuations" class="nav-link" data-scroll-target="#energy-and-its-fluctuations">5.1. Energy and its fluctuations</a></li>
-  <li><a href="#entropy-energy-distribution-and-free-energy" id="toc-entropy-energy-distribution-and-free-energy" class="nav-link" data-scroll-target="#entropy-energy-distribution-and-free-energy">5.2. Entropy, energy distribution, and free energy</a></li>
+  <li><a href="#energy-distribution-entropy-and-free-energy" id="toc-energy-distribution-entropy-and-free-energy" class="nav-link" data-scroll-target="#energy-distribution-entropy-and-free-energy">5.2. Energy distribution, entropy, and free energy</a></li>
   <li><a href="#free-energy-the-energyentropy-competition" id="toc-free-energy-the-energyentropy-competition" class="nav-link" data-scroll-target="#free-energy-the-energyentropy-competition">5.3. Free energy: The energy–entropy competition</a></li>
   <li><a href="#utility-of-the-partition-function" id="toc-utility-of-the-partition-function" class="nav-link" data-scroll-target="#utility-of-the-partition-function">5.4. Utility of the partition function</a></li>
   </ul></li>
@@ -348,7 +348,7 @@ window.Quarto = {
 <p><em>See Mandl 2.6</em></p>
 <section id="energy-and-its-fluctuations" class="level2">
 <h2 class="anchored" data-anchor-id="energy-and-its-fluctuations">5.1. Energy and its fluctuations</h2>
-<p>The mean energy is defined as usual as:</p>
+<p>We have seen that the energy of a system connected to a heat bath exhibits thermal fluctuations controlled by the Boltzmann distribution. Here we calcualte the mean and variance of these fluctuations. The mean energy is defined as usual as:</p>
 <p><span class="math display">\[
 \overline{E} = \sum_i E_i P_i
 \]</span></p>
@@ -368,10 +368,24 @@ window.Quarto = {
 <p><span class="math display">\[
 \overline{(\Delta E)^2} = \overline{(E - \overline{E})^2} = \overline{E^2} - \overline{E}^2
 \]</span></p>
-<p>and we will show it is related to the heat capacity <span class="math inline">\(C\)</span> defined by:</p>
-<p><span class="math display">\[
+<p>It turns out that this variance is related to the heat capacity <span class="math inline">\(C\)</span> defined by <span class="math display">\[
 C \equiv \frac{\partial \overline{E}}{\partial T} = \frac{d\beta}{dT} \frac{\partial \overline{E}}{\partial \beta} = -\frac{1}{kT^2} \frac{\partial \overline{E}}{\partial \beta}
 \]</span></p>
+<p>The relationship (derived below) is <span class="math display">\[
+C = -\frac{1}{kT^2} \left[\overline{E^2}- \overline{E}^2\right] = \frac{(\overline{\Delta E)^2}}{kT^2}
+\]</span></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Open to see derivation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>In order to demonstrate the relation of the energy fluctuations to the heat capacity, we write out the final expression for <span class="math inline">\(C\)</span> above using the Boltzmann distribution:</p>
 <p><span class="math display">\[
 C = -\frac{1}{kT^2} \frac{\partial}{\partial \beta} \left(\frac{\sum_i E_i \exp(-\beta E_i)}{Z}\right) = -\frac{1}{kT^2} \left[-\frac{\sum_i E_i \exp(-\beta E_i)}{Z^2} \frac{\partial Z}{\partial \beta} - \frac{\sum_i E_i^2 \exp(-\beta E_i)}{Z}\right]
@@ -387,6 +401,9 @@ C = -\frac{1}{kT^2} \frac{\partial}{\partial \beta} \left(\frac{\sum_i E_i \exp(
 <p><span class="math display">\[
 C = -\frac{1}{kT^2} \left[\overline{E^2}- \overline{E}^2\right] = \frac{(\overline{\Delta E)^2}}{kT^2}
 \]</span></p>
+</div>
+</div>
+</div>
 <p>It is interesting to pause and think what this means. The heat capacity can be thought of as the response of a macroscopic variable (the energy) to changing an external variable (the temperature). Thus, the response is related to the fluctuations of the macroscopic variable.</p>
 <p>Since <span class="math inline">\(E\)</span> is proportional to <span class="math inline">\(N\)</span>, so will be <span class="math inline">\(C = \partial \overline{E}/\partial T\)</span>. Therefore:</p>
 <p><span class="math display">\[
@@ -394,12 +411,12 @@ C = -\frac{1}{kT^2} \left[\overline{E^2}- \overline{E}^2\right] = \frac{(\overli
 \]</span></p>
 <p>and the fractional deviation:</p>
 <p><span class="math display">\[
-\frac{\overline{(\Delta E)^2}}{\overline{E}} \propto \frac{1}{\sqrt{N}}
+\frac{\left(\overline{\Delta E)^2}\right)^{1/2}}{\overline{E}} \propto \frac{1}{\sqrt{N}}
 \]</span></p>
 <p>From this, we see that for a system in equilibrium with a heat bath, although the energy is a free macroscopic variable, it takes on a sharply defined value <span class="math inline">\(\overline{E}\)</span>. A consequence is that a large system in equilibrium with a heat bath should have essentially the same behavior as a large isolated system with fixed energy <span class="math inline">\(\overline{E}\)</span>.</p>
 </section>
-<section id="entropy-energy-distribution-and-free-energy" class="level2">
-<h2 class="anchored" data-anchor-id="entropy-energy-distribution-and-free-energy">5.2. Entropy, energy distribution, and free energy</h2>
+<section id="energy-distribution-entropy-and-free-energy" class="level2">
+<h2 class="anchored" data-anchor-id="energy-distribution-entropy-and-free-energy">5.2. Energy distribution, entropy, and free energy</h2>
 <p>Since, in the Boltzmann distribution, the energy is a free macroscopic variable, we can label the macrostates of the system by their energy, and the weight of the macrostate of energy <span class="math inline">\(E\)</span> is <span class="math inline">\(\Omega(E)\)</span>, the number of microstates with energy <span class="math inline">\(E\)</span>.</p>
 <p>As in chapter 3, we can use the Planck relation to determine the entropy of a macrostate:</p>
 <p><span class="math display">\[
