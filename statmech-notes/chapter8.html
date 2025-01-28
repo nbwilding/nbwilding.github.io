@@ -392,10 +392,10 @@ Figure&nbsp;1
 \]</span></p>
 <p>where <span class="math inline">\(x\)</span> is the displacement from equilibrium position. Thus in 3d the system has <span class="math inline">\(N \times 3 \times 2\)</span> quadratic contributions (<span class="math inline">\(N\)</span> particles, <span class="math inline">\(3\)</span> dimensions, P.E. + K.E.) to the energy. The equipartition principle then implies that the energy and heat capacity of the system should be</p>
 <p><span class="math display">\[
-E = 6N \times \frac{1}{2} kT = 3NkT
+\overline{E} = 6N \times \frac{1}{2} kT = 3NkT
 \]</span></p>
 <p><span class="math display">\[
-C_V = \frac{\partial E}{\partial T} = 3Nk
+C_V = \frac{\partial \overline{E}}{\partial T} = 3Nk
 \]</span></p>
 <p>If you have forgotten the equipartition principle you can find it in your first year Properties of Matter notes. However we will understand it at a deeper level in a few chapters’ time.</p>
 <p>The prediction for the heat capacity was well borne out experimentally for many monoatomic solids and is known as the Dulong–Petit law. However diamond has a smaller heat capacity than the Dulong–Petit law predicts. Einstein showed that this is a quantum effect.</p>
@@ -434,11 +434,11 @@ Z_{1d}(1) = \frac{\exp\left(-\frac{x}{2}\right)}{1 - \exp(-x)}
 <h2 class="anchored" data-anchor-id="thermodynamic-properties">8.3 Thermodynamic properties</h2>
 <p>We now turn the handle to crank out the thermodynamics variables. First note</p>
 <p><span class="math display">\[
-E = 3N\varepsilon = 3N\hbar\omega\left(n + \frac{1}{2}\right)
+\overline{E} = 3N\overline{\varepsilon} = 3N\hbar\omega\left(\overline{n} + \frac{1}{2}\right)
 \]</span></p>
 <p>It is easiest to calculate <span class="math inline">\(\varepsilon\)</span> directly from the relation</p>
 <p><span class="math display">\[
-\varepsilon = -\frac{\partial}{\partial\beta} \ln Z_{1d}(1) = -\frac{dx}{d\beta} \frac{\partial}{\partial x} \ln Z_{1d}(1)
+\overline{\varepsilon} = -\frac{\partial}{\partial\beta} \ln Z_{1d}(1) = -\frac{dx}{d\beta} \frac{\partial}{\partial x} \ln Z_{1d}(1)
 \]</span></p>
 <p><span class="math display">\[
 = -\hbar\omega \frac{\partial}{\partial x} \left[-\ln\left(1 - \exp(-x)\right) - \frac{x}{2}\right]
@@ -448,7 +448,7 @@ E = 3N\varepsilon = 3N\hbar\omega\left(n + \frac{1}{2}\right)
 \]</span></p>
 <p>and we see</p>
 <p><span class="math display">\[
-n = \frac{\exp(-x)}{1 - \exp(-x)} = \frac{1}{\exp(x) - 1}
+\overline{n} = \frac{\exp(-x)}{1 - \exp(-x)} = \frac{1}{\exp(x) - 1}
 \]</span></p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -464,7 +464,7 @@ Expand to see an alternative derivation
 <div class="callout-body-container callout-body">
 <p>Aside: An alternative derivation is to use the Boltzmann distribution <span class="math inline">\(P_n\)</span> for the levels <span class="math inline">\(n\)</span> of a 1d oscillator explicitly</p>
 <p><span class="math display">\[
-n = \sum_{n=0}^{\infty} P_n n = \frac{1}{Z_{1d}(1)} \sum_{n=0}^{\infty} n \exp\left[-x\left(n + \frac{1}{2}\right)\right]
+\overline{n} = \sum_{n=0}^{\infty} P_n n = \frac{1}{Z_{1d}(1)} \sum_{n=0}^{\infty} n \exp\left[-x\left(n + \frac{1}{2}\right)\right]
 \]</span></p>
 <p>then use the identity</p>
 <p><span class="math display">\[
@@ -475,11 +475,11 @@ n = \sum_{n=0}^{\infty} P_n n = \frac{1}{Z_{1d}(1)} \sum_{n=0}^{\infty} n \exp\l
 </div>
 <p>The mean total energy is given by</p>
 <p><span class="math display">\[
-E = 3N\hbar\omega \left[\frac{\exp(-x)}{1 - \exp(-x)} + \frac{1}{2}\right]
+\overline{E} = 3N\hbar\omega \left[\frac{\exp(-x)}{1 - \exp(-x)} + \frac{1}{2}\right]
 \]</span></p>
 <p>and the heat capacity is given by</p>
 <p><span class="math display">\[
-C_V = \left(\frac{\partial E}{\partial T}\right)_V = \left(\frac{\partial x}{\partial T}\right)_\omega \left(\frac{\partial E}{\partial x}\right)_\omega
+C_V = \left(\frac{\partial \overline{E}}{\partial T}\right)_V = \left(\frac{\partial x}{\partial T}\right)_\omega \left(\frac{\partial \overline{E}}{\partial x}\right)_\omega
 \]</span></p>
 <p>Note that here the ‘constant volume’ constraint on the partial derivative is the same as the ‘constant <span class="math inline">\(\omega\)</span>’ constraint. This is because the only way volume (or any other variable except temperature) can enter into the model is through the parameter <span class="math inline">\(\omega\)</span>.</p>
 <p>We find</p>
@@ -495,24 +495,24 @@ T^* = \frac{\hbar\omega}{k}
 \]</span></p>
 <p>Thus in the high temperature regime <span class="math inline">\(T \gg T^*\)</span> (<span class="math inline">\(x \ll 1\)</span>) we find</p>
 <p><span class="math display">\[
-n \approx \frac{1}{1 + x \ldots - 1} \approx \frac{1}{x} = \frac{kT}{\hbar\omega}
+\overline{n} \approx \frac{1}{1 + x \ldots - 1} \approx \frac{1}{x} = \frac{kT}{\hbar\omega}
 \]</span></p>
 <p><span class="math display">\[
-E \approx 3NkT + \frac{3}{2}N\hbar\omega
+\overline{E} \approx 3NkT + \frac{3}{2}N\hbar\omega
 \]</span></p>
-<p>we see that <span class="math inline">\(n\)</span> and hence <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(E\)</span> increase linearly with temperature. Moreover the heat capacity becomes</p>
+<p>we see that <span class="math inline">\(\overline{n}\)</span> and hence <span class="math inline">\(\overline{\varepsilon}\)</span> and <span class="math inline">\(\overline{E}\)</span> increase linearly with temperature. Moreover the heat capacity becomes</p>
 <p><span class="math display">\[
-C_V = \left(\frac{\partial E}{\partial T}\right)_V \approx 3Nk
+C_V = \left(\frac{\partial \overline{E}}{\partial T}\right)_V \approx 3Nk
 \]</span></p>
 <p>and we recover the Dulong–Petit law.</p>
-<p>In the low temperature regime <span class="math inline">\(T \ll T^*\)</span> <span class="math inline">\(x \gg 1\)</span> we have</p>
+<p>In the low temperature regime <span class="math inline">\(T \ll T^*\)</span> (<span class="math inline">\(x \gg 1\)</span>) we have</p>
 <p><span class="math display">\[
-n \approx \exp(-x)
+\overline{n} \approx \exp(-x)
 \]</span></p>
 <p><span class="math display">\[
-C_V \approx \frac{3Nk x^2 \exp(-x)}{(1 - \exp(-x))^2}
+\frac{C_V}{3Nk} \approx x^2 \exp(-x)
 \]</span></p>
-<p>The mean energy level <span class="math inline">\(n\)</span> tends to zero meaning most oscillators are in the ground state; the heat capacity is very much less than <span class="math inline">\(3Nk\)</span>.</p>
+<p>The mean energy level <span class="math inline">\(\overline{n}\)</span> tends to zero meaning most oscillators are in the ground state; the heat capacity is very much less than <span class="math inline">\(3Nk\)</span>.</p>
 <p>Thus when <span class="math inline">\(x = \frac{\hbar\omega}{kT}\)</span> is large, quantum effects, in particular the effect of a discrete gap between the ground state and first excited state, become important. The Einstein model quite successfully explained the experimentally observed heat capacity of diamond (see Mandl 6.2). However the very low temperature behaviour of the heat capacity was still not quite right. In fact a <span class="math inline">\(T^3\)</span> dependence appeared to emerge. This can be explained by an elaborated version of the Einstein theory known as the Debye theory.</p>
 <p>When <span class="math inline">\(x = \frac{\hbar\omega}{kT}\)</span> is small we recover the ‘classical’ results i.e.&nbsp;results where Planck’s constant does not appear in the thermodynamic quantities (except as an arbitrary constant in the energy). Quite generally high temperature is the classical limit (if indeed one exists).</p>
 <p>Remark: We can also make <span class="math inline">\(x\)</span> small by making <span class="math inline">\(\hbar\)</span> small! This remark should hopefully become meaningful in a few chapters’ time.</p>

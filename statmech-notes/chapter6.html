@@ -402,20 +402,20 @@ Key Point 13:
 <p><em>See Mandl 3.1-3.3</em></p>
 <p>In 5.2, we examined the single particle partition function, i.e., the partition function for a single dipole, so effectively we have already done the hard work. We saw:</p>
 <p><span class="math display">\[
-Z(1) = 2 \cosh x \quad \text{where} \quad x = \frac{mH}{kT}
+Z(1) = 2 \cosh (x) \quad \text{where} \quad x = \frac{mH}{kT}
 \]</span></p>
 <p>Using the general results for weakly interacting systems (previous subsection), we have:</p>
 <p><span class="math display">\[
-\overline{E} = N\bar{\epsilon} = -N \frac{\partial}{\partial \beta} \ln Z(1) = -NmH \frac{\partial}{\partial x} \ln Z(1) = -NmH \tanh x
+\overline{E} = N\bar{\epsilon} = -N \frac{\partial}{\partial \beta} \ln Z(1) = -NmH \frac{\partial}{\partial x} \ln Z(1) = -NmH \tanh (x)
 \]</span></p>
 <p><span class="math display">\[\begin{eqnarray*}
 S(T) &amp;=&amp; k \ln Z + \frac{\overline{E}}{T} \\
      &amp;=&amp; Nk \ln Z(1) + \frac{N\bar{\epsilon}}{T} \\
-     &amp;=&amp; Nk \left[\ln (\exp x + \exp -x) - x \tanh x\right]
+     &amp;=&amp; Nk \left[\ln (\exp (x) + \exp (-x)) - x \tanh (x)\right]
 \end{eqnarray*}\]</span></p>
 <p>For the magnetisation, we have:</p>
 <p><span class="math display">\[
-\overline{M} = Nm \tanh x
+\overline{M} = Nm \tanh (x)
 \]</span></p>
 <p>we see that for low fields, which means <span class="math inline">\(mH \ll kT\)</span> so that <span class="math inline">\(x\)</span> is small:</p>
 <p><span class="math display">\[
@@ -433,11 +433,11 @@ S(T) &amp;=&amp; k \ln Z + \frac{\overline{E}}{T} \\
 <p>The <span class="math inline">\(\frac{1}{T}\)</span> dependence of <span class="math inline">\(\chi\)</span> is known as the Curie law. It implies that the dipoles become more ‘susceptible’ to an external magnetic field at lower temperature. See Mandl 3.1 for a comparison with real experiments.</p>
 <p>Finally, let’s consider the heat capacity (at constant field):</p>
 <p><span class="math display">\[
-C_H = \left(\frac{\partial \overline{E}}{\partial T}\right)_H = \left(\frac{\partial x}{\partial T}\right)_H \left(\frac{\partial \overline{E}}{\partial x}\right)_H = Nk x^2 \text{sech}^2x
+C_H = \left(\frac{\partial \overline{E}}{\partial T}\right)_H = \left(\frac{\partial x}{\partial T}\right)_H \left(\frac{\partial \overline{E}}{\partial x}\right)_H = Nk x^2 \text{sech}^2(x)
 \]</span></p>
 <p>Note the low-temperature (large <span class="math inline">\(x\)</span>) behaviour. Recalling:</p>
 <p><span class="math display">\[
-\text{sech } x = \frac{2}{\exp x + \exp -x} \sim 2 \exp -x \text{ for large } x
+\text{sech } (x) = \frac{2}{\exp (x) + \exp (-x)} \sim 2 \exp (-x) \text{ for large } x
 \]</span></p>
 <p>we see that the heat capacity vanishes for small <span class="math inline">\(T\)</span>.</p>
 <p>This is a general feature. Basically, at zero temperature, all particles are in the ground state. One has to raise the temperature until <span class="math inline">\(kT\)</span> is comparable with <span class="math inline">\(2mH\)</span> (the energy difference to the excited state) before a significant number of dipoles are excited. Thus near <span class="math inline">\(T = 0\)</span>, the derivative of internal energy with respect to <span class="math inline">\(T\)</span> is zero.</p>
