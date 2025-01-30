@@ -351,6 +351,12 @@ window.Quarto = {
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PDFs/course_notes.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course notes as PDF</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -533,13 +539,13 @@ P (x) dx = \text{Probability that outcome lies in the range } x \text{ to } x + 
 <p><em>Averages</em></p>
 <p>The Probability distribution contains the complete information about the trial. However the moments (mean, variance . . . ) can give the important features. They are defined as</p>
 <p><span class="math display">\[\begin{eqnarray*}
-{\rm mean}~~\overline{x} &amp;=&amp; \sum_{i=1}^q P(i)x_i ~{~\rm or}~ \int_{-\infty}^\infty P(x)xdx\\
-{\rm variance}~~\overline{\Delta x^2} &amp;=&amp; \sum_{i=1}^q P(i)(x_i-\overline{x})^2 ~{\rm or}~ \int_{-\infty}^\infty P(x)(x-\overline{x})^2\\
+\text{mean}~~\overline{x} &amp;=&amp; \sum_{i=1}^q P(i)x_i ~\text{ or}~ \int_{-\infty}^\infty P(x)xdx\\
+\text{variance}~~\overline{\Delta x^2} &amp;=&amp; \sum_{i=1}^q P(i)(x_i-\overline{x})^2 ~\text{ or}~ \int_{-\infty}^\infty P(x)(x-\overline{x})^2\\
 i.e. ~~\overline{\Delta x^2}&amp;=&amp; \overline{(x-\overline{x})^2}=\overline{x^2}-\overline{x}^2
 \end{eqnarray*}\]</span></p>
 <p>More generally the average of a function <span class="math inline">\(f(x)\)</span> is given by</p>
 <p><span class="math display">\[
-\overline {f(x)}=\sum_{i=1}^qP(i)f(x_i)~~{\rm or}~~\int_{-\infty}^\infty P(x)f(x)dx
+\overline {f(x)}=\sum_{i=1}^qP(i)f(x_i)~~\text{ or}~~\int_{-\infty}^\infty P(x)f(x)dx
 \]</span></p>
 <p><strong>Basic distributions</strong></p>
 <p>For completeness (and for the mathematically inclined) the content below includes some derivations of the functional forms of distributions; you are not expected to know these derivations for this course.</p>
@@ -585,10 +591,10 @@ i.e. ~~\overline{\Delta x^2}&amp;=&amp; \overline{(x-\overline{x})^2}=\overline{
 <p>This is known as the <a href="https://en.wikipedia.org/wiki/Poisson_distribution">Poisson distribution</a> and one can check using the power series representation of the exponential function that <span class="math inline">\(\sum_{n=1}^NP_n=1\)</span>. One also finds</p>
 <p><span class="math display">\[
 \boxed{
-\begin{align*}
+\begin{aligned}
 \overline{n}          &amp;= \sum_{n=1}^NnP_n=Np\\
 \overline{\Delta n^2} &amp;= \sum_{n=1}^N(n-\overline{n})^2P_n=Np
-\end{align*}}
+\end{aligned}}
 \]</span> ie. the mean and variance are equal.</p>
 <p>Basically the Poisson distribution is used when there are a large number of trials in each of which an event is very unlikely but overall one expects a finite number of events.</p>
 <p><em>Gaussian Distribution</em></p>
@@ -686,7 +692,7 @@ Figure&nbsp;1: Left: a probability histogram of the fraction of heads <span clas
 </figure>
 </div>
 <p>You can investigate for yourself the effect of changing the number of coin tosses <span class="math inline">\(N\)</span> in this python simulation (copy it into your favourite Python runtime environment):</p>
-<div id="d25d762f" class="cell" data-execution_count="1">
+<div id="e1e6760a" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>

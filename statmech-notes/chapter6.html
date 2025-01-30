@@ -317,6 +317,12 @@ window.Quarto = {
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PDFs/course_notes.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course notes as PDF</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -429,7 +435,7 @@ S(T) &amp;=&amp; k \ln Z + \frac{\overline{E}}{T} \\
 <p><span class="math display">\[
 \chi(H = 0) \equiv \left(\frac{\partial \overline{M}}{\partial H}\right)\bigg|_{H=0} = \frac{Nm^2}{kT}
 \]</span></p>
-<p>You should understand that the susceptibility measures the response of the magnetisation of the system to a small externally applied field. Question 4.9 shows that this response is actually related to the magnetisation fluctuations at zero field.</p>
+<p>You should understand that the susceptibility measures the response of the magnetisation of the system to a small externally applied field. It turns out that this response is actually related to the magnetisation fluctuations at zero field. This is analogous to the results for the specific heat in terms of the variance of the energy fluctuations.</p>
 <p>The <span class="math inline">\(\frac{1}{T}\)</span> dependence of <span class="math inline">\(\chi\)</span> is known as the Curie law. It implies that the dipoles become more ‘susceptible’ to an external magnetic field at lower temperature. See Mandl 3.1 for a comparison with real experiments.</p>
 <p>Finally, let’s consider the heat capacity (at constant field):</p>
 <p><span class="math display">\[
@@ -442,6 +448,65 @@ C_H = \left(\frac{\partial \overline{E}}{\partial T}\right)_H = \left(\frac{\par
 <p>we see that the heat capacity vanishes for small <span class="math inline">\(T\)</span>.</p>
 <p>This is a general feature. Basically, at zero temperature, all particles are in the ground state. One has to raise the temperature until <span class="math inline">\(kT\)</span> is comparable with <span class="math inline">\(2mH\)</span> (the energy difference to the excited state) before a significant number of dipoles are excited. Thus near <span class="math inline">\(T = 0\)</span>, the derivative of internal energy with respect to <span class="math inline">\(T\)</span> is zero.</p>
 <p><span class="math inline">\(kT\)</span> is often referred to as the ‘thermal energy’.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Expand to see a reminder about hyperbolic functions and their identities
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<section id="hyperbolic-identities" class="level1 callout-body-container callout-body">
+<h1>Hyperbolic Identities</h1>
+<p>The hyperbolic functions satisfy a number of identities. These allow expressions involving the hyperbolic functions to be written in different, yet equivalent forms. Several commonly used identities are given below.</p>
+<section id="basic-hyperbolic-functions" class="level2">
+<h2 class="anchored" data-anchor-id="basic-hyperbolic-functions">Basic Hyperbolic Functions</h2>
+<p><span class="math display">\[
+\cosh x = \frac{e^x + e^{-x}}{2}, \quad \sinh x = \frac{e^x - e^{-x}}{2}
+\]</span></p>
+<p><span class="math display">\[
+\tanh x = \frac{\sinh x}{\cosh x} = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{sech} x = \frac{1}{\cosh x} = \frac{2}{e^x + e^{-x}}
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{cosech} x = \frac{1}{\sinh x} = \frac{2}{e^x - e^{-x}}
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{coth} x = \frac{\cosh x}{\sinh x} = \frac{1}{\tanh x} = \frac{e^x + e^{-x}}{e^x - e^{-x}}
+\]</span></p>
+</section>
+<section id="some-derivatives-of-hyperbolic-functions" class="level2">
+<h2 class="anchored" data-anchor-id="some-derivatives-of-hyperbolic-functions">Some derivatives of hyperbolic functions</h2>
+<p><span class="math display">\[
+\frac{d}{dx} (\sinh x) = \cosh x
+\]</span></p>
+<p><span class="math display">\[
+\frac{d}{dx} (\cosh x) = \sinh x
+\]</span></p>
+<p><span class="math display">\[
+\frac{d}{dx} (\tanh x) = \operatorname{sech}^2 x
+\]</span></p>
+</section>
+<section id="fundamental-identities" class="level2">
+<h2 class="anchored" data-anchor-id="fundamental-identities">Fundamental Identities</h2>
+<p><span class="math display">\[
+\cosh^2 x - \sinh^2 x = 1
+\]</span></p>
+<p><span class="math display">\[
+1 - \tanh^2 x = \operatorname{sech}^2 x
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{coth}^2 x - 1 = \operatorname{cosech}^2 x
+\]</span></p>
+</section>
+</section>
+</div>
+</div>
 </section>
 <section id="more-general-factorisation" class="level2">
 <h2 class="anchored" data-anchor-id="more-general-factorisation">6.3. More general factorisation</h2>
