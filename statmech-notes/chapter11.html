@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -364,7 +364,17 @@ window.Quarto = {
 </section>
 <section id="the-chemical-potential" class="level2">
 <h2 class="anchored" data-anchor-id="the-chemical-potential">11.2 The chemical potential</h2>
-<p>Consider first a system as in Figure 1, where two halves (at equilibrium at the same temperature) are free to exchange particles. Since the total number <span class="math inline">\(N\)</span> of particles is conserved:</p>
+<p>Consider first a system as in <a href="#fig-membrane" class="quarto-xref">Figure&nbsp;2</a>, where two halves (at equilibrium at the same temperature) are free to exchange particles. Since the total number <span class="math inline">\(N\)</span> of particles is conserved:</p>
+<div id="fig-membrane" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-membrane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="NotesFigs/membrane.png" class="img-fluid figure-img" width="400">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-membrane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: System at equilibrium comprising two subsystems free to exchange particles
+</figcaption>
+</figure>
+</div>
 <p><span class="math display">\[
 dN_1 = -dN_2
 \]</span></p>
@@ -394,14 +404,33 @@ Definition
 </div>
 <p>is the chemical potential which is a quantity which is common to two systems that can exchange particles.</p>
 <p>A statement that is often made is: “the chemical potential is like a temperature for particle number”. If a system is not in equilibrium so that there is a chemical potential gradient, then particles will diffuse down then gradient. This is similar to heat diffusing down a temperature gradient.</p>
+<div id="fig-membrane" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-membrane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="NotesFigs/mu_ramp.png" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-membrane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: How gradients of temperature and chemical potential effect heat and mass flow respectively
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="example" class="level2">
 <h2 class="anchored" data-anchor-id="example">11.3 Example</h2>
-<p>A specific example may be helpful. Consider an ideal gas confined to two connected volumes (see Figure 3). In the semi-classical treatment, the partition function factorizes into the contribution from the upper volume <span class="math inline">\(Z_u\)</span> and from the lower volume <span class="math inline">\(Z_l\)</span> :</p>
+<p>A specific example may be helpful. Consider an ideal gas confined to two connected equal volumes <span class="math inline">\(V\)</span> (see <a href="#fig-gravity" class="quarto-xref">Figure&nbsp;3</a>) separated by height <span class="math inline">\(H\)</span> in a gravitational field <span class="math inline">\(g\)</span>. In the semi-classical treatment, the partition function factorizes into the contribution from the upper volume <span class="math inline">\(Z_u\)</span> and from the lower volume <span class="math inline">\(Z_l\)</span> :</p>
+<div id="fig-gravity" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gravity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="NotesFigs/gravity.png" class="img-fluid figure-img" width="250">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gravity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Simple example of two systems free to exchange particles (Baierlein Figure 7.1)
+</figcaption>
+</figure>
+</div>
 <p><span class="math display">\[
 Z(N_l, N_u) = Z_l(N_l) \times Z_u(N_u) = \left(\frac{V}{\lambda^3}\right)^{N_l} \frac{1}{N_l!} \times \left(\frac{V}{\lambda^3}\right)^{N_u} e^{-\beta mgHN_u} \frac{1}{N_u!}
-\]</span></p>
-<p>where <span class="math inline">\(\lambda = \frac{h}{\sqrt{2\pi MkT}}\)</span> . Using semi-classical results from 10.3:</p>
+\]</span> where <span class="math inline">\(\lambda = \frac{h}{\sqrt{2\pi MkT}}\)</span> . Using semi-classical results from 10.3:</p>
 <p><span class="math display">\[
 F_l = -kT \ln Z_l = N_l kT \left[\ln\left(\frac{N_l \lambda^3}{V}\right) - 1 \right]
 \]</span></p>
@@ -418,7 +447,7 @@ F_u = N_u kT \left[\ln\left(\frac{N_u \lambda^3}{V}\right) - 1 \right] + N_u MgH
 <p><span class="math display">\[
 kT \ln \left(\frac{N_l}{N_u}\right) = MgH \Rightarrow N_u = N_l e^{-MgH/kT}
 \]</span></p>
-<p>This gives the density dependence on height in the isothermal atmosphere (tutorial 8.1). Note that <span class="math inline">\(\mu\)</span> increases with density, and <span class="math inline">\(\mu_u\)</span> increases with <span class="math inline">\(H\)</span> , which supports the claim that the chemical potential measures the tendency for particles to diffuse.</p>
+<p>This gives the density dependence on height in the isothermal atmosphere (see you PoM notes). Note that <span class="math inline">\(\mu\)</span> increases with density, and <span class="math inline">\(\mu_u\)</span> increases with <span class="math inline">\(H\)</span> , which supports the claim that the chemical potential measures the tendency for particles to diffuse.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">

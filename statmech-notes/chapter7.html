@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -363,11 +363,10 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="simple-model-of-ferromagnetism">7.2 Simple model of ferromagnetism</h2>
 <p>As a very basic model of ferromagnetic interactions, let us restrict ourselves to a one-dimensional array of dipoles.</p>
 <p>Here there is no external field, and the only energy comes from the ferromagnetic interactions between particles: if two neighboring dipoles are in the same direction, this is favorable, but if two neighboring dipoles are in opposite directions, this costs energy.</p>
-<p>Thus, each ‘domain wall’ where neighboring dipoles are of opposite directions costs energy <span class="math inline">\(J\)</span>, say.</p>
+<p>Thus, each ‘domain wall’ where neighboring dipoles are of opposite directions costs energy <span class="math inline">\(J\)</span>, say. Here ia an example of two domain walls (three domains) in a one-dimensional array of <span class="math inline">\(N\)</span> dipoles.</p>
 <p><span class="math display">\[
 \uparrow\uparrow \cdots \uparrow\uparrow \downarrow\downarrow \cdots \downarrow\downarrow \uparrow\uparrow \cdots \uparrow\uparrow
 \]</span></p>
-<p>Example of two domain walls (three domains) in a one-dimensional array of <span class="math inline">\(N\)</span> dipoles.</p>
 <p>To estimate the dependence of the number of such domain walls on temperature, we can use a minimization of free energy argument.</p>
 <p>Let us consider <span class="math inline">\(n\)</span> domain walls. The energy cost is <span class="math inline">\(nJ\)</span>.</p>
 <p>The number of ways of arranging the <span class="math inline">\(n\)</span> domain walls on the lattice is the number of ways of choosing <span class="math inline">\(n\)</span> from the <span class="math inline">\(N - 1\)</span> possible places the domain walls can be. (Do you see why it is <span class="math inline">\(N - 1\)</span>? but actually <span class="math inline">\(N - 1 \approx N\)</span> for large <span class="math inline">\(N\)</span>.) Thus:</p>
