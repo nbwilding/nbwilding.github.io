@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -341,7 +341,6 @@ window.Quarto = {
   <li><a href="#important-points" id="toc-important-points" class="nav-link" data-scroll-target="#important-points">Important Points:</a></li>
   </ul></li>
   <li><a href="#low-temperature-behaviour" id="toc-low-temperature-behaviour" class="nav-link" data-scroll-target="#low-temperature-behaviour">Low temperature behaviour</a></li>
-  <li><a href="#summary-of-ideal-fermi-gas" id="toc-summary-of-ideal-fermi-gas" class="nav-link" data-scroll-target="#summary-of-ideal-fermi-gas">Summary of Ideal Fermi Gas</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -368,9 +367,9 @@ N = \sum_i \overline{n_i} \approx e^{\mu/kT} \sum_i e^{-\epsilon_i/kT} = e^{\mu/
 \]</span></p>
 <p>where we have identified the canonical single particle partition function <span class="math inline">\(Z(1)\)</span>. Thus we see that in the limit <span class="math inline">\(e^{\mu/kT} \ll 1\)</span>:</p>
 <p><span class="math display">\[
-Z(1)N \ll 1
+\frac{Z(1)}{N} \gg 1
 \]</span></p>
-<p>which, referring to <strong>chapters 11/12</strong>, is the low density/high temperature limit where a semi-classical treatment is adequate.</p>
+<p>which, referring to chapter 10.1, 10.4, is the low density/high temperature limit where a semi-classical treatment is adequate.</p>
 </section>
 <section id="ideal-fermi-gas" class="level2">
 <h2 class="anchored" data-anchor-id="ideal-fermi-gas">Ideal Fermi gas</h2>
@@ -425,7 +424,7 @@ N = \sum_i f_+(\epsilon_i) \approx \int_0^{\infty} d\epsilon\, g(\epsilon) f_+(\
 <p><span class="math display">\[
 g(\epsilon) d\epsilon = \text{number of states in energy range } [\epsilon, \epsilon + d\epsilon]
 \]</span></p>
-<p>We saw in <strong>chapter 11</strong> that for spinless particles in a box:</p>
+<p>We saw in <strong>chapter 10</strong> that for spinless particles in a box:</p>
 <p><span class="math display">\[
 g(\epsilon) = D \epsilon^{1/2}, \quad D = \left( \frac{2m}{h^2} \right)^{3/2} \frac{1}{4\pi^2}
 \]</span></p>
@@ -492,13 +491,6 @@ E(T) - E(0) \sim N \cdot \frac{kT}{\epsilon_f} \cdot kT
 C_V \sim \frac{E(T) - E(0)}{T} \sim \frac{Nk^2T}{\epsilon_f}
 \]</span></p>
 <p>The important point is that this is <strong>linear in <span class="math inline">\(T\)</span></strong>. This contrasts with the classical gas, where <span class="math inline">\(C_V\)</span> is a constant (equal to <span class="math inline">\(3Nk/2\)</span>).</p>
-</section>
-<section id="summary-of-ideal-fermi-gas" class="level2">
-<h2 class="anchored" data-anchor-id="summary-of-ideal-fermi-gas">Summary of Ideal Fermi Gas</h2>
-<ol type="1">
-<li><span class="math inline">\(E/N \approx E_\text{classical}/N\)</span>, i.e., the gas has a large kinetic energy per molecule, even at low <span class="math inline">\(T\)</span>.</li>
-<li><span class="math inline">\(C_V\)</span> is small.</li>
-</ol>
 
 
 </section>

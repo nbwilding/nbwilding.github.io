@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -364,7 +364,7 @@ window.Quarto = {
 </section>
 <section id="the-chemical-potential" class="level2">
 <h2 class="anchored" data-anchor-id="the-chemical-potential">11.2 The chemical potential</h2>
-<p>Consider first a system as in <a href="#fig-membrane" class="quarto-xref">Figure&nbsp;2</a>, where two halves (at equilibrium at the same temperature) are free to exchange particles. Since the total number <span class="math inline">\(N\)</span> of particles is conserved:</p>
+<p>Consider first a system as in <a href="#fig-membrane" class="quarto-xref">Figure&nbsp;1</a>, where two halves (at equilibrium at the same temperature) are free to exchange particles. Since the total number <span class="math inline">\(N=N_1+N_2\)</span> of particles is conserved:</p>
 <div id="fig-membrane" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-membrane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -403,13 +403,13 @@ Definition
 </div>
 </div>
 <p>is the chemical potential which is a quantity which is common to two systems that can exchange particles.</p>
-<p>A statement that is often made is: “the chemical potential is like a temperature for particle number”. If a system is not in equilibrium so that there is a chemical potential gradient, then particles will diffuse down then gradient. This is similar to heat diffusing down a temperature gradient.</p>
-<div id="fig-membrane" class="quarto-figure quarto-figure-center quarto-float anchored">
+<p>A statement that is often made is: “the chemical potential is like a temperature for particle number”. If a system is not in equilibrium so that there is a chemical potential gradient, then particles will diffuse down then gradient. This is similar to heat diffusing down a temperature gradient (<a href="#fig-ramp" class="quarto-xref">Figure&nbsp;2</a>).</p>
+<div id="fig-ramp" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-membrane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-ramp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="NotesFigs/mu_ramp.png" class="img-fluid figure-img" width="300">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-membrane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ramp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: How gradients of temperature and chemical potential effect heat and mass flow respectively
 </figcaption>
 </figure>
@@ -441,13 +441,13 @@ F_u = N_u kT \left[\ln\left(\frac{N_u \lambda^3}{V}\right) - 1 \right] + N_u MgH
 \mu_l = \frac{\partial F_l}{\partial N_l} = kT \ln \left(\frac{N_l}{V \lambda^3}\right)
 \]</span></p>
 <p><span class="math display">\[
-\mu_u = \frac{\partial F_u}{\partial N_u} = kT \ln \left(\frac{N_u}{V \lambda^3}\right) + mgH
+\mu_u = \frac{\partial F_u}{\partial N_u} = kT \ln \left(\frac{N_u}{V \lambda^3}\right) + MgH
 \]</span></p>
 <p>Equating the chemical potentials <span class="math inline">\(\mu_l = \mu_u\)</span> yields:</p>
 <p><span class="math display">\[
 kT \ln \left(\frac{N_l}{N_u}\right) = MgH \Rightarrow N_u = N_l e^{-MgH/kT}
 \]</span></p>
-<p>This gives the density dependence on height in the isothermal atmosphere (see you PoM notes). Note that <span class="math inline">\(\mu\)</span> increases with density, and <span class="math inline">\(\mu_u\)</span> increases with <span class="math inline">\(H\)</span> , which supports the claim that the chemical potential measures the tendency for particles to diffuse.</p>
+<p>This gives the density dependence on height in the isothermal atmosphere. Note that <span class="math inline">\(\mu\)</span> increases with density, and <span class="math inline">\(\mu_u\)</span> increases with <span class="math inline">\(H\)</span> , which supports the claim that the chemical potential measures the tendency for particles to diffuse.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -460,7 +460,7 @@ Expand to read about an equivalent definition of <span class="math inline">\(\mu
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Consider the scenario of Figure 4, where a system isolated from the rest of the universe comprises two subsystems free to exchange energy and particles. Since the total system is isolated, we must maximize the entropy (see chapter 4, Tutorial 3.1):</p>
+<p>Consider the scenario of <a href="#fig-membrane" class="quarto-xref">Figure&nbsp;1</a>, where a system isolated from the rest of the universe comprises two subsystems free to exchange energy and particles. Since the total system is isolated, we must maximize the entropy (see chapter 4, Tutorial 3.1):</p>
 <p><span class="math display">\[
 S = S_1(E_1, N_1) + S_2(E_2, N_2)
 \]</span></p>
@@ -482,13 +482,23 @@ dS = \left[\left(\frac{\partial S_1}{\partial E_1}\right) - \left(\frac{\partial
 </section>
 <section id="grand-canonical-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="grand-canonical-distribution">11.4 Grand canonical distribution</h2>
-<p>Consider the scenario of Figure 5, where, in analogy with chapter 4, the ‘composite’ comprises the system and the bath, which this time serves as a reservoir of energy and particles at constant <span class="math inline">\(T\)</span> and <span class="math inline">\(\mu\)</span> .</p>
+<p>Consider the scenario of <a href="#fig-gcecomp" class="quarto-xref">Figure&nbsp;4</a>, where, in analogy with chapter 4, the ‘composite’ comprises the system and the bath, which this time serves as a reservoir of energy and particles at constant <span class="math inline">\(T\)</span> and <span class="math inline">\(\mu\)</span> .</p>
+<div id="fig-gcecomp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gcecomp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="NotesFigs/gce_composite.png" class="img-fluid figure-img" width="400">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gcecomp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Composite of system + heat and particle reservoir
+</figcaption>
+</figure>
+</div>
 <p>A microstate <span class="math inline">\(r\)</span> of the system has energy <span class="math inline">\(E\)</span> and <span class="math inline">\(N\)</span> particles. In analogy with chapter 4, using the principle of equal a priori probabilities, the probability of microstate <span class="math inline">\(r\)</span> obeys:</p>
 <p><span class="math display">\[
-P_r \propto \Omega_b(E_\text{tot} - E, N_\text{tot} - N) = \exp\left(\frac{S_b(E_\text{tot} - E, N_\text{tot} - N)}{k}\right)
-\]</span> where the Planck relation has been used. We proceed as in chapter 4 and Taylor expand the entropy (since <span class="math inline">\(N, E \ll N_\text{tot}, E_\text{tot}\)</span> ), keeping only the first few terms:</p>
+P_r \propto \Omega_b(E_{tot} - E, N_{tot} - N) = \exp\left(\frac{S_b(E_{tot} - E, N_{tot} - N)}{k}\right)
+\]</span> where the Planck relation has been used. We proceed as in chapter 4 and Taylor expand the entropy (since <span class="math inline">\(N, E \ll N_{TOT}, E_{TOT}\)</span> ), keeping only the first few terms:</p>
 <p><span class="math display">\[
-S_b(E_\text{tot} - E, N_\text{tot} - N) = S_b(E_\text{tot}, N_\text{tot}) - E \frac{\partial S_b(E_\text{tot}, N_\text{tot})}{\partial E} - N \frac{\partial S_b(E_\text{tot}, N_\text{tot})}{\partial N} + \dots
+S_b(E_{TOT} - E, N_{TOT} - N) = S_b(E_{TOT}, N_{TOT}) - E \frac{\partial S_b(E_{TOT}, N_{TOT})}{\partial E} - N \frac{\partial S_b(E_{TOT}, N_{TOT})}{\partial N} + \dots
 \]</span></p>
 <p><span class="math display">\[
 = \text{const} - \frac{E}{T} + \frac{N \mu}{T}

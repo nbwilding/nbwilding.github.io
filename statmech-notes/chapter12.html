@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -352,7 +352,7 @@ window.Quarto = {
 <h1>12. Quantum gases</h1>
 <p>In the previous chapter we derived the grand canonical distribution. It applies to a system in equilibrium with a reservoir of energy and particles. This kind of system is referred to as an open system. The grand canonical distribution is given by:</p>
 <p><span class="math display">\[
-Pr = \frac{1}{Z} \exp(-\beta E_r + \beta \mu N_r)
+P_r = \frac{1}{Z} \exp(-\beta E_r + \beta \mu N_r)
 \]</span></p>
 <p>where</p>
 <p><span class="math display">\[
@@ -364,17 +364,17 @@ Z = \sum_r \exp(-\beta E_r + \beta \mu N_r)
 <p>In the grand canonical distribution, microstates of the system with all numbers of particles are possible. However, we expect that for large <span class="math inline">\(N\)</span> , the distribution of the particle number will become sharp.</p>
 <p>The mean number of particles is calculated as follows:</p>
 <p><span class="math display">\[
-N = \sum_r N_r P_r = \frac{1}{Z} \sum_r N_r \exp\left(\beta \left[N_r \mu - E_r \right]\right)
+\overline{N} = \sum_r N_r P_r = \frac{1}{Z} \sum_r N_r \exp\left(\beta \left[N_r \mu - E_r \right]\right)
 \]</span></p>
 <p><span class="math display">\[
-N = \frac{1}{\beta} \frac{\partial \ln Z}{\partial \mu}
+\overline{N} = \frac{1}{\beta} \frac{\partial \ln Z}{\partial \mu}
 \]</span></p>
 <p>where a similar idea to chapter 6 — where the mean energy was written as a derivative with respect to <span class="math inline">\(\beta\)</span> — has been used.</p>
-<p>By a similar argument to Q1.5 we find</p>
+<p>By a similar argument for the energy fluctuations in chapter 5, we find</p>
 <p><span class="math display">\[
-\frac{\left( \Delta N^2 \right)^{1/2}}{N} \sim \frac{1}{N^{1/2}}
+\frac{\left( \Delta \overline{N^2} \right)^{1/2}}{\overline {N}} \sim \frac{1}{N^{1/2}}
 \]</span></p>
-<p>Therefore, we see that <span class="math inline">\(N\)</span> is sharp about <span class="math inline">\(N\)</span> (i.e., fluctuations are small on the scale of the mean).</p>
+<p>Therefore, we see that <span class="math inline">\(N\)</span> is sharp about <span class="math inline">\(\overline{N}\)</span> (i.e., fluctuations are small on the scale of the mean).</p>
 <p>Thus, we</p>
 <div id="kp16" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -386,14 +386,15 @@ Key Point 16:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>choose <span class="math inline">\(\mu\)</span> to fix <span class="math inline">\(N = N(\mu)\)</span></p>
+<p>Choose <span class="math inline">\(\mu\)</span> to fix <span class="math inline">\(\overline{N} = N(\mu)\)</span></p>
 </div>
 </div>
-<p>in the same way that in the canonical distribution for a large system <span class="math inline">\(T\)</span> fixes <span class="math inline">\(E = E(T)\)</span> .</p>
+<p>in the same way that in the canonical distribution for a large system <span class="math inline">\(T\)</span> fixes <span class="math inline">\(\overline{E} = E(T)\)</span> .</p>
 <p>Remember also that <span class="math inline">\(\mu\)</span> depends on temperature.</p>
 </section>
 <section id="indistinguishable-particles" class="level3">
 <h3 class="anchored" data-anchor-id="indistinguishable-particles">12.2. Indistinguishable particles</h3>
+<p>Quantum particles have access to a set of states (we will call them ‘single-particle- states’) defined by the solutions to the Schrödinger equation for one particle in a box. We will use <span class="math inline">\(i=1,2,\ldots \infty\)</span> as a label of these states, and will denote the associated energies by <span class="math inline">\(\epsilon_1,\epsilon_2,\ldots\epsilon_\infty\)</span>. Note: In the following, the term ‘quantum state’ will be used interchangeably with ‘single-particle state.’</p>
 <p>Recall the definition of a microstate (chapter 2):</p>
 <ul>
 <li><strong>Distinguishable particles</strong>: A microstate is specified by <span class="math inline">\(i_1, i_2, \ldots, i_N\)</span> , i.e., the state of each particle.</li>
@@ -404,12 +405,11 @@ Key Point 16:
 N_r = \sum_i n_i \quad \text{and} \quad E_r = \sum_i n_i \epsilon_i
 \]</span></p>
 <p>where <span class="math inline">\(\epsilon_i\)</span> is the energy of single-particle state <em>i</em>.</p>
-<p>Note: In the following, the term ‘quantum state’ will be used interchangeably with ‘single-particle state.’</p>
 <p>We can write:</p>
 <p><span class="math display">\[
 \beta (N_r \mu - E_r) = \beta \sum_i n_i (\mu - \epsilon_i)
 \]</span></p>
-<p>and the sum over all possible microstates <em>r</em> becomes:</p>
+<p>and the sum over all possible microstates <span class="math inline">\(r\)</span> becomes:</p>
 <p><span class="math display">\[
 \sum_r \to \sum_{n_1} \sum_{n_2} \cdots
 \]</span></p>
@@ -428,7 +428,7 @@ N_r = \sum_i n_i \quad \text{and} \quad E_r = \sum_i n_i \epsilon_i
 <p><span class="math display">\[
 = {\cal Z}_1 \times {\cal Z}_2 \times \cdots = \prod_i {\cal Z}_i
 \]</span></p>
-<p>where <span class="math inline">\({\cal Z}_i\)</span> is the partition function for quantum state <em>i</em>.</p>
+<p>where <span class="math inline">\({\cal Z}_i\)</span> is the partition function for quantum state <span class="math inline">\(i\)</span>.</p>
 <p>Thus, a factorization into single-state partition functions occurs. This should be contrasted with the factorization into single-particle partition functions that occurred in the canonical (Boltzmann) distribution.</p>
 <p>Using the Factorization of <span class="math inline">\({\cal Z}\)</span> consider the probability of a microstate <span class="math inline">\(r = \{n_1, n_2, n_3, \ldots\}\)</span>:</p>
 <p><span class="math display">\[
@@ -479,7 +479,7 @@ P(n_i) = \frac{\exp\left(\beta n_i (\mu - \epsilon_i)\right)}{Z_i}
 <p><span class="math display">\[
 \sum_{n = 0}^{\infty} x^n = \frac{1}{1 - x} \quad \text{for } |x| &lt; 1
 \]</span></p>
-<p>We can now calculate <span class="math inline">\(n_i\)</span>, the average number of particles in quantum state <span class="math inline">\(i\)</span>. To do the calculation at the same time for fermions and bosons, write:</p>
+<p>We can now calculate <span class="math inline">\(\overline{n}_i\)</span>, the average number of particles in quantum state <span class="math inline">\(i\)</span>. To do the calculation at the same time for fermions and bosons, write:</p>
 <p><span class="math display">\[
 {\cal Z}_i = \left[1 \pm \exp\left(\beta (\mu - \epsilon_i)\right)\right]^{\pm 1}
 \]</span></p>
@@ -519,7 +519,7 @@ Key Point 17:
 </div>
 <p><span class="math inline">\(N(\mu)\)</span> (or <span class="math inline">\(\mu(N)\)</span>) is determined by the equation:</p>
 <p><span class="math display">\[
-N = \sum_i \overline{n_i} = \sum_i f_{\pm}(\epsilon_i)
+N = \sum_i \overline{n}_i = \sum_i f_{\pm}(\epsilon_i)
 \]</span></p>
 
 
