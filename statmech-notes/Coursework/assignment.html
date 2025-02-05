@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -342,8 +342,8 @@ window.Quarto = {
   <li><a href="#the-assignment" id="toc-the-assignment" class="nav-link" data-scroll-target="#the-assignment">3. The assignment</a>
   <ul class="collapse">
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">3.1 Setup</a></li>
-  <li><a href="#microstates-and-macrostates-as-a-function-of-temperature" id="toc-microstates-and-macrostates-as-a-function-of-temperature" class="nav-link" data-scroll-target="#microstates-and-macrostates-as-a-function-of-temperature">3.2 Microstates and macrostates as a function of temperature</a></li>
-  <li><a href="#energy-and-magnetisation" id="toc-energy-and-magnetisation" class="nav-link" data-scroll-target="#energy-and-magnetisation">3.3 Energy and magnetisation</a></li>
+  <li><a href="#microstates-as-a-function-of-temperature" id="toc-microstates-as-a-function-of-temperature" class="nav-link" data-scroll-target="#microstates-as-a-function-of-temperature">3.2 Microstates as a function of temperature</a></li>
+  <li><a href="#macrostates-as-a-function-of-temperature-energy-and-magnetisation" id="toc-macrostates-as-a-function-of-temperature-energy-and-magnetisation" class="nav-link" data-scroll-target="#macrostates-as-a-function-of-temperature-energy-and-magnetisation">3.3 Macrostates as a function of temperature: Energy and magnetisation</a></li>
   <li><a href="#specific-heat-and-magnetic-susceptibilty" id="toc-specific-heat-and-magnetic-susceptibilty" class="nav-link" data-scroll-target="#specific-heat-and-magnetic-susceptibilty">3.4 Specific heat and magnetic susceptibilty</a></li>
   <li><a href="#the-ferromagnetic-paramagnetic-phase-transition" id="toc-the-ferromagnetic-paramagnetic-phase-transition" class="nav-link" data-scroll-target="#the-ferromagnetic-paramagnetic-phase-transition">3.5 The ferromagnetic-paramagnetic phase transition</a></li>
   <li><a href="#your-report" id="toc-your-report" class="nav-link" data-scroll-target="#your-report">4.0 Your report</a></li>
@@ -375,7 +375,7 @@ window.Quarto = {
 
 <section id="introduction" class="level1">
 <h1>1 Introduction</h1>
-<p>In this coursework assignment, you will explore the two-dimensional (2d) square <a href="https://en.wikipedia.org/wiki/Ising_model">Ising model</a>. This model is used to represent the interactions between spins (either pointing up or down) arranged on a two-dimensional lattice, which is relevant for understanding ferromagnetic materials. At lower temperatures, the system becomes ordered, meaning most of the spins align in the same direction. However, as the temperature rises above a certain critical point <span class="math inline">\(T_c\)</span>, the order is disrupted due to temperature fluctuations, leading to a random arrangement of spins (see Fig. <a href="#fig-isingschematic" class="quarto-xref">Figure&nbsp;1</a>).</p>
+<p>In this coursework assignment, you will explore the two-dimensional (2d) square <a href="https://en.wikipedia.org/wiki/Ising_model">Ising model</a>. This model is used to represent the interactions between spins (either pointing up or down) arranged on a two-dimensional lattice, which is relevant for understanding ferromagnetic materials. At lower temperatures, the system becomes ordered, meaning most of the spins align in the same direction. However, as the temperature rises above a certain critical point <span class="math inline">\(T_c\)</span>, the order is disrupted due to temperature fluctuations, leading to a random arrangement of spins (see <a href="#fig-isingschematic" class="quarto-xref">Figure&nbsp;1</a>).</p>
 <p>The objective of this project is to analyze this phase transition through numerical simulations using Monte Carlo simulation techniques. While some of the concepts we will use are theoretically advanced, we will focus on understanding them at a level that allows us to implement them in code. Further reading is encouraged for those interested in the more detailed theoretical background.</p>
 <hr>
 <div id="fig-isingschematic" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -393,20 +393,21 @@ Figure&nbsp;1: Representation of spin alignment in the 2D Ising model.The arrows
 <h1>2 Background</h1>
 <section id="the-2d-ising-model" class="level2">
 <h2 class="anchored" data-anchor-id="the-2d-ising-model">2.1 The 2D Ising Model</h2>
-<p>We consider a square lattice with $L L $ sites, where the spins at each site <span class="math inline">\((i,j)\)</span> are denoted as <span class="math inline">\(s_{i,j}\)</span>, with possible values of <span class="math inline">\(s_{i,j} = \pm 1\)</span>. The system’s Hamiltonian <span class="math inline">\(H\)</span>, which represents the total energy, is given by:</p>
-<p><span class="math display">\[
-{\cal H}(S) = -\frac{J}{2} \sum_{i,j} s_{i,j} \left( s_{i+1,j} + s_{i-1,j} + s_{i,j+1} + s_{i,j-1} \right),
-\]</span> where <span class="math inline">\(J&gt;0\)</span> is the interaction strength between neighboring spins, and the factor <span class="math inline">\(\frac{1}{2}\)</span> avoids counting the same interactions twice. Here, <span class="math inline">\(S = \{s_{i,j}\}\)</span> represents a particular microstate of spins, and we assume periodic boundary conditions, such that <span class="math inline">\(s_{i+N_x,j} = s_{i,j}\)</span> and <span class="math inline">\(s_{i,j+N_y} = s_{i,j}\)</span>.</p>
+<p>We consider a square lattice with <span class="math inline">\(L\times L\)</span> sites, where the spins at each site <span class="math inline">\((i,j)\)</span> are denoted as <span class="math inline">\(s_{i,j}\)</span>, with possible values of <span class="math inline">\(s_{i,j} = \pm 1\)</span>. The system’s energy, is given by:</p>
+<p><span id="eq-E"><span class="math display">\[
+E(S) = -\frac{J}{2} \sum_{i,j} s_{i,j} \left( s_{i+1,j} + s_{i-1,j} + s_{i,j+1} + s_{i,j-1} \right),
+\tag{1}\]</span></span> where <span class="math inline">\(J&gt;0\)</span> is the interaction strength between neighboring spins, and the factor <span class="math inline">\(\frac{1}{2}\)</span> avoids counting the same interactions twice. Here, <span class="math inline">\(S = \{s_{i,j}\}\)</span> represents a particular microstate of spins, and we assume periodic boundary conditions, such that <span class="math inline">\(s_{i+N_x,j} = s_{i,j}\)</span> and <span class="math inline">\(s_{i,j+N_y} = s_{i,j}\)</span>.</p>
 <p>The partition function <span class="math inline">\(Z(\beta)\)</span>, which sums over all possible microstates and describes the system’s statistical properties, is defined as:</p>
-<p><span class="math display">\[
-Z(\beta) = \sum_{S} \exp\left( -\beta {\cal H}(S) \right),
-\]</span></p>
+<p><span id="eq-Z"><span class="math display">\[
+Z(\beta) = \sum_{S} \exp\left( -\beta E(S) \right),
+\tag{2}\]</span></span></p>
 <p>where <span class="math inline">\(\beta = \frac{1}{k_B T}\)</span>, with <span class="math inline">\(T\)</span> being the temperature and <span class="math inline">\(k_B\)</span> the Boltzmann constant. The sum runs over all possible spin microstates <span class="math inline">\(S\)</span>.</p>
-<p>The expectation value of an observable <span class="math inline">\(O\)</span> is given by:</p>
-<p><span class="math display">\[
-\langle O \rangle = \frac{1}{Z(\beta)} \sum_{S} O(S) \exp\left( -\beta {\cal H}(S) \right).
-\]</span></p>
-<p>The total number of possible states <span class="math inline">\(S\)</span> for a system of size <span class="math inline">\(L \times L\)</span> is <span class="math inline">\(N_{\text{total}} = 2^{L^2}\)</span>. This makes direct computation of sums like Eq. (3) impractical for even relatively small volumes. Therefore, we will introduce a statistical method to approximate these sums.</p>
+<p>The expectation value of an observable macrovariable <span class="math inline">\(O\)</span> is given by:</p>
+<p><span id="eq-obs"><span class="math display">\[
+\langle O \rangle = \frac{1}{Z(\beta)} \sum_{S} O(S) \exp\left( -\beta E(S) \right).
+\tag{3}\]</span></span></p>
+<p>Relevant macrovariables for the Ising magnet are the total energy <span class="math inline">\(E\)</span> defined above and the total magnetisation <span class="math inline">\(M=\sum_i s_i\)</span>.</p>
+<p>The total number of possible states <span class="math inline">\(S\)</span> for a system of size <span class="math inline">\(L \times L\)</span> is <span class="math inline">\(N_{\text{total}} = 2^{L^2}\)</span>. This makes direct computation of sums like <a href="#eq-obs" class="quarto-xref">Equation&nbsp;3</a> impractical for even relatively small volumes. Therefore, we will introduce a statistical method to approximate these sums.</p>
 <hr>
 </section>
 <section id="monte-carlo-simulation" class="level2">
@@ -417,27 +418,27 @@ I = \int_A dx \, f(x) \approx \frac{1}{N} \sum_{i=1}^{N} f(x_i),
 \]</span></p>
 <p>where <span class="math inline">\(x_i\)</span> are random points uniformly distributed in <span class="math inline">\(A\)</span>. In practice, while we cannot generate an infinite number of samples, using a large but finite <span class="math inline">\(N\)</span> still provides a good approximation.</p>
 <p>This idea can also be applied to sums, like the one in Eq. (3). However, for the Ising model, where the sum runs over all possible spin microstates, generating uniformly distributed random samples is inefficient, as most microstates contribute negligibly to the partition function. A more efficient approach focuses on generating only those microstates that have a significant contribution. This technique is known as importance sampling.</p>
-<p>To generate these important microstates, we use the Metropolis algorithm. Starting from an initial microstate, we generate the next microstate as follows:</p>
+<p>To generate these important microstates, we use the <a href="https://en.wikipedia.org/wiki/Metropolis–Hastings_algorithm">Metropolis algorithm</a>. Starting from an initial microstate, we generate the next microstate as follows:</p>
 <ol type="1">
 <li><p>Select a random spin <span class="math inline">\(s_{i,j}\)</span> and flip it: <span class="math inline">\(s_{i,j} \to -s_{i,j}\)</span>.</p>
 <p>This changes the microstate from <span class="math inline">\(S = \{s_{1,1}, s_{1,2}, \dots, s_{i,j}, \dots, s_{L,L}\}\)</span> to <span class="math inline">\(S' = \{s_{1,1}, s_{1,2}, \dots, -s_{i,j}, \dots, s_{L,L}\}\)</span>.</p></li>
-<li><p>Compute the energy change <span class="math inline">\(\Delta {\cal H} = {\cal H}(S') - {\cal H}(S)\)</span>.</p></li>
+<li><p>Compute the energy change <span class="math inline">\(\Delta E = E(S') - E(S)\)</span>.</p></li>
 <li><p>Accept the new microstate <span class="math inline">\(S'\)</span> with the following probability:</p></li>
 </ol>
 <p><span class="math display">\[
 W(s_{i,j} \to -s_{i,j}) =
 \begin{cases}
-1 &amp; \text{if } \Delta {\cal H} &lt; 0, \\
+1 &amp; \text{if } \Delta E &lt; 0, \\
 e^{-\beta \Delta H} &amp; \text{otherwise}.
 \end{cases}
 \]</span></p>
 <p>If the new microstate is rejected, the system remains in the current microstate <span class="math inline">\(S\)</span>. Note that in performing these updates it is convenient to define a reduced temperature <span class="math inline">\(T=k_BT/J\)</span>. Another way of thinking about this is that we are working with a system for which <span class="math inline">\(J=k_B=1\)</span>.</p>
 <p>A single update involves repeating these steps for all <span class="math inline">\(L^2\)</span> spins in the lattice.</p>
-<p>The expectation value of an observable <span class="math inline">\(O\)</span> can then be approximated as:</p>
+<p>The expectation value of a macrovariable <span class="math inline">\(O\)</span> can then be approximated as:</p>
 <p><span class="math display">\[
-\langle O \rangle \approx \frac{1}{N} \sum_{n=0}^{N} O_n,
+\langle O \rangle \approx \frac{1}{{\cal N}} \sum_{n=0}^{N} O_n,
 \]</span></p>
-<p>where <span class="math inline">\(O_n\)</span> is the observable measured for the <span class="math inline">\(n\)</span>-th microstate <span class="math inline">\(S_n\)</span>, and <span class="math inline">\(N\)</span> is the total number of microstates generated.</p>
+<p>where <span class="math inline">\(O_n\)</span> is the value of the macrovariable measured for the <span class="math inline">\(n\)</span>-th microstate <span class="math inline">\(S_n\)</span>, and <span class="math inline">\({\cal N}\)</span> is the total number of microstates generated.</p>
 </section>
 </section>
 <section id="the-assignment" class="level1">
@@ -458,16 +459,16 @@ e^{-\beta \Delta H} &amp; \text{otherwise}.
 </ul>
 <p>You should perform measurements of various quantities using the program as set out below. Instructions are given in <em>italics</em>.</p>
 </section>
-<section id="microstates-and-macrostates-as-a-function-of-temperature" class="level2">
-<h2 class="anchored" data-anchor-id="microstates-and-macrostates-as-a-function-of-temperature">3.2 Microstates and macrostates as a function of temperature</h2>
+<section id="microstates-as-a-function-of-temperature" class="level2">
+<h2 class="anchored" data-anchor-id="microstates-as-a-function-of-temperature">3.2 Microstates as a function of temperature</h2>
 <p><em>Use the program to generate a sequence of microstates at a temperature T=3.5. Save a copy of a typical configuration (eg via a screen grab).</em></p>
 <p><em>Use the program to generate a sequence of microstates at a temperature T=1.5. Again save a copy of a typical configuration.</em></p>
 <p><em>Comment on the qualitative differences between the microstates at the two temperatures.</em></p>
 </section>
-<section id="energy-and-magnetisation" class="level2">
-<h2 class="anchored" data-anchor-id="energy-and-magnetisation">3.3 Energy and magnetisation</h2>
-<p><em>Run the program at a series of temperatures in the range <span class="math inline">\(T=(1.5,3.5)\)</span>. Plot the average energy as a function of temperature. Comment on the shape of the curve.</em></p>
-<p><em>Run the program at a series of temperatures in the range <span class="math inline">\(T=(1.5,3.5)\)</span>. Plot the average magnetisation as a function of temperature. Comment on the shape of the curve.</em></p>
+<section id="macrostates-as-a-function-of-temperature-energy-and-magnetisation" class="level2">
+<h2 class="anchored" data-anchor-id="macrostates-as-a-function-of-temperature-energy-and-magnetisation">3.3 Macrostates as a function of temperature: Energy and magnetisation</h2>
+<p><em>Run the program at a series of temperatures in the range <span class="math inline">\(T=(1.5,3.5)\)</span>. Plot the average energy <span class="math inline">\(\overline{E}\)</span> as a function of temperature. Comment on the shape of the curve.</em></p>
+<p><em>Run the program at a series of temperatures in the range <span class="math inline">\(T=(1.5,3.5)\)</span>. Plot the average magnetisation <span class="math inline">\(\overline{M}\)</span> as a function of temperature. Comment on the shape of the curve.</em></p>
 </section>
 <section id="specific-heat-and-magnetic-susceptibilty" class="level2">
 <h2 class="anchored" data-anchor-id="specific-heat-and-magnetic-susceptibilty">3.4 Specific heat and magnetic susceptibilty</h2>
@@ -475,7 +476,7 @@ e^{-\beta \Delta H} &amp; \text{otherwise}.
 <p><span class="math display">\[
 C = -\frac{1}{kT^2} \left[\langle E^2 \rangle - \langle E \rangle^2\right] = \frac{(\Delta E)^2}{kT^2}
 \]</span></p>
-<p>As we shall see (Problems class) the magnetic susceptibility in zero magnetic field <span class="math inline">\(\chi \equiv \left( \frac{\partial M}{\partial H}\right )_{H=0}\)</span> is given by the variance of the magnetisation fluctuations</p>
+<p>It turns out that the magnetic susceptibility in zero magnetic field <span class="math inline">\(\chi \equiv \left( \frac{\partial M}{\partial H}\right )_{H=0}\)</span> is given by the variance of the magnetisation fluctuations</p>
 <p><span class="math display">\[
 \chi = -\frac{1}{kT} \left[\langle M^2 \rangle - \langle M \rangle^2\right] = \frac{(\Delta M)^2}{kT}
 \]</span></p>
@@ -484,8 +485,8 @@ C = -\frac{1}{kT^2} \left[\langle E^2 \rangle - \langle E \rangle^2\right] = \fr
 <section id="the-ferromagnetic-paramagnetic-phase-transition" class="level2">
 <h2 class="anchored" data-anchor-id="the-ferromagnetic-paramagnetic-phase-transition">3.5 The ferromagnetic-paramagnetic phase transition</h2>
 <p>Your investigations should be pointing to something interesting happening at around <span class="math inline">\(T=2.3\)</span>.</p>
-<p>In fact the exact ‘critical’ temperature of this model is <span class="math inline">\(T_c=2/(1+\sqrt{2})\approx 2.269\)</span>. (Aside: <a href="https://en.wikipedia.org/wiki/Lars_Onsager">Lars Onsager</a> provided an exact analytical solution of the properties of the Ising model in 1944.)</p>
-<p>Below the critical temperature, there is a net long-ranged ordering of the system, ie on average more than half the spins point in the same direction. We say that the system is feooromagnetic as it has a spontaneous magnetic moment. Above the critical temperature, the is no net ordering and the system is a paramagnet.</p>
+<p>In fact the exact ‘critical’ temperature of this model is <span class="math inline">\(T_c=2/(1+\sqrt{2})\approx 2.269\)</span>. (Aside: Nobel laureate <a href="https://en.wikipedia.org/wiki/Lars_Onsager">Lars Onsager</a> provided an exact analytical solution of the properties of the Ising model in 1944.)</p>
+<p>Below the critical temperature, there is a net long-ranged ordering of the system, ie on average more than half the spins point in the same direction. We say that the system is ferromagnetic as it has a spontaneous magnetic moment. Above the critical temperature, there is no net ordering and the system is a paramagnet.</p>
 <p>At the critical temperature the microstates form interesting fractal patterns, and as the number of sites <span class="math inline">\(L^2\to\infty\)</span>, <span class="math inline">\(C(T_c)\)</span> and <span class="math inline">\(\chi(T_c)\)</span> diverge to infinity.</p>
 <p><em>Make plots of how <span class="math inline">\(C(T)\)</span> and <span class="math inline">\(\chi(T)\)</span> vary with the number of sites for <span class="math inline">\(L=5,10,20\)</span>. Comment on the dependence with system size.</em></p>
 </section>
@@ -493,9 +494,9 @@ C = -\frac{1}{kT^2} \left[\langle E^2 \rangle - \langle E \rangle^2\right] = \fr
 <h2 class="anchored" data-anchor-id="your-report">4.0 Your report</h2>
 <p>You should produce a short skeleton report (upto 2 sides of A4) focussing on and summarising the results of the above investigations and demonstrating your understanding of what the results mean. The report should be laid out using the headings above:</p>
 <ul>
-<li>Microstates and macrostates as a function of temperature</li>
-<li>Energy and magnetisation</li>
-<li>Specific heat and magnetic susceptibilty</li>
+<li>Microstates as a function of temperature</li>
+<li>Macrostates as a function of temperature: Energy and magnetisation</li>
+<li>Specific heat and magnetic susceptibility</li>
 <li>The ferromagnetic-paramagnetic phase transition</li>
 </ul>
 <p>Submit your report in pdf form for grading via blackboard. The report will be marked out of 25, and will have the same weighting as all other courseworks in the unit.</p>
