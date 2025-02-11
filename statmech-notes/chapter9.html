@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -336,7 +336,7 @@ window.Quarto = {
   <li><a href="#ideal-gas-and-indistinguishability" id="toc-ideal-gas-and-indistinguishability" class="nav-link active" data-scroll-target="#ideal-gas-and-indistinguishability">9. Ideal gas and indistinguishability</a>
   <ul class="collapse">
   <li><a href="#indistinguishability" id="toc-indistinguishability" class="nav-link" data-scroll-target="#indistinguishability">9.1 Indistinguishability</a></li>
-  <li><a href="#semi-classical-treatment" id="toc-semi-classical-treatment" class="nav-link" data-scroll-target="#semi-classical-treatment">9.2 Semi-classical treatment</a></li>
+  <li><a href="#accounting-for-indistinguishability" id="toc-accounting-for-indistinguishability" class="nav-link" data-scroll-target="#accounting-for-indistinguishability">9.2 Accounting for indistinguishability</a></li>
   <li><a href="#calculation-of-z1" id="toc-calculation-of-z1" class="nav-link" data-scroll-target="#calculation-of-z1">9.3 Calculation of <span class="math inline">\(Z(1)\)</span></a></li>
   </ul></li>
   </ul>
@@ -371,13 +371,14 @@ Key point 14
 </div>
 </div>
 </section>
-<section id="semi-classical-treatment" class="level2">
-<h2 class="anchored" data-anchor-id="semi-classical-treatment">9.2 Semi-classical treatment</h2>
+<section id="accounting-for-indistinguishability" class="level2">
+<h2 class="anchored" data-anchor-id="accounting-for-indistinguishability">9.2 Accounting for indistinguishability</h2>
 <p>We seek to modify in a simple way the Boltzmann theory to take into account indistinguishability.</p>
 <p>Roughly speaking, and provided the density of particles is low (we’ll elaborate on this later) the number of microstates of a system of indistinguishable particles is less by a factor of <span class="math inline">\(1/N!\)</span> compared to the case where the particles are treated distinguishably. Thus to correct for the overcounting due to indistinguishability, we divide the partition function by <span class="math inline">\(N!\)</span>:</p>
 <p><span class="math display">\[
 Z_{\text{indist.}} = \frac{1}{N!} \sum_{i_1 = i_2 \cdots = i_N} \exp(-\beta [\epsilon_{i_1} + \epsilon_{i_2} + \cdots + \epsilon_{i_N}]) = \frac{1}{N!} [Z(1)]^N
 \]</span> where <span class="math inline">\(i_n\)</span> is the state of particle <span class="math inline">\(n\)</span>.</p>
+<p>The approximation that allows us to correct for indistinguishability via the (classical) factor <span class="math inline">\(1/N!\)</span> is valid when the particle density is low. It is known as the semi-classical approximation. As we shall see, at high density one has to take quantum indistinguishability into account.</p>
 </section>
 <section id="calculation-of-z1" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-of-z1">9.3 Calculation of <span class="math inline">\(Z(1)\)</span></h2>
