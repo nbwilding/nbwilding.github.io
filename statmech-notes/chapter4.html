@@ -356,9 +356,7 @@ If you don’t follow this
 \]</span></p>
 <p>Since <span class="math inline">\(E_i \ll E_{TOT}\)</span> we can perform a Taylor expansion <span class="math display">\[
 S_b(E _{TOT}− E_i) = S_b(E_{TOT}) − E_i\frac{\partial S_b}{\partial E_b} + \frac{E_i^2}{2}\frac{\partial^2S_b}{\partial E_b^2} +\cdots
-\]</span> Only keeping the first two terms (it turns out that the third term is small) and using key point 9 to identify <span class="math display">\[
-\frac{1}{T_b}=\frac{\partial S_b}{\partial E_b}
-\]</span> we find</p>
+\]</span> Only keeping the first two terms (it turns out that the third term is small) and using key point 9 to identify $$ = we find</p>
 <p><span class="math display">\[
 S_b(E_{TOT}-E_i)\simeq S_b(E_{TOT})-\frac{E_i}{T}
 \]</span> The first term on the right hand side is a constant therefore when we insert this in the expression for <span class="math inline">\(P_i\)</span> (or <span class="math inline">\(\Omega_b(E_{TOT} − E_i))\)</span> above we obtain</p>
@@ -393,19 +391,23 @@ P_i=\frac{1}{Z}\exp\left(-\beta E_i\right) \:\:\: \text{where~} Z=\sum_j\exp\lef
 <section id="boltzmann-distribution-for-a-single-particle-system" class="level2">
 <h2 class="anchored" data-anchor-id="boltzmann-distribution-for-a-single-particle-system">4.2 Boltzmann distribution for a single particle system</h2>
 <p>As a simple application of the Boltzmann distribution, let us consider a single magnetic dipole in equilibrium with a heat bath. (This is discussed in Baierlein 5.3 but with some differences in notation.)</p>
-<p>Recall that a single dipole has two microstates <span class="math inline">\(\downarrow, \uparrow\)</span> with energies <span class="math inline">\(-mH, +mH\)</span>.</p>
+<p>Recall that a single dipole has two microstates <span class="math inline">\(\downarrow, \uparrow\)</span> with energies <span class="math inline">\(mH, -mH\)</span>.</p>
 <p>A simple application of the Boltzmann distribution gives:</p>
 <p><span class="math display">\[
-P(\downarrow) = \frac{\exp\left(\frac{mH}{kT}\right)}{Z}, \quad P(\uparrow) = \frac{\exp\left(-\frac{mH}{kT}\right)}{Z}
+P(\downarrow) = \frac{\exp\left(-\frac{mH}{kT}\right)}{Z}, \quad P(\uparrow) = \frac{\exp\left(\frac{mH}{kT}\right)}{Z}
 \]</span></p>
 <p>where the partition function <span class="math inline">\(Z\)</span> is given by:</p>
 <p><span class="math display">\[
-Z = \exp\left(\frac{mH}{kT}\right) + \exp\left(-\frac{mH}{kT}\right) = 2\cosh\left(\frac{mH}{kT}\right)
+Z = \exp\left(-\frac{mH}{kT}\right) + \exp\left(\frac{mH}{kT}\right) = 2\cosh\left(\frac{mH}{kT}\right)
 \]</span></p>
 <p>The average energy of the dipole is given by:</p>
-<p><span class="math display">\[
-\overline{E} = \sum_i E_i P_i = \frac{1}{Z}[-mH P(\downarrow) + mH P(\uparrow)] = -mH \frac{\sinh\left(\frac{mH}{kT}\right)}{\cosh\left(\frac{mH}{kT}\right)} = -mH \tanh\left(\frac{mH}{kT}\right)
-\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+\overline{E} &amp;=&amp; \sum_i E_i P_i \\
+&amp;=&amp; E(\downarrow)P(\downarrow)+E(\uparrow)P(\uparrow)\\
+&amp;= &amp;\frac{1}{Z}\left[ mH \exp\left(-\frac{mH}{kT}\right)-mH \exp\left(\frac{mH}{kT}\right) \right] \\
+&amp;=&amp; -mH \frac{\sinh\left(\frac{mH}{kT}\right)}{\cosh\left(\frac{mH}{kT}\right)}\\
+&amp;=&amp; -mH \tanh\left(\frac{mH}{kT}\right)
+\end{eqnarray*}\]</span></p>
 <p>To see the temperature dependence of <span class="math inline">\(\bar{E}\)</span>, we plot it as a function of <span class="math inline">\(y = \frac{kT}{mH}\)</span>:</p>
 <p><span class="math display">\[
 \overline{E} = -mH \tanh\left(\frac{1}{y}\right)
