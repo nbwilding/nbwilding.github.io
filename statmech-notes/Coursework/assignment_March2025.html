@@ -410,11 +410,11 @@ Z(\beta) = \sum_{S} \exp\left( -\beta E(S) \right),
 </section>
 <section id="monte-carlo-simulation" class="level2">
 <h2 class="anchored" data-anchor-id="monte-carlo-simulation">2.2 Monte Carlo simulation</h2>
-<p>Monte Carlo methods are a class of algorithms that use repeated random sampling to obtain numerical solutions. For instance, integrals can be approximated using Monte Carlo techniques by generating <span class="math inline">\(M\)</span> random samples from the domain of integration <span class="math inline">\(A\)</span> and evaluating the function at these points. For a 1D integral, the result is approximated as:</p>
+<p>Monte Carlo methods are a class of algorithms that use repeated random sampling to obtain numerical solutions. For instance, integrals can be approximated using Monte Carlo techniques by generating <span class="math inline">\({\cal N}\)</span> random samples from the domain of integration <span class="math inline">\(A\)</span> and evaluating the function at these points. For a 1D integral, the result is approximated as:</p>
 <p><span class="math display">\[
 I = \int_A dx \, f(x) \approx \frac{1}{{\cal N}} \sum_{i=1}^{{\cal N}} f(x_i),
 \]</span></p>
-<p>where <span class="math inline">\(x_i\)</span> are random points uniformly distributed in <span class="math inline">\(A\)</span>. In practice, while we cannot generate an infinite number of samples, using a large but finite <span class="math inline">\(N\)</span> still provides a good approximation.</p>
+<p>where <span class="math inline">\(x_i\)</span> are random points uniformly distributed in <span class="math inline">\(A\)</span>. In practice, while we cannot generate an infinite number of samples, using a large but finite <span class="math inline">\({\cal N}\)</span> still provides a good approximation.</p>
 <p>This idea can also be applied to sums, like the one in Eq. (3). However, for the Ising model, where the sum runs over all possible spin microstates, generating uniformly distributed random samples is inefficient, as most microstates contribute negligibly to the partition function. A more efficient approach focuses on generating only those microstates that have a significant contribution. This technique is known as importance sampling.</p>
 <p>To generate these important microstates, we use the <a href="https://en.wikipedia.org/wiki/Metropolis–Hastings_algorithm">Metropolis algorithm</a>. Starting from an initial microstate, we generate the next microstate as follows:</p>
 <ol type="1">
