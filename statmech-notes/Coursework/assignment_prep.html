@@ -208,17 +208,40 @@ window.Quarto = {
  <span class="menu-text">Week 20: Problem set 1</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Problem_set_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 21: Problem set 2</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
- <span class="menu-text">Lecture slides by chapter as PDF</span></a>
+ <span class="menu-text">Solutions</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../solutions_set_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 20: Solutions set 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Lecture slides by chapter as PDF</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Lecture slides/chapter1.pdf" class="sidebar-item-text sidebar-link">
@@ -237,17 +260,29 @@ window.Quarto = {
  <span class="menu-text">Lecture slides chapter 3</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Lecture slides/chapter4.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides chapter 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Lecture slides/chapter5.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides chapter 5</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Course notes by chapter as PDF</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PDFs/chapter1.pdf" class="sidebar-item-text sidebar-link">
@@ -365,16 +400,16 @@ Z(\beta) = \sum_{S} \exp\left( -\beta E(S) \right),
 \overline O  = \frac{1}{Z(\beta)} \sum_{S} O(S) \exp\left( -\beta E(S) \right).
 \tag{3}\]</span></span></p>
 <p>Relevant macrovariables for the Ising magnet are the total energy <span class="math inline">\(E\)</span> defined above and the total magnetisation <span class="math inline">\(M=\sum_i s_i\)</span>.</p>
-<p>The total number of possible states <span class="math inline">\(S\)</span> for a system of size <span class="math inline">\(L \times L\)</span> is <span class="math inline">\(N_{\text{total}} = 2^{L^2}\)</span>. This makes direct computation of sums like <a href="#eq-obs" class="quarto-xref">Equation&nbsp;3</a> impractical for even relatively small volumes. Therefore, we will introduce a statistical method to approximate these sums.</p>
+<p>The total number of possible states <span class="math inline">\(S\)</span> for a system of size <span class="math inline">\(L \times L\)</span> is 2<sup>{L</sup>2}$. This makes direct computation of sums like <a href="#eq-obs" class="quarto-xref">Equation&nbsp;3</a> impractical for even relatively small volumes. Therefore, we will introduce a statistical method to approximate these sums.</p>
 <hr>
 </section>
 <section id="monte-carlo-simulation" class="level2">
 <h2 class="anchored" data-anchor-id="monte-carlo-simulation">2.2 Monte Carlo simulation</h2>
-<p>Monte Carlo methods are a class of algorithms that use repeated random sampling to obtain numerical solutions. For instance, integrals can be approximated using Monte Carlo techniques by generating <span class="math inline">\(N\)</span> random samples from the domain of integration <span class="math inline">\(A\)</span> and evaluating the function at these points. For a 1D integral, the result is approximated as:</p>
+<p>Monte Carlo methods are a class of algorithms that use repeated random sampling to obtain numerical solutions. For instance, integrals can be approximated using Monte Carlo techniques by generating <span class="math inline">\({\cal N}\)</span> random samples from the domain of integration <span class="math inline">\(A\)</span> and evaluating the function at these points. For a 1D integral, the result is approximated as:</p>
 <p><span class="math display">\[
-I = \int_A dx \, f(x) \approx \frac{1}{N} \sum_{i=1}^{N} f(x_i),
+I = \int_A dx \, f(x) \approx \frac{1}{{\cal N}} \sum_{i=1}^{{\cal N}} f(x_i),
 \]</span></p>
-<p>where <span class="math inline">\(x_i\)</span> are random points uniformly distributed in <span class="math inline">\(A\)</span>. In practice, while we cannot generate an infinite number of samples, using a large but finite <span class="math inline">\(N\)</span> still provides a good approximation.</p>
+<p>where <span class="math inline">\(x_i\)</span> are random points uniformly distributed in <span class="math inline">\(A\)</span>. In practice, while we cannot generate an infinite number of samples, using a large but finite <span class="math inline">\({\cal N}\)</span> still provides a good approximation.</p>
 <p>This idea can also be applied to sums, like the one in Eq. (3). However, for the Ising model, where the sum runs over all possible spin microstates, generating uniformly distributed random samples is inefficient, as most microstates contribute negligibly to the partition function. A more efficient approach focuses on generating only those microstates that have a significant contribution. This technique is known as importance sampling.</p>
 <p>To generate these important microstates, we use the <a href="https://en.wikipedia.org/wiki/Metropolis–Hastings_algorithm">Metropolis algorithm</a>. Starting from an initial microstate, we generate the next microstate as follows:</p>
 <ol type="1">
@@ -394,7 +429,7 @@ e^{-\beta \Delta H} &amp; \text{otherwise}.
 <p>A single update involves repeating these steps for all <span class="math inline">\(L^2\)</span> spins in the lattice.</p>
 <p>The expectation value of a macrovariable <span class="math inline">\(O\)</span> can then be approximated as:</p>
 <p><span class="math display">\[
-\overline O \approx \frac{1}{{\cal N}} \sum_{n=0}^{N} O_n,
+\overline O \approx \frac{1}{{\cal N}} \sum_{n=0}^{{\cal N}} O_n,
 \]</span></p>
 <p>where <span class="math inline">\(O_n\)</span> is the value of the macrovariable measured for the <span class="math inline">\(n\)</span>-th microstate <span class="math inline">\(S_n\)</span>, and <span class="math inline">\({\cal N}\)</span> is the total number of microstates generated.</p>
 </section>
@@ -413,9 +448,9 @@ e^{-\beta \Delta H} &amp; \text{otherwise}.
 <li>Under enter Git Repository insert: https://github.com/nbwilding/Ising-coursework</li>
 <li>Press the “clone” button. This will download a notebook called Ising.ipynb into Jupyter</li>
 <li>Check that the program runs</li>
-<li>Familiarise yourself with the main features of the program. Pay attention to how to change the temperature range and system size <span class="math inline">\(L^2\)</span>, and how the energy and magnetisation are calculated. Be aware that the program can take several minutes to run depending on the system size <span class="math inline">\(L\)</span>.</li>
+<li>Familiarise yourself with the main features of the program. Pay attention to how to change the temperature range and lattice size <span class="math inline">\(N=L^2\)</span>, and how the energy and magnetisation and their averages are calculated. Be aware that the program can take several minutes to run depending on the system size.</li>
 </ul>
-<p><strong>The assignment itself will be released on Friday 14th March with a deadline of Friday 21st March at 12:30.</strong></p>
+<p><strong>The assignment itself will be released on Friday 14th March on Blackbiard via the Assessment, Submission and Feedback tab. The submission deadline is Friday 21st March at 12:30.</strong></p>
 <p><strong>Please contact me (nigel.wilding@bristol.ac.uk) if you have trouble with the setup described above, detailing the problem you encountered.</strong></p>
 
 
