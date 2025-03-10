@@ -430,7 +430,7 @@ W(s_{i,j} \to -s_{i,j}) =
 e^{-\beta \Delta H} &amp; \text{otherwise}.
 \end{cases}
 \]</span></p>
-<p>If the new microstate is rejected, the system remains in the current microstate <span class="math inline">\(S\)</span>. Note that in performing these updates it is convenient to define a reduced temperature <span class="math inline">\(T=kT/J\)</span>. Another way of thinking about this is that we are working with a system for which <span class="math inline">\(J=k=1\)</span>.</p>
+<p>If the new microstate is rejected, the system remains in the current microstate <span class="math inline">\(S\)</span>. Note that in performing these updates it is convenient to define a dimensionless temperature <span class="math inline">\(T=kT/J\)</span>. Another way of thinking about this is that we are working with a system for which <span class="math inline">\(J=k=1\)</span>.</p>
 <p>A single update involves repeating these steps for all <span class="math inline">\(L^2\)</span> spins in the lattice.</p>
 <p>The expectation value of a macrovariable <span class="math inline">\(O\)</span> can then be approximated as:</p>
 <p><span class="math display">\[
@@ -453,7 +453,7 @@ e^{-\beta \Delta H} &amp; \text{otherwise}.
 <li>Under enter Git Repository insert: https://github.com/nbwilding/Ising-coursework</li>
 <li>Press the “clone” button. This will download a notebook called Ising.ipynb into Jupyter</li>
 <li>Check that the program runs</li>
-<li>Familiarise yourself with the main features of the program. Pay attention to how to change the temperature range and system size <span class="math inline">\(L^2\)</span>, and how the energy and magnetisation are calculated. Be aware that the program can take several minutes to run depending on the system size <span class="math inline">\(L\)</span>.</li>
+<li>Familiarise yourself with the main features of the program. Pay attention to how to change the temperature range and lattice size <span class="math inline">\(N=L^2\)</span>, and how the energy and magnetisation and their averages are calculated. Be aware that the program can take several minutes to run depending on the system size.</li>
 </ul>
 <p>You should perform measurements of various quantities using the program as set out below. Instructions are given in <em>italics</em>.</p>
 </section>
@@ -466,7 +466,7 @@ e^{-\beta \Delta H} &amp; \text{otherwise}.
 <section id="macrostates-as-a-function-of-temperature-energy-and-magnetisation" class="level2">
 <h2 class="anchored" data-anchor-id="macrostates-as-a-function-of-temperature-energy-and-magnetisation">3.3 Macrostates as a function of temperature: Energy and magnetisation</h2>
 <p><em>Run the simulation at a series of temperatures in the range <span class="math inline">\(T=(1.5,3.5)\)</span> for system size <span class="math inline">\(L=15\)</span>. Show a plot of the average energy per spin <span class="math inline">\(\overline{E}/N\)</span> as a function of temperature. Comment on the shape of the curve.</em></p>
-<p>Show a plot of the average magnetisation per spin <span class="math inline">\(\overline{M}/N\)</span> for the same temperature range and system size. Comment on the shape of the curve.*</p>
+<p><em>Show a plot of the average magnetisation per spin</em> <span class="math inline">\(\overline{M}/N\)</span> <em>for the same temperature range and system size. Comment on the shape of the curve.</em></p>
 </section>
 <section id="specific-heat-and-magnetic-susceptibilty" class="level2">
 <h2 class="anchored" data-anchor-id="specific-heat-and-magnetic-susceptibilty">3.4 Specific heat and magnetic susceptibilty</h2>
@@ -485,9 +485,9 @@ C=\frac{1}{kT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta E)
 <p>Your investigations should be pointing to something interesting happening at around <span class="math inline">\(T=2.3\)</span>.</p>
 <p>In fact the exact ‘critical’ temperature of this model is <span class="math inline">\(T_c=2/(1+\sqrt{2})\approx 2.269\)</span>. (Aside: Nobel laureate <a href="https://en.wikipedia.org/wiki/Lars_Onsager">Lars Onsager</a> provided an exact analytical solution of the properties of the Ising model in 1944.)</p>
 <p>Below the critical temperature, there is a net long-ranged ordering of the system, ie on average more than half the spins point in the same direction. We say that the system is ferromagnetic as it has a spontaneous magnetic moment. Above the critical temperature, there is no net ordering and the system is a paramagnet.</p>
-<p>At the critical temperature the microstates form interesting fractal patterns, and as the number of sites <span class="math inline">\(L^2\to\infty\)</span>, <span class="math inline">\(C_s(T_c)\)</span> and <span class="math inline">\(\chi_s(T_c)\)</span> diverge to infinity.</p>
-<p><em>Make plots showing how <span class="math inline">\(\:C_s(T)\)</span> and <span class="math inline">\(\:\chi_s(T)\)</span> vary with the number of sites for <span class="math inline">\(L=5,10,20\)</span>. Comment on the dependence with system size.</em></p>
-<p>Note that the program might take several minutes to run for <span class="math inline">\(L=20\)</span>.</p>
+<p>At the critical temperature the microstates form interesting fractal patterns (for a really large simulation see <a href="https://www.youtube.com/watch?v=fi-g2ET97W8&amp;list=PLEiHoEYBhJ0C64aDoOJwpVM41F7RX28ZR&amp;index=3&amp;ab_channel=DouglasAshton">here</a>), and as the number of spins <span class="math inline">\(N=L^2\to\infty\)</span>, <span class="math inline">\(C_s(T_c)\)</span> and <span class="math inline">\(\chi_s(T_c)\)</span> diverge to infinity.</p>
+<p><em>Make plots showing how the specific heat <span class="math inline">\(\:C_s(T)\)</span> varies with the number of sites for <span class="math inline">\(L=5,10,20\)</span>. Comment on the dependence with system size.</em></p>
+<p>Note that the program might take several minutes to run for <span class="math inline">\(L=20\)</span>. If your data points are very noisy try increasing the number of steps via the parameter “mcsteps”.</p>
 </section>
 <section id="your-report" class="level2">
 <h2 class="anchored" data-anchor-id="your-report">4.0 Your report</h2>
