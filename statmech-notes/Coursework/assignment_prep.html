@@ -400,7 +400,7 @@ Z(\beta) = \sum_{S} \exp\left( -\beta E(S) \right),
 \overline O  = \frac{1}{Z(\beta)} \sum_{S} O(S) \exp\left( -\beta E(S) \right).
 \tag{3}\]</span></span></p>
 <p>Relevant macrovariables for the Ising magnet are the total energy <span class="math inline">\(E\)</span> defined above and the total magnetisation <span class="math inline">\(M=\sum_i s_i\)</span>.</p>
-<p>The total number of possible states <span class="math inline">\(S\)</span> for a system of size <span class="math inline">\(L \times L\)</span> is 2<sup>{L</sup>2}$. This makes direct computation of sums like <a href="#eq-obs" class="quarto-xref">Equation&nbsp;3</a> impractical for even relatively small volumes. Therefore, we will introduce a statistical method to approximate these sums.</p>
+<p>The total number of possible states <span class="math inline">\(S\)</span> for a system of size <span class="math inline">\(L \times L\)</span> is <span class="math inline">\(2^{L^2}\)</span>. This makes direct computation of sums like <a href="#eq-obs" class="quarto-xref">Equation&nbsp;3</a> impractical for even relatively small volumes. Therefore, we will introduce a statistical method to approximate these sums.</p>
 <hr>
 </section>
 <section id="monte-carlo-simulation" class="level2">
@@ -422,7 +422,7 @@ I = \int_A dx \, f(x) \approx \frac{1}{{\cal N}} \sum_{i=1}^{{\cal N}} f(x_i),
 W(s_{i,j} \to -s_{i,j}) =
 \begin{cases}
 1 &amp; \text{if } \Delta E &lt; 0, \\
-e^{-\beta \Delta H} &amp; \text{otherwise}.
+e^{-\beta \Delta E} &amp; \text{otherwise}.
 \end{cases}
 \]</span></p>
 <p>If the new microstate is rejected, the system remains in the current microstate <span class="math inline">\(S\)</span>. Note that in performing these updates it is convenient to define a reduced temperature <span class="math inline">\(T=kT/J\)</span>. Another way of thinking about this is that we are working with a system for which <span class="math inline">\(J=k=1\)</span>.</p>
