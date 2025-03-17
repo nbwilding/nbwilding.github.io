@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -490,7 +490,44 @@ Figure&nbsp;1
 <p><span class="math display">\[
 C_V = \frac{\partial \overline{E}}{\partial T} = 3Nk
 \]</span></p>
-<p>If you have forgotten the equipartition theorem you can find it in your first year Properties of Matter notes. However we will understand it at a deeper level in a few chapters’ time.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+More on equipartition
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>For each degree of freedom of a system with an energy which is quadratic in either the coordinate or the momentum, the average energy is <span class="math inline">\(kT/2\)</span> and its contribution to the heat capacity is <span class="math inline">\(k/2\)</span>, at high enough temperatures.</strong></p>
+<p>Equipartition is applicable only when the system can be described classically and is applicable only to each term in the energy that is proportional to a coordinate squared. This coordinate must take on a continuum of values from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(+\infty\)</span>. Here are some examples from classical mechanical systems.</p>
+<ul>
+<li><p><strong>Vibrations:</strong> <span class="math display">\[
+E_{vib} = \frac{1}{2} m\dot{x}^2 + \frac{1}{2} kx^2
+\]</span> Two quadratic degrees of freedom, hence <span class="math inline">\(E \rightarrow kT\)</span> as <span class="math inline">\(T \to \infty\)</span>.</p></li>
+<li><p><strong>Rotations:</strong> Two perpendicular axes about which a molecule can rotate, <span class="math display">\[
+E_{rot} = \frac{1}{2} I_1 \dot{\theta}_1^2 + \frac{1}{2} I_2 \dot{\theta}_2^2
+\]</span> Two quadratic degrees of freedom, hence <span class="math inline">\(E \rightarrow kT\)</span> as <span class="math inline">\(T \to \infty\)</span>.</p></li>
+<li><p><strong>Translations:</strong> <span class="math display">\[
+E_{tr} = \frac{1}{2} m(\dot{x}^2 + \dot{y}^2 + \dot{z}^2)
+\]</span> Three quadratic degrees of freedom, hence <span class="math inline">\(E\rightarrow \frac{3}{2}kT\)</span> as <span class="math inline">\(T \to \infty\)</span>.</p></li>
+</ul>
+<p>The equipartition theorem is a fundamental principle in classical physics. However, from the perspective of modern statistical mechanics, it fails when the energy level separation is significantly larger than thermal energy. In such cases, the heat capacity associated with that degree of freedom decreases, eventually approaching zero at low temperatures. This phenomenon is referred to as “freezing out” of the degree of freedom. A common example is the vibrational degrees of freedom, which are typically frozen out at room temperature.</p>
+<p>More specifically, equipartition holds:</p>
+<ul>
+<li>for <strong>vibrations</strong>, when <span class="math inline">\(T \gg \hbar \omega / k \approx 10^3 K\)</span>;</li>
+<li>for <strong>rotations</strong>, when <span class="math inline">\(T \gg \hbar^2 / I k \approx 10 - 100 K\)</span>;</li>
+<li>for <strong>translations</strong>, when <span class="math inline">\(T \gg \hbar^2 / (m V^{2/3} k) \approx 10^{-14} K\)</span>.</li>
+</ul>
+<p>Thus, at room temperature, only the rotational and translational degrees of freedom can be treated classically, giving <span class="math inline">\(C_V = \frac{3}{2} R\)</span> for monatomic gases and <span class="math inline">\(C_V = \frac{5}{2} R\)</span> for diatomic gases, for the molar heat capacity.</p>
+<p>Using the equipartition theorem, we can estimate the heat capacities of various substances by counting their quadratic degrees of freedom. For example, in a solid, each atom can vibrate in three directions, leading to an expected molar heat capacity of (3R). This prediction aligns with the <strong>Dulong-Petit law</strong>, which accurately describes the heat capacities of many solids at room temperature.</p>
+</div>
+</div>
+</div>
+<p>If you have forgotten the equipartition theorem, you can find it in your first year Properties of Matter notes and in the note above. However we will understand it at a deeper level in a few chapters’ time.</p>
 <p>The prediction for the heat capacity was well borne out experimentally for many monoatomic solids and is known as the Dulong–Petit law. However diamond has a smaller heat capacity than the Dulong–Petit law predicts. Einstein showed that this is a quantum effect.</p>
 <p>To understand why at a qualitative level quantum effects are important in diamond. Recall that diamond is very hard. This means that the ‘spring constant’ of the classical oscillator modelling each atom in Figure 1 is very large. Therefore the frequency of the oscillators is very large and and the typical displacements very small. This last fact implies that quantum effects have to be taken into account– roughly speaking, from the uncertainty principle if the displacements are very small then we know the atoms’ positions with high accuracy, therefore there must be uncertainty in the momenta (velocities).</p>
 </section>
@@ -544,7 +581,7 @@ Z_{1d}(1) = \frac{\exp\left(-\frac{x}{2}\right)}{1 - \exp(-x)}
 \overline{n} = \frac{\exp(-x)}{1 - \exp(-x)} = \frac{1}{\exp(x) - 1}
 \]</span></p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -553,7 +590,7 @@ Expand to see an alternative derivation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Aside: An alternative derivation is to use the Boltzmann distribution <span class="math inline">\(P_n\)</span> for the levels <span class="math inline">\(n\)</span> of a 1d oscillator explicitly</p>
 <p><span class="math display">\[
