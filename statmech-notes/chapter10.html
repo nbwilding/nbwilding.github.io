@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -457,7 +457,7 @@ window.Quarto = {
 
 <section id="ideal-gas-in-the-low-density-limit" class="level1">
 <h1>10. Ideal gas in the low density limit</h1>
-<p><em>Blundell and Blundell chapter 2, Baierlein 5.6</em></p>
+<p><em>Blundell and Blundell chapter 21, Baierlein 5.6</em></p>
 <p>In the last chapter, the calculation of <span class="math inline">\(Z(1)\)</span> for the ideal gas was begun. In this chapter, we finish the calculation and discuss when the semi-classical treatment is valid. The concept of a density of states is also introduced.</p>
 <section id="calculation-of-z1" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-of-z1">10.1 Calculation of <span class="math inline">\(Z(1)\)</span></h2>
@@ -575,19 +575,27 @@ C_V = \frac{3}{2} Nk \quad \text{(equipartition)}
 </section>
 <section id="validity-of-semi-classical-treatment" class="level2">
 <h2 class="anchored" data-anchor-id="validity-of-semi-classical-treatment">10.4 Validity of semi-classical treatment</h2>
-<p>The semi-classical treatment developed here is valid when <span class="math inline">\(d_{typ}\)</span> the typical distance between particles is much larger than the typical thermal de Broglie wavelength <span class="math inline">\(\lambda_{typ}\)</span>:</p>
+<p>One can show that for an ideal gas the semi-classical treatment developed here is valid when</p>
+<p><span class="math display">\[\begin{eqnarray*}
+\frac{N}{Z(1)}&amp;\ll  1\\
+\Rightarrow \frac{N}{V}\left(\frac{2\pi MkT}{h^2}\right)^{-\frac{3}{2}} &amp;\ll 1\\
+\Rightarrow \rho\left(\frac{2\pi MkT}{h^2}\right)^{-\frac{3}{2}} &amp;\ll 1
+\end{eqnarray*}\]</span> wher <span class="math inline">\(\rho=N/V\)</span> is the number density.</p>
+<p>In terms of the typical interparticle distance <span class="math inline">\(d_{typ}=\rho^\frac{1}{3}\)</span>, the condition becomes <span class="math display">\[
+d_{typ}=\rho^\frac{1}{3}=\left(\frac{N}{V}\right)^\frac{1}{3}\ll \left(\frac{2\pi MkT}{h^2}\right)^\frac{1}{2}
+\]</span></p>
+<p>This inequality is known as the <strong>classical limit</strong> or <strong>dilute gas limit</strong>. When this condition is violated, quantum effects become important, and we must turn to quantum statistics (Bose-Einstein or Fermi-Dirac statistics).</p>
+<p>One can regard the condition for the classical limit as being approximately equivalent to the requirement that the typical distance between particles <span class="math inline">\(d_{typ}\)</span> is much larger than the typical thermal de Broglie wavelength <span class="math inline">\(\lambda_{typ}\)</span>:</p>
 <p><span class="math display">\[
 d_{typ} \gg \lambda_{typ}
 \]</span></p>
-<p>For an ideal gas, this is equivalent to requiring the number density <span class="math inline">\(\rho = N/V\)</span> be low, specifically:</p>
 <p><span class="math display">\[
 \rho \lambda_{typ}^3 \ll 1
 \]</span></p>
 <p>Using <span class="math inline">\(\lambda_{typ} = \frac{h}{\sqrt{3MkT}}\)</span>, this condition becomes:</p>
 <p><span class="math display">\[
-\rho \left( \frac{h}{\sqrt{3MkT}} \right)^3 \ll 1 \quad \Rightarrow \quad \rho \left( \frac{h^2}{2\pi MkT} \right)^{3/2} \ll 1
+\rho \left( \frac{h}{\sqrt{3MkT}} \right)^3 \ll 1  
 \]</span></p>
-<p>This inequality is often expressed as <span class="math inline">\(\rho \lambda_{typ}^3 \ll 1\)</span>, known as the <strong>classical limit</strong> or <strong>dilute gas limit</strong>. When this condition is violated, quantum effects become important, and we must turn to quantum statistics (Bose-Einstein or Fermi-Dirac statistics).</p>
 <p>The semi-classical treatment breaks down when the temperature is very low or the density is very high because, under these conditions, the wavefunctions of individual particles overlap, and quantum indistinguishability becomes essential.</p>
 <div id="fig-semiclass" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
