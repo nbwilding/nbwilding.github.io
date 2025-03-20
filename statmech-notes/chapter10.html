@@ -520,10 +520,25 @@ n = \frac{L}{\pi} k \quad dn = \frac{L}{\pi} dk
 g(\epsilon) d\epsilon = \left(\frac{2M}{\hbar^2}\right)^{3/2} \frac{V}{4\pi^2} \epsilon^{1/2} d\epsilon
 \]</span></p>
 <p>The meaning of the density of states <span class="math inline">\(g(\epsilon)\)</span> is that <span class="math inline">\(g(\epsilon) d\epsilon\)</span> is the number of states with energy between <span class="math inline">\(\epsilon\)</span> and <span class="math inline">\(\epsilon + d\epsilon\)</span>.</p>
-<p>If you’re unsure of this change of variables from <span class="math inline">\(\Gamma(k)\)</span> to <span class="math inline">\(g(\epsilon)\)</span>, you can carry it out as follows: Consider for any function <span class="math inline">\(A(k)\)</span>:</p>
-<p><span class="math display">\[
-\int A(k) \Gamma(k) dk = \int A(k) \Gamma(k) \frac{dk}{d\epsilon} d\epsilon = \int A(\epsilon) g(\epsilon) d\epsilon
-\]</span></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If you’re unsure of this change of variables from <span class="math inline">\(\Gamma(k)\)</span> to <span class="math inline">\(g(\epsilon)\)</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Remember that <span class="math inline">\(k=k(\epsilon)\)</span>. Then <span class="math inline">\(dk=\frac{dk}{d\epsilon}d\epsilon\)</span>.</p>
+<p>So <span class="math inline">\(\Gamma(k)dk=\Gamma(k)\frac{dk}{d\epsilon}d\epsilon\)</span>.</p>
+<p>Set <span class="math inline">\(\Gamma(k)\frac{dk}{d\epsilon}=g(\epsilon)\)</span>.</p>
+<p>Rearranging gives <span class="math inline">\(\Gamma(k)dk=g(\epsilon)d\epsilon\)</span>.</p>
+</div>
+</div>
+</div>
 <p>Using the density of states, one can write, for example:</p>
 <p><span class="math display">\[
 Z(1) = \int_0^\infty  g(\epsilon) \exp(-\beta \epsilon) d\epsilon
@@ -567,7 +582,9 @@ P = - \left( \frac{\partial F}{\partial V} \right)_T = \frac{NkT}{V} \quad \text
 <p><span class="math display">\[
 C_V = \frac{3}{2} Nk \quad \text{(equipartition)}
 \]</span></p>
-<p>*Exercise: Use the expression for <span class="math inline">\(Z(1)\)</span> and Stirling’s approximation to derive these results.</p>
+<ul>
+<li>Exercise: Use the expression for <span class="math inline">\(Z\)</span> and Stirling’s approximation to derive these results.*</li>
+</ul>
 <p>Note that</p>
 <ul>
 <li><p>the relation for the pressure comes from thermodynamics: <span class="math display">\[\begin{eqnarray*}
