@@ -574,7 +574,7 @@ S \simeq 3Nkxe^{-x}
 <p><span class="math display">\[
 S \simeq -3Nk \ln x = 3Nk \ln \left( \frac{kT}{\hbar \omega} \right)
 \]</span></p>
-<p>In contrast to the magnet, the vibrational entropy continues to grow with increasing <span class="math inline">\(T\)</span> (as <span class="math inline">\(\ln T\)</span>), manifesting the fact that the oscillators explore ever higher parts of their energy-level ladder as the temperature grows. Correspondingly, the heat capacity</p>
+<p>In contrast to the magnet whose entropy tend to fixed maximum value as <span class="math inline">\(T\infty\)</span>, the vibrational entropy continues to grow with increasing <span class="math inline">\(T\)</span> (as <span class="math inline">\(\ln T\)</span>), manifesting the fact that the oscillators explore ever higher parts of their energy-level ladder as the temperature grows. Correspondingly, the heat capacity</p>
 <p><span class="math display">\[
 C_V \equiv T \left( \frac{\partial S}{\partial T} \right)_V = T \frac{\partial}{\partial T} \left( 3Nk \ln T \right) = 3Nk
 \]</span></p>
@@ -598,35 +598,38 @@ S = R \left[ \frac{3}{2} \ln T - \ln \left( \frac{N}{V} \right) + \frac{5}{2} + 
 <p><span class="math display">\[
 \phi(x, y) = B \sin(k_x x) \sin(k_y y) \quad \text{with} \quad k_x = \frac{n_x \pi}{L} \quad k_y = \frac{n_y \pi}{L}
 \]</span></p>
-<p>where <span class="math inline">\(n_x, n_y = 1, 2, 3 \dots\)</span>. We define</p>
+<p>where <span class="math inline">\(n_x, n_y = 1, 2, 3 \dots\)</span>. Refer to the figure in chapter 9.3 which shows the 2D case. We define</p>
 <p><span class="math display">\[
-\Gamma(k) dk \equiv \text{number of solutions with k-values in the range} \ k \to k + dk
+n = (n_x^2 + n_y^2 )^{1/2}
 \]</span></p>
-<p>This quantity is identifiable as the number of allowed points in <span class="math inline">\(k\)</span>-space lying in the shell bounded by circles of radii <span class="math inline">\(k\)</span> and <span class="math inline">\(k + dk\)</span>. This is</p>
+<p>and write the parition function <span class="math inline">\(Z(1)\)</span> as an integral with respect to <span class="math inline">\(n\)</span>. We think of adding up shells of constant <span class="math inline">\(n\)</span> whose area are <span class="math inline">\(\frac{1}{4} 2\pi n dn\)</span> and which, since the density of points is one, contain on average <span class="math inline">\(\frac{1}{4} 2\pi n dn\)</span> points. The area is of a circular shell of radius <span class="math inline">\(n\)</span> and thickness <span class="math inline">\(dn\)</span>; the division by 4 is because we are restricted to the quadrant where all components of <span class="math inline">\(n\)</span> are positive.</p>
 <p><span class="math display">\[
-\Gamma(k) dk = \frac{2\pi k dk}{4} \cdot \frac{1}{(\pi / L)^2}
+\sum_{n_x, n_y} [\cdots] \rightarrow \frac{1}{4} \int [\cdots] 2\pi n dn
 \]</span></p>
-<p>The first factor is the area of one quadrant of the shell; the second factor is the reciprocal of the area of the space associated with each point. Reorganizing, and identifying <span class="math inline">\(A = L^2\)</span>, gives</p>
+<p>In particular:</p>
 <p><span class="math display">\[
-\Gamma(k) dk = \frac{A k dk}{2\pi}
+Z(1) \rightarrow \frac{\pi}{2} \int_0^\infty \exp\left(-\beta \frac{\hbar^2\pi^2n^2}{2ML^2}\right) n dn\:.
 \]</span></p>
-<p>Recalling the definition of the density of states,</p>
+<p>Now recalling that the energy of a quantum state is given by</p>
 <p><span class="math display">\[
-g(\epsilon) d\epsilon \equiv \text{number of states with energies in the range} \ \epsilon \to \epsilon + d\epsilon
+\epsilon =  \frac{\hbar^2\pi^2}{2ML^2} (n_x^2 + n_y^2),
 \]</span></p>
-<p>we identify</p>
-<p><span class="math display">\[
-g(\epsilon) d\epsilon = \Gamma(k) dk \quad \text{with} \quad \epsilon = \frac{\hbar^2 k^2}{2M} \quad \text{and} \quad d\epsilon = \frac{\hbar^2 k dk}{M}
-\]</span></p>
-<p>Then</p>
-<p><span class="math display">\[
-g(\epsilon) d\epsilon = \frac{A}{2\pi} \cdot k dk = \frac{A}{2\pi} \cdot \frac{M}{\hbar^2} d\epsilon
-\]</span></p>
+<p>we change variable from <span class="math inline">\(n\)</span> to <span class="math inline">\(\epsilon\)</span>:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+n^2 &amp;=\frac{2ML^2}{\hbar^2\pi^2}\epsilon\\
+n &amp;=\sqrt{\frac{2ML^2}{\hbar^2\pi^2}\epsilon}\\
+dn &amp;=\sqrt{\frac{2ML^2}{\hbar^2\pi^2}}\frac{\epsilon^{-1/2}}{2}d\epsilon
+\end{eqnarray*}\]</span></p>
 <p>so that</p>
+<p><span class="math display">\[\begin{eqnarray*}
+Z(1)=\int_0^\infty\frac{\pi}{4}\exp(-\beta\epsilon)\frac{2ML^2}{\hbar^2\pi^2}d\epsilon
+\end{eqnarray*}\]</span></p>
+<p>Comparing with the expression:</p>
 <p><span class="math display">\[
+Z(1) = \int_0^\infty  g(\epsilon) \exp(-\beta \epsilon) d\epsilon
+\]</span> One has <span class="math display">\[
 g(\epsilon) = \frac{AM}{2\pi \hbar^2}
-\]</span></p>
-<p>which is to be contrasted with the result for 3d where <span class="math inline">\(g(\epsilon)\)</span> increases as <span class="math inline">\(\epsilon^{1/2}\)</span>.</p>
+\]</span> where <span class="math inline">\(A=L^2\)</span>. This is to be contrasted with the result for 3d where <span class="math inline">\(g(\epsilon)\)</span> increases as <span class="math inline">\(\epsilon^{1/2}\)</span>.</p>
 <p>The 2d gas is not just a theorist’s fantasy: there are a range of physical systems (atoms absorbed onto substrates, electrons in “quantum wells”, <span class="math inline">\(\dots\)</span>) to which this theory is relevant.</p>
 </section>
 <section id="making-use-of-the-helmholtz-free-energy" class="level2">
