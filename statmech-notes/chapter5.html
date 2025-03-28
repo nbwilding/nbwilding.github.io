@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -689,7 +689,7 @@ Z \approx \Omega(\overline{E}) \exp(-\beta \overline{E}) \times O(N^{1/2})
 <p><span class="math display">\[
 \ln Z = -\beta F(T) + O(\ln N^{1/2})
 \]</span></p>
-<p>We see the last term can be ignored since we are in the ‘large <span class="math inline">\(N\)</span>’ regime where <span class="math inline">\(N \gg \ln N\)</span>. Thus, the equilibrium value of the free energy</p>
+<p>We see the last term can be ignored since the free energy is extensive (i.e linear in <span class="math inline">\(N\)</span>) and we are in the ‘large <span class="math inline">\(N\)</span>’ regime where <span class="math inline">\(N \gg \ln N\)</span>. Thus, the equilibrium value of the free energy</p>
 <p><span class="math display">\[
 F(T) = \overline{E} - TS(T) = -kT \ln Z
 \]</span></p>
@@ -730,7 +730,7 @@ An aside on entropy for the curious
 <p>It turns out (see recommended textbooks) that one can express the entropy as a sum over microstates:</p>
 <p><span class="math display">\[
 p_i=-k\sum_ip_i\ln p_r
-\]</span></p>
+\]</span> (which can be derived as a weighted average over all possible states of the Planck entropy.)</p>
 <p>For an isolated system of energy <span class="math inline">\(E\)</span> all microstates are equally likely (Key Point 5). If there are <span class="math inline">\(\Omega(E)\)</span> microstates of energy <span class="math inline">\(E\)</span>, the probability that the system is in any particular one of them is</p>
 <p><span class="math display">\[
 p_i = \frac{1}{\Omega(E)}
