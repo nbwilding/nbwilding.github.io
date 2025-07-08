@@ -13,7 +13,6 @@
 # Last update: 2020-12-17                                                      #
 #                                                                              #
 ################################################################################
-# so.com chinese search engine
 Disallow:
 # disallow all other bots
 User-agent: *
