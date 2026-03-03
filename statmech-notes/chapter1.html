@@ -209,6 +209,12 @@ window.Quarto = {
  <span class="menu-text">2. Foundations: equilibrium of an isolated system</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Entropy, equilibrium, and the second Law</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -229,27 +235,8 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Lecture slides by chapter as PDF</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Lecture slides/chapter1.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture slides chapter 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Lecture slides/chapter2.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture slides chapter 2</span></a>
-  </div>
-</li>
-      </ul>
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Lecture slides by chapter as PDF</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -270,6 +257,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./PDFs/chapter2.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">chapter 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PDFs/chapter3.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">chapter 3</span></a>
   </div>
 </li>
       </ul>
@@ -561,7 +554,7 @@ P_n\simeq P_{Np}\exp{ \left(\frac{−(n−Np)^2}{2N(1−p)p}\right)}
 <p><span class="math display">\[\begin{eqnarray*}
    p_n &amp; \equiv &amp;  \text {number of distinct ways of obtaining $n$ heads}\\
        &amp; &amp; \times   \text{probability of any specific way of getting $n$ heads}\\[2mm]
-   &amp; = &amp; {N\choose n}p^nq^{N-m}
+   &amp; = &amp; {N\choose n}p^nq^{N-n}
 \end{eqnarray*}\]</span></p>
 <p>This is the binomial distribution of probabilities. The distribution is characterised by two key parameters, the <em>mean</em> <span class="math inline">\(\overline{n}\)</span> and the <em>variance</em> <span class="math inline">\(\overline{\Delta n^2}\)</span>. Remind yourself from your probability and statistics lectures that <span class="math inline">\(\overline{n}\equiv\sum_{n=0}^Nnp_n=Np\)</span>, and <span class="math inline">\(\overline{\Delta n^2}\equiv\sum_{n=0}^N(n-\overline{n})^2p_n=Npq\)</span>.</p>
 <p>In the present context, setting <span class="math inline">\(p=q=\frac{1}{2}\)</span> (for an unbiased coin) and defining <span class="math inline">\(f\equiv n/N\)</span>, the fraction of tosses giving heads, we have</p>
@@ -609,7 +602,7 @@ Figure&nbsp;1: Left: a probability histogram of the fraction of heads <span clas
 </figure>
 </div>
 <p>You can investigate for yourself the effect of changing the number of coin tosses <span class="math inline">\(N\)</span> in this python simulation (copy it into your favourite Python runtime environment):</p>
-<div id="cbcacbee" class="cell" data-execution_count="1">
+<div id="5f4548b7" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
