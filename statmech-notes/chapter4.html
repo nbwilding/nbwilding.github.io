@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Welcome to PHYS20040: Statistical Mechanics! – Statistical Physics</title>
+<title>chapter4 – Statistical Physics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -81,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter4.html">4. The Boltzmann distribution</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -108,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
@@ -126,13 +155,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Chapters</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
@@ -153,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">4. The Boltzmann distribution</span></a>
   </div>
 </li>
@@ -249,69 +278,226 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#delivery-and-format" id="toc-delivery-and-format" class="nav-link active" data-scroll-target="#delivery-and-format">Delivery and format</a></li>
-  <li><a href="#questions-and-comments" id="toc-questions-and-comments" class="nav-link" data-scroll-target="#questions-and-comments">Questions and comments</a></li>
+  <li><a href="#the-boltzmann-distribution" id="toc-the-boltzmann-distribution" class="nav-link active" data-scroll-target="#the-boltzmann-distribution">4 The Boltzmann distribution</a></li>
+  <li><a href="#derivation-of-the-boltzmann-distribution" id="toc-derivation-of-the-boltzmann-distribution" class="nav-link" data-scroll-target="#derivation-of-the-boltzmann-distribution">4.1 Derivation of the Boltzmann distribution</a>
+  <ul class="collapse">
+  <li><a href="#boltzmann-distribution-for-a-single-particle-system" id="toc-boltzmann-distribution-for-a-single-particle-system" class="nav-link" data-scroll-target="#boltzmann-distribution-for-a-single-particle-system">4.2 Boltzmann distribution for a single particle system</a></li>
+  <li><a href="#single-constituent-in-an-isolated-system-for-large-n" id="toc-single-constituent-in-an-isolated-system-for-large-n" class="nav-link" data-scroll-target="#single-constituent-in-an-isolated-system-for-large-n">4.3. Single constituent in an isolated system for large <span class="math inline">\(N\)</span></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter4.html">4. The Boltzmann distribution</a></li></ol></nav><h1 class="title display-7">Hyperbolic Identities</h1></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Welcome to PHYS20040: Statistical Mechanics!</h1>
+
+
+
+<section id="the-boltzmann-distribution" class="level1">
+<h1>4 The Boltzmann distribution</h1>
+<p><em>See Mandl chapter 2.5 and Blundell &amp; Blundell chapter 20</em></p>
+<p>Previously we have considered an isolated system of fixed <span class="math inline">\(N, E\)</span>. Here we consider systems with fixed <span class="math inline">\(N\)</span> but instead of <span class="math inline">\(E\)</span> being fixed, the system is at some fixed temperature <span class="math inline">\(T\)</span>.</p>
+<p>To be specific our system is in equilibrium with a heat bath (or heat reservior) at constant <span class="math inline">\(T\)</span>. The zeroth law of thermodynamics then implies our system is at temperature <span class="math inline">\(T\)</span> and the thermal contact with the reservoir means that energy can be exchanged. Therefore the energy of our system is not fixed and the system can explore microstates of different energy. We expect microstates of the same energy to have the same probabilities (we have no reason to believe otherwise). However since we are at fixed <span class="math inline">\(T\)</span> we might think that microstates of different energy should have different probabilities. In the following we substantiate this.</p>
+</section>
+<section id="derivation-of-the-boltzmann-distribution" class="level1">
+<h1>4.1 Derivation of the Boltzmann distribution</h1>
+<p><a href="#fig-compositesystem" class="quarto-xref">Figure&nbsp;1</a> illustrates the setup we shall use.</p>
+<div id="fig-compositesystem" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-compositesystem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="NotesFigs/compositesystem.png" class="img-fluid figure-img" width="700">
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p><span style="color:blue;">Lecturer: Prof.&nbsp;Nigel Wilding (nigel.wilding@bristol.ac.uk)</span></p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="NotesFigs/Ising1.png" class="img-fluid quarto-figure quarto-figure-left figure-img" width="300"></p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-compositesystem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Composite system of a large heat reservoir within which is the system of interest
+</figcaption>
 </figure>
 </div>
-<div style="text-align: justify">
-<p>This course in statistical mechanics introduces you to the powerful methods used to describe the behavior of systems with a large number of particles, linking the microscopic properties of individual atoms and molecules with macroscopic observables such as temperature, pressure, and entropy. Statistical mechanics provides a framework to understand thermodynamics from a probabilistic standpoint, using statistical tools to connect the microstates of a system to its overall behavior. In this course, you’ll learn fundamental concepts like free energies, partition functions, and the Boltzmann distribution, which allow us to describe systems in thermal equilibrium. Applications will include understanding phase transitions, properties of gases and magnets, and fluctuations, with examples from both classical and quantum systems. By the end of the course, you’ll have a toolkit for analyzing complex physical systems, making statistical mechanics an essential foundation for advanced studies in physics, chemistry, and materials science.</p>
-</div>
-<p>The navigation bar on the left will allow you to access the lecture notes and problem sets.</p>
-<section id="delivery-and-format" class="level3">
-<h3 class="anchored" data-anchor-id="delivery-and-format">Delivery and format</h3>
-<ul>
-<li><p>Detailed e-notes (see Blackboard) can be viewed on a variety of devices. Pdf is also available.</p></li>
-<li><p>I will give ‘traditional’ lectures (Tues, Wed, Fri) in which I use slides to summarise and explain the lecture content. Questions welcome (within reason…)</p></li>
-<li><p>Try to read ahead in the notes, then come to lectures, listen to my explanations and then reread the notes.</p></li>
-<li><p>Rewriting the notes or slides to express your own thoughts and understanding, or annotating a pdf copy can help wire the material into your own way of thinking.</p></li>
-<li><p>There are group problem classes (Tues, Thurs) where you can try problem sheets and seek help. I will go over some problems with the class.</p></li>
-</ul>
-</section>
-<section id="questions-and-comments" class="level3">
-<h3 class="anchored" data-anchor-id="questions-and-comments">Questions and comments</h3>
-<p>If you have any questions about the course, please don’t hesitate to contact me, either by email (see above) or in a problems class.</p>
-<p>Finally, if you find any errors or mistakes or something which isn’t clear, please let me know, or fill in this anonymous form:</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<p>We will refer to the system of interest as the ‘system’ and the composite system (system plus heat bath) as the ‘composite’. The composite is isolated and has fixed total energy <span class="math inline">\(E_{TOT}\)</span>. Thus for the composite all microstates are equally likely. But we are interested in microstates of the system.</p>
+<p>Let the probability that system is in a given microstate labelled <span class="math inline">\(i\)</span>, of energy <span class="math inline">\(E_i\)</span>, be <span class="math inline">\(P_i\)</span>. Now if the system is in this microstate there is energy <span class="math inline">\(E_{TOT} − E_i\)</span> left for the bath, and this corresponds to many possible microstates for the bath. Since for the composite all microstates are equally likely, we deduce <span class="math display">\[
+P_i = \text{constant} \times \Omega_b(E_{TOT} − E_i)
+\]</span> where the subscript <span class="math inline">\(b\)</span> refers to the bath.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p><a href="https://forms.office.com/e/6uL2Bd5QGq">Submit an error/mistake/query</a></p>
+<div class="callout-title-container flex-fill">
+If you don’t follow this
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Here is the reasoning. For fixed total energy <span class="math inline">\(E_{TOT}\)</span>, the total number of microstates of the composite of system and bath is <span class="math inline">\(\Omega=\Omega_s\Omega_b\)</span>, a constant. If we consider only the microstate of the system with energy <span class="math inline">\(E\)</span>, then their number is <span class="math inline">\(\Omega_s(E)=\Omega/\Omega_b(E_{TOT}-E)\)</span>. Now as all microstates of the system having a given energy are equally likely, the probability <span class="math inline">\(P_i(E)\)</span> of the system being in a specific microstate <span class="math inline">\(i\)</span> with energy <span class="math inline">\(E\)</span> is <span class="math inline">\(P_i(E)=1/\Omega_s(E)=\Omega^{-1}\Omega_b(E_{TOT}-E)\)</span>.</p>
 </div>
 </div>
 </div>
+<p>Now using the Planck relation (key point 4)</p>
+<p><span class="math display">\[
+\Omega_b(E_{TOT}-E_i)=\exp\left(\frac{S_b(E_{TOT}-E_i)}{k}\right)
+\]</span></p>
+<p>Since <span class="math inline">\(E_i \ll E_{TOT}\)</span> we can perform a Taylor expansion <span class="math display">\[
+S_b(E _{TOT}− E_i) = S_b(E_{TOT}) − E_i\frac{\partial S_b}{\partial E_b} + \frac{E_i^2}{2}\frac{\partial^2S_b}{\partial E_b^2} +\cdots
+\]</span> Only keeping the first two terms (it turns out that the third term is small) and using key point 9 to identify <span class="math display">\[
+\frac{1}{T_b}=\frac{\partial S_b}{\partial E_b}
+\]</span> we find</p>
+<p><span class="math display">\[
+S_b(E_{TOT}-E_i)\simeq S_b(E_{TOT})-\frac{E_i}{T}
+\]</span> The first term on the right hand side is a constant therefore when we insert this in the expression for <span class="math inline">\(P_i\)</span> (or <span class="math inline">\(\Omega_b(E_{TOT} − E_i))\)</span> above we obtain</p>
+<p><span class="math display">\[
+P_i \propto \exp\left(-\frac{E_i}{kT}\right)
+\]</span></p>
+<p>In order that the probability be normalised we require <span class="math display">\[
+\sum_i P_i =1
+\]</span> where the sum is over all microstates of the system which implies <span class="math display">\[
+P_i=\frac{\exp\left(-\frac{E_i}{kT}\right)}{\sum_j\exp\left(-\frac{E_j}{kT}\right)}
+\]</span></p>
+<p>Thus the Boltzmann distribution for the probability that a system in equilibrium with a heat bath at temperature <span class="math inline">\(T\)</span> is in microstate <span class="math inline">\(i\)</span> is</p>
+<div id="kp10" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Point 10:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+P_i=\frac{1}{Z}\exp\left(-\beta E_i\right) \:\:\: \text{where~} Z=\sum_j\exp\left(-\beta E_j\right)\:\:\:\text{and~} \beta=\frac{1}{kT}
+\]</span></p>
+</div>
+</div>
+<p>You have met this distribution in year 1 properties of matter. It appears for example in considering an isothermal atmosphere where particles of mass <span class="math inline">\(m\)</span> have height probability distribution <span class="math inline">\(P(h) \propto
+\exp(-mgh)\)</span>. To see this is a Boltzmann distribution recall that the potential energy of <span class="math inline">\(kT\)</span> such a particle is <span class="math inline">\(mgh\)</span>+constant.</p>
+<p>The Boltzmann distribution is also known as the canonical distribution (canonical simply means standard).</p>
+<p>The quantity <span class="math inline">\(Z\)</span> is known as the <strong>partition function</strong> or partition sum (<em>Zustandssumme</em> in Max Planck’s native German). Although introduced quietly here as a normalisation, we shall see that it holds the key to calculating all properties of the system!</p>
+<section id="boltzmann-distribution-for-a-single-particle-system" class="level2">
+<h2 class="anchored" data-anchor-id="boltzmann-distribution-for-a-single-particle-system">4.2 Boltzmann distribution for a single particle system</h2>
+<p>As a simple application of the Boltzmann distribution, let us consider a single magnetic dipole in equilibrium with a heat bath. (This is discussed in Baierlein 5.3 but with some differences in notation.)</p>
+<p>Recall that a single dipole has two microstates <span class="math inline">\(\downarrow, \uparrow\)</span> with energies <span class="math inline">\(mH, -mH\)</span>.</p>
+<p>A simple application of the Boltzmann distribution gives:</p>
+<p><span class="math display">\[
+P(\downarrow) = \frac{\exp\left(-\frac{mH}{kT}\right)}{Z}, \quad P(\uparrow) = \frac{\exp\left(\frac{mH}{kT}\right)}{Z}
+\]</span></p>
+<p>where the partition function <span class="math inline">\(Z\)</span> is given by:</p>
+<p><span class="math display">\[
+Z = \exp\left(-\frac{mH}{kT}\right) + \exp\left(\frac{mH}{kT}\right) = 2\cosh\left(\frac{mH}{kT}\right)
+\]</span></p>
+<p>The average energy of the dipole is given by:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+\overline{E} &amp;=&amp; \sum_i E_i P_i \\
+&amp;=&amp; E(\downarrow)P(\downarrow)+E(\uparrow)P(\uparrow)\\
+&amp;= &amp;\frac{1}{Z}\left[ mH \exp\left(-\frac{mH}{kT}\right)-mH \exp\left(\frac{mH}{kT}\right) \right] \\
+&amp;=&amp; -mH \frac{\sinh\left(\frac{mH}{kT}\right)}{\cosh\left(\frac{mH}{kT}\right)}\\
+&amp;=&amp; -mH \tanh\left(\frac{mH}{kT}\right)
+\end{eqnarray*}\]</span></p>
+<p>To see the temperature dependence of <span class="math inline">\(\bar{E}\)</span>, we plot it as a function of <span class="math inline">\(y = \frac{kT}{mH}\)</span>:</p>
+<p><span class="math display">\[
+\overline{E} = -mH \tanh\left(\frac{1}{y}\right)
+\]</span></p>
+<p>You should be able to sketch this curve by recalling the properties of the <span class="math inline">\(\tanh\)</span> function:</p>
+<p><span class="math display">\[
+\tanh x \approx x \quad \text{for small } x, \quad \tanh x \approx 1 \quad \text{for } x \gg 1
+\]</span></p>
+<div id="fig-Ebar" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Ebar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="NotesFigs/Ebar_mH_plot.png" class="img-fluid figure-img" width="600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Ebar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Mean energy <span class="math inline">\(E/mH\)</span> versus scaled temperature for a single dipole
+</figcaption>
+</figure>
+</div>
+<p>The curve is plotted in <a href="#fig-Ebar" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Expand to learn about hyperbolic functions and their identities
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<section id="hyperbolic-identities" class="level1 callout-body-container callout-body">
+
+<p>The hyperbolic functions satisfy a number of identities. These allow expressions involving the hyperbolic functions to be written in different, yet equivalent forms. Several commonly used identities are given below.</p>
+<section id="basic-hyperbolic-functions" class="level2">
+<h2 class="anchored" data-anchor-id="basic-hyperbolic-functions">Basic Hyperbolic Functions</h2>
+<p><span class="math display">\[
+\cosh x = \frac{e^x + e^{-x}}{2}, \quad \sinh x = \frac{e^x - e^{-x}}{2}
+\]</span></p>
+<p><span class="math display">\[
+\tanh x = \frac{\sinh x}{\cosh x} = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{sech} x = \frac{1}{\cosh x} = \frac{2}{e^x + e^{-x}}
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{cosech} x = \frac{1}{\sinh x} = \frac{2}{e^x - e^{-x}}
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{coth} x = \frac{\cosh x}{\sinh x} = \frac{1}{\tanh x} = \frac{e^x + e^{-x}}{e^x - e^{-x}}
+\]</span></p>
+</section>
+<section id="some-derivatives-of-hyperbolic-functions" class="level2">
+<h2 class="anchored" data-anchor-id="some-derivatives-of-hyperbolic-functions">Some derivatives of hyperbolic functions</h2>
+<p><span class="math display">\[
+\frac{d}{dx} (\sinh x) = \cosh x
+\]</span></p>
+<p><span class="math display">\[
+\frac{d}{dx} (\cosh x) = \sinh x
+\]</span></p>
+<p><span class="math display">\[
+\frac{d}{dx} (\tanh x) = \operatorname{sech}^2 x
+\]</span></p>
+</section>
+<section id="fundamental-identities" class="level2">
+<h2 class="anchored" data-anchor-id="fundamental-identities">Fundamental Identities</h2>
+<p><span class="math display">\[
+\cosh^2 x - \sinh^2 x = 1
+\]</span></p>
+<p><span class="math display">\[
+1 - \tanh^2 x = \operatorname{sech}^2 x
+\]</span></p>
+<p><span class="math display">\[
+\operatorname{coth}^2 x - 1 = \operatorname{cosech}^2 x
+\]</span></p>
+</section>
+</section>
+</div>
+</div>
+</section>
+<section id="single-constituent-in-an-isolated-system-for-large-n" class="level2">
+<h2 class="anchored" data-anchor-id="single-constituent-in-an-isolated-system-for-large-n">4.3. Single constituent in an isolated system for large <span class="math inline">\(N\)</span></h2>
+<p>In order to gain more insight into the generality of the Boltzmann distribution, we return briefly to the scenario of chapters 3 and 4 where we considered an isolated system with a large number <span class="math inline">\(N\)</span> of constituents. We saw we could define an entropy <span class="math inline">\(S(E)\)</span> through the Planck relation and a temperature through key point 9.</p>
+<p>In particular, for the model magnet, we used the Planck relation to find the entropy:</p>
+<p><span class="math display">\[
+S(E) = -Nk \left[ x \ln x + (1 - x) \ln(1 - x) \right], \quad x = \frac{n}{N} = \frac{1}{2}\left(1 + \frac{E}{NmH}\right)
+\]</span></p>
+<p>where <span class="math inline">\(n\)</span> is the number of excited dipoles and <span class="math inline">\(N\)</span> is the total number of dipoles.</p>
+<p>Using key point 9, we find:</p>
+<p><span class="math display">\[
+\frac{1}{T} = \frac{\partial S}{\partial E} = \frac{dx}{dE} \frac{\partial S}{\partial x} = -\frac{Nk}{2NmH} \left[ \ln x + 1 - \ln(1 - x) - 1 \right] = -\frac{k}{2mH} \ln\left(\frac{x}{1 - x}\right)
+\]</span></p>
+<p>Inverting this, we find:</p>
+<p><span class="math display">\[
+\exp\left(-\frac{2mH}{kT}\right) = \frac{x}{1 - x}
+\]</span></p>
+<p>so that:</p>
+<p><span class="math display">\[
+x = \frac{n}{N} = \frac{\exp\left(-\frac{2mH}{kT}\right)}{1 + \exp\left(-\frac{2mH}{kT}\right)} = \frac{\exp(-\beta mH)}{\exp(\beta mH) + \exp(-\beta mH)}
+\]</span></p>
+<p>The frequency definition of probability implies that <span class="math inline">\(\frac{n}{N}\)</span> is the probability that a single dipole is in the excited state. We see we recover the Boltzmann distribution of the previous subsection for a single dipole!</p>
+<p>At first, this seems very confusing: for an isolated system, we have all microstates equally likely—so where did the Boltzmann distribution suddenly appear from?</p>
+<p>The answer is to realize that a single dipole exchanges energy with the <span class="math inline">\(N - 1\)</span> other dipoles. Therefore, for large <span class="math inline">\(N\)</span>, the other dipoles act as a heat bath for the single dipole, which is why we recover the Boltzmann distribution for a single dipole.</p>
+<p>Another way of thinking about this is to remember that although all microstates of the isolated system are equally likely, we have the constraint of total fixed energy. Therefore, for a single dipole, its two states are not equally likely since the state it is in dictates how much energy is left to share among the other dipoles. Therefore, the global constraint of fixed energy induces a Boltzmann distribution for a single dipole.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
