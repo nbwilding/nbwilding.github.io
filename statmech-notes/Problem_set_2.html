@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>problem_set_1 – Statistical Physics</title>
+<title>problem_set_2 – Statistical Physics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Problem_set_1.html">Problems</a></li><li class="breadcrumb-item"><a href="./Problem_set_1.html">Week 19: Problem set 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -190,16 +190,16 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Problems</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Problem_set_1.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Problem_set_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 19: Problem set 1</span></a>
   </div>
 </li>
@@ -278,84 +278,71 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#revision-of-probability-and-probability-distributions---problem-set-1" id="toc-revision-of-probability-and-probability-distributions---problem-set-1" class="nav-link active" data-scroll-target="#revision-of-probability-and-probability-distributions---problem-set-1">Revision of probability and probability distributions - Problem set 1</a>
+  <li><a href="#microstates-macrostates-and-the-planck-relations---problems-set-2" id="toc-microstates-macrostates-and-the-planck-relations---problems-set-2" class="nav-link active" data-scroll-target="#microstates-macrostates-and-the-planck-relations---problems-set-2">Microstates, Macrostates and the Planck relations - problems set 2</a>
   <ul class="collapse">
-  <li><a href="#properties-of-the-binomial-distribution" id="toc-properties-of-the-binomial-distribution" class="nav-link" data-scroll-target="#properties-of-the-binomial-distribution">1.1 Properties of the binomial distribution</a></li>
-  <li><a href="#thinking-about-probabilities" id="toc-thinking-about-probabilities" class="nav-link" data-scroll-target="#thinking-about-probabilities">1.2 Thinking about probabilities</a></li>
-  <li><a href="#the-gaussian-distribution" id="toc-the-gaussian-distribution" class="nav-link" data-scroll-target="#the-gaussian-distribution">1.3 The Gaussian distribution</a></li>
-  <li><a href="#the-random-walk" id="toc-the-random-walk" class="nav-link" data-scroll-target="#the-random-walk">1.4 The random walk</a></li>
-  <li><a href="#contrasting-one-and-many" id="toc-contrasting-one-and-many" class="nav-link" data-scroll-target="#contrasting-one-and-many">1.5 Contrasting one and many</a></li>
-  <li><a href="#practically-never" id="toc-practically-never" class="nav-link" data-scroll-target="#practically-never">1.6 Practically never</a></li>
+  <li><a href="#microstates-and-macrostates" id="toc-microstates-and-macrostates" class="nav-link" data-scroll-target="#microstates-and-macrostates">2.1 Microstates and macrostates</a></li>
+  <li><a href="#exploring-the-weight-function-for-the-magnet" id="toc-exploring-the-weight-function-for-the-magnet" class="nav-link" data-scroll-target="#exploring-the-weight-function-for-the-magnet">2.2 Exploring the weight function for the magnet</a></li>
+  <li><a href="#sharpness-of-maximum-of-weight-function" id="toc-sharpness-of-maximum-of-weight-function" class="nav-link" data-scroll-target="#sharpness-of-maximum-of-weight-function">2.3 Sharpness of maximum of weight function</a></li>
+  <li><a href="#two-ways-of-calculating-entropy-changes" id="toc-two-ways-of-calculating-entropy-changes" class="nav-link" data-scroll-target="#two-ways-of-calculating-entropy-changes">2.4 Two ways of calculating entropy changes</a></li>
+  <li><a href="#entropy-change-due-to-a-phase-transition-melting-ice" id="toc-entropy-change-due-to-a-phase-transition-melting-ice" class="nav-link" data-scroll-target="#entropy-change-due-to-a-phase-transition-melting-ice">2.5 Entropy change due to a phase transition: melting ice</a></li>
+  <li><a href="#entropy-change-due-to-a-phase-transition-orderdisorder-transition" id="toc-entropy-change-due-to-a-phase-transition-orderdisorder-transition" class="nav-link" data-scroll-target="#entropy-change-due-to-a-phase-transition-orderdisorder-transition">2.6 Entropy change due to a phase transition: order/disorder transition</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Problem_set_1.html">Problems</a></li><li class="breadcrumb-item"><a href="./Problem_set_1.html">Week 19: Problem set 1</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-<section id="revision-of-probability-and-probability-distributions---problem-set-1" class="level1">
-<h1>Revision of probability and probability distributions - Problem set 1</h1>
-<section id="properties-of-the-binomial-distribution" class="level2">
-<h2 class="anchored" data-anchor-id="properties-of-the-binomial-distribution">1.1 Properties of the binomial distribution</h2>
-<p>Write down the form of the binomial distribution <span class="math inline">\(P_n\)</span> giving the probability of observing precisely <span class="math inline">\(n\)</span> instances of an event in a total of <span class="math inline">\(N\)</span> trials each of which may give that event with probability <span class="math inline">\(p\)</span>.</p>
-<p>Write down expressions for the mean <span class="math inline">\(\bar{n} \equiv \sum_{n=0}^{N} n P_n\)</span> and variance <span class="math inline">\(\Delta n^2 \equiv \sum_{n=0}^{N} (n - \bar{n})^2 P_n\)</span> of this distribution.</p>
+<section id="microstates-macrostates-and-the-planck-relations---problems-set-2" class="level1">
+<h1>Microstates, Macrostates and the Planck relations - problems set 2</h1>
+<section id="microstates-and-macrostates" class="level2">
+<h2 class="anchored" data-anchor-id="microstates-and-macrostates">2.1 Microstates and macrostates</h2>
+<p>Consider the model magnet of <span class="math inline">\(N\)</span> dipoles (see chapter 2), each of which may exist in either of two states (orientations). For the case <span class="math inline">\(N = 4\)</span>, identify explicitly, and count, the different microstates associated with each possible energy macrostate (identified by each possible value of the system energy <span class="math inline">\(E\)</span>).</p>
 </section>
-<section id="thinking-about-probabilities" class="level2">
-<h2 class="anchored" data-anchor-id="thinking-about-probabilities">1.2 Thinking about probabilities</h2>
-<ol type="1">
-<li><p>What is the probability that in <span class="math inline">\(N\)</span> trials, each with probability of an event <span class="math inline">\(p\)</span>, one sees at least one instance of an event?</p></li>
-<li><p>When is <span class="math inline">\(1 - \exp(-Np)\)</span> a good approximation to this probability?</p></li>
-<li><p>When is <span class="math inline">\(Np\)</span> a good approximation to this probability?</p></li>
-</ol>
-<p>Hint: recall the form of the Taylor expansion for <span class="math inline">\(e^x\)</span>.</p>
+<section id="exploring-the-weight-function-for-the-magnet" class="level2">
+<h2 class="anchored" data-anchor-id="exploring-the-weight-function-for-the-magnet">2.2 Exploring the weight function for the magnet</h2>
+<p>Review the analysis of the model magnet (see chapter 2), according to which the weight function <span class="math inline">\(\Omega(N, E)\)</span>, giving the number of microstates of energy <span class="math inline">\(E\)</span>, satisfies, for large <span class="math inline">\(N\)</span>:</p>
+<p><span class="math display">\[
+\frac{1}{N} \ln \Omega(N, E) = s(x)
+\]</span></p>
+<p>where <span class="math inline">\(s(x) = -x \ln x - (1 - x) \ln (1 - x)\)</span>,</p>
+<p>and <span class="math inline">\(x \equiv n/N\)</span>, with <span class="math inline">\(n\)</span> (which is fixed by <span class="math inline">\(E\)</span>) the number of dipoles in excited states. Sketch <span class="math inline">\(\ln \Omega\)</span> as a function of <span class="math inline">\(n/N\)</span>, and think about why it has this form. (See chapter 2 for hints on the sketch).</p>
 </section>
-<section id="the-gaussian-distribution" class="level2">
-<h2 class="anchored" data-anchor-id="the-gaussian-distribution">1.3 The Gaussian distribution</h2>
-<p>Consider the binomial distribution discussed above. Use Stirling’s approximation <span class="math inline">\(\ln N!\approx N\ln N-N\)</span>, to show that</p>
+<section id="sharpness-of-maximum-of-weight-function" class="level2">
+<h2 class="anchored" data-anchor-id="sharpness-of-maximum-of-weight-function">2.3 Sharpness of maximum of weight function</h2>
+<p>For the model magnet with <span class="math inline">\(E = 0\)</span> (which has <span class="math inline">\(n = N/2\)</span> dipoles in excited states), the weight function of a macrostate in which <span class="math inline">\(n_L\)</span> dipoles in the left-hand half of the magnet are in their excited state satisfies:</p>
 <p><span class="math display">\[
-s(n) \equiv \ln P_n \simeq n \ln p + (N - n) \ln (1 - p) + N \ln N - (N - n) \ln (N - n) - n \ln n
+\frac{1}{N} \ln \Omega(N, E = 0, n_L) = s(y)
 \]</span></p>
-<p>for large <span class="math inline">\(N, n\)</span>.</p>
-<p>Show that</p>
+<p>where <span class="math inline">\(s\)</span> is the function defined in the previous question, and <span class="math inline">\(y = n_L/(N/2)\)</span>. Carry out a Taylor expansion, to show that around its maximum, the weight function can be written in the form:</p>
 <p><span class="math display">\[
-s'(n) = \ln p - \ln (1 - p) + \ln (N - n) - \ln n
+\Omega(E = 0, n_L) \simeq \Omega_{\text{max}} e^{-2N(y - y^*)^2}
 \]</span></p>
-<p><span class="math display">\[
-s''(n) = - \frac{N}{n (N - n)}
-\]</span></p>
-<p>Now make a Taylor expansion to second order in <span class="math inline">\(x = n - Np\)</span> to give</p>
-<p><span class="math display">\[
-s(x) \simeq s(Np) - \frac{x^2}{2N(1 - p)p}
-\]</span></p>
-<p>(why is there no linear term in <span class="math inline">\(x\)</span>?).</p>
-<p>Thus deduce</p>
-<p><span class="math display">\[
-P_n \simeq P_{Np} \exp\left( - \frac{(n - Np)^2}{2N(1 - p)p} \right)
-\]</span></p>
-<p>The <a href="https://youtu.be/UCmPmkHqHXk">Galton Board</a> is a visual demonstration of how a binomial process with two outcomes (a ball falls either left or right at each step) leads to a Gaussian distribution of distances from the mean</p>
+<p>where <span class="math inline">\(y^* = \frac{1}{2}\)</span>. Think about the implications for the values of <span class="math inline">\(n_L\)</span> that are likely to be observed.</p>
 </section>
-<section id="the-random-walk" class="level2">
-<h2 class="anchored" data-anchor-id="the-random-walk">1.4 The random walk</h2>
-<p>An inebriated customer exits a pub and lurches from one lamp post to another on his way home; at each lamp post he pauses for reflection before starting out again. Each time he starts he is equally likely to move towards or away from home. If the posts are separated by a distance <span class="math inline">\(a\)</span>, find the mean and the standard deviation of his displacement <span class="math inline">\(d\)</span> from the starting point, after <span class="math inline">\(N\)</span> steps (i.e.&nbsp;encounters with a lamppost).</p>
-<p>In fact the random walk plays a key role in our understanding of how randomness affects our lives. See <a href="https://www.amazon.co.uk/Drunkards-Walk-Randomness-Rules-Lives/dp/B002SQ7KCU/ref=sr_1_1?crid=3PA7URH8Y9XYR&amp;dib=eyJ2IjoiMSJ9.nuSamEgNbpm80em9YnvRy4ajqD-MPASFLSFFhoIdfsJwY0RkT9IdKFlD-6ptjEsdrTGKQpaE5vOGl56xo8M5Q3q0TIL7ujCQFEiawNd5kO5XGBHfRhJOO1UjSm2exiAQY2wFJN1FzNzdUkdEu2oYuA.9BDY3j4laY7AMz3C6fu-xw7gB9Hls7Y8Sp_HaQnGVt8&amp;dib_tag=se&amp;keywords=the+drunkard%27s+walk&amp;qid=1739802839&amp;sprefix=the+drunkard%27s+walk%2Caps%2C77&amp;sr=8-1">“The Drunkards walk” by L. Mlodinow</a></p>
+<section id="two-ways-of-calculating-entropy-changes" class="level2">
+<h2 class="anchored" data-anchor-id="two-ways-of-calculating-entropy-changes">2.4 Two ways of calculating entropy changes</h2>
+<p>One mole of ideal gas is maintained by a partition in one half of a container of total volume <span class="math inline">\(2V\)</span>, which is thermodynamically isolated. The partition is removed, allowing the gas to expand freely to fill the entire volume. Calculate the entropy change by appeal to: - (a) thermodynamic arguments - (b) statistical mechanics arguments</p>
+<p>[<strong>Help</strong>: In (a) Use the first law of thermodynamics in differential form: dE=dQ+dW=TdS-PdV. In (b) you may assume that the number of states available to a single molecule of gas is proportional to the volume <span class="math inline">\(V\)</span> it occupies, from which you should deduce that the number of microstates of <span class="math inline">\(N\)</span> molecules in volume <span class="math inline">\(V\)</span> is proportional to <span class="math inline">\(V^N\)</span>.]</p>
 </section>
-<section id="contrasting-one-and-many" class="level2">
-<h2 class="anchored" data-anchor-id="contrasting-one-and-many">1.5 Contrasting one and many</h2>
-<p>Consider a system of <span class="math inline">\(N\)</span> particles, each of which can exist in either of two states, of energies <span class="math inline">\(0\)</span> and <span class="math inline">\(\hat{\epsilon}\)</span>. Suppose that each particle is equally likely to be in either of its two states. Write down expressions for:</p>
-<ul>
-<li>the mean energy of one particle, and its standard deviation;</li>
-<li>the mean energy of the system, and its standard deviation.</li>
-</ul>
-<p>Comment.</p>
+<section id="entropy-change-due-to-a-phase-transition-melting-ice" class="level2">
+<h2 class="anchored" data-anchor-id="entropy-change-due-to-a-phase-transition-melting-ice">2.5 Entropy change due to a phase transition: melting ice</h2>
+<p>An ice cube is melted slowly (i.e., reversibly) at <span class="math inline">\(T = 0^\circ C\)</span>. How many times more microstates are associated with the liquid phase (water) than the solid phase (ice)?</p>
+<p><strong>Help</strong>: Calculate the energy required to melt the cube given that its size is <span class="math inline">\(10 \, \text{cm}^3\)</span>, its density is <span class="math inline">\(1 \, \text{g/cm}^3\)</span>, and the latent heat of melting of ice is <span class="math inline">\(3.34 \times 10^5 \, \text{J/kg}\)</span>. Now use the relation from thermodynamics for entropy change along a reversible path at constant <span class="math inline">\(T\)</span>, <span class="math inline">\(\Delta S = \frac{Q}{T}\)</span>, to determine the entropy change. Then use the Planck relation.</p>
 </section>
-<section id="practically-never" class="level2">
-<h2 class="anchored" data-anchor-id="practically-never">1.6 Practically never</h2>
-<p>Consider a cubic box of side <span class="math inline">\(L = 1\)</span>m containing <span class="math inline">\(N = 6 \times 10^{23}\)</span> molecules. Estimate the probability of finding all the molecules in the left-hand half of the box.</p>
-<p>How long might you expect to wait before observing one of the special arrangements whose probability you have just estimated.</p>
-<p>[Help: Under typical conditions it might take a molecule of the order of <span class="math inline">\(10^3\)</span> s to diffuse from one half of the box to the other.]</p>
+<section id="entropy-change-due-to-a-phase-transition-orderdisorder-transition" class="level2">
+<h2 class="anchored" data-anchor-id="entropy-change-due-to-a-phase-transition-orderdisorder-transition">2.6 Entropy change due to a phase transition: order/disorder transition</h2>
+<p>A metallic alloy comprises 25 atomic percent of Au and 75 atomic percent of Cu. At low temperatures the atoms arrange themselves in an ordered array comprising cubic cells in which the Au atoms occupy cube-corner sites, and the Cu atoms occupy the centres of the cube faces. At high enough temperatures the atoms are randomly arranged over corner and face-centre sites. For a sample containing <span class="math inline">\(N\)</span> atoms in total, show that the number of microstates associated with the ordered (o) low-temperature arrangement (“macrostate”), <span class="math inline">\(\Omega_o\)</span>, and the number associated with the disordered (d) high-temperature arrangement, <span class="math inline">\(\Omega_d\)</span>, are</p>
+<p>either</p>
+<p><span class="math display">\[\Omega_d = N! \quad \text{and} \quad \Omega_o = (N/4)!(3N/4)!\]</span></p>
+<p>or</p>
+<p><span class="math display">\[\Omega_d = \frac{N!}{[(N/4)!(3N/4)!]} \quad \text{and} \quad \Omega_o = 1\]</span></p>
+<p>where the “either … or” reflects two possible ways of thinking about atoms, which you should identify. Show that (irrespective of the “way of thinking”) the difference between the (molar) entropy of the two arrangements is</p>
+<p><span class="math display">\[\Delta S \equiv S_d - S_o = R \left( \ln 4 - \frac{3}{4} \ln 3 \right).\]</span></p>
+<p><strong>Help</strong>: (1) Can you tell one Au atom from another? (2) Use Stirling’s formula.</p>
 
 
 </section>

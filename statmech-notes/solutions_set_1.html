@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>problem_set_1 – Statistical Physics</title>
+<title>Solutions to problem set 1 – Statistical Physics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Problem_set_1.html">Problems</a></li><li class="breadcrumb-item"><a href="./Problem_set_1.html">Week 19: Problem set 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./solutions_set_1.html">Solutions</a></li><li class="breadcrumb-item"><a href="./solutions_set_1.html">Week 19: Solutions set 1</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -190,16 +190,16 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Problems</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Problem_set_1.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Problem_set_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 19: Problem set 1</span></a>
   </div>
 </li>
@@ -207,16 +207,16 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Solutions</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./solutions_set_1.html" class="sidebar-item-text sidebar-link">
+  <a href="./solutions_set_1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 19: Solutions set 1</span></a>
   </div>
 </li>
@@ -278,87 +278,259 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#revision-of-probability-and-probability-distributions---problem-set-1" id="toc-revision-of-probability-and-probability-distributions---problem-set-1" class="nav-link active" data-scroll-target="#revision-of-probability-and-probability-distributions---problem-set-1">Revision of probability and probability distributions - Problem set 1</a>
-  <ul class="collapse">
-  <li><a href="#properties-of-the-binomial-distribution" id="toc-properties-of-the-binomial-distribution" class="nav-link" data-scroll-target="#properties-of-the-binomial-distribution">1.1 Properties of the binomial distribution</a></li>
+  <li><a href="#properties-of-the-binomial-distribution" id="toc-properties-of-the-binomial-distribution" class="nav-link active" data-scroll-target="#properties-of-the-binomial-distribution">1.1 Properties of the binomial distribution</a></li>
   <li><a href="#thinking-about-probabilities" id="toc-thinking-about-probabilities" class="nav-link" data-scroll-target="#thinking-about-probabilities">1.2 Thinking about probabilities</a></li>
   <li><a href="#the-gaussian-distribution" id="toc-the-gaussian-distribution" class="nav-link" data-scroll-target="#the-gaussian-distribution">1.3 The Gaussian distribution</a></li>
   <li><a href="#the-random-walk" id="toc-the-random-walk" class="nav-link" data-scroll-target="#the-random-walk">1.4 The random walk</a></li>
   <li><a href="#contrasting-one-and-many" id="toc-contrasting-one-and-many" class="nav-link" data-scroll-target="#contrasting-one-and-many">1.5 Contrasting one and many</a></li>
   <li><a href="#practically-never" id="toc-practically-never" class="nav-link" data-scroll-target="#practically-never">1.6 Practically never</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Problem_set_1.html">Problems</a></li><li class="breadcrumb-item"><a href="./Problem_set_1.html">Week 19: Problem set 1</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./solutions_set_1.html">Solutions</a></li><li class="breadcrumb-item"><a href="./solutions_set_1.html">Week 19: Solutions set 1</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Solutions to problem set 1</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="revision-of-probability-and-probability-distributions---problem-set-1" class="level1">
-<h1>Revision of probability and probability distributions - Problem set 1</h1>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
 <section id="properties-of-the-binomial-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="properties-of-the-binomial-distribution">1.1 Properties of the binomial distribution</h2>
-<p>Write down the form of the binomial distribution <span class="math inline">\(P_n\)</span> giving the probability of observing precisely <span class="math inline">\(n\)</span> instances of an event in a total of <span class="math inline">\(N\)</span> trials each of which may give that event with probability <span class="math inline">\(p\)</span>.</p>
-<p>Write down expressions for the mean <span class="math inline">\(\bar{n} \equiv \sum_{n=0}^{N} n P_n\)</span> and variance <span class="math inline">\(\Delta n^2 \equiv \sum_{n=0}^{N} (n - \bar{n})^2 P_n\)</span> of this distribution.</p>
+<p>The binomial distribution is <span class="math display">\[
+p_n = \binom{N}{n} p^n q^{\,N-n},
+\qquad \text{where} \qquad
+\binom{N}{n} = \frac{N!}{n!(N-n)!}.
+\]</span></p>
+<p>The binomial coefficient <span class="math inline">\(\binom{N}{n}\)</span> counts the number of distinct ways in which exactly <span class="math inline">\(n\)</span> successes can occur in <span class="math inline">\(N\)</span> independent trials.</p>
+<p>To understand this, imagine writing the <span class="math inline">\(N\)</span> trials in sequence. Any outcome with <span class="math inline">\(n\)</span> successes is obtained by choosing which <span class="math inline">\(n\)</span> of the <span class="math inline">\(N\)</span> trial positions contain successes (the remaining <span class="math inline">\(N-n\)</span> positions contain failures).</p>
+<p>There are <span class="math inline">\(N!\)</span> ways of arranging <span class="math inline">\(N\)</span> symbols in total. However, the <span class="math inline">\(n\)</span> successes are indistinguishable from one another, giving a factor of <span class="math inline">\(n!\)</span>, and the <span class="math inline">\(N-n\)</span> failures are likewise indistinguishable, giving a factor of <span class="math inline">\((N-n)!\)</span>. Dividing by these factors removes the overcounting, yielding <span class="math display">\[
+\binom{N}{n} = \frac{N!}{n!(N-n)!}.
+\]</span></p>
+<p>Thus, <span class="math inline">\(\binom{N}{n}\)</span> counts the number of distinct sequences of successes and failures that result in exactly <span class="math inline">\(n\)</span> successes.</p>
+<p>The binomial distribution approaches a Gaussian for large enough <span class="math inline">\(N\)</span> (even <span class="math inline">\(N \simeq 10^2\)</span> is large enough for this correspondence to be good).</p>
+<p>The most important things to know about this distribution (apart from what it <strong>means</strong>) are its mean and variance, which are given by</p>
+<p><span class="math display">\[
+\bar{n} \equiv \sum_{n=0}^N n p_n = Np \quad \text{(mean)}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\Delta n^2 \equiv \sum_{n=0}^N (n - \bar{n})^2 p_n = Npq \quad \text{(variance)}
+\]</span></p>
+<p>The <strong>standard deviation</strong> (which measures the width of the distribution) is identified as the square root of the variance. It is important to know these results!</p>
 </section>
 <section id="thinking-about-probabilities" class="level2">
 <h2 class="anchored" data-anchor-id="thinking-about-probabilities">1.2 Thinking about probabilities</h2>
+<p><strong>1.</strong> The probability of <strong>not</strong> seeing the event in a single trial is <span class="math inline">\(1 - p\)</span>. Therefore, the probability of not seeing the event in all <span class="math inline">\(N\)</span> trials (i.e., zero occurrences of the event) is:</p>
+<p><span class="math display">\[
+P(\text{no event}) = (1 - p)^N
+\]</span></p>
+<p>Thus, the probability of seeing <strong>at least one</strong> instance of the event is the complement of this:</p>
+<p><span class="math display">\[
+P(\text{at least one event}) = 1 - (1 - p)^N
+\]</span></p>
+<p><strong>2.</strong> For small values of <span class="math inline">\(p\)</span> and large <span class="math inline">\(N\)</span>, the expression <span class="math inline">\((1 - p)^N\)</span> can be approximated using the exponential function. Specifically, for small <span class="math inline">\(p\)</span>, we use the approximation <span class="math inline">\((1 - p) \approx e^{-p}\)</span>. Applying this to <span class="math inline">\((1 - p)^N\)</span>, we get:</p>
+<p><span class="math display">\[
+(1 - p)^N \approx \exp(-Np)
+\]</span></p>
+<p>Thus, the probability of seeing at least one instance becomes:</p>
+<p><span class="math display">\[
+P(\text{at least one event}) \approx 1 - \exp(-Np)
+\]</span></p>
+<p>This approximation works well when <span class="math inline">\(Np\)</span> is small, meaning when either <span class="math inline">\(p\)</span> is small or <span class="math inline">\(N\)</span> is large but <span class="math inline">\(p\)</span> remains small enough that the product <span class="math inline">\(Np\)</span> is not large.</p>
+<p><strong>3.</strong> <span class="math inline">\(Np\)</span> approximates the <strong>expected number</strong> of events (mean of the binomial distribution). For small probabilities, <span class="math inline">\(Np\)</span> can be used to estimate the likelihood of observing at least one event. This is particularly effective when <span class="math inline">\(Np\)</span> is small because:</p>
 <ol type="1">
-<li><p>What is the probability that in <span class="math inline">\(N\)</span> trials, each with probability of an event <span class="math inline">\(p\)</span>, one sees at least one instance of an event?</p></li>
-<li><p>When is <span class="math inline">\(1 - \exp(-Np)\)</span> a good approximation to this probability?</p></li>
-<li><p>When is <span class="math inline">\(Np\)</span> a good approximation to this probability?</p></li>
+<li>When <span class="math inline">\(p\)</span> is very small and <span class="math inline">\(N\)</span> is reasonably large, the distribution becomes approximately Poissonian with mean <span class="math inline">\(Np\)</span>, and the probability of at least one event is close to <span class="math inline">\(Np\)</span>.</li>
+<li>When <span class="math inline">\(Np\)</span> is small, the expression <span class="math inline">\(1 - \exp(-Np) \approx Np\)</span>, as <span class="math inline">\(\exp(-Np)\)</span> can be expanded for small <span class="math inline">\(Np\)</span>.</li>
 </ol>
-<p>Hint: recall the form of the Taylor expansion for <span class="math inline">\(e^x\)</span>.</p>
+<p>Hence, <span class="math inline">\(Np\)</span> is a good approximation for the probability of at least one event when <span class="math inline">\(p\)</span> is small and <span class="math inline">\(Np\)</span> is small.</p>
 </section>
 <section id="the-gaussian-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="the-gaussian-distribution">1.3 The Gaussian distribution</h2>
-<p>Consider the binomial distribution discussed above. Use Stirling’s approximation <span class="math inline">\(\ln N!\approx N\ln N-N\)</span>, to show that</p>
+<p>Start by writing the logarithm of the binomial probability <span class="math inline">\(P_n\)</span>:</p>
 <p><span class="math display">\[
-s(n) \equiv \ln P_n \simeq n \ln p + (N - n) \ln (1 - p) + N \ln N - (N - n) \ln (N - n) - n \ln n
+s(n) = \ln P_n = \ln N! - \ln (N-n)! - \ln n! + n \ln p + (N - n) \ln (1-p)
 \]</span></p>
-<p>for large <span class="math inline">\(N, n\)</span>.</p>
-<p>Show that</p>
+<p>Stirling’s approximation is given by:</p>
+<p><span class="math display">\[
+\ln N! \simeq N \ln N - N
+\]</span></p>
+<p>Using this for <span class="math inline">\(N!\)</span>, <span class="math inline">\((N-n)!\)</span>, and <span class="math inline">\(n!\)</span>, we get:</p>
+<p><span class="math display">\[
+\ln N! \simeq N \ln N - N
+\]</span> <span class="math display">\[
+\ln (N - n)! \simeq (N - n) \ln (N - n) - (N - n)
+\]</span> <span class="math display">\[
+\ln n! \simeq n \ln n - n
+\]</span></p>
+<p>Thus</p>
+<p><span class="math display">\[
+s(n) = \left( N \ln N - N \right) - \left( (N-n) \ln (N-n) - (N-n) \right) - \left( n \ln n - n \right) + n \ln p + (N - n) \ln (1 - p)
+\]</span></p>
+<p>Simplifying:</p>
+<p><span class="math display">\[
+s(n) \simeq n \ln p + (N - n) \ln (1 - p) + N \ln N - (N - n) \ln (N - n) - n \ln n
+\]</span></p>
+<p>Next we compute the first and second derivatives of <span class="math inline">\(s(n)\)</span> with respect to <span class="math inline">\(n\)</span>.</p>
+<p><span class="math display">\[
+s'(n) = \frac{\partial}{\partial n} \left[ n \ln p + (N - n) \ln (1 - p) + N \ln N - (N - n) \ln (N - n) - n \ln n \right]
+\]</span></p>
+<p>Differentiating term by term:</p>
 <p><span class="math display">\[
 s'(n) = \ln p - \ln (1 - p) + \ln (N - n) - \ln n
 \]</span></p>
+<p>Then</p>
 <p><span class="math display">\[
-s''(n) = - \frac{N}{n (N - n)}
-\]</span></p>
-<p>Now make a Taylor expansion to second order in <span class="math inline">\(x = n - Np\)</span> to give</p>
+s''(n) = \frac{\partial}{\partial n} \left( \ln p - \ln (1 - p) + \ln (N - n) - \ln n \right)
+\]</span> so</p>
 <p><span class="math display">\[
-s(x) \simeq s(Np) - \frac{x^2}{2N(1 - p)p}
+s''(n) = -\frac{1}{N - n} - \frac{1}{n} = -\frac{N}{n(N - n)}
 \]</span></p>
-<p>(why is there no linear term in <span class="math inline">\(x\)</span>?).</p>
-<p>Thus deduce</p>
+<p>The question invites us to perform a Taylor Expansion in <span class="math inline">\(x = n - Np\)</span>. We expand <span class="math inline">\(s(n)\)</span> to second order around <span class="math inline">\(n = Np\)</span>:</p>
+<p><span class="math display">\[
+s(n) \simeq s(Np) + s'(Np)(n - Np) + \frac{1}{2} s''(Np) (n - Np)^2
+\]</span></p>
+<p>At <span class="math inline">\(n = Np\)</span>, the first derivative <span class="math inline">\(s'(Np) = 0\)</span>, so the linear term vanishes. Thus, the second-order expansion is:</p>
+<p><span class="math display">\[
+s(n) \simeq s(Np) + \frac{1}{2} s''(Np) (n - Np)^2
+\]</span></p>
+<p>Substitute <span class="math inline">\(s''(Np) = -\frac{1}{Np(1 - p)}\)</span>:</p>
+<p><span class="math display">\[
+s(n) \simeq s(Np) - \frac{(n - Np)^2}{2N(1 - p)p}
+\]</span></p>
+<p>Finally, we can exponentiate both sides to recover <span class="math inline">\(P_n\)</span>:</p>
 <p><span class="math display">\[
 P_n \simeq P_{Np} \exp\left( - \frac{(n - Np)^2}{2N(1 - p)p} \right)
-\]</span></p>
-<p>The <a href="https://youtu.be/UCmPmkHqHXk">Galton Board</a> is a visual demonstration of how a binomial process with two outcomes (a ball falls either left or right at each step) leads to a Gaussian distribution of distances from the mean</p>
+\]</span> showing that the binomial distribution is approximated by a Gaussian distribution.</p>
 </section>
 <section id="the-random-walk" class="level2">
 <h2 class="anchored" data-anchor-id="the-random-walk">1.4 The random walk</h2>
-<p>An inebriated customer exits a pub and lurches from one lamp post to another on his way home; at each lamp post he pauses for reflection before starting out again. Each time he starts he is equally likely to move towards or away from home. If the posts are separated by a distance <span class="math inline">\(a\)</span>, find the mean and the standard deviation of his displacement <span class="math inline">\(d\)</span> from the starting point, after <span class="math inline">\(N\)</span> steps (i.e.&nbsp;encounters with a lamppost).</p>
-<p>In fact the random walk plays a key role in our understanding of how randomness affects our lives. See <a href="https://www.amazon.co.uk/Drunkards-Walk-Randomness-Rules-Lives/dp/B002SQ7KCU/ref=sr_1_1?crid=3PA7URH8Y9XYR&amp;dib=eyJ2IjoiMSJ9.nuSamEgNbpm80em9YnvRy4ajqD-MPASFLSFFhoIdfsJwY0RkT9IdKFlD-6ptjEsdrTGKQpaE5vOGl56xo8M5Q3q0TIL7ujCQFEiawNd5kO5XGBHfRhJOO1UjSm2exiAQY2wFJN1FzNzdUkdEu2oYuA.9BDY3j4laY7AMz3C6fu-xw7gB9Hls7Y8Sp_HaQnGVt8&amp;dib_tag=se&amp;keywords=the+drunkard%27s+walk&amp;qid=1739802839&amp;sprefix=the+drunkard%27s+walk%2Caps%2C77&amp;sr=8-1">“The Drunkards walk” by L. Mlodinow</a></p>
+<p>The walker encounters a sequence of lampposts. At each lamppost they choose, with equal probability, to move one lamppost spacing <span class="math inline">\(a\)</span> to the right or one spacing <span class="math inline">\(a\)</span> to the left. Let <span class="math inline">\(N\)</span> be the total number of such encounters.</p>
+<p>Denote by <span class="math inline">\(n_R\)</span> the number of times the walker chooses to move to the right. The number of leftward moves is then</p>
+<p><span class="math display">\[
+n_L = N - n_R.
+\]</span></p>
+<p>The net displacement <span class="math inline">\(d\)</span> from the starting lamppost is therefore</p>
+<p><span class="math display">\[
+d = (n_R - n_L)a = (2n_R - N)a.
+\]</span></p>
+<p>At each encounter, a rightward move occurs with probability <span class="math inline">\(p = 1/2\)</span>. Thus the distribution of <span class="math inline">\(n_R\)</span> is binomial with mean and standard deviation</p>
+<p><span class="math display">\[
+\overline{n_R} = Np = \frac{N}{2},
+\]</span></p>
+<p><span class="math display">\[
+\sqrt{\overline{\Delta n_R^2}} = \sqrt{Npq}
+= \sqrt{\frac{N}{4}}.
+\]</span></p>
+<p>The mean displacement is therefore</p>
+<p><span class="math display">\[
+\bar{d} = (2\overline{n_R} - N)a = 0,
+\]</span></p>
+<p>as expected by symmetry.</p>
+<p>Since</p>
+<p><span class="math display">\[
+\Delta d = d - \bar{d} = 2a\,\Delta n_R,
+\]</span></p>
+<p>the variance of the displacement is</p>
+<p><span class="math display">\[
+\overline{\Delta d^2}
+= (2a)^2 \overline{\Delta n_R^2}
+= 4a^2 \cdot \frac{N}{4}
+= Na^2.
+\]</span></p>
+<p>Hence the standard deviation of the displacement is</p>
+<p><span class="math display">\[
+\sqrt{\overline{\Delta d^2}} = a\sqrt{N}.
+\]</span></p>
+<p>Thus, although the walker makes <span class="math inline">\(N\)</span> independent left/right choices, the typical displacement from the starting lamppost grows only as <span class="math inline">\(\sqrt{N}\)</span> — the characteristic signature of diffusion.</p>
+<p>Though couched in whimsical language this little calculation has a wide range of applications (it is the basic model of a <strong>diffusive</strong> process) and can be extended and refined in many interesting ways (look up “Random Walk” on the internet!). One thing you might try is extending the above argument to a <strong>biased walk</strong> in which a step to the right is more likely than a step to the left.</p>
 </section>
 <section id="contrasting-one-and-many" class="level2">
 <h2 class="anchored" data-anchor-id="contrasting-one-and-many">1.5 Contrasting one and many</h2>
-<p>Consider a system of <span class="math inline">\(N\)</span> particles, each of which can exist in either of two states, of energies <span class="math inline">\(0\)</span> and <span class="math inline">\(\hat{\epsilon}\)</span>. Suppose that each particle is equally likely to be in either of its two states. Write down expressions for:</p>
-<ul>
-<li>the mean energy of one particle, and its standard deviation;</li>
-<li>the mean energy of the system, and its standard deviation.</li>
-</ul>
-<p>Comment.</p>
+<p>The mean energy of a single particle is</p>
+<p><span class="math display">\[
+\bar{\varepsilon} = \sum_{i=1}^{2} p_i \varepsilon_i
+\]</span></p>
+<p>where (in this case) <span class="math inline">\(p_1 = p_2 = \frac{1}{2}\)</span>. Thus</p>
+<p><span class="math display">\[
+\bar{\varepsilon} = 0 \times \frac{1}{2} + \hat{\varepsilon} \times \frac{1}{2} = \frac{\hat{\varepsilon}}{2}
+\]</span></p>
+<p>The variance of the energy of a single particle is</p>
+<p><span class="math display">\[
+\overline{(\Delta \varepsilon)^2} = \sum_{i=1}^{2} p_i (\varepsilon_i - \bar{\varepsilon})^2 = \left( - \frac{\hat{\varepsilon}}{2} \right)^2 \times \frac{1}{2} + \left( \frac{\hat{\varepsilon}}{2} \right)^2 \times \frac{1}{2} = \frac{\hat{\varepsilon}^2}{4}
+\]</span></p>
+<p>So the standard deviation of the energy of one particle is</p>
+<p><span class="math display">\[
+\left[ \overline{(\Delta \varepsilon)^2 }\right]^{1/2} = \frac{\hat{\varepsilon}}{2}
+\]</span></p>
+<p>The energy of <span class="math inline">\(N\)</span> particles can be written as <span class="math inline">\(E = n \hat{\varepsilon}\)</span> where <span class="math inline">\(n\)</span> is the number of particles in excited states. Then, appealing to the binomial distribution (with <span class="math inline">\(p = q = \frac{1}{2}\)</span>),</p>
+<p><span class="math display">\[
+\overline{E} = \overline{n} \hat{\varepsilon} = N p \hat{\varepsilon} = N \frac{\hat{\varepsilon}}{2}
+\]</span></p>
+<p>and since the particle are independent, their variances add</p>
+<p><span class="math display">\[
+\overline{(\Delta E)^2} = \overline{(\Delta n)^2 }\hat{\varepsilon}^2 = N p q \hat{\varepsilon}^2 = N \frac{\hat{\varepsilon}^2}{4}
+\]</span></p>
+<p>so that</p>
+<p><span class="math display">\[
+\left[ \overline{(\Delta E)^2} \right]^{1/2} = \sqrt{N} \frac{\hat{\varepsilon}}{2}
+\]</span></p>
+<p>The most pertinent comment is that while the standard deviation of the energy of a single particle is “significant” on the scale of its mean</p>
+<p><span class="math display">\[
+\frac{\left[\overline{ (\Delta \varepsilon)^2} \right]^{1/2}}{\bar{\varepsilon}} = 1
+\]</span></p>
+<p>the standard deviation of the energy of the system as a whole is vanishingly small on the scale of its mean</p>
+<p><span class="math display">\[
+\frac{\left[ \overline{(\Delta E)^2 }\right]^{1/2}}{E} = \frac{1}{\sqrt{N}}
+\]</span></p>
+<p>This is a simple instance of a fundamental principle: physical properties are ever more sharply defined the more independent contributions they comprise.</p>
 </section>
 <section id="practically-never" class="level2">
 <h2 class="anchored" data-anchor-id="practically-never">1.6 Practically never</h2>
-<p>Consider a cubic box of side <span class="math inline">\(L = 1\)</span>m containing <span class="math inline">\(N = 6 \times 10^{23}\)</span> molecules. Estimate the probability of finding all the molecules in the left-hand half of the box.</p>
-<p>How long might you expect to wait before observing one of the special arrangements whose probability you have just estimated.</p>
-<p>[Help: Under typical conditions it might take a molecule of the order of <span class="math inline">\(10^3\)</span> s to diffuse from one half of the box to the other.]</p>
+<p>Under typical conditions, a molecule takes of order<br>
+<span class="math display">\[
+\tau \sim 10^3 \,\text{s}
+\]</span> to diffuse from one half of the box to the other. This means that the <em>macroscopic distribution</em> of molecules between the two halves of the box is effectively refreshed on this timescale. We may therefore regard the system as sampling a new, statistically independent arrangement roughly every <span class="math inline">\(\tau\)</span>.</p>
+<p>Suppose we observe the system at intervals of <span class="math inline">\(\tau\)</span>, and let <span class="math inline">\(\mathcal{N}\)</span> be the number of such observations. For any single observation, the probability of finding <strong>all</strong> <span class="math inline">\(N\)</span> molecules in the left-hand half of the box is <span class="math display">\[
+p_N = \left(\tfrac{1}{2}\right)^N,
+\]</span> since each molecule independently has probability <span class="math inline">\(1/2\)</span> of being in that half.</p>
+<p>Over <span class="math inline">\(\mathcal{N}\)</span> independent observations, the expected (mean) number of times this special arrangement occurs is <span class="math display">\[
+\langle n \rangle = p_N \mathcal{N},
+\]</span> the mean of the corresponding binomial distribution.</p>
+<p>To have a reasonable chance of observing this event at least once, we require <span class="math display">\[
+p_N \mathcal{N} \sim 1,
+\]</span> which implies <span class="math display">\[
+\mathcal{N} \sim \frac{1}{p_N}.
+\]</span> The associated waiting time is therefore <span class="math display">\[
+t \sim \mathcal{N}\tau \sim \frac{\tau}{p_N}.
+\]</span></p>
+<p>For <span class="math inline">\(N = 6\times 10^{23}\)</span>, <span class="math display">\[
+p_N = 2^{-N} \approx 10^{-2\times 10^{23}},
+\]</span> so that <span class="math display">\[
+t \sim 10^3 \times 10^{2\times 10^{23}}
+\;\approx\;
+10^{2\times 10^{23}} \,\text{s}.
+\]</span> (The precise value of <span class="math inline">\(\tau\)</span> is completely negligible compared to the enormous exponential factor.)</p>
+<p>For comparison, the age of the Universe is only of order <span class="math display">\[
+10^{17}\,\text{s}.
+\]</span></p>
+<p>This estimate highlights why such macroscopic violations of equilibrium, while not forbidden in principle, are utterly unobservable in practice.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
