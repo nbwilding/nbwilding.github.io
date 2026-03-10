@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>chapter4 – Statistical Physics</title>
+<title>chapter5 – Statistical Physics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -109,7 +109,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter4.html">4. The Boltzmann distribution</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter5.html">5. Free energy minimisation</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -181,13 +181,13 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter4.html" class="sidebar-item-text sidebar-link active">
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">4. The Boltzmann distribution</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">5. Free energy minimisation</span></a>
   </div>
 </li>
@@ -301,223 +301,246 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-boltzmann-distribution" id="toc-the-boltzmann-distribution" class="nav-link active" data-scroll-target="#the-boltzmann-distribution">4 The Boltzmann distribution</a></li>
-  <li><a href="#derivation-of-the-boltzmann-distribution" id="toc-derivation-of-the-boltzmann-distribution" class="nav-link" data-scroll-target="#derivation-of-the-boltzmann-distribution">4.1 Derivation of the Boltzmann distribution</a>
+  <li><a href="#free-energy-minimisation" id="toc-free-energy-minimisation" class="nav-link active" data-scroll-target="#free-energy-minimisation">5. Free energy minimisation</a>
   <ul class="collapse">
-  <li><a href="#boltzmann-distribution-for-a-single-particle-system" id="toc-boltzmann-distribution-for-a-single-particle-system" class="nav-link" data-scroll-target="#boltzmann-distribution-for-a-single-particle-system">4.2 Boltzmann distribution for a single particle system</a></li>
-  <li><a href="#single-constituent-in-an-isolated-system-for-large-n" id="toc-single-constituent-in-an-isolated-system-for-large-n" class="nav-link" data-scroll-target="#single-constituent-in-an-isolated-system-for-large-n">4.3. Single constituent in an isolated system for large <span class="math inline">\(N\)</span></a></li>
+  <li><a href="#energy-and-its-fluctuations" id="toc-energy-and-its-fluctuations" class="nav-link" data-scroll-target="#energy-and-its-fluctuations">5.1. Energy and its fluctuations</a></li>
+  <li><a href="#energy-distribution-entropy-and-free-energy" id="toc-energy-distribution-entropy-and-free-energy" class="nav-link" data-scroll-target="#energy-distribution-entropy-and-free-energy">5.2. Energy distribution, entropy, and free energy</a></li>
+  <li><a href="#free-energy-the-energyentropy-competition" id="toc-free-energy-the-energyentropy-competition" class="nav-link" data-scroll-target="#free-energy-the-energyentropy-competition">5.3. Free energy: The energy–entropy competition</a></li>
+  <li><a href="#utility-of-the-partition-function" id="toc-utility-of-the-partition-function" class="nav-link" data-scroll-target="#utility-of-the-partition-function">5.4. Utility of the partition function</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter4.html">4. The Boltzmann distribution</a></li></ol></nav><h1 class="title display-7">Hyperbolic Identities</h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter5.html">5. Free energy minimisation</a></li></ol></nav></header>
 
 
 
 
-<section id="the-boltzmann-distribution" class="level1">
-<h1>4 The Boltzmann distribution</h1>
-<p><em>See Mandl chapter 2.5 and Blundell &amp; Blundell chapter 20</em></p>
-<p>Previously we have considered an isolated system of fixed <span class="math inline">\(N, E\)</span>. Here we consider systems with fixed <span class="math inline">\(N\)</span> but instead of <span class="math inline">\(E\)</span> being fixed, the system is at some fixed temperature <span class="math inline">\(T\)</span>.</p>
-<p>To be specific our system is in equilibrium with a heat bath (or heat reservior) at constant <span class="math inline">\(T\)</span>. The zeroth law of thermodynamics then implies our system is at temperature <span class="math inline">\(T\)</span> and the thermal contact with the reservoir means that energy can be exchanged. Therefore the energy of our system is not fixed and the system can explore microstates of different energy. We expect microstates of the same energy to have the same probabilities (we have no reason to believe otherwise). However since we are at fixed <span class="math inline">\(T\)</span> we might think that microstates of different energy should have different probabilities. In the following we substantiate this.</p>
-</section>
-<section id="derivation-of-the-boltzmann-distribution" class="level1">
-<h1>4.1 Derivation of the Boltzmann distribution</h1>
-<p><a href="#fig-compositesystem" class="quarto-xref">Figure&nbsp;1</a> illustrates the setup we shall use.</p>
-<div id="fig-compositesystem" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-compositesystem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="NotesFigs/compositesystem.png" class="img-fluid figure-img" width="700">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-compositesystem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Composite system of a large heat reservoir within which is the system of interest
-</figcaption>
-</figure>
-</div>
-<p>We will refer to the system of interest as the ‘system’ and the composite system (system plus heat bath) as the ‘composite’. The composite is isolated and has fixed total energy <span class="math inline">\(E_{TOT}\)</span>. Thus for the composite all microstates are equally likely. But we are interested in microstates of the system.</p>
-<p>Let the probability that the system is in a given microstate labelled <span class="math inline">\(i\)</span>, of energy <span class="math inline">\(E_i\)</span>, be <span class="math inline">\(P_i\)</span>. Now if the system is in this microstate there is energy <span class="math inline">\(E_{TOT} − E_i\)</span> left for the bath, and this corresponds to many possible microstates for the bath. Since for the composite all microstates are equally likely, we deduce <span class="math display">\[
-P_i = \text{constant} \times \Omega_b(E_{TOT} − E_i)
-\]</span> where the subscript <span class="math inline">\(b\)</span> refers to the bath.</p>
+<section id="free-energy-minimisation" class="level1">
+<h1>5. Free energy minimisation</h1>
+<p><em>See Mandl 2.6</em></p>
+<section id="energy-and-its-fluctuations" class="level2">
+<h2 class="anchored" data-anchor-id="energy-and-its-fluctuations">5.1. Energy and its fluctuations</h2>
+<p>We have seen that the energy of a system connected to a heat bath exhibits thermal fluctuations controlled by the Boltzmann distribution. Here we calcualte the mean and variance of these fluctuations. The mean energy is defined as usual as:</p>
+<p><span class="math display">\[
+\overline{E} = \sum_i E_i P_i
+\]</span></p>
+<p>where <span class="math inline">\(P_i\)</span> is the probability of the system being in microstate <span class="math inline">\(i\)</span>. Inserting the Boltzmann distribution yields:</p>
+<p><span class="math display">\[
+\overline{E} = \frac{1}{Z} \sum_i E_i \exp(-\beta E_i) = -\frac{1}{Z} \sum_i \frac{\partial}{\partial \beta} \exp(-\beta E_i) = -\frac{1}{Z} \frac{\partial Z}{\partial \beta}
+\]</span></p>
+<p>Note the trick of using the derivative to bring down <span class="math inline">\(E_i\)</span> from the argument of the exponential. A further manipulation to note is:</p>
+<p><span class="math display">\[
+\frac{\partial \ln Z}{\partial \beta} = \frac{1}{Z} \frac{\partial Z}{\partial \beta}
+\]</span></p>
+<p>and we find:</p>
+<p><span class="math display">\[
+\overline{E} = -\frac{\partial \ln Z}{\partial \beta} = -\frac{dT}{d\beta} \frac{\partial \ln Z}{\partial T} = kT^2 \frac{\partial \ln Z}{\partial T}
+\]</span></p>
+<p>Now we consider fluctuations of the energy. The variance is:</p>
+<p><span class="math display">\[
+\overline{(\Delta E)^2} = \overline{(E - \overline{E})^2} = \overline{E^2} - \overline{E}^2
+\]</span></p>
+<p>It turns out that this variance is related to the heat capacity <span class="math inline">\(C\)</span> defined by <span class="math display">\[
+C \equiv \frac{\partial \overline{E}}{\partial T} = \frac{d\beta}{dT} \frac{\partial \overline{E}}{\partial \beta} = -\frac{1}{kT^2} \frac{\partial \overline{E}}{\partial \beta}
+\]</span></p>
+<p>The relationship (derived below) is <span class="math display">\[
+C = -\frac{1}{kT^2} \left[\overline{E^2}- \overline{E}^2\right] = \frac{(\overline{\Delta E)^2}}{kT^2}
+\]</span></p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-If you don’t follow this
+Open to see derivation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Here is the reasoning. For fixed total energy <span class="math inline">\(E_{TOT}\)</span>, the total number of microstates of the composite of system and bath is <span class="math inline">\(\Omega=\Omega_s\Omega_b\)</span>, a constant. If we consider only the microstate of the system with energy <span class="math inline">\(E\)</span>, then their number is <span class="math inline">\(\Omega_s(E)=\Omega/\Omega_b(E_{TOT}-E)\)</span>. Now as all microstates of the system having a given energy are equally likely, the probability <span class="math inline">\(P_i(E)\)</span> of the system being in a specific microstate <span class="math inline">\(i\)</span> with energy <span class="math inline">\(E\)</span> is <span class="math inline">\(P_i(E)=1/\Omega_s(E)=\Omega^{-1}\Omega_b(E_{TOT}-E)\)</span>.</p>
+<p>In order to demonstrate the relation of the energy fluctuations to the heat capacity, we write out the final expression for <span class="math inline">\(C\)</span> above using the Boltzmann distribution:</p>
+<p><span class="math display">\[
+C = -\frac{1}{kT^2} \frac{\partial}{\partial \beta} \left(\frac{\sum_i E_i \exp(-\beta E_i)}{Z}\right) = -\frac{1}{kT^2} \left[-\frac{\sum_i E_i \exp(-\beta E_i)}{Z^2} \frac{\partial Z}{\partial \beta} - \frac{\sum_i E_i^2 \exp(-\beta E_i)}{Z}\right]
+\]</span></p>
+<p>which recalling:</p>
+<p><span class="math display">\[
+\sum_i E_i \exp(-\beta E_i) = \overline{E} = -\frac{1}{Z} \frac{\partial Z}{\partial \beta}
+\]</span></p>
+<p><span class="math display">\[
+\sum_i E_i^2 \exp(-\beta E_i) = \overline{E^2}
+\]</span></p>
+<p>yields:</p>
+<p><span class="math display">\[
+C = \frac{1}{kT^2} \left[\overline{E^2}- \overline{E}^2\right] = \frac{(\overline{\Delta E)^2}}{kT^2}
+\]</span></p>
 </div>
 </div>
 </div>
-<p>Now using the Planck relation (key point 4)</p>
+<p>It is interesting to pause and think what this means. The heat capacity can be thought of as the response of a macroscopic variable (the energy) to changing an external variable (the temperature). Thus, the response is related to the fluctuations of the macroscopic variable.</p>
+<p>Since <span class="math inline">\(E\)</span> is proportional to <span class="math inline">\(N\)</span>, so will be <span class="math inline">\(C = \partial \overline{E}/\partial T\)</span>. Therefore:</p>
 <p><span class="math display">\[
-\Omega_b(E_{TOT}-E_i)=\exp\left(\frac{S_b(E_{TOT}-E_i)}{k}\right)
+\overline{(\Delta E)^2} \propto N
 \]</span></p>
-<p>Since <span class="math inline">\(E_i \ll E_{TOT}\)</span> we can perform a Taylor expansion <span class="math display">\[
-S_b(E _{TOT}− E_i) = S_b(E_{TOT}) − E_i\frac{\partial S_b}{\partial E_b} + \frac{E_i^2}{2}\frac{\partial^2S_b}{\partial E_b^2} +\cdots
-\]</span> Only keeping the first two terms (it turns out that the third term is small) and using key point 9 to identify <span class="math display">\[
-\frac{1}{T_b}=\frac{\partial S_b}{\partial E_b}
-\]</span> we find</p>
+<p>and the fractional deviation:</p>
 <p><span class="math display">\[
-S_b(E_{TOT}-E_i)\simeq S_b(E_{TOT})-\frac{E_i}{T}
-\]</span> The first term on the right hand side is a constant therefore when we insert this in the expression for <span class="math inline">\(P_i\)</span> (or <span class="math inline">\(\Omega_b(E_{TOT} − E_i))\)</span> above we obtain</p>
+\frac{\left(\overline{\Delta E)^2}\right)^{1/2}}{\overline{E}} \propto \frac{1}{\sqrt{N}}
+\]</span></p>
+<p>From this, we see that for a system in equilibrium with a heat bath, although the energy is a free macroscopic variable, it takes on a sharply defined value <span class="math inline">\(\overline{E}\)</span>. A consequence is that a large system in equilibrium with a heat bath should have essentially the same behavior as a large isolated system with fixed energy <span class="math inline">\(\overline{E}\)</span>.</p>
+</section>
+<section id="energy-distribution-entropy-and-free-energy" class="level2">
+<h2 class="anchored" data-anchor-id="energy-distribution-entropy-and-free-energy">5.2. Energy distribution, entropy, and free energy</h2>
+<p>Since, in the Boltzmann distribution, the energy is a free macroscopic variable, we can label the macrostates of the system by their energy, and the weight of the macrostate of energy <span class="math inline">\(E\)</span> is <span class="math inline">\(\Omega(E)\)</span>, the number of microstates with energy <span class="math inline">\(E\)</span>.</p>
+<p>As in chapter 3, we can use the Planck relation to determine the entropy of a macrostate:</p>
 <p><span class="math display">\[
-P_i \propto \exp\left(-\frac{E_i}{kT}\right)
+S(E) = k \ln \Omega(E)
 \]</span></p>
-<p>In order that the probability be normalised we require <span class="math display">\[
-\sum_i P_i =1
-\]</span> where the sum is over all microstates of the system which implies <span class="math display">\[
-P_i=\frac{\exp\left(-\frac{E_i}{kT}\right)}{\sum_j\exp\left(-\frac{E_j}{kT}\right)}
+<p>We now return to the question of the sharpness of <span class="math inline">\(E\)</span>. Let us consider again:</p>
+<p><span class="math display">\[
+\overline{E} = \frac{1}{Z} \sum_i E_i \exp(-\beta E_i)
 \]</span></p>
-<p>Thus the Boltzmann distribution for the probability that a system in equilibrium with a heat bath at temperature <span class="math inline">\(T\)</span> is in microstate <span class="math inline">\(i\)</span> is</p>
-<div id="kp10" class="callout callout-style-default callout-tip callout-titled">
+<p>Generally, for a system of large <span class="math inline">\(N\)</span>, we expect many of the microstates to have the same energy. Therefore, rather than sum over all microstates, it is more convenient to sum over the possible values of the energy:</p>
+<p><span class="math display">\[
+\overline{E} = \frac{1}{Z} \sum_E \Omega(E) E \exp(-\beta E)
+\]</span></p>
+<p>To understand this, realize that we are simply grouping together microstates with the same energy <span class="math inline">\(E\)</span> of which there are <span class="math inline">\(\Omega(E)\)</span>.</p>
+<p>The same idea of grouping microstates with the same energy gives the probability of the system having energy <span class="math inline">\(E\)</span>:</p>
+<p><span class="math display">\[
+P(E) = \frac{1}{Z} \Omega(E) \exp(-\beta E)
+\]</span></p>
+<p>Since we expect <span class="math inline">\(E \sim N\)</span>, <span class="math inline">\(\exp(-\beta E)\)</span> is a sharply decreasing function. Also, <span class="math inline">\(\Omega(E)\)</span> is exponentially large in <span class="math inline">\(N\)</span> and <span class="math inline">\(\Omega\)</span> is a sharply increasing function of <span class="math inline">\(E\)</span>. The two conspire to give as a product a sharply peaked probability distribution around <span class="math inline">\(\overline{E}\)</span>. This is plotted in <a href="#fig-P_E" class="quarto-xref">Figure&nbsp;1</a></p>
+<div id="fig-P_E" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-P_E-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="NotesFigs/P_E.png" class="img-fluid figure-img" width="400">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-P_E-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Sharply peaked probability distribution of the energy
+</figcaption>
+</figure>
+</div>
+<p>To go further, we rewrite <span class="math inline">\(P(E)\)</span> and use the Planck relation:</p>
+<p><span class="math display">\[
+P(E) = \frac{1}{Z} \exp\left(-\beta\left(E - \frac{\ln \Omega}{\beta}\right)\right) = \frac{1}{Z} \exp(-\beta(E - TS)) = \frac{1}{Z} \exp(-\beta F)
+\]</span></p>
+<p>where:</p>
+<p><span class="math display">\[
+F(E) \equiv E - TS(E)
+\]</span></p>
+<p><span class="math inline">\(F\)</span> is the Helmholtz free energy, which is often referred to in statistical mechanics simply as the free energy.</p>
+<p>Now the peak of <span class="math inline">\(P(E)\)</span> occurs when the argument of the exponential is maximized. Thus, we see that the equilibrium value of the energy <span class="math inline">\(E\)</span> is determined by minimizing the free energy. This is a profound and general concept:</p>
+<div id="kp11" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Key Point 10:
+Key Point 11:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[
-P_i=\frac{1}{Z}\exp\left(-\beta E_i\right) \:\:\: \text{where~} Z=\sum_j\exp\left(-\beta E_j\right)\:\:\:\text{and~} \beta=\frac{1}{kT}
-\]</span></p>
+<p>The equilibrium values of the macroscopic properties <span class="math inline">\(E, \{\alpha\}\)</span> of a system in equilibrium are such as to minimize the free energy <span class="math inline">\(F(E, \{\alpha\}) \equiv E - TS(E, \{\alpha\})\)</span>.</p>
 </div>
 </div>
-<p>You have met this distribution in year 1 properties of matter. It appears for example in considering an isothermal atmosphere where particles of mass <span class="math inline">\(m\)</span> have height probability distribution <span class="math inline">\(P(h) \propto
-\exp(-mgh)\)</span>. To see this is a Boltzmann distribution recall that the potential energy of <span class="math inline">\(kT\)</span> such a particle is <span class="math inline">\(mgh\)</span>+constant.</p>
-<p>The Boltzmann distribution is also known as the canonical distribution (canonical simply means standard).</p>
-<p>The quantity <span class="math inline">\(Z\)</span> is known as the <strong>partition function</strong> or partition sum (<em>Zustandssumme</em> in Max Planck’s native German). Although introduced quietly here as a normalisation, we shall see that it holds the key to calculating all properties of the system!</p>
-<section id="boltzmann-distribution-for-a-single-particle-system" class="level2">
-<h2 class="anchored" data-anchor-id="boltzmann-distribution-for-a-single-particle-system">4.2 Boltzmann distribution for a single particle system</h2>
-<p>As a simple application of the Boltzmann distribution, let us consider a single magnetic dipole in equilibrium with a heat bath. (This is discussed in Baierlein 5.3 but with some differences in notation.)</p>
-<p>Recall that a single dipole has two microstates <span class="math inline">\(\downarrow, \uparrow\)</span> with energies <span class="math inline">\(mH, -mH\)</span>.</p>
-<p>A simple application of the Boltzmann distribution gives:</p>
+<p>We write equilibrium values as <span class="math inline">\(S(T)\)</span>, <span class="math inline">\(F(T)\)</span>, etc.</p>
+</section>
+<section id="free-energy-the-energyentropy-competition" class="level2">
+<h2 class="anchored" data-anchor-id="free-energy-the-energyentropy-competition">5.3. Free energy: The energy–entropy competition</h2>
+<p>First, consider low <span class="math inline">\(T\)</span>: here <span class="math inline">\(F\)</span> is dominated by <span class="math inline">\(E\)</span>, therefore minimizing <span class="math inline">\(F\)</span> corresponds to minimizing <span class="math inline">\(E\)</span> (exactly so for <span class="math inline">\(T = 0\)</span>).</p>
+<p>Now consider high <span class="math inline">\(T\)</span>: here <span class="math inline">\(F\)</span> is dominated by <span class="math inline">\(S\)</span>, therefore minimizing <span class="math inline">\(F\)</span> corresponds to maximizing <span class="math inline">\(S\)</span> (exactly so for <span class="math inline">\(T = \infty\)</span>).</p>
+<p>Thus, one has a competition between energy and entropy, the arbiter of which is temperature.</p>
+<p>However, it should always be borne in mind that equilibrium is such as to maximize the entropy of the universe under the constraint that energy is conserved. For example, in an isolated system, the energy is constant, therefore we just maximize the entropy. For a system in equilibrium with its environment, the energy is free to vary. Thus, the minimization of the free energy for a system in equilibrium tells us the best way to distribute energy between the system and the universe such that the entropy of the universe is maximized.</p>
+<p>We now begin to understand the different phases in question 2.5:</p>
+<ul>
+<li>At low temperatures, ice forms. The crystal structure is energetically favorable and releases energy (latent heat of fusion) to the environment, which maximizes the entropy of the universe, i.e., from the viewpoint of the system, energy considerations win.</li>
+<li>At higher temperatures, storing more energy in the system gives the liquid phase (water), which has a high entropy and allows the entropy of the universe to be maximized. From the point of view of the system, entropy wins.</li>
+</ul>
+</section>
+<section id="utility-of-the-partition-function" class="level2">
+<h2 class="anchored" data-anchor-id="utility-of-the-partition-function">5.4. Utility of the partition function</h2>
+<p>Let us first write <span class="math inline">\(Z\)</span> as</p>
 <p><span class="math display">\[
-P(\downarrow) = \frac{\exp\left(-\frac{mH}{kT}\right)}{Z}, \quad P(\uparrow) = \frac{\exp\left(\frac{mH}{kT}\right)}{Z}
+Z = \sum_E \Omega(E) \exp(-\beta E)
 \]</span></p>
-<p>where the partition function <span class="math inline">\(Z\)</span> is given by:</p>
+<p>In the same way as <span class="math inline">\(P(E)\)</span> is an extremely sharp function, the summand is very sharply peaked at <span class="math inline">\(\overline{E}\)</span> and of width <span class="math inline">\(N^{1/2}\)</span> about the peak. Therefore, we can write</p>
 <p><span class="math display">\[
-Z = \exp\left(-\frac{mH}{kT}\right) + \exp\left(\frac{mH}{kT}\right) = 2\cosh\left(\frac{mH}{kT}\right)
+Z \approx \Omega(\overline{E}) \exp(-\beta \overline{E}) \times O(N^{1/2})
 \]</span></p>
-<p>The average energy of the dipole is given by:</p>
-<p><span class="math display">\[\begin{eqnarray*}
-\overline{E} &amp;=&amp; \sum_i E_i P_i \\
-&amp;=&amp; E(\downarrow)P(\downarrow)+E(\uparrow)P(\uparrow)\\
-&amp;= &amp;\frac{1}{Z}\left[ mH \exp\left(-\frac{mH}{kT}\right)-mH \exp\left(\frac{mH}{kT}\right) \right] \\
-&amp;=&amp; -mH \frac{\sinh\left(\frac{mH}{kT}\right)}{\cosh\left(\frac{mH}{kT}\right)}\\
-&amp;=&amp; -mH \tanh\left(\frac{mH}{kT}\right)
-\end{eqnarray*}\]</span></p>
-<p>To see the temperature dependence of <span class="math inline">\(\bar{E}\)</span>, we plot it as a function of <span class="math inline">\(y = \frac{kT}{mH}\)</span>:</p>
 <p><span class="math display">\[
-\overline{E} = -mH \tanh\left(\frac{1}{y}\right)
+= \exp(-\beta F(T)) \times O(N^{1/2})
 \]</span></p>
-<p>You should be able to sketch this curve by recalling the properties of the <span class="math inline">\(\tanh\)</span> function:</p>
+<p>(since <span class="math inline">\(F(T) = F(\overline{E})\)</span> for a large system in equilibrium). Thus</p>
 <p><span class="math display">\[
-\tanh x \approx x \quad \text{for small } x, \quad \tanh x \approx 1 \quad \text{for } x \gg 1
+\ln Z = -\beta F(T) + O(\ln N^{1/2})
 \]</span></p>
-<div id="fig-Ebar" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-Ebar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="NotesFigs/Ebar_mH_plot.png" class="img-fluid figure-img" width="600">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Ebar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Mean energy <span class="math inline">\(E/mH\)</span> versus scaled temperature for a single dipole
-</figcaption>
-</figure>
-</div>
-<p>The curve is plotted in <a href="#fig-Ebar" class="quarto-xref">Figure&nbsp;2</a>.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<p>We see the last term can be ignored since the free energy is extensive (i.e linear in <span class="math inline">\(N\)</span>) and we are in the ‘large <span class="math inline">\(N\)</span>’ regime where <span class="math inline">\(N \gg \ln N\)</span>. Thus, the equilibrium value of the free energy</p>
+<p><span class="math display">\[
+F(T) = \overline{E} - TS(T) = -kT \ln Z
+\]</span></p>
+<p>This is a very important formula.</p>
+<p>Also, the expression can be written in terms of the entropy</p>
+<p><span class="math display">\[
+S(T) = k \ln Z + \frac{\overline{E}}{T}
+\]</span></p>
+<p>Therefore, for a system in equilibrium at temperature <span class="math inline">\(T\)</span>, all the thermodynamic properties can be obtained from <span class="math inline">\(Z\)</span> from the following formulae:</p>
+<div id="kp12" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Expand to learn about hyperbolic functions and their identities
+Key Point 12:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+F = -kT \ln Z, \quad \overline{E} = kT^2 \frac{\partial}{\partial T} \ln Z, \quad S = k \ln Z + \frac{\overline{E}}{T}
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+An aside on entropy for the curious
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<section id="hyperbolic-identities" class="level1 callout-body-container callout-body">
-
-<p>The hyperbolic functions satisfy a number of identities. These allow expressions involving the hyperbolic functions to be written in different, yet equivalent forms. Several commonly used identities are given below.</p>
-<section id="basic-hyperbolic-functions" class="level2">
-<h2 class="anchored" data-anchor-id="basic-hyperbolic-functions">Basic Hyperbolic Functions</h2>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Here we have simply rearranged the definition of the free energy <span class="math inline">\(F=\overline{E}-TS\)</span> to express the entropy as <span class="math inline">\(S=\frac{-1}{T}(F-\overline{E})\)</span>. You might be wondering how this relates to the Planck formula <span class="math inline">\(S(E)=k\ln\Omega (E)\)</span> that applies to an isolated system of energy <span class="math inline">\(E\)</span>.</p>
+<p>It turns out (see recommended textbooks) that one can express the entropy as a sum over microstates:</p>
 <p><span class="math display">\[
-\cosh x = \frac{e^x + e^{-x}}{2}, \quad \sinh x = \frac{e^x - e^{-x}}{2}
-\]</span></p>
+S=-k\sum_ip_i\ln p_i
+\]</span> (which can be derived as a weighted average over all possible states of the Planck entropy.)</p>
+<p>For an isolated system of energy <span class="math inline">\(E\)</span> all microstates are equally likely (Key Point 5). If there are <span class="math inline">\(\Omega(E)\)</span> microstates of energy <span class="math inline">\(E\)</span>, the probability that the system is in any particular one of them is</p>
 <p><span class="math display">\[
-\tanh x = \frac{\sinh x}{\cosh x} = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+p_i = \frac{1}{\Omega(E)}
 \]</span></p>
+<p>Thus</p>
+<p><span class="math display">\[\begin{eqnarray}
+S &amp;=&amp; -k \sum_i p_i \ln p_i \\
+  &amp;=&amp; -k \times \Omega(E) \times \frac{1}{\Omega(E)} \ln\left( \frac{1}{\Omega(E)} \right) \\
+  &amp;=&amp; +k \ln \Omega(E)
+\end{eqnarray}\]</span> in accord with the Planck relationship (Key Point 8).</p>
+<p>For a system in equilibrium at temperature <span class="math inline">\(T\)</span> the probability of a microstate varies with its energy according to the Boltzmann form:</p>
 <p><span class="math display">\[
-\operatorname{sech} x = \frac{1}{\cosh x} = \frac{2}{e^x + e^{-x}}
+p_i = \frac{1}{Z} e^{-\beta E_i}, \quad \text{with} \quad Z = \sum_i e^{-\beta E_i}
 \]</span></p>
-<p><span class="math display">\[
-\operatorname{cosech} x = \frac{1}{\sinh x} = \frac{2}{e^x - e^{-x}}
-\]</span></p>
-<p><span class="math display">\[
-\operatorname{coth} x = \frac{\cosh x}{\sinh x} = \frac{1}{\tanh x} = \frac{e^x + e^{-x}}{e^x - e^{-x}}
-\]</span></p>
-</section>
-<section id="some-derivatives-of-hyperbolic-functions" class="level2">
-<h2 class="anchored" data-anchor-id="some-derivatives-of-hyperbolic-functions">Some derivatives of hyperbolic functions</h2>
-<p><span class="math display">\[
-\frac{d}{dx} (\sinh x) = \cosh x
-\]</span></p>
-<p><span class="math display">\[
-\frac{d}{dx} (\cosh x) = \sinh x
-\]</span></p>
-<p><span class="math display">\[
-\frac{d}{dx} (\tanh x) = \operatorname{sech}^2 x
-\]</span></p>
-</section>
-<section id="fundamental-identities" class="level2">
-<h2 class="anchored" data-anchor-id="fundamental-identities">Fundamental Identities</h2>
-<p><span class="math display">\[
-\cosh^2 x - \sinh^2 x = 1
-\]</span></p>
-<p><span class="math display">\[
-1 - \tanh^2 x = \operatorname{sech}^2 x
-\]</span></p>
-<p><span class="math display">\[
-\operatorname{coth}^2 x - 1 = \operatorname{cosech}^2 x
-\]</span></p>
-</section>
-</section>
+<p>Then</p>
+<p><span class="math display">\[\begin{eqnarray}
+S &amp;=&amp; -k \sum_i p_i \ln p_i \\
+  &amp;=&amp; -k \sum_i p_i [-\ln Z - \beta E_i] \\
+  &amp;=&amp; k \ln Z \sum_i p_i + \frac{1}{T} \sum_i p_i E_i \\
+  &amp;=&amp; k \ln Z + \frac{\overline{E}}{T}
+\end{eqnarray}\]</span> as claimed in key point 12.</p>
+<p>In the information-theory formulation of statistical mechanics the representation <span class="math inline">\(S = -k \sum_i p_i \ln p_i\)</span> is established on the basis of very general arguments which identify entropy with the ‘missing information’ or ‘uncertainty’ associated with a set of probabilities <span class="math inline">\(p_i\)</span>.</p>
 </div>
 </div>
-</section>
-<section id="single-constituent-in-an-isolated-system-for-large-n" class="level2">
-<h2 class="anchored" data-anchor-id="single-constituent-in-an-isolated-system-for-large-n">4.3. Single constituent in an isolated system for large <span class="math inline">\(N\)</span></h2>
-<p>In order to gain more insight into the generality of the Boltzmann distribution, we return briefly to the scenario of chapters 3 and 4 where we considered an isolated system with a large number <span class="math inline">\(N\)</span> of constituents. We saw we could define an entropy <span class="math inline">\(S(E)\)</span> through the Planck relation and a temperature through key point 9.</p>
-<p>In particular, for the model magnet, we used the Planck relation to find the entropy:</p>
-<p><span class="math display">\[
-S(E) = -Nk \left[ x \ln x + (1 - x) \ln(1 - x) \right], \quad x = \frac{n}{N} = \frac{1}{2}\left(1 + \frac{E}{NmH}\right)
-\]</span></p>
-<p>where <span class="math inline">\(n\)</span> is the number of excited dipoles and <span class="math inline">\(N\)</span> is the total number of dipoles.</p>
-<p>Using key point 9, we find:</p>
-<p><span class="math display">\[
-\frac{1}{T} = \frac{\partial S}{\partial E} = \frac{dx}{dE} \frac{\partial S}{\partial x} = -\frac{Nk}{2NmH} \left[ \ln x + 1 - \ln(1 - x) - 1 \right] = -\frac{k}{2mH} \ln\left(\frac{x}{1 - x}\right)
-\]</span></p>
-<p>Inverting this, we find:</p>
-<p><span class="math display">\[
-\exp\left(-\frac{2mH}{kT}\right) = \frac{x}{1 - x}
-\]</span></p>
-<p>so that:</p>
-<p><span class="math display">\[
-x = \frac{n}{N} = \frac{\exp\left(-\frac{2mH}{kT}\right)}{1 + \exp\left(-\frac{2mH}{kT}\right)} = \frac{\exp(-\beta mH)}{\exp(\beta mH) + \exp(-\beta mH)}
-\]</span></p>
-<p>The frequency definition of probability implies that <span class="math inline">\(\frac{n}{N}\)</span> is the probability that a single dipole is in the excited state. We see we recover the Boltzmann distribution of the previous subsection for a single dipole!</p>
-<p>At first, this seems very confusing: for an isolated system, we have all microstates equally likely—so where did the Boltzmann distribution suddenly appear from?</p>
-<p>The answer is to realize that a single dipole exchanges energy with the <span class="math inline">\(N - 1\)</span> other dipoles. Therefore, for large <span class="math inline">\(N\)</span>, the other dipoles act as a heat bath for the single dipole, which is why we recover the Boltzmann distribution for a single dipole.</p>
-<p>Another way of thinking about this is to remember that although all microstates of the isolated system are equally likely, we have the constraint of total fixed energy. Therefore, for a single dipole, its two states are not equally likely since the state it is in dictates how much energy is left to share among the other dipoles. Therefore, the global constraint of fixed energy induces a Boltzmann distribution for a single dipole.</p>
+</div>
 
 
 </section>
