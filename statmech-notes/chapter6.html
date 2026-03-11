@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Welcome to PHYS20040: Statistical Mechanics! – Statistical Physics</title>
+<title>chapter6 – Statistical Physics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -81,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter6.html">6. Systems of weakly interacting constituents</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -108,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
@@ -126,13 +155,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Chapters</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
@@ -165,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">6. Systems of weakly interacting constituents</span></a>
   </div>
 </li>
@@ -297,69 +326,146 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#delivery-and-format" id="toc-delivery-and-format" class="nav-link active" data-scroll-target="#delivery-and-format">Delivery and format</a></li>
-  <li><a href="#questions-and-comments" id="toc-questions-and-comments" class="nav-link" data-scroll-target="#questions-and-comments">Questions and comments</a></li>
+  <li><a href="#systems-of-weakly-interacting-constituents" id="toc-systems-of-weakly-interacting-constituents" class="nav-link active" data-scroll-target="#systems-of-weakly-interacting-constituents">6. Systems of weakly interacting constituents</a>
+  <ul class="collapse">
+  <li><a href="#factorisation-of-the-partition-function" id="toc-factorisation-of-the-partition-function" class="nav-link" data-scroll-target="#factorisation-of-the-partition-function">6.1. Factorisation of the partition function</a></li>
+  <li><a href="#the-model-magnet" id="toc-the-model-magnet" class="nav-link" data-scroll-target="#the-model-magnet">6.2. The model magnet</a></li>
+  <li><a href="#more-general-factorisation-non-examinable" id="toc-more-general-factorisation-non-examinable" class="nav-link" data-scroll-target="#more-general-factorisation-non-examinable">6.3. More general factorisation (non-examinable)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Welcome to PHYS20040: Statistical Mechanics!</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter6.html">6. Systems of weakly interacting constituents</a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p><span style="color:blue;">Lecturer: Prof.&nbsp;Nigel Wilding (nigel.wilding@bristol.ac.uk)</span></p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="NotesFigs/Ising1.png" class="img-fluid quarto-figure quarto-figure-left figure-img" width="300"></p>
-</figure>
-</div>
-<div style="text-align: justify">
-<p>This course in statistical mechanics introduces you to the powerful methods used to describe the behavior of systems with a large number of particles, linking the microscopic properties of individual atoms and molecules with macroscopic observables such as temperature, pressure, and entropy. Statistical mechanics provides a framework to understand thermodynamics from a probabilistic standpoint, using statistical tools to connect the microstates of a system to its overall behavior. In this course, you’ll learn fundamental concepts like free energies, partition functions, and the Boltzmann distribution, which allow us to describe systems in thermal equilibrium. Applications will include understanding phase transitions, properties of gases and magnets, and fluctuations, with examples from both classical and quantum systems. By the end of the course, you’ll have a toolkit for analyzing complex physical systems, making statistical mechanics an essential foundation for advanced studies in physics, chemistry, and materials science.</p>
-</div>
-<p>The navigation bar on the left will allow you to access the lecture notes and problem sets.</p>
-<section id="delivery-and-format" class="level3">
-<h3 class="anchored" data-anchor-id="delivery-and-format">Delivery and format</h3>
-<ul>
-<li><p>Detailed e-notes (see Blackboard) can be viewed on a variety of devices. Pdf is also available.</p></li>
-<li><p>I will give ‘traditional’ lectures (Tues, Wed, Fri) in which I use slides to summarise and explain the lecture content. Questions welcome (within reason…)</p></li>
-<li><p>Try to read ahead in the notes, then come to lectures, listen to my explanations and then reread the notes.</p></li>
-<li><p>Rewriting the notes or slides to express your own thoughts and understanding, or annotating a pdf copy can help wire the material into your own way of thinking.</p></li>
-<li><p>There are group problem classes (Tues, Thurs) where you can try problem sheets and seek help. I will go over some problems with the class.</p></li>
-</ul>
-</section>
-<section id="questions-and-comments" class="level3">
-<h3 class="anchored" data-anchor-id="questions-and-comments">Questions and comments</h3>
-<p>If you have any questions about the course, please don’t hesitate to contact me, either by email (see above) or in a problems class.</p>
-<p>Finally, if you find any errors or mistakes or something which isn’t clear, please let me know, or fill in this anonymous form:</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<section id="systems-of-weakly-interacting-constituents" class="level1">
+<h1>6. Systems of weakly interacting constituents</h1>
+<section id="factorisation-of-the-partition-function" class="level2">
+<h2 class="anchored" data-anchor-id="factorisation-of-the-partition-function">6.1. Factorisation of the partition function</h2>
+<p>We have already discussed in chapter 3 the concept of weakly interacting particles (or constituents)—basically, we can write the energy of the system as a sum of contributions from each particle since no energy is stored in any interaction potential. The Boltzmann distribution is quite general and is not restricted to weakly interacting systems; the derivation of chapter 5 only required that the system interact weakly with its environment. However, it is weakly interacting systems that are most easily treated.</p>
+<p>For a weakly interacting system, we can write the energy of a microstate labelled <span class="math inline">\(r\)</span> as:</p>
+<p><span class="math display">\[
+E_r = \epsilon_{i_1} + \epsilon_{i_2} + \epsilon_{i_3} + \cdots + \epsilon_{i_N}
+\]</span></p>
+<p>where <span class="math inline">\(\epsilon_{i_n}\)</span> is the energy of particle <span class="math inline">\(n\)</span> which is in state <span class="math inline">\(i_n\)</span>.</p>
+<p>For example, in the model magnet, the microstate is given by the states of all <span class="math inline">\(N\)</span> dipoles; the state of each dipole <span class="math inline">\(n\)</span> is either the ground state (<span class="math inline">\(i_n = 1; \epsilon_1 = -mH\)</span>) or the excited state (<span class="math inline">\(i_n = 2; \epsilon_2 = +mH\)</span>). The total energy is the sum of the energies of each dipole.</p>
+<p>Recalling the definition of <span class="math inline">\(Z\)</span> from key point 10, we have:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+Z &amp;=&amp; \sum_r \exp(-\beta E_r)\\
+&amp;=&amp; \sum_{i_1 \cdots i_N} \exp\left(-\beta \left[\epsilon_{i_1} + \epsilon_{i_2} + \cdots + \epsilon_{i_N}\right]\right) \\
+&amp;=&amp; \left[\sum_{i_1} \exp(-\beta \epsilon_{i_1})\right] \cdots \left[\sum_{i_N} \exp(-\beta \epsilon_{i_N})\right]\\
+&amp;=&amp; [Z(1)]^N
+\end{eqnarray*}\]</span></p>
+<p>where <span class="math inline">\(Z(1)\)</span> is the partition function for a single particle, c.f. the single dipole calculation of chapter 5.2. You should make sure you follow each step in the above development.</p>
+<p>The significance of this is that the partition function for the <span class="math inline">\(N\)</span> particle system factorises into a product of <span class="math inline">\(N\)</span> partition functions, one for each particle. This produces an immense simplification, basically because:</p>
+<p><span class="math display">\[
+\ln Z = \ln \left[Z(1)\right]^N = N \ln Z(1)
+\]</span></p>
+<p>and <span class="math inline">\(Z(1)\)</span> should be simple to calculate.</p>
+<p>As an example, consider the mean energy which from chapter 6.1 or key point 12 is given by:</p>
+<p><span class="math display">\[
+\overline{E} = -\frac{\partial}{\partial \beta} \ln Z = -N \frac{\partial}{\partial \beta} \ln Z(1) = N\bar{\epsilon}
+\]</span></p>
+<p>where <span class="math inline">\(\bar{\epsilon}\)</span> is the average energy of a single dipole. The fact that the mean energy is the sum of the mean energies of each dipole is, of course, expected in the absence of (strong) interactions between particles.</p>
+<p>Similarly,</p>
+<p><span class="math display">\[
+F(T) = -kT \ln Z = -NkT \ln Z(1)
+\]</span></p>
+<p>Another consequence of the factorisation of <span class="math inline">\(Z\)</span> is that if we are interested in the state of, say, particle 1, then we can ‘sum out’ the states of all the other particles 2 to <span class="math inline">\(N\)</span>:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+P_{i_1} &amp;=&amp; \sum_{i_2 \cdots i_N} \exp\left(-\beta \left[\epsilon_{i_1} + \epsilon_{i_2} + \cdots + \epsilon_{i_N}\right]\right) \times Z^{-1}\\
+&amp; =&amp; \frac{\exp(-\beta \epsilon_{i_1}) Z(1)^{N-1}}{Z(1)^N}\\
+&amp; =&amp; \frac{\exp(-\beta \epsilon_{i_1})}{Z(1)}
+\end{eqnarray*}\]</span> This is identical to the probability distribution for a single particle discussed in 4.2.</p>
+<div id="kp13" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p><a href="https://forms.office.com/e/6uL2Bd5QGq">Submit an error/mistake/query</a></p>
+<div class="callout-title-container flex-fill">
+Key Point 13:
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>In a system of <span class="math inline">\(N\)</span> weakly interacting, distinguishable particles, the system partition function is simply <span class="math inline">\(Z = [Z(1)]^N\)</span> and the single particle probability distribution is <span class="math inline">\(P_i = \frac{\exp(-\beta \epsilon_i)}{Z(1)}\)</span>.</p>
 </div>
+</div>
+<p>Thus we see that the problem is reduced to that of the single particle problem. The key thing to remember though is that for the single particle problem the energy, etc., fluctuate, whereas in the <span class="math inline">\(N\)</span> particle system for large <span class="math inline">\(N\)</span>, the macroscopic variables are sharp and have well-defined thermodynamic values.</p>
+<p><strong>N.B.</strong> the reason for the qualification ‘distinguishable’ will become apparent later when we address quantum particles.</p>
+</section>
+<section id="the-model-magnet" class="level2">
+<h2 class="anchored" data-anchor-id="the-model-magnet">6.2. The model magnet</h2>
+<p><em>See Mandl 3.1-3.3</em></p>
+<p>In chapter 4.2, we examined the single particle partition function, i.e., the partition function for a single dipole, so effectively we have already done the hard work. We saw:</p>
+<p><span class="math display">\[
+Z(1) = 2 \cosh (x) \quad \text{where} \quad x = \frac{mH}{kT}
+\]</span></p>
+<p>Using the general results for weakly interacting systems (previous subsection), we have:</p>
+<p><span class="math display">\[
+\overline{E} = N\bar{\epsilon} = -N \frac{\partial}{\partial \beta} \ln Z(1) = -NmH \frac{\partial}{\partial x} \ln Z(1) = -NmH \tanh (x)
+\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+S(T) &amp;=&amp; k \ln Z + \frac{\overline{E}}{T} \\
+     &amp;=&amp; Nk \ln Z(1) + \frac{N\bar{\epsilon}}{T} \\
+     &amp;=&amp; Nk \left[\ln (\exp (x) + \exp (-x)) - x \tanh (x)\right]
+\end{eqnarray*}\]</span></p>
+<p>An important quantity in magnetism is the magnetisation <span class="math inline">\(M\)</span>, which counts the total magnet moment <span class="math inline">\(M=(n_1-n_2)m\)</span>, where <span class="math inline">\(n_i (i=1,2)\)</span> are the number of dipoles in levels 1 (<span class="math inline">\(\epsilon=−mH\)</span>) and 2 (<span class="math inline">\(\epsilon=+mH)\)</span>. The magnetisation is related to the energy by <span class="math inline">\(E=-MH\)</span>. Thus we have:</p>
+<p><span class="math display">\[
+\overline{M} = Nm \tanh (x)
+\]</span></p>
+<p>we see that for low fields, which means <span class="math inline">\(mH \ll kT\)</span> so that <span class="math inline">\(x\)</span> is small:</p>
+<p><span class="math display">\[
+\overline{M} = \frac{Nm^2H}{kT}
+\]</span></p>
+<p>and for high fields <span class="math inline">\(mH \gg kT\)</span> so that <span class="math inline">\(x \gg 1\)</span>:</p>
+<p><span class="math display">\[
+\overline{M} \approx Nm
+\]</span></p>
+<p>Let us now consider the zero-field magnetic susceptibility <span class="math inline">\(\chi(H = 0)\)</span> defined as:</p>
+<p><span class="math display">\[
+\chi(H = 0) \equiv \left(\frac{\partial \overline{M}}{\partial H}\right)\bigg|_{H=0} = \frac{Nm^2}{kT}
+\]</span></p>
+<p>You should understand that the susceptibility measures the response of the magnetisation of the system to a small externally applied field. It turns out that this response is actually related to the magnetisation fluctuations at zero field. This is analogous to the results for the specific heat in terms of the variance of the energy fluctuations.</p>
+<p>The <span class="math inline">\(\frac{1}{T}\)</span> dependence of <span class="math inline">\(\chi\)</span> is known as the Curie law. It implies that the dipoles become more ‘susceptible’ to an external magnetic field at lower temperature. See Mandl 3.1 for a comparison with real experiments.</p>
+<p>Finally, let’s consider the heat capacity (at constant field):</p>
+<p><span class="math display">\[
+C_H = \left(\frac{\partial \overline{E}}{\partial T}\right)_H = \left(\frac{\partial x}{\partial T}\right)_H \left(\frac{\partial \overline{E}}{\partial x}\right)_H = Nk x^2 \text{sech}^2(x)
+\]</span></p>
+<p>Note the low-temperature (large <span class="math inline">\(x\)</span>) behaviour. Recalling:</p>
+<p><span class="math display">\[
+\text{sech } (x) = \frac{2}{\exp (x) + \exp (-x)} \sim 2 \exp (-x) \text{ for large } x
+\]</span></p>
+<p>we see that the heat capacity vanishes for small <span class="math inline">\(T\)</span>.</p>
+<p>This is a general feature. Basically, at zero temperature, all particles are in the ground state. One has to raise the temperature until <span class="math inline">\(kT\)</span> is comparable with <span class="math inline">\(2mH\)</span> (the energy difference to the excited state) before a significant number of dipoles are excited. Thus near <span class="math inline">\(T = 0\)</span>, the derivative of internal energy with respect to <span class="math inline">\(T\)</span> is zero.</p>
+<p><span class="math inline">\(kT\)</span> is often referred to as the ‘thermal energy’.</p>
+</section>
+<section id="more-general-factorisation-non-examinable" class="level2">
+<h2 class="anchored" data-anchor-id="more-general-factorisation-non-examinable">6.3. More general factorisation (non-examinable)</h2>
+<p>We have seen in this chapter how the fact that for weakly interacting particles the energy is a sum of terms allows factorisation of <span class="math inline">\(Z\)</span>.</p>
+<p>A similar mechanism occurs in systems which are not necessarily weakly interacting, but whose energy may be expressed as a sum of contributions associated with different ‘aspects’ of its behaviour say <span class="math inline">\(\alpha, \beta\)</span>.</p>
+<p><span class="math display">\[
+E = E_\alpha + E_\beta + \cdots
+\]</span></p>
+<p>Then if the microscopic ‘degrees of freedom’ which contribute to the different aspects are independent, we find that the partition function factorises:</p>
+<p><span class="math display">\[
+Z = Z_\alpha \times Z_\beta \times \cdots
+\]</span></p>
+<p>A consequence of this is that the free energy is a sum of contributions from each aspect.</p>
+<p>For example, in a real magnetic solid, contributions to the energy will come from vibrations of the atoms about their average positions (see chapter 8) as well as the energy from the interaction with a magnetic field discussed in this lecture. Thus we can write</p>
+<p><span class="math display">\[
+E = E_{\text{Vib}} + E_{\text{Mag}}
+\]</span></p>
+<p>We have seen that the microscopic degrees of freedom which contribute to <span class="math inline">\(E_{Mag}\)</span> are the dipole moments of the atoms.</p>
+<p>The microscopic degrees of freedom which contribute to <span class="math inline">\(E_{Vib}\)</span> will be something like the displacements from the atoms’ equilibrium positions, say. These degrees of freedom (d.o.f) are independent of the dipole moment degrees of freedom. Thus</p>
+<p><span class="math display">\[
+Z = \sum_{\text{Vib d.o.f}} \sum_{\text{Mag d.o.f}} \exp \left( -\beta [E_{\text{Vib}} + E_{\text{Mag}}] \right) = Z_{\text{Vib}} \times Z_{\text{Mag}}.
+\]</span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
