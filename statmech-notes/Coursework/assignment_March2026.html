@@ -220,6 +220,12 @@ window.Quarto = {
  <span class="menu-text">Week 20: Problem set 2</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Problem_set_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 21: Problem set 3</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -327,6 +333,10 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Coursework preparation</span></span>
+  </li>
     </ul>
     </div>
 </nav>
@@ -348,7 +358,7 @@ window.Quarto = {
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">3.1 Setup</a></li>
   <li><a href="#microstates-as-a-function-of-temperature" id="toc-microstates-as-a-function-of-temperature" class="nav-link" data-scroll-target="#microstates-as-a-function-of-temperature">3.2 Microstates as a function of temperature</a></li>
   <li><a href="#macrostates-as-a-function-of-temperature-energy-and-magnetisation" id="toc-macrostates-as-a-function-of-temperature-energy-and-magnetisation" class="nav-link" data-scroll-target="#macrostates-as-a-function-of-temperature-energy-and-magnetisation">3.3 Macrostates as a function of temperature: Energy and magnetisation</a></li>
-  <li><a href="#other-macrostates-specific-heat-and-magnetic-susceptibilty" id="toc-other-macrostates-specific-heat-and-magnetic-susceptibilty" class="nav-link" data-scroll-target="#other-macrostates-specific-heat-and-magnetic-susceptibilty">3.4 Other macrostates: Specific heat and magnetic susceptibilty</a></li>
+  <li><a href="#other-macrostates-specific-heat-and-magnetic-susceptibility" id="toc-other-macrostates-specific-heat-and-magnetic-susceptibility" class="nav-link" data-scroll-target="#other-macrostates-specific-heat-and-magnetic-susceptibility">3.4 Other macrostates: Specific heat and magnetic susceptibility</a></li>
   <li><a href="#the-ferromagnetic-paramagnetic-phase-transition" id="toc-the-ferromagnetic-paramagnetic-phase-transition" class="nav-link" data-scroll-target="#the-ferromagnetic-paramagnetic-phase-transition">3.5 The ferromagnetic-paramagnetic phase transition</a></li>
   <li><a href="#your-report" id="toc-your-report" class="nav-link" data-scroll-target="#your-report">4.0 Your report</a></li>
   </ul></li>
@@ -388,7 +398,7 @@ window.Quarto = {
 <img src="Ising schematic.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-isingschematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Representation of spin alignment in the 2D Ising model.The arrows indicate spin-up or spin-down states. - (a) System below <span class="math inline">\(T_c\)</span>, where spins are ordered. - (b) System above <span class="math inline">\(T_c\)</span>, where spins are disordered.
+Figure&nbsp;1: Representation of spin alignment in the 2D Ising model. The arrows indicate spin-up or spin-down states. - (a) System below <span class="math inline">\(T_c\)</span>, where spins are ordered. - (b) System above <span class="math inline">\(T_c\)</span>, where spins are disordered.
 </figcaption>
 </figure>
 </div>
@@ -400,7 +410,7 @@ Figure&nbsp;1: Representation of spin alignment in the 2D Ising model.The arrows
 <p>We consider a square lattice with <span class="math inline">\(L\times L\)</span> sites, where the spins at each site <span class="math inline">\((i,j)\)</span> are denoted as <span class="math inline">\(s_{i,j}\)</span>, with possible values of <span class="math inline">\(s_{i,j} = \pm 1\)</span>. The system’s energy, is given by:</p>
 <p><span id="eq-E"><span class="math display">\[
 E(S) = -\frac{J}{2} \sum_{i,j} s_{i,j} \left( s_{i+1,j} + s_{i-1,j} + s_{i,j+1} + s_{i,j-1} \right),
-\tag{1}\]</span></span> where <span class="math inline">\(J&gt;0\)</span> is the interaction strength between neighboring spins, and the factor <span class="math inline">\(\frac{1}{2}\)</span> avoids counting the same interactions twice. Here, <span class="math inline">\(S = \{s_{i,j}\}\)</span> represents a particular microstate of spins, and we assume periodic boundary conditions, such that <span class="math inline">\(s_{i+N_x,j} = s_{i,j}\)</span> and <span class="math inline">\(s_{i,j+N_y} = s_{i,j}\)</span>.</p>
+\tag{1}\]</span></span> where <span class="math inline">\(J&gt;0\)</span> is the interaction strength between neighboring spins, and the factor <span class="math inline">\(\frac{1}{2}\)</span> avoids counting the same interactions twice. Here, <span class="math inline">\(S = \{s_{i,j}\}\)</span> represents a particular microstate of spins, and we assume periodic boundary conditions, such that <span class="math inline">\(s_{i+L,j} = s_{i,j}\)</span> and <span class="math inline">\(s_{i,j+L} = s_{i,j}\)</span>.</p>
 <p>The partition function <span class="math inline">\(Z(\beta)\)</span>, which sums over all possible microstates and describes the system’s statistical properties, is defined as:</p>
 <p><span id="eq-Z"><span class="math display">\[
 Z(\beta) = \sum_{S} \exp\left( -\beta E(S) \right),
@@ -410,7 +420,7 @@ Z(\beta) = \sum_{S} \exp\left( -\beta E(S) \right),
 <p><span id="eq-obs"><span class="math display">\[
 \overline O  = \frac{1}{Z(\beta)} \sum_{S} O(S) \exp\left( -\beta E(S) \right).
 \tag{3}\]</span></span></p>
-<p>Relevant macrovariables for the Ising magnet are the total energy <span class="math inline">\(E\)</span> defined above and the total magnetisation <span class="math inline">\(M=\sum_i s_i\)</span>.</p>
+<p>Relevant macrovariables for the Ising magnet are the total energy <span class="math inline">\(E\)</span> defined above and the total magnetisation <span class="math inline">\(M=\sum_{i,j} s_{i,j}\)</span>.</p>
 <p>The total number of possible states <span class="math inline">\(S\)</span> for a system of size <span class="math inline">\(L \times L\)</span> is <span class="math inline">\(2^{L^2}\)</span>. This makes direct computation of sums like <a href="#eq-obs" class="quarto-xref">Equation&nbsp;3</a> impractical for even relatively small volumes. Therefore, we will introduce a statistical method to approximate these sums.</p>
 <hr>
 </section>
@@ -436,18 +446,18 @@ W(s_{i,j} \to -s_{i,j}) =
 e^{-\beta \Delta E} &amp; \text{otherwise}.
 \end{cases}
 \]</span></p>
-<p>If the new microstate is rejected, the system remains in the current microstate <span class="math inline">\(S\)</span>. Note that in performing these updates it is convenient to define a dimensionless temperature <span class="math inline">\(T=kT/J\)</span>. Another way of thinking about this is that we are working with a system for which <span class="math inline">\(J=k=1\)</span>.</p>
+<p>If the new microstate is rejected, the system remains in the current microstate <span class="math inline">\(S\)</span>. Note that in performing these updates it is convenient to define a dimensionless temperature <span class="math inline">\(T^\star=kT/J\)</span>. Another way of thinking about this is that we are working with a system for which <span class="math inline">\(J=k=1\)</span>.</p>
 <p>A single update ‘sweep’ involves repeating these steps for all <span class="math inline">\(L^2\)</span> spins in the lattice.</p>
 <p>The expectation value of a macrovariable <span class="math inline">\(O\)</span> can then be approximated as:</p>
 <p><span class="math display">\[
-\overline O \approx \frac{1}{{\cal N}} \sum_{n=0}^{\cal N} O_n,
+\overline O \approx \frac{1}{{\cal N}} \sum_{n=1}^{\cal N} O_n,
 \]</span></p>
 <p>where <span class="math inline">\(O_n\)</span> is the value of the macrovariable measured for the <span class="math inline">\(n\)</span>-th microstate <span class="math inline">\(S_n\)</span>, and <span class="math inline">\({\cal N}\)</span> is the total number of microstates generated.</p>
 </section>
 </section>
 <section id="the-assignment" class="level1">
 <h1>3. The assignment</h1>
-<p>You should investigate certain properties of the 2d square Ising model using a prewritten Python code. The code allows you to run a simulation of the model with a choice of the numbers of lattice sites and temperature, or range of temperatures. It measures the macrostates <span class="math inline">\(E\)</span> and <span class="math inline">\(M\)</span> ie the total energy and the total magnetisation.</p>
+<p>You should investigate certain properties of the 2d square Ising model using a prewritten Python code. The code allows you to run a simulation of the model with a choice of the numbers of lattice sites and temperature, or range of temperatures. It measures the macrostates <span class="math inline">\(E\)</span> and <span class="math inline">\(M\)</span>, namely the total energy and the total magnetisation.</p>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">3.1 Setup</h2>
 <p>This should be completed in the week prior to the release of the assignment to make sure that any technical problems are resolved.</p>
@@ -472,10 +482,10 @@ e^{-\beta \Delta E} &amp; \text{otherwise}.
 <section id="macrostates-as-a-function-of-temperature-energy-and-magnetisation" class="level2">
 <h2 class="anchored" data-anchor-id="macrostates-as-a-function-of-temperature-energy-and-magnetisation">3.3 Macrostates as a function of temperature: Energy and magnetisation</h2>
 <p><em>Run the simulation at a series of temperatures in the range <span class="math inline">\(\:T=(1.5,3.5)\)</span> for system size <span class="math inline">\(L=15\)</span>. Show a plot of the average energy per spin <span class="math inline">\(\:\overline{E}/N\)</span> as a function of temperature. Comment on the shape of the curve.</em></p>
-<p><em>Show a plot of the average magnetisation per spin</em> <span class="math inline">\(\overline{M}/N\)</span> <em>for the same temperature range and system size. Comment on the shape of the curve.</em></p>
+<p><em>Show a plot of the average of the modulus of the magnetisation per spin</em>, <span class="math inline">\(\overline{|M|}/N\)</span>, <em>for the same temperature range and system size. Comment on the shape of the curve.</em></p>
 </section>
-<section id="other-macrostates-specific-heat-and-magnetic-susceptibilty" class="level2">
-<h2 class="anchored" data-anchor-id="other-macrostates-specific-heat-and-magnetic-susceptibilty">3.4 Other macrostates: Specific heat and magnetic susceptibilty</h2>
+<section id="other-macrostates-specific-heat-and-magnetic-susceptibility" class="level2">
+<h2 class="anchored" data-anchor-id="other-macrostates-specific-heat-and-magnetic-susceptibility">3.4 Other macrostates: Specific heat and magnetic susceptibility</h2>
 <p>As covered in lectures (chapter 5), the heat capacity can be calculated via measurements of the variance of the energy fluctuations:</p>
 <p><span class="math display">\[
 C=\frac{1}{kT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta E)^2}{kT^2}
@@ -497,7 +507,7 @@ C=\frac{1}{kT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta E)
 </section>
 <section id="your-report" class="level2">
 <h2 class="anchored" data-anchor-id="your-report">4.0 Your report</h2>
-<p><em>You should produce a short skeleton report (upto 2 sides of A4 including figures and in no less than 11 pt fontsize) focussing on and summarising the <strong>results</strong> of the above investigations and your comments/observations on the findings. You do not need to include any Python code.</em></p>
+<p><em>You should produce a short skeleton report (up to 2 sides of A4 including figures and in no less than 11 pt font size) focussing on and summarising the <strong>results</strong> of the above investigations and your comments/observations on the findings. You do not need to include any Python code.</em></p>
 <p><em>As well as a title and your name, the report should be laid out using the headings above:</em></p>
 <ul>
 <li><em>Microstates as a function of temperature</em></li>
