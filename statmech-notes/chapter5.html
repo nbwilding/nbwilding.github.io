@@ -409,39 +409,32 @@ Open to see derivation (non-examinable)
 <div class="callout-body-container callout-body">
 <p>The heat capacity for a system in thermal equilibrium at temperature <span class="math inline">\(T\)</span> is</p>
 <p><span class="math display">\[
-C = \frac{\partial \langle E \rangle}{\partial T}.
+C = \frac{\partial \overline{E}}{\partial T}.
 \]</span></p>
-<p>Introducing <span class="math inline">\(\beta = 1/(k_B T)\)</span> gives</p>
+<p>Using <span class="math inline">\(\beta = 1/(k_B T)\)</span> gives</p>
 <p><span class="math display">\[
-C
-=
--\frac{1}{k_B T^2}
-\frac{\partial \langle E \rangle}{\partial \beta}.
+C =
+-\frac{1}{k_B T^2}\frac{\partial \overline{E}}{\partial \beta}.
 \]</span></p>
 <p>The mean energy is</p>
 <p><span class="math display">\[
-\langle E \rangle
-=
-\frac{1}{Z}\sum_i E_i e^{-\beta E_i},
+\overline{E} = \frac{1}{Z}\sum_i E_i e^{-\beta E_i},
 \qquad
-Z = \sum_i e^{-\beta E_i}.
+Z=\sum_i e^{-\beta E_i}.
 \]</span></p>
 <p>Differentiating with respect to <span class="math inline">\(\beta\)</span> yields</p>
 <p><span class="math display">\[
-\frac{\partial \langle E \rangle}{\partial \beta}
+\frac{\partial \overline{E}}{\partial \beta}
 =
--\langle E^2 \rangle + \langle E \rangle^2 .
+-\overline{E^2} + \overline{E}^{\,2}.
 \]</span></p>
-<p>Substituting into the expression for <span class="math inline">\(C\)</span> gives</p>
+<p>Hence</p>
 <p><span class="math display">\[
-C
-=
+C =
 \frac{1}{k_B T^2}
-\left(
-\langle E^2 \rangle
--
-\langle E \rangle^2
-\right).
+\left(\overline{E^2}-\overline{E}^{\,2}\right)
+=
+\frac{(\Delta E)^2}{k_B T^2}.
 \]</span></p>
 <p>Thus the heat capacity is proportional to the variance of the energy</p>
 <p><span class="math display">\[
