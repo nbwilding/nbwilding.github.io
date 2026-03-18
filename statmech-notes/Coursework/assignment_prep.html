@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Coursework assignment: Investigating ferro- and para-magnetism in a two dimensional model magnet.</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Coursework/assignment_prep.html">Coursework preparation</a></li><li class="breadcrumb-item"><a href="../Coursework/assignment_prep.html">Coursework assignment preparation</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -335,8 +335,21 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Coursework preparation</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Coursework preparation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Coursework/assignment_prep.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Coursework assignment preparation</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -364,7 +377,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Coursework/assignment_prep.html">Coursework preparation</a></li><li class="breadcrumb-item"><a href="../Coursework/assignment_prep.html">Coursework assignment preparation</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Coursework assignment: Investigating ferro- and para-magnetism in a two dimensional model magnet.</h1>
 </div>
@@ -412,11 +425,11 @@ E(S) = -\frac{J}{2} \sum_{i,j} s_{i,j} \left( s_{i+1,j} + s_{i-1,j} + s_{i,j+1} 
 Z(\beta) = \sum_{S} \exp\left( -\beta E(S) \right),
 \tag{2}\]</span></span></p>
 <p>where <span class="math inline">\(\beta = \frac{1}{k T}\)</span>, with <span class="math inline">\(T\)</span> being the temperature and <span class="math inline">\(k\)</span> the Boltzmann constant. The sum runs over all possible spin microstates <span class="math inline">\(S\)</span>.</p>
-<p>The average (also called the `expectation’) value of an observable macrovariable <span class="math inline">\(O\)</span> is given by:</p>
+<p>The average (also called the `expectation’) value of an observable macrostate <span class="math inline">\(O\)</span> is given by:</p>
 <p><span id="eq-obs"><span class="math display">\[
 \overline O  = \frac{1}{Z(\beta)} \sum_{S} O(S) \exp\left( -\beta E(S) \right).
 \tag{3}\]</span></span></p>
-<p>Relevant macrovariables for the Ising magnet are the total energy <span class="math inline">\(E\)</span> defined above and the total magnetisation <span class="math inline">\(M=\sum_{i,j} s_{i,j}\)</span>.</p>
+<p>Relevant macrostates for the Ising magnet are the total energy <span class="math inline">\(E\)</span> defined above and the total magnetisation <span class="math inline">\(M=\sum_{i,j} s_{i,j}\)</span>.</p>
 <p>The total number of possible states <span class="math inline">\(S\)</span> for a system of size <span class="math inline">\(L \times L\)</span> is <span class="math inline">\(2^{L^2}\)</span>. This makes direct computation of sums like <a href="#eq-obs" class="quarto-xref">Equation&nbsp;3</a> impractical for even relatively small volumes. Therefore, we will introduce a statistical method to approximate these sums.</p>
 <hr>
 </section>
@@ -441,32 +454,32 @@ P_{acc}(s_{i,j} \to -s_{i,j}) =
 1 &amp; \text{if } \Delta E &lt; 0, \\
 e^{-\beta \Delta E} &amp; \text{otherwise}.
 \end{cases}
-\]</span></p>
-<p>If the new microstate is rejected, the system remains in the current microstate <span class="math inline">\(S\)</span>. Note that in performing these updates it is convenient to define a dimensionless temperature <span class="math inline">\(T^\star=kT/J\)</span>. Another way of thinking about this is that we are working with a system for which <span class="math inline">\(J=k=1\)</span>.</p>
-<p>A single Monte Carlo sweep consists of attempting <span class="math inline">\(L^2\)</span> spin flips.</p>
-<p>The expectation value of a macrovariable <span class="math inline">\(O\)</span> can then be approximated as:</p>
+\]</span> Steps 1-3 are then repeated. We refer to <span class="math inline">\(L^2\)</span> such iterations as a Monte Carlo ‘sweep’ – a convenient unit of ‘time’. Note that if the new microstate is rejected in any given iteration, the system remains in the current microstate <span class="math inline">\(S\)</span> when we begin the next iteration.</p>
+<p>In performing these updates it is convenient to define a dimensionless temperature <span class="math inline">\(T^\star=kT/J\)</span>. Another way of thinking about this is that we are working with a system for which <span class="math inline">\(J=k=1\)</span>. Your simulations (see below) will work with this dimensionless temperature.</p>
+<p>The sequence of microstates generated by the Metropolis procedure satisfy the Boltzmann distribution. We can thus sample from them to estimate macrostate probabilities. The expectation value of a macrostate <span class="math inline">\(O\)</span> can then be approximated as:</p>
 <p><span class="math display">\[
 \overline O \approx \frac{1}{{\cal N}} \sum_{n=1}^{\cal N} O_n,
-\]</span></p>
-<p>where <span class="math inline">\(O_n\)</span> is the value of the macrovariable measured for the <span class="math inline">\(n\)</span>-th microstate <span class="math inline">\(S_n\)</span>, and <span class="math inline">\({\cal N}\)</span> is the total number of microstates generated.</p>
+\]</span> where <span class="math inline">\(O_n\)</span> is the value of the macrostate measured after the <span class="math inline">\(n\)</span>th sweep, and <span class="math inline">\({\cal N}\)</span> is the total number of sweeps generated.</p>
 </section>
 </section>
 <section id="the-assignment" class="level1">
 <h1>3. The assignment</h1>
-<p>You should investigate certain properties of the 2d square Ising model using a prewritten Python code. The code allows you to run a simulation of the model with a choice of the numbers of lattice sites and temperature, or range of temperatures. It measures the macrostates <span class="math inline">\(E\)</span> and <span class="math inline">\(M\)</span>, namely the total energy and the total magnetisation.</p>
+<p>You should investigate certain properties of the 2d square Ising model using a prewritten and presupplied Python code. The code allows you to run a simulation of the model with a choice of the numbers of lattice sites and temperature, or range of temperatures. It measures the macrostates <span class="math inline">\(E\)</span> and <span class="math inline">\(M\)</span>, namely the total energy and the total magnetisation.</p>
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">3.1 Setup</h2>
 <p>This should be completed in the week prior to the release of the assignment to make sure that any technical problems are resolved.</p>
 <ul>
-<li>On the PHYS20040 Blackboard page open the Resources and Tools tab</li>
+<li>On the PHYS20040 Blackboard page open the Unit Information and Resources tab</li>
 <li>Scroll down to Notable and open it (if off campus make sure you have the <a href="https://uob.sharepoint.com/sites/itservices/SitePages/vpn.aspx">UoB VPN</a> enabled)</li>
 <li>Select the Jupyter Notebook (Legacy) notebook server option</li>
 <li>When the notebook has opened click the +Gitrepo button</li>
 <li>Under enter Git Repository insert: https://github.com/nbwilding/Ising-coursework</li>
 <li>Press the “clone” button. This will download a notebook called Ising.ipynb into Jupyter</li>
 <li>Check that the program runs</li>
-<li>Familiarise yourself with the main features of the program. Pay attention to how to change the temperature range and number of spins <span class="math inline">\(N=L^2\)</span>, and how the energy and magnetisation and their averages are calculated. Be aware that the program can take several minutes to run depending on the system size.</li>
+<li>Familiarise yourself with the main features of the program. Pay attention to how to change the temperature range and number of spins <span class="math inline">\(L^2\)</span>, and how the energy and magnetisation and their averages are calculated. Be aware that the program can take several minutes to run depending on the system size.</li>
 </ul>
+<p><strong>The assignment itself will be released on Friday 20th March at 12:30 with a deadline of Friday 17th April at 12:30.</strong></p>
+<p><strong>Please contact me (nigel.wilding@bristol.ac.uk) if you have trouble with the setup described above, detailing the problem that you encountered.</strong></p>
 
 
 </section>
