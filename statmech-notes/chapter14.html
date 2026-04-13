@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>chapter8 – Statistical Physics</title>
+<title>chapter14 – Statistical Physics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter8.html">8. Einstein’s model of a simple solid</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,13 +155,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Chapters</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
@@ -206,7 +206,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter8.html" class="sidebar-item-text sidebar-link active">
+  <a href="./chapter8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8. Einstein’s model of a simple solid</span></a>
   </div>
 </li>
@@ -445,233 +445,137 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#einsteins-model-of-a-simple-solid" id="toc-einsteins-model-of-a-simple-solid" class="nav-link active" data-scroll-target="#einsteins-model-of-a-simple-solid">8 Einstein’s model of a simple solid</a>
+  <li><a href="#the-ideal-bose-gas" id="toc-the-ideal-bose-gas" class="nav-link active" data-scroll-target="#the-ideal-bose-gas">14. The ideal bose gas</a>
   <ul class="collapse">
-  <li><a href="#simple-model-of-a-solid" id="toc-simple-model-of-a-solid" class="nav-link" data-scroll-target="#simple-model-of-a-solid">8.1 Simple model of a solid</a></li>
-  <li><a href="#statistical-mechanics-of-the-quantum-harmonic-oscillator" id="toc-statistical-mechanics-of-the-quantum-harmonic-oscillator" class="nav-link" data-scroll-target="#statistical-mechanics-of-the-quantum-harmonic-oscillator">8.2 Statistical mechanics of the quantum harmonic oscillator</a></li>
-  <li><a href="#thermodynamic-properties" id="toc-thermodynamic-properties" class="nav-link" data-scroll-target="#thermodynamic-properties">8.3 Thermodynamic properties</a></li>
-  <li><a href="#high-and-low-temperature-behaviour" id="toc-high-and-low-temperature-behaviour" class="nav-link" data-scroll-target="#high-and-low-temperature-behaviour">8.4 High and low temperature behaviour</a></li>
+  <li><a href="#quanta-as-bosons" id="toc-quanta-as-bosons" class="nav-link" data-scroll-target="#quanta-as-bosons">14.1 Quanta as Bosons</a>
+  <ul class="collapse">
+  <li><a href="#waveparticle-duality" id="toc-waveparticle-duality" class="nav-link" data-scroll-target="#waveparticle-duality">Wave/Particle Duality</a></li>
+  </ul></li>
+  <li><a href="#blackbody-or-cavity-radiation" id="toc-blackbody-or-cavity-radiation" class="nav-link" data-scroll-target="#blackbody-or-cavity-radiation">14.2 Blackbody or Cavity Radiation</a></li>
+  <li><a href="#limits-of-the-planck-distribution" id="toc-limits-of-the-planck-distribution" class="nav-link" data-scroll-target="#limits-of-the-planck-distribution">14.3 Limits of the Planck Distribution</a>
+  <ul class="collapse">
+  <li><a href="#low-frequency-limit" id="toc-low-frequency-limit" class="nav-link" data-scroll-target="#low-frequency-limit">Low-Frequency Limit</a></li>
+  <li><a href="#high-frequency-limit" id="toc-high-frequency-limit" class="nav-link" data-scroll-target="#high-frequency-limit">High-Frequency Limit</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter8.html">8. Einstein’s model of a simple solid</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-<section id="einsteins-model-of-a-simple-solid" class="level1">
-<h1>8 Einstein’s model of a simple solid</h1>
-<p>Here we apply the Boltzmann distribution to the vibrational energy of atoms in a solid. In so doing we use a fundamental model of quantum physics—the quantum harmonic oscillator.</p>
-<section id="simple-model-of-a-solid" class="level2">
-<h2 class="anchored" data-anchor-id="simple-model-of-a-solid">8.1 Simple model of a solid</h2>
-<p><em>See Mandl 6.2</em></p>
-<p>Recall from your first year Properties of Matter course that in a crystalline solid, atoms sit on the sites of a regular array (lattice). A model for the vibrational motion of the atoms about their equilibrium positions (lattice sites) is to consider the atoms attached to each other by springs (see <a href="#fig-einstein-a" class="quarto-xref">Figure&nbsp;1 (a)</a>). However this a (strongly) interacting system since energy is stored in interaction potentials (the springs) between atoms.</p>
-<div id="fig-einsteinsolid" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-einsteinsolid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-einsteinsolid" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-einstein-a" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-einstein-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="NotesFigs/Einstein_solid.png" class="img-fluid figure-img" data-ref-parent="fig-einsteinsolid">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-einstein-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) Model of crystal solid as atoms connect by harmonic springs.
-</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-einsteinsolid" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-einstein-b" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-einstein-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="NotesFigs/Einstein_single_particle.png" class="img-fluid figure-img" data-ref-parent="fig-einsteinsolid">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-einstein-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) Model of each atom as independent harmonic oscillator
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-einsteinsolid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1
-</figcaption>
-</figure>
-</div>
-<p>We seek a weakly interacting system that models the behaviour. A simple approximation is illustrated in <a href="#fig-einstein-b" class="quarto-xref">Figure&nbsp;1 (b)</a>. Each atom sits in its own harmonic potential and the motion of atoms independent of the others. This is the Einstein model.</p>
-<p>Let us first consider the system classically. Each oscillator has energy</p>
+<section id="the-ideal-bose-gas" class="level1">
+<h1>14. The ideal bose gas</h1>
+<p>In this chapter, we will be dealing with bosons for which the relevant distribution is the Bose-Einstein distribution:</p>
 <p><span class="math display">\[
-\varepsilon = \frac{1}{2} \kappa x^2 + \frac{1}{2} mv^2
+n(\epsilon) = f_B(\epsilon) = \frac{1}{\exp\left(\frac{\epsilon - \mu}{kT}\right) - 1}
 \]</span></p>
-<p>where <span class="math inline">\(x\)</span> is the displacement from equilibrium position. Thus in 3d the system has <span class="math inline">\(N \times 3 \times 2\)</span> quadratic contributions (<span class="math inline">\(N\)</span> particles, <span class="math inline">\(3\)</span> dimensions, P.E. + K.E.) to the energy. The equipartition theorem then implies that the energy and heat capacity of the system should be</p>
+<p>Recall that this gives the average number of bosons in a quantum state of energy <span class="math inline">\(\epsilon\)</span>.</p>
+<p>For bosons, there is no exclusion principle (so no restriction on the number of bosons in a quantum state); however, there are still strong effects of indistinguishability</p>
+<section id="quanta-as-bosons" class="level2">
+<h2 class="anchored" data-anchor-id="quanta-as-bosons">14.1 Quanta as Bosons</h2>
+<p>A quantum harmonic oscillator of frequency <span class="math inline">\(\omega\)</span> has energy levels:</p>
 <p><span class="math display">\[
-\overline{E} = 6N \times \frac{1}{2} kT = 3NkT
+\epsilon_n = \hbar \omega \left( n + \frac{1}{2} \right)
 \]</span></p>
+<p>Recall from chapter 9 that for such an oscillator in contact with a heat reservoir:</p>
 <p><span class="math display">\[
-C_V = \frac{\partial \overline{E}}{\partial T} = 3Nk
+n = \frac{1}{\exp\left(\frac{\hbar \omega}{kT}\right) - 1}
 \]</span></p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-More on the Equipartition Theorem
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>For each degree of freedom of a system with an energy which is quadratic in either the coordinate or the momentum, the average energy is <span class="math inline">\(kT/2\)</span> and its contribution to the heat capacity is <span class="math inline">\(k/2\)</span>, at high enough temperatures.</strong></p>
-<p>The equipartition theorem is applicable only when the system can be described classically and is applicable only to each term in the energy that is proportional to a coordinate squared. This coordinate must take on a continuum of values from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(+\infty\)</span>. Here are some examples from classical mechanical systems.</p>
-<ul>
-<li><p><strong>Vibrations:</strong> <span class="math display">\[
-E_{vib} = \frac{1}{2} m\dot{x}^2 + \frac{1}{2} \kappa x^2
-\]</span> Two quadratic degrees of freedom, hence <span class="math inline">\(E \rightarrow kT\)</span> as <span class="math inline">\(T \to \infty\)</span>. Note that here <span class="math inline">\(\kappa\)</span> is the spring constant.</p></li>
-<li><p><strong>Rotations:</strong> Two perpendicular axes about which a molecule can rotate, <span class="math display">\[
-E_{rot} = \frac{1}{2} I_1 \dot{\theta}_1^2 + \frac{1}{2} I_2 \dot{\theta}_2^2
-\]</span> Two quadratic degrees of freedom, hence <span class="math inline">\(E \rightarrow kT\)</span> as <span class="math inline">\(T \to \infty\)</span>.</p></li>
-<li><p><strong>Translations:</strong> <span class="math display">\[
-E_{tr} = \frac{1}{2} m(\dot{x}^2 + \dot{y}^2 + \dot{z}^2)
-\]</span> Three quadratic degrees of freedom, hence <span class="math inline">\(E\rightarrow \frac{3}{2}kT\)</span> as <span class="math inline">\(T \to \infty\)</span>.</p></li>
-</ul>
-<p>The equipartition theorem is a fundamental principle in classical physics. However, from the perspective of modern statistical mechanics, it fails when the energy level separation is significantly larger than thermal energy. In such cases, the heat capacity associated with that degree of freedom decreases, eventually approaching zero at low temperatures. This phenomenon is referred to as “freezing out” of the degree of freedom. A common example is the vibrational degrees of freedom, which are typically frozen out at room temperature.</p>
-<p>More specifically, equipartition holds:</p>
-<ul>
-<li>for <strong>vibrations</strong>, when <span class="math inline">\(T \gg \hbar \omega / k \approx 10^3 K\)</span>;</li>
-<li>for <strong>rotations</strong>, when <span class="math inline">\(T \gg \hbar^2 / I k \approx 10 - 100 K\)</span>;</li>
-<li>for <strong>translations</strong>, when <span class="math inline">\(T \gg \hbar^2 / (m V^{2/3} k) \approx 10^{-14} K\)</span>.</li>
-</ul>
-<p>Thus, at room temperature, only the rotational and translational degrees of freedom can be treated classically, giving <span class="math inline">\(C_V = \frac{3}{2} R\)</span> for monatomic gases and <span class="math inline">\(C_V = \frac{5}{2} R\)</span> for diatomic gases, for the molar heat capacity.</p>
-<p>Using the equipartition theorem, we can estimate the heat capacities of various substances by counting their quadratic degrees of freedom. For example, in a solid, each atom can vibrate in three directions, leading to an expected molar heat capacity of (3R). This prediction aligns with the <strong>Dulong-Petit law</strong>, which accurately describes the heat capacities of many solids at room temperature.</p>
-</div>
-</div>
-</div>
-<p>If you have forgotten the equipartition theorem, you can find it in your first year Properties of Matter notes and in the note above. However we will understand it at a deeper level in a few chapters’ time.</p>
-<p>The prediction for the heat capacity was well borne out experimentally for many monoatomic solids and is known as the Dulong–Petit law. However diamond has a smaller heat capacity than the Dulong–Petit law predicts. Einstein showed that this is a quantum effect.</p>
-<p>To understand why at a qualitative level quantum effects are important in diamond. Recall that diamond is very hard. This means that the ‘spring constant’ of the classical oscillator modelling each atom in Figure 1 is very large. Therefore the frequency of the oscillators is very large and and the typical displacements very small. This last fact implies that quantum effects have to be taken into account– roughly speaking, from the uncertainty principle if the displacements are very small then we know the atoms’ positions with high accuracy, therefore there must be uncertainty in the momenta (velocities).</p>
+<p>Comparing this with the Bose-Einstein distribution above, we see that the average energy level <span class="math inline">\(n\)</span> of the quantum oscillator can be thought of as the average number of bosons in a quantum state with energy <span class="math inline">\(\hbar \omega\)</span> and chemical potential <span class="math inline">\(\mu = 0\)</span>.</p>
+<p>Thus, quanta of energy can be treated as bosons. This is reasonable since there is no restriction on the number of quanta of energy in the oscillator, and the quanta of energy clearly cannot be labeled and are indistinguishable.</p>
+<p>That <span class="math inline">\(\mu = 0\)</span> expresses the fact that there is no constraint on the number of quanta, i.e., the number of quanta is not conserved. Returning to a definition of <span class="math inline">\(\mu\)</span> from chapter 14:</p>
+<p><span class="math display">\[
+\mu = \left(\frac{\partial F}{\partial N}\right)_{T, V}
+\]</span></p>
+<p>we see that <span class="math inline">\(\mu = 0\)</span> implies that we minimize the free energy with respect to <span class="math inline">\(N\)</span> (number of quanta).</p>
+<p>Now, proceed to use the idea of quanta as bosons to view the wave/particle duality you will have encountered in quantum mechanics courses in a new light. For our purposes, we consider only standing waves.</p>
+<section id="waveparticle-duality" class="level3">
+<h3 class="anchored" data-anchor-id="waveparticle-duality">Wave/Particle Duality</h3>
+<ol type="1">
+<li>The standing waves or normal modes of the system have discrete frequencies <span class="math inline">\(\nu\)</span> (or angular frequencies <span class="math inline">\(\omega\)</span>). We think of them as the quantum states.</li>
+<li>Quantum mechanics tells us energy is quantized, thus the energy <span class="math inline">\(\epsilon\)</span> in a mode is <span class="math inline">\(n h \nu + \text{constant}\)</span>.</li>
+<li>These quanta can be treated as bosons; therefore, the average number of quanta in a quantum state is given by the B-E distribution <span class="math inline">\(n(\nu) = \frac{1}{\exp\left(\frac{h \nu}{kT}\right) - 1}\)</span>. This will tell us how energy is distributed amongst the possible frequencies.</li>
+</ol>
+<p>If you are unsure of how it all fits together, a simple example might help: consider the 1D wave equation</p>
+<p><span class="math display">\[
+\frac{1}{v^2} \frac{\partial^2 \psi}{\partial t^2} = \frac{\partial^2 \psi}{\partial x^2}
+\]</span></p>
+<p>This is solved (for boundary conditions that vanish at <span class="math inline">\(0\)</span>, <span class="math inline">\(L\)</span>) by the substitution <span class="math inline">\(\psi = T(t) X(x)\)</span> with <span class="math inline">\(X = \sin(n \pi x / L)\)</span>:</p>
+<p><span class="math display">\[
+\frac{1}{v^2} \frac{d^2 T}{dt^2} = - k^2 T
+\]</span></p>
+<p>where <span class="math inline">\(k = n \pi / L\)</span>, which is just the equation for a harmonic oscillator with angular frequency <span class="math inline">\(\omega = k v\)</span>.</p>
+<p>Therefore, quantum mechanically, the wave modes should be treated as quantum oscillators with angular frequency <span class="math inline">\(\omega\)</span> or frequency <span class="math inline">\(\nu\)</span>, which in turn can be treated as Bose states with the energy quanta as bosons.</p>
 </section>
-<section id="statistical-mechanics-of-the-quantum-harmonic-oscillator" class="level2">
-<h2 class="anchored" data-anchor-id="statistical-mechanics-of-the-quantum-harmonic-oscillator">8.2 Statistical mechanics of the quantum harmonic oscillator</h2>
-<p>From quantum mechanics recall that a one dimensional harmonic oscillator has energy levels</p>
-<p><span class="math display">\[
-\varepsilon = \left(n + \frac{1}{2}\right)\hbar\omega
-\]</span></p>
-<p>where the quantum number <span class="math inline">\(n = 0, 1, 2 \ldots\)</span> (see chapter 8 of quantum mechanics notes). The ground state energy <span class="math inline">\(n = 0\)</span> is <span class="math inline">\(\frac{1}{2}\hbar\omega\)</span>. The generalisation to a three-dimensional oscillator is easy</p>
-<p><span class="math display">\[
-\varepsilon_{3d} = \left(n_x + n_y + n_z + \frac{3}{2}\right)\hbar\omega
-\]</span></p>
-<p>Einstein’s model is a system of <span class="math inline">\(N\)</span> 3d quantum oscillators all with the same frequency <span class="math inline">\(\omega\)</span> in thermal equilibrium; <span class="math inline">\(\omega\)</span> is chosen to fit the experimental data.</p>
-<p>From the statistical mechanics of weakly interacting systems we have <span class="math inline">\(Z = [Z(1)]^N\)</span>. Now since the energy of an oscillator is a sum of three similar contributions we will have a further factorisation (see chapter 6.3) and</p>
-<p><span class="math display">\[
-Z = [Z(1)]^N = \left[Z_{1d}(1)\right]^{3N}
-\]</span></p>
-<p>where <span class="math inline">\(Z_{1d}(1)\)</span> is the partition function for a single 1d oscillator. The task reduces to the calculation of <span class="math inline">\(Z_{1d}(1)\)</span></p>
-<p><span class="math display">\[
-Z_{1d}(1) = \sum_{n=0}^{\infty} \exp\left(-\beta\hbar\omega\left[n + \frac{1}{2}\right]\right)
-\]</span></p>
-<p>To evaluate the sum recall the geometric series, valid for <span class="math inline">\(|a|&lt;1\)</span></p>
-<p><span class="math display">\[
-\sum_{n=0}^{\infty} a^n = \frac{1}{1 - a}
-\]</span></p>
-<p>Thus, inserting <span class="math inline">\(a=\exp(-\beta\hbar\omega)\)</span>, we find</p>
-<p><span class="math display">\[
-Z_{1d}(1) = \frac{\exp\left(-\frac{x}{2}\right)}{1 - \exp(-x)}
-\]</span></p>
-<p>where <span class="math inline">\(x = \beta\hbar\omega\)</span>.</p>
 </section>
-<section id="thermodynamic-properties" class="level2">
-<h2 class="anchored" data-anchor-id="thermodynamic-properties">8.3 Thermodynamic properties</h2>
-<p>We now turn the handle to crank out the thermodynamics variables. First note</p>
+<section id="blackbody-or-cavity-radiation" class="level2">
+<h2 class="anchored" data-anchor-id="blackbody-or-cavity-radiation">14.2 Blackbody or Cavity Radiation</h2>
+<p>A “blackbody” is one that absorbs all incident radiation (none is reflected). Thus, when cold, a blackbody looks black. However, if the body is not to heat up indefinitely, it eventually must radiate as much energy as it absorbs. Thus, a hot blackbody does not look black because it is emitting radiation. The question is as to the spectrum of the emitted radiation.</p>
+<p>Historically, this was an important question since empirically it seemed that the radiation spectrum depended only on temperature, not the composition of the black body. Also, a classical description ran into a problem known as the “ultraviolet catastrophe” to be discussed below.</p>
+<p>The idealized model of blackbody radiation is to think of the radiation inside a cavity (like an oven) at temperature <span class="math inline">\(T\)</span> as being in equilibrium. If a very small hole is drilled in the cavity, the radiation that escapes will be the same as blackbody radiation and will have the same spectrum as the radiation in equilibrium inside the cavity.</p>
+<p>The radiation inside the cavity is just made up of electromagnetic standing waves (or normal modes) of frequency <span class="math inline">\(\nu\)</span>. Treating the photons as bosons as above and using the B-E distribution, we have for the average energy in a mode of frequency <span class="math inline">\(\nu\)</span>:</p>
 <p><span class="math display">\[
-\overline{E} = 3N\overline{\varepsilon} = 3N\hbar\omega\left(\overline{n} + \frac{1}{2}\right)
+\epsilon(\nu) = h \nu n(\nu) = \frac{h \nu}{\exp\left(\frac{h \nu}{kT}\right) - 1}
 \]</span></p>
-<p>It is easiest to calculate <span class="math inline">\(\varepsilon\)</span> directly from the relation</p>
+<p>We just need to calculate the density of modes in the same way we calculated the density of states for a free particle in a box. In fact, the calculation is very nearly identical. We reproduce it for completeness.</p>
+<p>Consider a cubic cavity side <span class="math inline">\(L\)</span>; to have the wave vanish at the boundaries, we must have <span class="math inline">\(L \nu_x = 2 n_x c\)</span>.</p>
+<p>The momentum component of the wave in the <span class="math inline">\(x\)</span>-direction is</p>
 <p><span class="math display">\[
-\overline{\varepsilon} = -\frac{\partial}{\partial\beta} \ln Z_{1d}(1) = -\frac{dx}{d\beta} \frac{\partial}{\partial x} \ln Z_{1d}(1)
+p_x = \frac{h \nu_x}{c} = \frac{h n_x}{2L}
+\]</span></p>
+<p>and the magnitude of the momentum is</p>
+<p><span class="math display">\[
+p = \frac{h}{2L} (n_x^2 + n_y^2 + n_z^2)^{1/2}
+\]</span></p>
+<p>Thus, from <span class="math inline">\(\nu = p c / h\)</span>, the allowed value of <span class="math inline">\(\nu\)</span> is given by triplets <span class="math inline">\(\{n_x, n_y, n_z\}\)</span>. We now approximate the sum over all triplets as an integral in analogy with chapter 10.3. However, we also have two possible transverse polarizations of the electromagnetic wave, so an additional factor of two enters:</p>
+<p><span class="math display">\[
+\sum_{\text{modes}} A(\nu) \rightarrow 2 \times 8 \int A(\nu) 4 \pi n^2 dn = 8 \times \int A(\nu) 4 \pi \nu^2 L^3 \frac{d\nu}{c^3}
+\]</span></p>
+<p>The density of modes <span class="math inline">\(g(\nu)\)</span> is defined through:</p>
+<p><span class="math display">\[
+g(\nu) d\nu = \text{number of electromagnetic waves in frequency range } \nu \rightarrow \nu + d\nu = \frac{8 \pi \nu^2 V d\nu}{c^3}
+\]</span></p>
+<p>Thus, the energy in modes <span class="math inline">\(\nu \rightarrow \nu + d\nu\)</span> is:</p>
+<p><span class="math display">\[
+\epsilon(\nu) g(\nu) d\nu = \frac{8 \pi V h \nu^3 d\nu}{c^3 \left(\exp\left(\frac{h \nu}{kT}\right) - 1\right)}
+\]</span></p>
+<p>And the spatial energy density is given by the Planck distribution:</p>
+<p><span class="math display">\[
+u(\nu) = \frac{8 \pi h \nu^3}{c^3 \left(\exp\left(\frac{h \nu}{kT}\right) - 1\right)}
+\]</span></p>
+<p>Sometimes the distribution appears as a function of wavelength <span class="math inline">\(\lambda = c / \nu\)</span>, which is obtained by changing variables:</p>
+<p><span class="math display">\[
+d\nu = - \frac{c}{\lambda^2} d\lambda
 \]</span></p>
 <p><span class="math display">\[
-= -\hbar\omega \frac{\partial}{\partial x} \left[-\ln\left(1 - \exp(-x)\right) - \frac{x}{2}\right]
-\]</span></p>
-<p><span class="math display">\[
-= \hbar\omega \left[\frac{\exp(-x)}{1 - \exp(-x)} + \frac{1}{2}\right]
-\]</span></p>
-<p>and we see that the average quantum number is</p>
-<p><span class="math display">\[
-\overline{n} = \frac{\exp(-x)}{1 - \exp(-x)} = \frac{1}{\exp(x) - 1}
-\]</span></p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Expand to see an alternative derivation
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Aside: An alternative derivation is to use the Boltzmann distribution <span class="math inline">\(P_n\)</span> for the levels <span class="math inline">\(n\)</span> of a 1d oscillator explicitly</p>
-<p><span class="math display">\[
-\overline{n} = \sum_{n=0}^{\infty} P_n n = \frac{1}{Z_{1d}(1)} \sum_{n=0}^{\infty} n \exp\left[-x\left(n + \frac{1}{2}\right)\right]
-\]</span></p>
-<p>then use the identity</p>
-<p><span class="math display">\[
-\sum_{n=0}^{\infty} n a^n = a \frac{d}{da} \sum_{n=0}^{\infty} a^n = a \frac{d}{da} \frac{1}{1 - a} = \frac{a}{(1 - a)^2}
-\]</span></p>
-</div>
-</div>
-</div>
-<p>The mean total energy is given by</p>
-<p><span class="math display">\[
-\overline{E} = 3N\hbar\omega \left[\frac{\exp(-x)}{1 - \exp(-x)} + \frac{1}{2}\right]
-\]</span></p>
-<p>and the heat capacity is given by</p>
-<p><span class="math display">\[
-C_V = \left(\frac{\partial \overline{E}}{\partial T}\right)_V = \left(\frac{\partial x}{\partial T}\right)_\omega \left(\frac{\partial \overline{E}}{\partial x}\right)_\omega
-\]</span></p>
-<p>Note that here the ‘constant volume’ constraint on the partial derivative is the same as the ‘constant <span class="math inline">\(\omega\)</span>’ constraint. This is because the only way volume (or any other variable except temperature) can enter into the model is through the parameter <span class="math inline">\(\omega\)</span>.</p>
-<p>We find</p>
-<p><span class="math display">\[
-C_V = -3N \frac{\hbar\omega}{k T^2} \frac{d}{dx} \left[\frac{1}{\exp(x) - 1}\right] = 3Nk \frac{x^2 \exp(x)}{(\exp(x) - 1)^2}
+u(\lambda) d\lambda = \frac{8 \pi h c}{\lambda^5 \left(\exp\left(\frac{h c}{\lambda kT}\right) - 1\right)} d\lambda
 \]</span></p>
 </section>
-<section id="high-and-low-temperature-behaviour" class="level2">
-<h2 class="anchored" data-anchor-id="high-and-low-temperature-behaviour">8.4 High and low temperature behaviour</h2>
-<p>To define the high temperature and low temperature regimes we define a characteristic temperature <span class="math inline">\(T^*\)</span> defined by <span class="math inline">\(x = 1\)</span> i.e.&nbsp;when <span class="math inline">\(kT\)</span> equals the excitation energy <span class="math inline">\(\hbar\omega\)</span>. Below this temperature quantum effects with typical energy <span class="math inline">\(\sim\hbar\omega\)</span> dominate over classical effects with typical energy <span class="math inline">\(\sim kT\)</span>.￼</p>
+<section id="limits-of-the-planck-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="limits-of-the-planck-distribution">14.3 Limits of the Planck Distribution</h2>
+<p>An important feature is that it only depends on the cavity through temperature, not through composition or shape (see Figure 1).</p>
+<section id="low-frequency-limit" class="level3">
+<h3 class="anchored" data-anchor-id="low-frequency-limit">Low-Frequency Limit</h3>
+<p>First, consider the limit of low <span class="math inline">\(\nu\)</span> when <span class="math inline">\(\frac{h \nu}{kT} \ll 1\)</span>:</p>
 <p><span class="math display">\[
-T^* = \frac{\hbar\omega}{k}
+u(\nu) \approx \frac{8 \pi k T \nu^2}{c^3}
 \]</span></p>
-<p>Thus in the high temperature regime <span class="math inline">\(T \gg T^\star\)</span> (<span class="math inline">\(x \ll 1\)</span>) we find</p>
+<p>This is a classical result since <span class="math inline">\(h\)</span> does not appear (it can be obtained by purely classical arguments). However, if one tries to apply the formula for all frequencies, in particular high frequencies, the “ultraviolet catastrophe” occurs, whereby the higher the frequency, the more energy is stored—essentially, a blackbody radiator would kill us all with high-frequency radiation!</p>
+</section>
+<section id="high-frequency-limit" class="level3">
+<h3 class="anchored" data-anchor-id="high-frequency-limit">High-Frequency Limit</h3>
+<p>The correct high-frequency limit is from the Planck distribution when <span class="math inline">\(\frac{h \nu}{kT} \gg 1\)</span>:</p>
 <p><span class="math display">\[
-\overline{n} \approx \frac{1}{1 + x \ldots - 1} \approx \frac{1}{x} = \frac{kT}{\hbar\omega}
+u(\nu) \approx \frac{8 \pi h \nu^3}{c^3} \exp\left(- \frac{h \nu}{kT}\right)
 \]</span></p>
-<p><span class="math display">\[
-\overline{E} \approx 3NkT + \frac{3}{2}N\hbar\omega
-\]</span></p>
-<p>we see that <span class="math inline">\(\overline{n}\)</span> and hence <span class="math inline">\(\overline{\varepsilon}\)</span> and <span class="math inline">\(\overline{E}\)</span> increase linearly with temperature. Moreover the heat capacity becomes</p>
-<p><span class="math display">\[
-C_V = \left(\frac{\partial \overline{E}}{\partial T}\right)_V \approx 3Nk
-\]</span></p>
-<p>and we recover the Dulong–Petit law.</p>
-<p>In the low temperature regime <span class="math inline">\(T \ll T^\star\)</span> (<span class="math inline">\(x \gg 1\)</span>) we have</p>
-<p><span class="math display">\[
-\overline{n} \approx \exp(-x)
-\]</span></p>
-<p><span class="math display">\[
-\frac{C_V}{3Nk} \approx x^2 \exp(-x)
-\]</span></p>
-<p>The mean energy level <span class="math inline">\(\overline{n}\)</span> tends to zero meaning most oscillators are in the ground state; the heat capacity is very much less than <span class="math inline">\(3Nk\)</span>.</p>
-<p>Thus when <span class="math inline">\(x = \frac{\hbar\omega}{kT}\)</span> is large, quantum effects, in particular the effect of a discrete gap between the ground state and first excited state, become important. The Einstein model quite successfully explained the experimentally observed heat capacity of diamond (see Mandl 6.2). However the very low temperature behaviour of the heat capacity was still not quite right. In fact a <span class="math inline">\(T^3\)</span> dependence appeared to emerge. This can be explained by an elaborated version of the Einstein theory known as the Debye theory. In essence the central weakness of the Einstein model is its neglect of collective motion of atoms (so called phonons) which exhibit a spectrum of frequencies.</p>
-<p>When <span class="math inline">\(x = \frac{\hbar\omega}{kT}\)</span> is small we recover the ‘classical’ results i.e.&nbsp;results where Planck’s constant does not appear in the thermodynamic quantities (except as an arbitrary constant in the energy). Quite generally high temperature is the classical limit (if indeed one exists).</p>
+<p>In this formula, the negative exponential kills the cubic power in <span class="math inline">\(\nu\)</span> and the “ultraviolet catastrophe” is removed. This is a direct result of using a quantum picture for the normal modes in the cavity and was one of the first successes of quantum statistical mechanics.</p>
 
 
+</section>
 </section>
 </section>
 

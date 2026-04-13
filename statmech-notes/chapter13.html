@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>chapter8 – Statistical Physics</title>
+<title>chapter13 – Statistical Physics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter8.html">8. Einstein’s model of a simple solid</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,13 +155,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Chapters</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
@@ -206,7 +206,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter8.html" class="sidebar-item-text sidebar-link active">
+  <a href="./chapter8.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8. Einstein’s model of a simple solid</span></a>
   </div>
 </li>
@@ -445,231 +445,159 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#einsteins-model-of-a-simple-solid" id="toc-einsteins-model-of-a-simple-solid" class="nav-link active" data-scroll-target="#einsteins-model-of-a-simple-solid">8 Einstein’s model of a simple solid</a>
+  <li><a href="#the-ideal-fermi-gas" id="toc-the-ideal-fermi-gas" class="nav-link active" data-scroll-target="#the-ideal-fermi-gas">13. The Ideal Fermi gas</a>
   <ul class="collapse">
-  <li><a href="#simple-model-of-a-solid" id="toc-simple-model-of-a-solid" class="nav-link" data-scroll-target="#simple-model-of-a-solid">8.1 Simple model of a solid</a></li>
-  <li><a href="#statistical-mechanics-of-the-quantum-harmonic-oscillator" id="toc-statistical-mechanics-of-the-quantum-harmonic-oscillator" class="nav-link" data-scroll-target="#statistical-mechanics-of-the-quantum-harmonic-oscillator">8.2 Statistical mechanics of the quantum harmonic oscillator</a></li>
-  <li><a href="#thermodynamic-properties" id="toc-thermodynamic-properties" class="nav-link" data-scroll-target="#thermodynamic-properties">8.3 Thermodynamic properties</a></li>
-  <li><a href="#high-and-low-temperature-behaviour" id="toc-high-and-low-temperature-behaviour" class="nav-link" data-scroll-target="#high-and-low-temperature-behaviour">8.4 High and low temperature behaviour</a></li>
+  <li><a href="#low-density-limit" id="toc-low-density-limit" class="nav-link" data-scroll-target="#low-density-limit">Low density limit</a></li>
+  <li><a href="#ideal-fermi-gas" id="toc-ideal-fermi-gas" class="nav-link" data-scroll-target="#ideal-fermi-gas">Ideal Fermi gas</a>
+  <ul class="collapse">
+  <li><a href="#important-points" id="toc-important-points" class="nav-link" data-scroll-target="#important-points">Important Points:</a></li>
+  </ul></li>
+  <li><a href="#low-temperature-behaviour" id="toc-low-temperature-behaviour" class="nav-link" data-scroll-target="#low-temperature-behaviour">Low temperature behaviour</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter8.html">8. Einstein’s model of a simple solid</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-<section id="einsteins-model-of-a-simple-solid" class="level1">
-<h1>8 Einstein’s model of a simple solid</h1>
-<p>Here we apply the Boltzmann distribution to the vibrational energy of atoms in a solid. In so doing we use a fundamental model of quantum physics—the quantum harmonic oscillator.</p>
-<section id="simple-model-of-a-solid" class="level2">
-<h2 class="anchored" data-anchor-id="simple-model-of-a-solid">8.1 Simple model of a solid</h2>
-<p><em>See Mandl 6.2</em></p>
-<p>Recall from your first year Properties of Matter course that in a crystalline solid, atoms sit on the sites of a regular array (lattice). A model for the vibrational motion of the atoms about their equilibrium positions (lattice sites) is to consider the atoms attached to each other by springs (see <a href="#fig-einstein-a" class="quarto-xref">Figure&nbsp;1 (a)</a>). However this a (strongly) interacting system since energy is stored in interaction potentials (the springs) between atoms.</p>
-<div id="fig-einsteinsolid" class="quarto-layout-panel">
+<section id="the-ideal-fermi-gas" class="level1">
+<h1>13. The Ideal Fermi gas</h1>
+<p><em>Blundell and Blundell chapter 30</em></p>
+<section id="low-density-limit" class="level2">
+<h2 class="anchored" data-anchor-id="low-density-limit">Low density limit</h2>
+<p>The imposed value of <span class="math inline">\(\mu\)</span> for a system in the grand canonical ensemble sets the average particle number <span class="math inline">\({\overline N}\)</span>. Consider the limit <span class="math inline">\(e^{\mu/kT} \ll 1\)</span>, i.e.&nbsp;<span class="math inline">\(\mu\)</span> large and negative. Then:</p>
+<p><span class="math display">\[
+\overline{n_i} = \frac{1}{\exp\left(\frac{\epsilon_i - \mu}{kT}\right) \pm 1} \approx e^{-\frac{\epsilon_i - \mu}{kT}}
+\]</span></p>
+<p>for both Fermi-Dirac (F-D) and Bose-Einstein (B-E) distributions.</p>
+<p>Now fix <span class="math inline">\(\mu(N,T)\)</span> through the constraint</p>
+<p><span class="math display">\[
+N = \sum_i \overline{n_i} \approx e^{\mu/kT} \sum_i e^{-\epsilon_i/kT} = e^{\mu/kT} Z(1)
+\]</span></p>
+<p>where we have identified the canonical single particle partition function <span class="math inline">\(Z(1)\)</span>. Thus we see that in the limit <span class="math inline">\(e^{\mu/kT} \ll 1\)</span>:</p>
+<p><span class="math display">\[
+\frac{Z(1)}{N} \gg 1
+\]</span></p>
+<p>which, referring to chapter 10.1, 10.4, is the low density/high temperature limit where a semi-classical treatment is adequate.</p>
+</section>
+<section id="ideal-fermi-gas" class="level2">
+<h2 class="anchored" data-anchor-id="ideal-fermi-gas">Ideal Fermi gas</h2>
+<p>We return now to the Fermi-Dirac distribution from key point 17 (chapter 12). The function <span class="math inline">\(f_+\)</span> is often referred to simply as the <strong>Fermi function</strong>.</p>
+<p>Consider the limit <span class="math inline">\(T \to 0\)</span> (<span class="math inline">\(\beta \to \infty\)</span>):</p>
+<p><span class="math display">\[
+f_+(\epsilon) = \frac{1}{\exp\left(\frac{\epsilon - \mu}{kT}\right) + 1} \to
+\begin{cases}
+1 &amp; \text{if } \epsilon &lt; \epsilon_f \\
+0 &amp; \text{if } \epsilon &gt; \epsilon_f
+\end{cases}
+\]</span></p>
+<p>where <span class="math inline">\(\epsilon_f\)</span> is the <strong>Fermi energy</strong> defined by:</p>
+<div id="kp18" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Point 18
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\epsilon_f = \lim_{T \to 0} \mu(T)
+\]</span></p>
+</div>
+</div>
+<p>You should convince yourself that because the occupation numbers <span class="math inline">\(n_i\)</span> are restricted to <span class="math inline">\(0,1\)</span> for fermions, the Fermi-Dirac distribution is equivalent to the probability that a quantum state of energy <span class="math inline">\(\epsilon\)</span> is occupied.</p>
+<div id="fig-FermiT0" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-einsteinsolid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-einsteinsolid" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-einstein-a" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-einstein-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="NotesFigs/Einstein_solid.png" class="img-fluid figure-img" data-ref-parent="fig-einsteinsolid">
+<div aria-describedby="fig-FermiT0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="NotesFigs/FermiT0.png" class="img-fluid figure-img" width="400">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-einstein-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) Model of crystal solid as atoms connect by harmonic springs.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-FermiT0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Fermi function at zero temperature
 </figcaption>
 </figure>
 </div>
-</div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-einsteinsolid" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-einstein-b" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-einstein-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="NotesFigs/Einstein_single_particle.png" class="img-fluid figure-img" data-ref-parent="fig-einsteinsolid">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-einstein-b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) Model of each atom as independent harmonic oscillator
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-einsteinsolid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1
-</figcaption>
-</figure>
-</div>
-<p>We seek a weakly interacting system that models the behaviour. A simple approximation is illustrated in <a href="#fig-einstein-b" class="quarto-xref">Figure&nbsp;1 (b)</a>. Each atom sits in its own harmonic potential and the motion of atoms independent of the others. This is the Einstein model.</p>
-<p>Let us first consider the system classically. Each oscillator has energy</p>
-<p><span class="math display">\[
-\varepsilon = \frac{1}{2} \kappa x^2 + \frac{1}{2} mv^2
-\]</span></p>
-<p>where <span class="math inline">\(x\)</span> is the displacement from equilibrium position. Thus in 3d the system has <span class="math inline">\(N \times 3 \times 2\)</span> quadratic contributions (<span class="math inline">\(N\)</span> particles, <span class="math inline">\(3\)</span> dimensions, P.E. + K.E.) to the energy. The equipartition theorem then implies that the energy and heat capacity of the system should be</p>
-<p><span class="math display">\[
-\overline{E} = 6N \times \frac{1}{2} kT = 3NkT
-\]</span></p>
-<p><span class="math display">\[
-C_V = \frac{\partial \overline{E}}{\partial T} = 3Nk
-\]</span></p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-More on the Equipartition Theorem
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>For each degree of freedom of a system with an energy which is quadratic in either the coordinate or the momentum, the average energy is <span class="math inline">\(kT/2\)</span> and its contribution to the heat capacity is <span class="math inline">\(k/2\)</span>, at high enough temperatures.</strong></p>
-<p>The equipartition theorem is applicable only when the system can be described classically and is applicable only to each term in the energy that is proportional to a coordinate squared. This coordinate must take on a continuum of values from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(+\infty\)</span>. Here are some examples from classical mechanical systems.</p>
+<p>In <a href="#fig-FermiT0" class="quarto-xref">Figure&nbsp;1</a>, we observe the following features:</p>
 <ul>
-<li><p><strong>Vibrations:</strong> <span class="math display">\[
-E_{vib} = \frac{1}{2} m\dot{x}^2 + \frac{1}{2} \kappa x^2
-\]</span> Two quadratic degrees of freedom, hence <span class="math inline">\(E \rightarrow kT\)</span> as <span class="math inline">\(T \to \infty\)</span>. Note that here <span class="math inline">\(\kappa\)</span> is the spring constant.</p></li>
-<li><p><strong>Rotations:</strong> Two perpendicular axes about which a molecule can rotate, <span class="math display">\[
-E_{rot} = \frac{1}{2} I_1 \dot{\theta}_1^2 + \frac{1}{2} I_2 \dot{\theta}_2^2
-\]</span> Two quadratic degrees of freedom, hence <span class="math inline">\(E \rightarrow kT\)</span> as <span class="math inline">\(T \to \infty\)</span>.</p></li>
-<li><p><strong>Translations:</strong> <span class="math display">\[
-E_{tr} = \frac{1}{2} m(\dot{x}^2 + \dot{y}^2 + \dot{z}^2)
-\]</span> Three quadratic degrees of freedom, hence <span class="math inline">\(E\rightarrow \frac{3}{2}kT\)</span> as <span class="math inline">\(T \to \infty\)</span>.</p></li>
+<li>All states up to <span class="math inline">\(\epsilon_f\)</span> are filled with probability 1.</li>
+<li>All states above <span class="math inline">\(\epsilon_f\)</span> are empty.</li>
+<li>This is very different from a classical gas where at zero temperature, all gas molecules would have zero energy.</li>
+<li>It is a direct result of the <strong>exclusion principle</strong>, which leads to an “effective repulsion” between fermions.</li>
 </ul>
-<p>The equipartition theorem is a fundamental principle in classical physics. However, from the perspective of modern statistical mechanics, it fails when the energy level separation is significantly larger than thermal energy. In such cases, the heat capacity associated with that degree of freedom decreases, eventually approaching zero at low temperatures. This phenomenon is referred to as “freezing out” of the degree of freedom. A common example is the vibrational degrees of freedom, which are typically frozen out at room temperature.</p>
-<p>More specifically, equipartition holds:</p>
+<p>We now calculate <span class="math inline">\(\epsilon_f\)</span>. First, turn the sum over quantum states into an integral:</p>
+<p><span class="math display">\[
+N = \sum_i f_+(\epsilon_i) \approx \int_0^{\infty} d\epsilon\, g(\epsilon) f_+(\epsilon)
+\]</span></p>
+<p>where <span class="math inline">\(g(\epsilon)\)</span> is the density of states, a concept first introduced in <strong>chapter 10</strong>. As a reminder:</p>
+<p><span class="math display">\[
+g(\epsilon) d\epsilon = \text{number of states in energy range } [\epsilon, \epsilon + d\epsilon]
+\]</span></p>
+<p>We saw in <strong>chapter 10</strong> that for spinless particles in a box:</p>
+<p><span class="math display">\[
+g(\epsilon) = D V\epsilon^{1/2}, \quad D = \left( \frac{2M}{h^2} \right)^{3/2} \frac{1}{4\pi^2}
+\]</span></p>
+<p>Incorporating the idea of spin, each translational (“standing wave”) state corresponds to <span class="math inline">\(2s + 1\)</span> states since the particle has <span class="math inline">\(2s + 1\)</span> possible spin states. Therefore:</p>
+<p><span class="math display">\[
+g(\epsilon) = \tilde{DV} \epsilon^{1/2}, \quad \tilde{D} = (2s + 1) D
+\]</span></p>
+<p>Thus:</p>
+<p><span class="math display">\[
+N = \int_0^{\epsilon_f} \tilde{D}V \epsilon^{1/2} d\epsilon = \frac{2}{3} \tilde{D}V \epsilon_f^{3/2}
+\]</span></p>
+<p>which implies:</p>
+<p><span class="math display">\[
+\epsilon_f = \left( \frac{3N}{2\tilde{D}V} \right)^{2/3}
+\]</span></p>
+<p>or equivalently:</p>
+<p><span class="math display">\[
+\epsilon_f = \frac{h^2}{2M} \left( \frac{6\pi^2 N}{(2s + 1)V} \right)^{2/3}
+\]</span></p>
+<p>In <strong>Question 4.6</strong>, it is shown that:</p>
+<p><span class="math display">\[
+E = \int_0^{\epsilon_f} g(\epsilon) \epsilon d\epsilon = \frac{3}{5} N \epsilon_f
+\]</span></p>
+<section id="important-points" class="level3">
+<h3 class="anchored" data-anchor-id="important-points">Important Points:</h3>
 <ul>
-<li>for <strong>vibrations</strong>, when <span class="math inline">\(T \gg \hbar \omega / k \approx 10^3 K\)</span>;</li>
-<li>for <strong>rotations</strong>, when <span class="math inline">\(T \gg \hbar^2 / I k \approx 10 - 100 K\)</span>;</li>
-<li>for <strong>translations</strong>, when <span class="math inline">\(T \gg \hbar^2 / (m V^{2/3} k) \approx 10^{-14} K\)</span>.</li>
+<li><span class="math inline">\(\epsilon_f\)</span> decreases with the mass <span class="math inline">\(M\)</span> of the fermion.</li>
+<li><span class="math inline">\(\epsilon_f\)</span> increases with the number density <span class="math inline">\(N/V\)</span>.</li>
+<li><span class="math inline">\(\epsilon_f\)</span> defines a characteristic ‘Fermi temperature’ through <span class="math inline">\(\epsilon_f = kT_f\)</span>.</li>
+<li>At zero temperature, there is a finite energy per particle <span class="math inline">\(\epsilon = \frac{3}{5} \epsilon_f\)</span>.</li>
 </ul>
-<p>Thus, at room temperature, only the rotational and translational degrees of freedom can be treated classically, giving <span class="math inline">\(C_V = \frac{3}{2} R\)</span> for monatomic gases and <span class="math inline">\(C_V = \frac{5}{2} R\)</span> for diatomic gases, for the molar heat capacity.</p>
-<p>Using the equipartition theorem, we can estimate the heat capacities of various substances by counting their quadratic degrees of freedom. For example, in a solid, each atom can vibrate in three directions, leading to an expected molar heat capacity of (3R). This prediction aligns with the <strong>Dulong-Petit law</strong>, which accurately describes the heat capacities of many solids at room temperature.</p>
-</div>
-</div>
-</div>
-<p>If you have forgotten the equipartition theorem, you can find it in your first year Properties of Matter notes and in the note above. However we will understand it at a deeper level in a few chapters’ time.</p>
-<p>The prediction for the heat capacity was well borne out experimentally for many monoatomic solids and is known as the Dulong–Petit law. However diamond has a smaller heat capacity than the Dulong–Petit law predicts. Einstein showed that this is a quantum effect.</p>
-<p>To understand why at a qualitative level quantum effects are important in diamond. Recall that diamond is very hard. This means that the ‘spring constant’ of the classical oscillator modelling each atom in Figure 1 is very large. Therefore the frequency of the oscillators is very large and and the typical displacements very small. This last fact implies that quantum effects have to be taken into account– roughly speaking, from the uncertainty principle if the displacements are very small then we know the atoms’ positions with high accuracy, therefore there must be uncertainty in the momenta (velocities).</p>
 </section>
-<section id="statistical-mechanics-of-the-quantum-harmonic-oscillator" class="level2">
-<h2 class="anchored" data-anchor-id="statistical-mechanics-of-the-quantum-harmonic-oscillator">8.2 Statistical mechanics of the quantum harmonic oscillator</h2>
-<p>From quantum mechanics recall that a one dimensional harmonic oscillator has energy levels</p>
-<p><span class="math display">\[
-\varepsilon = \left(n + \frac{1}{2}\right)\hbar\omega
-\]</span></p>
-<p>where the quantum number <span class="math inline">\(n = 0, 1, 2 \ldots\)</span> (see chapter 8 of quantum mechanics notes). The ground state energy <span class="math inline">\(n = 0\)</span> is <span class="math inline">\(\frac{1}{2}\hbar\omega\)</span>. The generalisation to a three-dimensional oscillator is easy</p>
-<p><span class="math display">\[
-\varepsilon_{3d} = \left(n_x + n_y + n_z + \frac{3}{2}\right)\hbar\omega
-\]</span></p>
-<p>Einstein’s model is a system of <span class="math inline">\(N\)</span> 3d quantum oscillators all with the same frequency <span class="math inline">\(\omega\)</span> in thermal equilibrium; <span class="math inline">\(\omega\)</span> is chosen to fit the experimental data.</p>
-<p>From the statistical mechanics of weakly interacting systems we have <span class="math inline">\(Z = [Z(1)]^N\)</span>. Now since the energy of an oscillator is a sum of three similar contributions we will have a further factorisation (see chapter 6.3) and</p>
-<p><span class="math display">\[
-Z = [Z(1)]^N = \left[Z_{1d}(1)\right]^{3N}
-\]</span></p>
-<p>where <span class="math inline">\(Z_{1d}(1)\)</span> is the partition function for a single 1d oscillator. The task reduces to the calculation of <span class="math inline">\(Z_{1d}(1)\)</span></p>
-<p><span class="math display">\[
-Z_{1d}(1) = \sum_{n=0}^{\infty} \exp\left(-\beta\hbar\omega\left[n + \frac{1}{2}\right]\right)
-\]</span></p>
-<p>To evaluate the sum recall the geometric series, valid for <span class="math inline">\(|a|&lt;1\)</span></p>
-<p><span class="math display">\[
-\sum_{n=0}^{\infty} a^n = \frac{1}{1 - a}
-\]</span></p>
-<p>Thus, inserting <span class="math inline">\(a=\exp(-\beta\hbar\omega)\)</span>, we find</p>
-<p><span class="math display">\[
-Z_{1d}(1) = \frac{\exp\left(-\frac{x}{2}\right)}{1 - \exp(-x)}
-\]</span></p>
-<p>where <span class="math inline">\(x = \beta\hbar\omega\)</span>.</p>
 </section>
-<section id="thermodynamic-properties" class="level2">
-<h2 class="anchored" data-anchor-id="thermodynamic-properties">8.3 Thermodynamic properties</h2>
-<p>We now turn the handle to crank out the thermodynamics variables. First note</p>
+<section id="low-temperature-behaviour" class="level2">
+<h2 class="anchored" data-anchor-id="low-temperature-behaviour">Low temperature behaviour</h2>
+<p>Now consider the Fermi function at low but finite <span class="math inline">\(T\)</span>. The meaning of “low” will be specified shortly. Note that:</p>
 <p><span class="math display">\[
-\overline{E} = 3N\overline{\varepsilon} = 3N\hbar\omega\left(\overline{n} + \frac{1}{2}\right)
+f_+(\epsilon) = \frac{1}{\exp\left(\frac{\epsilon - \mu}{kT}\right) + 1}
 \]</span></p>
-<p>It is easiest to calculate <span class="math inline">\(\varepsilon\)</span> directly from the relation</p>
-<p><span class="math display">\[
-\overline{\varepsilon} = -\frac{\partial}{\partial\beta} \ln Z_{1d}(1) = -\frac{dx}{d\beta} \frac{\partial}{\partial x} \ln Z_{1d}(1)
-\]</span></p>
-<p><span class="math display">\[
-= -\hbar\omega \frac{\partial}{\partial x} \left[-\ln\left(1 - \exp(-x)\right) - \frac{x}{2}\right]
-\]</span></p>
-<p><span class="math display">\[
-= \hbar\omega \left[\frac{\exp(-x)}{1 - \exp(-x)} + \frac{1}{2}\right]
-\]</span></p>
-<p>and we see that the average quantum number is</p>
-<p><span class="math display">\[
-\overline{n} = \frac{\exp(-x)}{1 - \exp(-x)} = \frac{1}{\exp(x) - 1}
-\]</span></p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>approaches 1 if <span class="math inline">\((\epsilon - \mu)/kT \ll -1\)</span> and 0 if <span class="math inline">\((\epsilon - \mu)/kT \gg 1\)</span>, with <span class="math inline">\(f_+(\epsilon) = 1/2\)</span> when <span class="math inline">\(\epsilon = \mu\)</span>. The Fermi function is a sigmoid shape illustrated in <a href="#fig-FermilowT" class="quarto-xref">Figure&nbsp;2</a>. It differs from the zero-temperature step-function only when <span class="math inline">\(|\epsilon - \mu| \sim O(kT)\)</span>.</p>
+<div id="fig-FermilowT" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-FermilowT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="NotesFigs/FermilowT.png" class="img-fluid figure-img" width="400">
 </div>
-<div class="callout-title-container flex-fill">
-Expand to see an alternative derivation
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-FermilowT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Fermi function at zero temperature
+</figcaption>
+</figure>
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Aside: An alternative derivation is to use the Boltzmann distribution <span class="math inline">\(P_n\)</span> for the levels <span class="math inline">\(n\)</span> of a 1d oscillator explicitly</p>
+<p>For the Fermi function to retain its characteristic shape, we must have <span class="math inline">\(kT \ll \mu(T) \approx \epsilon_f\)</span>, implying <span class="math inline">\(T \ll T_f\)</span>.</p>
+<p>An intuitive interpretation of <a href="#fig-FermilowT" class="quarto-xref">Figure&nbsp;2</a> is that at low temperatures, the general scenario is similar to that at zero temperature, where all states up to energy <span class="math inline">\(\epsilon_f\)</span> are filled. The difference is that states within energy <span class="math inline">\(O(kT)\)</span> below <span class="math inline">\(\epsilon_f\)</span> are vacated with some probability, and previously empty states within <span class="math inline">\(O(kT)\)</span> above <span class="math inline">\(\epsilon_f\)</span> are filled with some probability. In other words, some fermions are thermally excited above the Fermi energy.</p>
+<p>We investigate the result of this thermal excitation by calculating the heat capacity. To avoid a complicated calculation required to get the exact result, we instead make a rough estimate (for a more careful argument, see Baierlein 9.1). We expect:</p>
 <p><span class="math display">\[
-\overline{n} = \sum_{n=0}^{\infty} P_n n = \frac{1}{Z_{1d}(1)} \sum_{n=0}^{\infty} n \exp\left[-x\left(n + \frac{1}{2}\right)\right]
-\]</span></p>
-<p>then use the identity</p>
+E(T) - E(0) \sim N \cdot \frac{kT}{\epsilon_f} \cdot kT
+\]</span> i.e the change in energy is <span class="math inline">\(N\)</span> times the fraction of fermions excited (roughly <span class="math inline">\(kT/\epsilon_f\)</span>) times the typical excitation (roughly <span class="math inline">\(kT\)</span>).</p>
+<p>Therefore, the heat capacity is approximately:</p>
 <p><span class="math display">\[
-\sum_{n=0}^{\infty} n a^n = a \frac{d}{da} \sum_{n=0}^{\infty} a^n = a \frac{d}{da} \frac{1}{1 - a} = \frac{a}{(1 - a)^2}
+C_V \sim \frac{E(T) - E(0)}{T} \sim \frac{Nk^2T}{\epsilon_f}
 \]</span></p>
-</div>
-</div>
-</div>
-<p>The mean total energy is given by</p>
-<p><span class="math display">\[
-\overline{E} = 3N\hbar\omega \left[\frac{\exp(-x)}{1 - \exp(-x)} + \frac{1}{2}\right]
-\]</span></p>
-<p>and the heat capacity is given by</p>
-<p><span class="math display">\[
-C_V = \left(\frac{\partial \overline{E}}{\partial T}\right)_V = \left(\frac{\partial x}{\partial T}\right)_\omega \left(\frac{\partial \overline{E}}{\partial x}\right)_\omega
-\]</span></p>
-<p>Note that here the ‘constant volume’ constraint on the partial derivative is the same as the ‘constant <span class="math inline">\(\omega\)</span>’ constraint. This is because the only way volume (or any other variable except temperature) can enter into the model is through the parameter <span class="math inline">\(\omega\)</span>.</p>
-<p>We find</p>
-<p><span class="math display">\[
-C_V = -3N \frac{\hbar\omega}{k T^2} \frac{d}{dx} \left[\frac{1}{\exp(x) - 1}\right] = 3Nk \frac{x^2 \exp(x)}{(\exp(x) - 1)^2}
-\]</span></p>
-</section>
-<section id="high-and-low-temperature-behaviour" class="level2">
-<h2 class="anchored" data-anchor-id="high-and-low-temperature-behaviour">8.4 High and low temperature behaviour</h2>
-<p>To define the high temperature and low temperature regimes we define a characteristic temperature <span class="math inline">\(T^*\)</span> defined by <span class="math inline">\(x = 1\)</span> i.e.&nbsp;when <span class="math inline">\(kT\)</span> equals the excitation energy <span class="math inline">\(\hbar\omega\)</span>. Below this temperature quantum effects with typical energy <span class="math inline">\(\sim\hbar\omega\)</span> dominate over classical effects with typical energy <span class="math inline">\(\sim kT\)</span>.￼</p>
-<p><span class="math display">\[
-T^* = \frac{\hbar\omega}{k}
-\]</span></p>
-<p>Thus in the high temperature regime <span class="math inline">\(T \gg T^\star\)</span> (<span class="math inline">\(x \ll 1\)</span>) we find</p>
-<p><span class="math display">\[
-\overline{n} \approx \frac{1}{1 + x \ldots - 1} \approx \frac{1}{x} = \frac{kT}{\hbar\omega}
-\]</span></p>
-<p><span class="math display">\[
-\overline{E} \approx 3NkT + \frac{3}{2}N\hbar\omega
-\]</span></p>
-<p>we see that <span class="math inline">\(\overline{n}\)</span> and hence <span class="math inline">\(\overline{\varepsilon}\)</span> and <span class="math inline">\(\overline{E}\)</span> increase linearly with temperature. Moreover the heat capacity becomes</p>
-<p><span class="math display">\[
-C_V = \left(\frac{\partial \overline{E}}{\partial T}\right)_V \approx 3Nk
-\]</span></p>
-<p>and we recover the Dulong–Petit law.</p>
-<p>In the low temperature regime <span class="math inline">\(T \ll T^\star\)</span> (<span class="math inline">\(x \gg 1\)</span>) we have</p>
-<p><span class="math display">\[
-\overline{n} \approx \exp(-x)
-\]</span></p>
-<p><span class="math display">\[
-\frac{C_V}{3Nk} \approx x^2 \exp(-x)
-\]</span></p>
-<p>The mean energy level <span class="math inline">\(\overline{n}\)</span> tends to zero meaning most oscillators are in the ground state; the heat capacity is very much less than <span class="math inline">\(3Nk\)</span>.</p>
-<p>Thus when <span class="math inline">\(x = \frac{\hbar\omega}{kT}\)</span> is large, quantum effects, in particular the effect of a discrete gap between the ground state and first excited state, become important. The Einstein model quite successfully explained the experimentally observed heat capacity of diamond (see Mandl 6.2). However the very low temperature behaviour of the heat capacity was still not quite right. In fact a <span class="math inline">\(T^3\)</span> dependence appeared to emerge. This can be explained by an elaborated version of the Einstein theory known as the Debye theory. In essence the central weakness of the Einstein model is its neglect of collective motion of atoms (so called phonons) which exhibit a spectrum of frequencies.</p>
-<p>When <span class="math inline">\(x = \frac{\hbar\omega}{kT}\)</span> is small we recover the ‘classical’ results i.e.&nbsp;results where Planck’s constant does not appear in the thermodynamic quantities (except as an arbitrary constant in the energy). Quite generally high temperature is the classical limit (if indeed one exists).</p>
+<p>The important point is that this is <strong>linear in <span class="math inline">\(T\)</span></strong>. This contrasts with the classical gas, where <span class="math inline">\(C_V\)</span> is a constant (equal to <span class="math inline">\(3Nk/2\)</span>).</p>
 
 
 </section>
