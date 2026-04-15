@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>chapter9 – Statistical Physics</title>
+<title>chapter9_old – Statistical Physics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter9.html">9. Ideal gas and indistinguishability</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,13 +155,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Chapters</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
@@ -212,7 +212,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter9.html" class="sidebar-item-text sidebar-link active">
+  <a href="./chapter9.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">9. Ideal gas and indistinguishability</span></a>
   </div>
 </li>
@@ -467,7 +467,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">Chapters</a></li><li class="breadcrumb-item"><a href="./chapter9.html">9. Ideal gas and indistinguishability</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
@@ -480,7 +480,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="indistinguishability">9.1 Indistinguishability</h2>
 <p>Since atoms of some element or molecules of the same type all have the same chemical make-up they are truly identical.</p>
 <p>In solids we can still tell which atom is which because they are localised at the lattice sites of the crystal structure. So we can label the atom nearest to site <span class="math inline">\(1\)</span>, as atom number <span class="math inline">\(1\)</span> and know that basically it will always be the same atom.</p>
-<p>However in gases, or liquids, the notion of particle identity becomes ill-defined. The problem stems from quantum mechanics. In quantum mechanics to correctly describe a many particle system one has to consider a many-particle wavefunction. We will not delve into the issues here, but will just argue that In gases or liquids, particles are not localised and continuously exchange positions. More fundamentally, quantum mechanics requires that identical particles are described by a single many-particle wavefunction that is symmetric (or antisymmetric) under particle exchange. As a result, permutations of particle labels do not correspond to distinct physical states.</p>
+<p>However in gases, or liquids, the identity of the particles is problematic. The problem stems from quantum mechanics. In quantum mechanics to correctly describe a many particle system one has to consider a many-particle wavefunction. We will not delve into the issues here, but will just argue that we cannot treat particles individually because we cannot keep track of their identities.</p>
 <div id="kp14" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -500,7 +500,7 @@ Key point 14
 <p>We seek to modify in a simple way the Boltzmann theory to take into account indistinguishability.</p>
 <p>Roughly speaking, and provided the density of particles is low (we’ll elaborate on this later) the number of microstates of a system of indistinguishable particles is less by a factor of <span class="math inline">\(1/N!\)</span> compared to the case where the particles are treated distinguishably. Thus to correct for the overcounting due to indistinguishability, we divide the partition function by <span class="math inline">\(N!\)</span>:</p>
 <p><span class="math display">\[
-Z_{\text{indist.}} = \frac{1}{N!} \sum_{i_1, i_2, \ldots, i_N} \exp(-\beta [\epsilon_{i_1} + \epsilon_{i_2} + \cdots + \epsilon_{i_N}]) = \frac{1}{N!} [Z(1)]^N
+Z_{\text{indist.}} = \frac{1}{N!} \sum_{i_1 = i_2 \cdots = i_N} \exp(-\beta [\epsilon_{i_1} + \epsilon_{i_2} + \cdots + \epsilon_{i_N}]) = \frac{1}{N!} [Z(1)]^N
 \]</span> where <span class="math inline">\(i_n\)</span> is the state of particle <span class="math inline">\(n\)</span>.</p>
 <p>The approximation that allows us to correct for indistinguishability via the (classical) factor <span class="math inline">\(1/N!\)</span> is valid when the particle density is low. It is known as the semi-classical approximation. As we shall see, at high density one has to take quantum indistinguishability into account.</p>
 </section>
