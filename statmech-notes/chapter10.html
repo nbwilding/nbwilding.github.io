@@ -351,6 +351,12 @@ window.Quarto = {
  <span class="menu-text">Lecture slides chapter 8</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture slides/chapter9.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides chapter 9</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -480,23 +486,33 @@ window.Quarto = {
 <p>In the last chapter, the calculation of <span class="math inline">\(Z(1)\)</span> for the ideal gas was begun. In this chapter, we finish the calculation and discuss when the semi-classical treatment is valid. The concept of a density of states is also introduced.</p>
 <section id="calculation-of-z1" class="level2">
 <h2 class="anchored" data-anchor-id="calculation-of-z1">10.1 Calculation of <span class="math inline">\(Z(1)\)</span></h2>
-<p>We first finish the job begun in the last chapter:</p>
-<p><span class="math display">\[
-Z(1) = \frac{\pi}{2} \int_0^\infty \exp\left(-an^2\right) n^2 dn \quad \text{where} \quad a = \frac{\hbar^2 \pi^2}{2kTML^2}
+<p>We first finish the job begun in the last chapter. Writing <span class="math display">\[
+a = \frac{\beta \hbar^2 \pi^2}{2ML^2},
+\]</span> the single-particle partition function takes the form <span class="math display">\[
+Z(1) = \frac{\pi}{2} \int_0^\infty n^2 e^{-an^2}\,dn.
 \]</span></p>
-<p>The Gaussian integral that should be familiar is:</p>
-<p><span class="math display">\[
-\int_{-\infty}^\infty \exp(-an^2) dn = \left(\frac{\pi}{a}\right)^{1/2}
+<p>To evaluate the integral, first note that the integrand is even, so <span class="math display">\[
+\int_0^\infty n^2 e^{-an^2}\,dn
+= \frac{1}{2}\int_{-\infty}^\infty n^2 e^{-an^2}\,dn.
+\]</span> Hence <span class="math display">\[
+Z(1)=\frac{\pi}{4}\int_{-\infty}^\infty n^2 e^{-an^2}\,dn.
 \]</span></p>
-<p>Thus, we see:</p>
-<p><span class="math display">\[
-Z(1) = -\frac{1}{2} \frac{d}{da} \left( \int_{-\infty}^\infty \exp(-an^2) dn \right) = -\frac{1}{2} \frac{d}{da} \left(\frac{\pi}{a}\right)^{1/2} = \frac{\sqrt{\pi}}{4a^{3/2}}
+<p>Now use differentiation with respect to the parameter <span class="math inline">\(a\)</span>: <span class="math display">\[
+\frac{d}{da}e^{-an^2} = -n^2 e^{-an^2},
+\]</span> so that <span class="math display">\[
+\int_{-\infty}^\infty n^2 e^{-an^2}\,dn
+= -\frac{d}{da}\int_{-\infty}^\infty e^{-an^2}\,dn.
+\]</span> Using the standard Gaussian integral <span class="math display">\[
+\int_{-\infty}^\infty e^{-an^2}\,dn = \left(\frac{\pi}{a}\right)^{1/2},
+\]</span> we obtain <span class="math display">\[
+Z(1)
+= -\frac{\pi}{4}\frac{d}{da}\left(\frac{\pi}{a}\right)^{1/2}
+= \frac{\pi^{3/2}}{8a^{3/2}}.
 \]</span></p>
-<p>The factor <span class="math inline">\(\frac{1}{2}\)</span> comes from the limit <span class="math inline">\(0\)</span> to <span class="math inline">\(\infty\)</span> in the integral for <span class="math inline">\(Z(1)\)</span>. Inserting the expression for <span class="math inline">\(a\)</span> gives:</p>
-<p><span class="math display">\[
-Z(1) = \frac{\pi^{3/2}}{8} \left( \frac{2ML^2}{\beta \hbar^2 \pi^2} \right)^{3/2} = V \left( \frac{2\pi M k T}{h^2} \right)^{3/2}
-\]</span></p>
-<p>where <span class="math inline">\(V=L^3\)</span> is the system volume and <span class="math inline">\(h = 2\pi \hbar\)</span> has been used.</p>
+<p>Finally, substituting for <span class="math inline">\(a\)</span> gives <span class="math display">\[
+Z(1) = \frac{\pi^{3/2}}{8} \left( \frac{2ML^2}{\beta \hbar^2 \pi^2} \right)^{3/2}
+= V \left( \frac{2\pi M k T}{h^2} \right)^{3/2},
+\]</span> where <span class="math inline">\(V=L^3\)</span> is the system volume and <span class="math inline">\(h = 2\pi\hbar\)</span> has been used.</p>
 </section>
 <section id="density-of-states" class="level2">
 <h2 class="anchored" data-anchor-id="density-of-states">10.2 Density of states</h2>
