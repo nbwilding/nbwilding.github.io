@@ -317,6 +317,12 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./Lecture slides/all_slides.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./Lecture slides/chapter1.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides chapter 1</span></a>
   </div>
@@ -373,6 +379,24 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Lecture slides/chapter10.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides chapter 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture slides/chapter11.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides chapter 11</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture slides/chapter12.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides chapter 12</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lecture slides/chapter13.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides chapter 13</span></a>
   </div>
 </li>
       </ul>
@@ -589,7 +613,7 @@ C_V \equiv T \left( \frac{\partial S}{\partial T} \right)_V = T \frac{\partial}{
 </section>
 <section id="a-check-on-the-entropy-formula" class="level2">
 <h2 class="anchored" data-anchor-id="a-check-on-the-entropy-formula">4.3 A check on the entropy formula</h2>
-<p>According to the result established chapter 10.3, the entropy of one mole (<span class="math inline">\(N = N_A\)</span>) of ideal gas in volume <span class="math inline">\(V\)</span> at temperature <span class="math inline">\(T\)</span> is</p>
+<p>According to the result established in chapter 10.3, the entropy of one mole (<span class="math inline">\(N = N_A\)</span>) of ideal gas in volume <span class="math inline">\(V\)</span> at temperature <span class="math inline">\(T\)</span> is</p>
 <p><span class="math display">\[
 S(T) = R \left[ \ln \left( \frac{2\pi MkT}{h^2} \right)^{\frac{3}{2}} - \ln \left( \frac{N}{V} \right) + \frac{5}{2} \right]
 \]</span></p>
@@ -598,6 +622,27 @@ S(T) = R \left[ \ln \left( \frac{2\pi MkT}{h^2} \right)^{\frac{3}{2}} - \ln \lef
 S = R \left[ \frac{3}{2} \ln T - \ln \left( \frac{N}{V} \right) + \frac{5}{2} + \frac{3}{2} \ln \left( \frac{2\pi Mk}{h^2} \right) \right]
 \]</span></p>
 <p>Now, setting <span class="math inline">\(M = 6.62 \times 10^{-26} \, \text{kg}\)</span>, <span class="math inline">\(kT_b = 1.205 \times 10^{-21} \, \text{J}\)</span>, and <span class="math inline">\(V/N \equiv V/N_A = kT/P = 1.18 \times 10^{-26} \, \text{m}^3\)</span> (with <span class="math inline">\(P = 1.013 \times 10^5 \, \text{Nm}^{-2}\)</span>), we find <span class="math inline">\(S(T_b) \simeq 129.2 \, \text{J mol}^{-1} \, \text{K}^{-1}\)</span>, in excellent agreement with the measured value.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aside: Calorimetric determination of entropy
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Experimentally, the entropy at the boiling point is obtained via third-law calorimetry. Starting from <span class="math inline">\(S=0\)</span> at <span class="math inline">\(T=0\)</span> for a perfect crystal, one integrates measured heat capacities through the solid and liquid phases and adds the entropy changes associated with melting and vaporisation, i.e. <span class="math display">\[
+S(T_b)=\int_0^{T_m}\frac{C_{p,s}}{T}\,dT
++\frac{\Delta H_{\mathrm{fus}}}{T_m}
++\int_{T_m}^{T_b}\frac{C_{p,l}}{T}\,dT
++\frac{\Delta H_{\mathrm{vap}}}{T_b}.
+\]</span> This provides an absolute entropy against which the ideal-gas prediction can be compared.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="density-of-states-for-a-2d-gas" class="level2">
 <h2 class="anchored" data-anchor-id="density-of-states-for-a-2d-gas">4.4 Density of states for a 2D gas</h2>
@@ -651,7 +696,7 @@ F = E - TS
 \]</span></p>
 <blockquote class="blockquote">
 <p><strong>NOTE</strong><br>
-Whether one writes <em>E</em> or <span class="math inline">\(\bar{E}\)</span> in these expressions is a matter of taste or perspective.<br>
+Whether one writes <span class="math inline">\(E\)</span> or <span class="math inline">\(\bar{E}\)</span> in these expressions is a matter of taste or perspective.<br>
 From a thermodynamics point of view a system has a definite (‘internal’) energy, for a given equilibrium state, and it is normally written as <em>E</em> (or <em>U</em> !).<br>
 With the insights of statistical physics we see that this energy should in fact be thought of as the mean value, <span class="math inline">\(\bar{E}\)</span>, of a quantity which actually is exhibiting small fluctuations.</p>
 </blockquote>
@@ -668,7 +713,7 @@ dF = -PdV - SdT
 P = -\left( \frac{\partial F}{\partial V} \right)_T \quad \text{and} \quad S = -\left( \frac{\partial F}{\partial T} \right)_V
 \]</span></p>
 <p>We made use of the first of these results in establishing the ideal gas equation of state (chapter 10.3).<br>
-The second result provides an alternative route from the partition function (which gives <em>F</em> through <span class="math inline">\(F = -kT \ln Z\)</span>) to the entropy.</p>
+The second result provides an alternative route from the partition function (which gives <span class="math inline">\(F\)</span> through <span class="math inline">\(F = -kT \ln Z\)</span>) to the entropy.</p>
 </section>
 <section id="the-fermi-dirac-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="the-fermi-dirac-distribution">4.6 The Fermi-Dirac distribution</h2>
